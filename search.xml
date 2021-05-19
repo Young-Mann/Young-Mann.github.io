@@ -58,4 +58,20 @@
         <tag>数据库系统概论</tag>
       </tags>
   </entry>
+  <entry>
+    <title>数学错误集合&amp;题型整理</title>
+    <url>/2021/05/19/%E6%95%B0%E5%AD%A6%E5%88%B7%E9%A2%98%E9%94%99%E8%AF%AF%E9%9B%86%E5%90%88/</url>
+    <content><![CDATA[<hr>
+<h2 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h2><h3 id="根号提取公因式时，忽视绝对值的存在"><a href="#根号提取公因式时，忽视绝对值的存在" class="headerlink" title="根号提取公因式时，忽视绝对值的存在"></a>根号提取公因式时，忽视绝对值的存在</h3><p>(李林880·基础·一元微分·30)求下列曲线的渐近线：<br>$$<br>y=\sqrt {4x^2+x} \ln {( 2+\frac1x)}<br>$$</p>
+<h2 id="微分中值定理"><a href="#微分中值定理" class="headerlink" title="微分中值定理"></a>微分中值定理</h2><h3 id="已知带有绝对值的函数，求不可导点的数量"><a href="#已知带有绝对值的函数，求不可导点的数量" class="headerlink" title="已知带有绝对值的函数，求不可导点的数量"></a>已知带有绝对值的函数，求不可导点的数量</h3><p>(李林880·基础·一元微分·5)求以下函数不可导点的数量：<br>$$<br>f(x) = (x^2+3x+2)|x^3-x|<br>$$</p>
+<h3 id="证明方程有且仅有n个根"><a href="#证明方程有且仅有n个根" class="headerlink" title="证明方程有且仅有n个根"></a>证明方程有且仅有n个根</h3><ul>
+<li><strong>求根的数量：</strong><ul>
+<li>端点函数值异号 + 零点定理</li>
+<li>一阶导数 + 递增递减性质 + 两个端点（极限）值</li>
+</ul>
+</li>
+<li><strong>证明至多n个根</strong>：反证法 + 拉格朗日中值定理</li>
+</ul>
+]]></content>
+  </entry>
 </search>
