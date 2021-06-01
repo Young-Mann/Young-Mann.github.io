@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>tags</title>
+    <url>/2021/06/01/tags/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>leetcode | 342. 4的幂 | 位运算的巧妙应用</title>
+    <url>/2021/05/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。</p>
+<p>整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == $4^x$</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>经观察，不难发现：</p>
+<ol>
+<li>4的幂次方一定是2的幂次方</li>
+<li>写成二进制后，可知4的幂的二进制表示中只会出现一位1，而且该1一定出现在奇数位上</li>
+<li>在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然</li>
+</ol>
+<p>至此，便得出了解决问题所需要的所有条件。下文选取了思路中的1和3用以解决问题，代码如下：</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. n&amp;(n-1)用于判断n是否2的幂次方</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span> || n&amp;(n<span class="number">-1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">        <span class="comment">// 2. 在1.的前提下，判断余数</span></span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">3</span> == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="附录1：用余数判断一个2的幂次方是否是4的幂次方"><a href="#附录1：用余数判断一个2的幂次方是否是4的幂次方" class="headerlink" title="附录1：用余数判断一个2的幂次方是否是4的幂次方"></a>附录1：用余数判断一个2的幂次方是否是4的幂次方</h2><p>取$k\in N$，则在2的幂次方中，4的幂次方一定满足：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+2^{2k} &= 4^x
+\\ &= (3+1)^x
+\\ &= C(x,0) \times 3^0 \times 1^x +  \underbrace {\sum ^{x} _{i=1} C(x,i) \times 3^i \times 1^{ (x-i)}}_{x-1个\space3的幂次方之和}
+\\
+&=1+各个3的幂次方之和
+
+\end{align*}</script><p>而2的幂次方中，不是4的幂次方又满足：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+2^{2k+1}&=4^x\times2
+ \\ &=(3+1)^x \times(3-1)
+\\
+&=(1+各个3的幂次方)\times(3-1)
+\\&=2+各个3的幂次方之和\times2
+
+\end{align*}</script><p>观察可知，在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然。</p>
+<h2 id="附录2：有意思的二进制数"><a href="#附录2：有意思的二进制数" class="headerlink" title="附录2：有意思的二进制数"></a>附录2：有意思的二进制数</h2><p>0xaaaaaaaa = 10101010101010101010101010101010 (偶数位为1，奇数位为0）</p>
+<p>0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）</p>
+<p>0x33333333 = 110011001100110011001100110011 (1和0每隔两位交替出现)</p>
+<p>0xcccccccc = 11001100110011001100110011001100 (0和1每隔两位交替出现)</p>
+<p>0x0f0f0f0f = 00001111000011110000111100001111 (1和0每隔四位交替出现)</p>
+<p>0xf0f0f0f0 = 11110000111100001111000011110000 (0和1每隔四位交替出现)</p>
+]]></content>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库系统概论 | 关系数据理论</title>
     <url>/2021/05/18/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<p>本文是基于《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
@@ -45,22 +93,16 @@
 <li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
 <li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li>
 </ul>
-<p>由于<del>笔者实在太懒</del>异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
+<p>由于~笔者实在太懒~异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
 <p>在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
 <p>对这个问题换一个更为具体的表述，那便成了：</p>
 <div class="note info">
-            <p>给定关系模式R &lt;U, F&gt;以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</p>
+            <p>给定关系模式R <U, F>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</p>
           </div>
-
 <p>首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
 ]]></content>
       <tags>
         <tag>数据库系统概论</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>出栈顺序与卡特兰数</title>
-    <url>/2021/05/20/%E5%87%BA%E6%A0%88%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>

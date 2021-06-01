@@ -122,6 +122,11 @@
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
@@ -181,7 +186,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
+        <span class="collection-header">欸! 目前为止，YHC写了 3 篇日志! 好！很有精神🤺！</span>
       </div>
 
       
@@ -194,15 +199,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2021-05-20T13:20:36+08:00"
-              content="2021-05-20">
-          05-20
+              datetime="2021-05-31T22:15:07+08:00"
+              content="2021-05-31">
+          05-31
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/05/20/%E5%87%BA%E6%A0%88%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/" itemprop="url">
-            <span itemprop="name">出栈顺序与卡特兰数</span>
+          <a class="post-title-link" href="/2021/05/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/" itemprop="url">
+            <span itemprop="name">leetcode | 342. 4的幂 | 位运算的巧妙应用</span>
           </a>
       </div>
 
@@ -303,13 +308,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span>
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -344,7 +351,7 @@
 
         <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 1.9k 字</span>
+  <span class="post-count">全站共 2.4k 字</span>
 </div>
 
 <div class="copyright">
@@ -431,61 +438,6 @@
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
