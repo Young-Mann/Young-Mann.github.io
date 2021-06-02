@@ -378,7 +378,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-02 17:08:14" itemprop="dateModified" datetime="2021-06-02T17:08:14+08:00">2021-06-02</time>
+                <time title="修改时间：2021-06-02 17:44:20" itemprop="dateModified" datetime="2021-06-02T17:44:20+08:00">2021-06-02</time>
               </span>
 
           
@@ -400,10 +400,10 @@
 </ul>
 <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
 <h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
-<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X\rightarrow Y$。</li>
-<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X\xrightarrow F Y$。</li>
-<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X\xrightarrow P Y$。</li>
-<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X\xrightarrow {传递} Y$。</li>
+<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
+<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
+<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
+<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
 </ul>
 <h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
 <li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
@@ -567,7 +567,7 @@
 
         <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 2.5k 字</span>
+  <span class="post-count">目前为止，YHC已经写了 2.5k 字！</span>
 </div>
 
 <div class="copyright">
@@ -579,6 +579,43 @@
   </span>
   <span class="author" itemprop="copyrightHolder">👴Yang Huaicheng</span>
 </div>
+
+<span id="sitetime"></span>
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2018,02,13,15,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
 
         
 <div class="busuanzi-count">
