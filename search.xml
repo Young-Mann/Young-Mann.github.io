@@ -1,64 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>数据结构与算法 | 八嘎模板</title>
-      <link href="2021/06/01/%E7%AE%97%E6%B3%95/"/>
-      <url>2021/06/01/%E7%AE%97%E6%B3%95/</url>
-      
-        <content type="html"><![CDATA[<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"><span class="comment">// Pre: An unsorted array &quot;q&quot;. </span></span></span><br><span class="line"><span class="function"><span class="comment">// Post: The original array &quot;q&quot; has been sorted.</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 1. Choose the standard value (here we choose the median) for the  comparation. </span></span><br><span class="line">    <span class="keyword">int</span> x = q[(l+r)/<span class="number">2</span>], i = l - <span class="number">1</span>, j = r + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. Swap the values in the array, </span></span><br><span class="line"><span class="comment">// so that the values lower than &quot;x&quot; are put before the &quot;x&quot;,</span></span><br><span class="line"><span class="comment">// while the values higher than &quot;x&quot; are put after the &quot;x&quot;.</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">    <span class="keyword">do</span> i ++ ; <span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">    <span class="keyword">do</span> j -- ; <span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">    <span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 3. Repeat the procedure 1 and 2 to finish the sorting.</span></span><br><span class="line">    <span class="built_in">quick_sort</span>(q, l, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数据结构与算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>leetcode | 342. 4的幂 | 位运算的巧妙应用</title>
-      <link href="2021/05/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/"/>
-      <url>2021/05/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。</p><p>整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == $4^x$</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>经观察，不难发现：</p><ol><li>4的幂次方一定是2的幂次方</li><li>写成二进制后，可知4的幂的二进制表示中只会出现一位1，而且该1一定出现在奇数位上</li><li>在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然</li></ol><p>至此，便得出了解决问题所需要的所有条件。下文选取了思路中的1和3用以解决问题，代码如下：</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. n&amp;(n-1)用于判断n是否2的幂次方</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span> || n&amp;(n<span class="number">-1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 在1.的前提下，判断余数</span></span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">3</span> == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h2 id="附录1：用余数判断一个2的幂次方是否是4的幂次方"><a href="#附录1：用余数判断一个2的幂次方是否是4的幂次方" class="headerlink" title="附录1：用余数判断一个2的幂次方是否是4的幂次方"></a>附录1：用余数判断一个2的幂次方是否是4的幂次方</h2><p>取$k\in N$，则在2的幂次方中，4的幂次方一定满足：</p><script type="math/tex; mode=display">\begin{align*}2^{2k} &= 4^x\\ &= (3+1)^x\\ &= C(x,0) \times 3^0 \times 1^x +  \underbrace {\sum ^{x} _{i=1} C(x,i) \times 3^i \times 1^{ (x-i)}}_{x-1个\space3的幂次方之和}\\&=1+各个3的幂次方之和\end{align*}</script><p>而2的幂次方中，不是4的幂次方又满足：</p><script type="math/tex; mode=display">\begin{align*}2^{2k+1}&=4^x\times2 \\ &=(3+1)^x \times(3-1)\\&=(1+各个3的幂次方)\times(3-1)\\&=2+各个3的幂次方之和\times2\end{align*}</script><p>观察可知，在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然。</p><h2 id="附录2：有意思的二进制数"><a href="#附录2：有意思的二进制数" class="headerlink" title="附录2：有意思的二进制数"></a>附录2：有意思的二进制数</h2><p>0xaaaaaaaa = 10101010101010101010101010101010 (偶数位为1，奇数位为0）</p><p>0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）</p><p>0x33333333 = 110011001100110011001100110011 (1和0每隔两位交替出现)</p><p>0xcccccccc = 11001100110011001100110011001100 (0和1每隔两位交替出现)</p><p>0x0f0f0f0f = 00001111000011110000111100001111 (1和0每隔四位交替出现)</p><p>0xf0f0f0f0 = 11110000111100001111000011110000 (0和1每隔四位交替出现)</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 位运算 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数据库 | 数据库系统概论 | 关系数据理论</title>
-      <link href="2021/05/18/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/"/>
-      <url>2021/05/18/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
-      
-        <content type="html"><![CDATA[<p>本文是基于《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p><ul><li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li><li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li><li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li></ul><h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p><h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul><li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li><li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li><li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li><li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li></ul><h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul><li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p></li><li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p></li><li><p><strong>超码：</strong>对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为<strong>超码。</strong></p></li><li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p></li></ul><h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>对于范式的概念，特别不靠谱的理解如下：</p><ul><li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p></li><li><p><strong>第二范式(2NF)：</strong>在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为<strong>一个整体</strong>起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。</p></li><li><p><strong>第三范式(3NF)：</strong>在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。</p></li><li><p><strong>BCNF:</strong> 在满足3NF的基础上，将“对于一个关系内的<strong>非主</strong>属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的<strong>所有</strong>属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。</p></li><li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p></li></ul><h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p><ul><li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li><li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li><li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li></ul><p>由于~笔者实在太懒~异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p><p>在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p><p>对这个问题换一个更为具体的表述，那便成了：</p><div class="note info">            <p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>          </div><p>首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数据库系统概论 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>leetcode | 342. 4的幂 | 位运算的巧妙应用</title>
+    <url>/2021/05/31/%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。</p>
+<p>整数 n 是 4 的幂次方需满足：存在整数 x 使得 n == $4^x$</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>经观察，不难发现：</p>
+<ol>
+<li>4的幂次方一定是2的幂次方</li>
+<li>写成二进制后，可知4的幂的二进制表示中只会出现一位1，而且该1一定出现在奇数位上</li>
+<li>在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然</li>
+</ol>
+<p>至此，便得出了解决问题所需要的所有条件。下文选取了思路中的1和3用以解决问题，代码如下：</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. n&amp;(n-1)用于判断n是否2的幂次方</span></span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">0</span> || n&amp;(n<span class="number">-1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">		</span><br><span class="line">        <span class="comment">// 2. 在1.的前提下，判断余数</span></span><br><span class="line">        <span class="keyword">return</span> n % <span class="number">3</span> == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="附录1：用余数判断一个2的幂次方是否是4的幂次方"><a href="#附录1：用余数判断一个2的幂次方是否是4的幂次方" class="headerlink" title="附录1：用余数判断一个2的幂次方是否是4的幂次方"></a>附录1：用余数判断一个2的幂次方是否是4的幂次方</h2><p>取$k\in N$，则在2的幂次方中，4的幂次方一定满足：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+2^{2k} &= 4^x
+\\ &= (3+1)^x
+\\ &= C(x,0) \times 3^0 \times 1^x +  \underbrace {\sum ^{x} _{i=1} C(x,i) \times 3^i \times 1^{ (x-i)}}_{x-1个\space3的幂次方之和}
+\\
+&=1+各个3的幂次方之和
+\end{align*}</script><p>而2的幂次方中，不是4的幂次方又满足：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+2^{2k+1}&=4^x\times2
+ \\ &=(3+1)^x \times(3-1)
+\\
+&=(1+各个3的幂次方)\times(3-1)
+\\&=2+各个3的幂次方之和\times2
+
+\end{align*}</script><p>观察可知，在n为2的幂次方的前提下，若n除以3的余数为1，则为4的幂次方，否则不然。</p>
+<h2 id="附录2：有意思的二进制数"><a href="#附录2：有意思的二进制数" class="headerlink" title="附录2：有意思的二进制数"></a>附录2：有意思的二进制数</h2><p>0xaaaaaaaa = 10101010101010101010101010101010 (偶数位为1，奇数位为0）</p>
+<p>0x55555555 = 1010101010101010101010101010101 (偶数位为0，奇数位为1）</p>
+<p>0x33333333 = 110011001100110011001100110011 (1和0每隔两位交替出现)</p>
+<p>0xcccccccc = 11001100110011001100110011001100 (0和1每隔两位交替出现)</p>
+<p>0x0f0f0f0f = 00001111000011110000111100001111 (1和0每隔四位交替出现)</p>
+<p>0xf0f0f0f0 = 11110000111100001111000011110000 (0和1每隔四位交替出现)</p>
+]]></content>
+      <tags>
+        <tag>位运算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库 | 数据库系统概论 | 关系数据理论</title>
+    <url>/2021/05/18/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<p>本文是基于《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
+<ul>
+<li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
+<li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
+<li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li>
+</ul>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
+<h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
+<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
+<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
+<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
+<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
+</ul>
+<h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
+<li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
+</li>
+<li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p>
+</li>
+<li><p><strong>超码：</strong>对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为<strong>超码。</strong></p>
+</li>
+<li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p>
+</li>
+</ul>
+<h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>对于范式的概念，特别不靠谱的理解如下：</p>
+<ul>
+<li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p>
+</li>
+<li><p><strong>第二范式(2NF)：</strong>在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为<strong>一个整体</strong>起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。</p>
+</li>
+<li><p><strong>第三范式(3NF)：</strong>在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。</p>
+</li>
+<li><p><strong>BCNF:</strong> 在满足3NF的基础上，将“对于一个关系内的<strong>非主</strong>属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的<strong>所有</strong>属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。</p>
+</li>
+<li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p>
+</li>
+</ul>
+<h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
+<ul>
+<li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li>
+<li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
+<li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li>
+</ul>
+<p>由于~笔者实在太懒~异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
+<p>在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
+<p>对这个问题换一个更为具体的表述，那便成了：</p>
+<div class="note info">
+            <p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>
+          </div>
+<p>首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
+]]></content>
+      <tags>
+        <tag>数据库系统概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法 | 八嘎模板</title>
+    <url>/2021/06/01/%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">quick_sort</span><span class="params">(<span class="keyword">int</span> q[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"><span class="comment">// Pre: An unsorted array &quot;q&quot;. </span></span></span><br><span class="line"><span class="function"><span class="comment">// Post: The original array &quot;q&quot; has been sorted.</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 1. Choose the standard value (here we choose the median) for the  comparation. </span></span><br><span class="line">    <span class="keyword">int</span> x = q[(l+r)/<span class="number">2</span>], i = l - <span class="number">1</span>, j = r + <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line"><span class="comment">// 2. Swap the values in the array, </span></span><br><span class="line"><span class="comment">// so that the values lower than &quot;x&quot; are put before the &quot;x&quot;,</span></span><br><span class="line"><span class="comment">// while the values higher than &quot;x&quot; are put after the &quot;x&quot;.</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">    	<span class="keyword">do</span> i ++ ; <span class="keyword">while</span> (q[i] &lt; x);</span><br><span class="line">    	<span class="keyword">do</span> j -- ; <span class="keyword">while</span> (q[j] &gt; x);</span><br><span class="line">    	<span class="keyword">if</span> (i &lt; j) <span class="built_in">swap</span>(q[i],q[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 3. Repeat the procedure 1 and 2 to finish the sorting.</span></span><br><span class="line">    <span class="built_in">quick_sort</span>(q, l, j);</span><br><span class="line">    <span class="built_in">quick_sort</span>(q, j + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
 </search>
