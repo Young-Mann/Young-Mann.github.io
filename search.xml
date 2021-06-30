@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>小目标儿</title>
-    <url>/2021/06/21/%E3%80%90%E7%9B%AE%E6%A0%87%E3%80%91%E8%80%83%E6%9F%A5%E7%A7%91%E7%9B%AE/</url>
-    <content><![CDATA[<h2 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h2><h3 id="考研的那点儿东西"><a href="#考研的那点儿东西" class="headerlink" title="考研的那点儿东西"></a>考研的那点儿东西</h3><h4 id="数据结构与程序设计"><a href="#数据结构与程序设计" class="headerlink" title="数据结构与程序设计"></a>数据结构与程序设计</h4><p><i class="fa fa-check-square"></i>  数据结构的概念；算法及其时间和空间复杂度分析；</p>
-<p><i class="fa fa-square"></i>  常用线性结构：栈、队列，循环队列, 数组, 字符串等；</p>
-<p><i class="fa fa-square"></i>  线性结构的链式存储，链表、双向链表、循环链表、链式队列、链式栈；</p>
-<p><i class="fa fa-square"></i>  递归概念、递归程序设计、回溯法、广度优先搜索、深度优先搜索；</p>
-<p><i class="fa fa-square"></i>  列表：查找的概念，顺序查找与二分查找；</p>
-<p><i class="fa fa-square"></i>  哈希表：利用哈希表进行查找，哈希冲突的解决；</p>
-<p><i class="fa fa-square"></i>  排序的概念：排序算法(插入排序、冒泡排序、快速排序、堆排序、基数排序等)；</p>
-<p><i class="fa fa-square"></i>  树：基本性质、常用存储结构、遍历算法、二叉树、二叉查找树、堆、二叉平衡树、多路树（Trie树，B树）；</p>
-<p><i class="fa fa-square"></i>  图：基本概念、存储结构、遍历算法、生成树、拓扑排序、最短路径；</p>
-<p><i class="fa fa-square"></i>  C++语言程序设计：数据类型、操作符和表达式、控制流程、函数、程序结构、数组、指针、结构和共用体、基本输入输出、类与对象。</p>
-<h4 id="数据管理系统及应用"><a href="#数据管理系统及应用" class="headerlink" title="数据管理系统及应用"></a>数据管理系统及应用</h4><p><i class="fa fa-check-square"></i>  数据库的基本概念： 数据库、数据库管理系统、DBA；</p>
-<p><i class="fa fa-square"></i> 数据模型的基本概念：层次模型、网状模型、关系模型；关系模型：关系代数、关系演算；查询语言：SQL（DDL、DML）；</p>
-<p><i class="fa fa-square"></i> 数据库设计：数据库模式、范式、ER图、逻辑设计、物理设计、约束的使用；</p>
-<p><i class="fa fa-square"></i> 事务处理：ACID属性、事务在程序中的使用方法、并发控制、日志、恢复；</p>
-<p><i class="fa fa-square"></i> 数据库的基本工作原理：数据的存储方式、索引、查询的执行方式、查询优化；</p>
-<p><i class="fa fa-square"></i> 数据库的辅助工具：存储过程、触发器、软件访问数据库的方式（ODBC）。</p>
-]]></content>
-      <categories>
-        <category>想过的事儿</category>
-      </categories>
-  </entry>
-  <entry>
     <title>leetcode | 342. 4的幂 | 位运算的巧妙应用</title>
     <url>/2021/05/31/%E5%AD%A6%E4%B9%A0__%E4%BD%8D%E8%BF%90%E7%AE%97%E7%9A%84%E5%B7%A7%E5%A6%99%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="342-4的幂"><a href="#342-4的幂" class="headerlink" title="342. 4的幂"></a>342. 4的幂</h1><p>给定一个整数，写一个函数来判断它是否是 4 的幂次方。如果是，返回 true ；否则，返回 false 。</p>
@@ -201,6 +177,22 @@
       </tags>
   </entry>
   <entry>
+    <title>数据库 | 数据库系统概论 | 关系数据库</title>
+    <url>/2021/06/22/%E6%95%B0%E6%8D%AE%E5%BA%93__%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<p>本文是《数据库系统概论》的第2、3、4、5章的部分笔记。<br>这些章节的内容可被概括为：</p>
+<ul>
+<li>作为<strong>数据模型</strong>的关系模型是什么样的？（还记得数据模型的三要素吗？即数据结构、数据操纵及完整性约束这三个要素。第2章便是从这3个角度介绍关系模型的）</li>
+<li>实现关系数据库中各类操作的标准语言，即SQL，是什么样的？</li>
+</ul>
+<h2 id="关系模型的三个要素"><a href="#关系模型的三个要素" class="headerlink" title="关系模型的三个要素"></a>关系模型的三个要素</h2><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h3 id="操作集合"><a href="#操作集合" class="headerlink" title="操作集合"></a>操作集合</h3><h3 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h3>]]></content>
+      <categories>
+        <category>学的理论儿</category>
+      </categories>
+      <tags>
+        <tag>数据库系统概论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据库 | 数据库系统概论 | 关系数据理论</title>
     <url>/2021/05/18/%E6%95%B0%E6%8D%AE%E5%BA%93__%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
     <content><![CDATA[<p>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
@@ -259,6 +251,34 @@
       <tags>
         <tag>数据库系统概论</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/06/30/%E6%95%B0%E6%8D%AE%E5%BA%93__%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/</url>
+    <content><![CDATA[<ul>
+<li>为什么会用并发上的问题？</li>
+</ul>
+<p>数据库系统存储的数据具有高共享性</p>
+<ul>
+<li>并发会带来哪些问题？</li>
+</ul>
+<p>丢失修改、脏读、不可重复读，分别对应W-W冲突、W-R冲突与R-W冲突</p>
+<ul>
+<li>如何解决这些问题？</li>
+</ul>
+<p>封锁，包括X锁与S锁。其中，一级、二级、三级封锁协议分别解决了上述问题。<br>不过，在使用封锁时也可能出现一些问题，即死锁及活锁。</p>
+<ul>
+<li>如何判断一个并发事务的调度是正确的？</li>
+</ul>
+<p>判断其是否为可串行化调度。如果是冲突可串行化，那一定可串行化</p>
+<ul>
+<li><p>两段锁协议</p>
+</li>
+<li><p>封锁的粒度</p>
+</li>
+</ul>
+<p>包括显式封锁及隐式封锁。另外，为了减少检查的开销，引入了意向锁，包括IS，IX，SIX锁</p>
+]]></content>
   </entry>
   <entry>
     <title>数据库 | 数据库系统概论 | 概述</title>
@@ -367,19 +387,6 @@
       </categories>
       <tags>
         <tag>数据库系统概论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>斗志！ @19880 days</title>
-    <url>/2021/06/14/%E9%9A%8F%E7%AC%94__%E6%96%97%E5%BF%97/</url>
-    <content><![CDATA[<p>晚上与老爹聊了聊他的过去，聊着聊着，感受到了他这几十年来的不容易。将他和自己作了作比较，突然发觉这么长时间没有状态，计划被轻易打乱，只有一个原因，那便是我总是患得患失，缺乏那种对于胜利的渴望，没有所谓的斗志。过去二十年来，我活得太过安逸了，即便心中有着那么些危机感，也只停留于想想的层面。更多时候，我还是习惯于贬低自己的能力，将自己的目标定得很低很低，常常怀有做得比较好就满意了的心态。一旦结果真如我所料的那样不堪，便为自己开脱，解释说这是因为我对所做的事情不感兴趣，亦或是我目前了解的还太少，这不是我以后的水平。而一旦开脱完，收获糟糕结果的坏心情便与希望改良的心态一同被我抛诸脑后。面对自己的无能，我逐渐学会了妥协，悄悄放低了对于自己的要求，追求一个“比较好”的结果。</p>
-<p>唉。</p>
-]]></content>
-      <categories>
-        <category>想过的事儿</category>
-      </categories>
-      <tags>
-        <tag>随想</tag>
       </tags>
   </entry>
 </search>
