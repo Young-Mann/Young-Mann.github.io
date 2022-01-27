@@ -3,7 +3,7 @@
   <entry>
     <title>怕死</title>
     <url>/post/thanatophobia/</url>
-    <content><![CDATA[<blockquote>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>多少葬礼从我们门前经过，但我们从不认真思考死亡。</p>
 </blockquote>
 <p>　　在人生如此多的不确定当中，似乎只有死亡是确定的。某种意义上而言，它是生活中唯一确定的、每个人都必须独自面对而无法逃避的。无论在生前做出了多少大事，随着活力的逝去，终究会化作一沓沓纸钱。然而，在青年时代，我们往往着眼于未来，而将死亡的存在抛诸脑后。随着看到的死亡愈来愈多，某种异样的、从未有过的情感便在内心中萌发，在某种契机的刺激下，最终意识到：人终究是会死的。</p>
@@ -20,7 +20,7 @@
   <entry>
     <title>对于“关系数据理论”的一些理解</title>
     <url>/post/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
 <ul>
 <li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
 <li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
@@ -77,7 +77,7 @@
   <entry>
     <title>几则笑话</title>
     <url>/post/%E5%87%A0%E5%88%99%E7%AC%91%E8%AF%9D/</url>
-    <content><![CDATA[<p>　　几则弱智吧笑话，觉得很有意思，故摘录于此：</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　几则弱智吧笑话，觉得很有意思，故摘录于此：</p>
 <ul>
 <li>去年驾鹤西去的李先生已经有一年驾龄了。</li>
 <li>造星公司操作失误，旗下艺人纷纷坍缩成黑洞。</li>
@@ -94,18 +94,68 @@
   <entry>
     <title>未选择的路</title>
     <url>/post/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/</url>
-    <content><![CDATA[<p>这几天不得不做出一些选择了，心里颇不宁静。犹疑之余，想起了高中时曾看到的一首诗。当时读的时候并没有什么感触，可如今再看，倒是有了些别的味儿。就将此诗放在此处吧：</p>
-<p><strong>The Road Not Taken</strong><br>By Robert Frost</p>
-<p>Two roads diverged in a yellow wood,<br>And sorry I could not travel both<br>And be one traveler, long I stood<br>And looked down one as far as I could<br>To where it bent in the undergrowth;</p>
-<p>Then took the other, as just as fair,<br>And having perhaps the better claim,<br>Because it was grassy and wanted wear;</p>
-<p>Though as for that the passing there<br>Had worn them really about the same,<br>And both that morning equally lay<br>In leaves no step had trodden black.<br>Oh, I kept the first for another day!<br>Yet knowing how way leads on to way,<br>I doubted if I should ever come back.</p>
-<p>I shall be telling this with a sigh<br>Somewhere ages and ages hence:<br>Two roads diverged in a wood,and I—<br>I took the one less traveled by,<br>And that has made all the difference.</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　这几天不得不做出一些选择了，心里颇不宁静。犹疑之余，想起了高中时曾看到的一首诗。当时读的时候并没有什么感触，可如今再看，倒是有了些别的味儿。就将此诗放在此处吧：</p>
+<center>
+    <font size="4" color="#cc2a41"><b>The Road Not Taken</b></font>
+    <br>
+    <font size="1" color="#666">By Robert Frost</font>
+
+    <br>
+
+    Two roads diverged in a yellow wood,
+    <br>
+    And sorry I could not travel both
+    <br>
+    And be one traveler, long I stood
+    <br>
+    And looked down one as far as I could
+    <br>
+    To where it bent in the undergrowth;
+    <br>
+    <br>
+    Then took the other, as just as fair,
+    <br>
+    And having perhaps the better claim,
+    <br>
+    Because it was grassy and wanted wear;
+    <br>
+    <br>
+
+    Though as for that the passing there
+    <br>
+    Had worn them really about the same,
+    <br>
+    And both that morning equally lay
+    <br>
+    In leaves no step had trodden black.
+    <br>
+    Oh, I kept the first for another day!
+    <br>
+    Yet knowing how way leads on to way,
+    <br>
+    I doubted if I should ever come back.
+    <br>
+    <br>
+
+    I shall be telling this with a sigh
+    <br>
+    Somewhere ages and ages hence:
+    <br>
+    Two roads diverged in a wood, and I—
+    <br>
+    I took the one less traveled by,
+    <br>
+    And that has made all the difference.
+</center>
+
+
+
 ]]></content>
   </entry>
   <entry>
     <title>浮点数的存储形式</title>
     <url>/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</url>
-    <content><![CDATA[<p>　　本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p>
 <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>　　若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。</p>
 <h3 id="IEEE754-标准"><a href="#IEEE754-标准" class="headerlink" title="IEEE754 标准"></a>IEEE754 标准</h3><p>　　根据IEEE浮点数标准，一个浮点数可表达为：</p>
 <script type="math/tex; mode=display">
@@ -138,7 +188,7 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
   <entry>
     <title>拉面好吃</title>
     <url>/post/%E9%9D%A2%E9%A3%9F%E5%A5%BD%E5%90%83/</url>
-    <content><![CDATA[<p>　　不知怎么的，我突然想吃面了。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　不知怎么的，我突然想吃面了。</p>
 <p>　　我的初中附近吃的很多。但我独爱校门口不远处的那家牛肉面馆。面馆外挂着个“兰州牛肉拉面”的LED招牌，随处可见的那种，乍一看，和其他拉面馆别无两样。但比起这家店，其他面馆总感觉差些什么，似乎只有初中门口这家最好吃。每逢周五放学，或是平日做完值日，兜里还有点闲钱，便约上三两同学一同去吃面。</p>
 <p>　　这家店地方不大，不过很洁净。大部分时候，店里的客人并不多，因此从不担心没有座位。常常会选个面向大门的位置坐。落座以后，便开始考虑要吃什么。若仅仅是为了垫垫肚子，而对味道没有特殊要求的话，便会点一碗大份的牛肉拉面。原味的牛肉拉面，刚上桌的时候总是热气腾腾的，在冬天尤为暖心。分量不少，管饱，而且还算便宜，即便是大份的拉面，再加个煎荷包蛋，也只需要十元。</p>
 <p>　　有时，为了找到一起吃面的同伴，我往往会请客。虽然不想承认，但不得不说，若是能有些许朋友一道吃面，那还是满闹腾的。不过，自我上了高中后，曾独自回到这儿，点了份油泼辣子面，试着找回曾经的味道。只不过，这次的面似乎和我记忆中的味道产生了些许偏差。面条没那么劲道了，有些粘牙，总感觉失去了活力。辣油和面也腻腻的，吃上去没那么香了。附赠的面汤倒还是那个味，但对于现在的我而言，或许还是太咸了，稍吮几口便不再喝下去。</p>
