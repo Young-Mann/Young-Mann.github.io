@@ -9,7 +9,7 @@
     <meta name="description" content="本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。 前置知识　　若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浮点数的存储形式">
-<meta property="og:url" content="http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/index.html">
+<meta property="og:url" content="https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/index.html">
 <meta property="og:site_name" content="狗蛋日">
 <meta property="og:description" content="本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。 前置知识　　若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定">
 <meta property="og:locale" content="zh_CN">
@@ -76,7 +76,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="上一篇" href="/post/%E5%87%A0%E5%88%99%E7%AC%91%E8%AF%9D/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="上一篇" href="/post/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="下一篇" href="/post/%E9%9D%A2%E9%A3%9F%E5%A5%BD%E5%90%83/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -92,17 +92,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&text=浮点数的存储形式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&is_video=false&description=浮点数的存储形式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=浮点数的存储形式&body=Check out this article: http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&name=浮点数的存储形式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&t=浮点数的存储形式"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&text=浮点数的存储形式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&is_video=false&description=浮点数的存储形式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=浮点数的存储形式&body=Check out this article: https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&name=浮点数的存储形式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&t=浮点数的存储形式"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -187,12 +187,6 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
     </div>
 
 
-    <div class="blog-post-comments">
-        <div id="utterances_thread">
-            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
-        </div>
-    </div>
-
 
         
           <div id="footer-post-container">
@@ -216,17 +210,17 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&text=浮点数的存储形式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&is_video=false&description=浮点数的存储形式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=浮点数的存储形式&body=Check out this article: http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&name=浮点数的存储形式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&t=浮点数的存储形式"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&text=浮点数的存储形式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&is_video=false&description=浮点数的存储形式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=浮点数的存储形式&body=Check out this article: https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&title=浮点数的存储形式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&name=浮点数的存储形式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/&t=浮点数的存储形式"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -312,6 +306,14 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
 
 <!-- Google Analytics -->
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N8RT51VVT8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-N8RT51VVT8');
+    </script>
+
 <!-- Baidu Analytics -->
 
 <!-- Cloudflare Analytics -->
@@ -333,26 +335,6 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
     </script>
 
 <!-- utterances Comments -->
-
-    <script type="text/javascript">
-      var utterances_repo = 'Young-Mann/Young-Mann.github.io';
-      var utterances_issue_term = 'pathname';
-      var utterances_label = 'Comments';
-      var utterances_theme = 'github-dark';
-
-      (function(){
-          var script = document.createElement('script');
-
-          script.src = 'https://utteranc.es/client.js';
-          script.setAttribute('repo', utterances_repo);
-          script.setAttribute('issue-term', 'pathname');
-          script.setAttribute('label', utterances_label);
-          script.setAttribute('theme', utterances_theme);
-          script.setAttribute('crossorigin', 'anonymous');
-          script.async = true;
-          (document.getElementById('utterances_thread')).appendChild(script);
-      }());
-  </script>
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
