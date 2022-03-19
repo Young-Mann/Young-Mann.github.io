@@ -11,33 +11,99 @@
 ]]></content>
   </entry>
   <entry>
-    <title>刨土，然后假装考古</title>
-    <url>/post/archeology-toy/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　今天是某个老哥的生日。按照过去的经验来看，我应该要在这天送点什么——至少我是这么认为的。</p>
-<p>　　我想送一点有意思的玩意儿，可是一时半会儿又想不出有啥合适的东西。正当我在淘宝上冲浪的时候，我看到了各个博物馆的文创产品里有这么一样玩意儿——一个被称作“考古盲盒”的玩具。我一看，就发现，这不是我初中时候曾经玩过的东西嘛？在我的印象里，这玩意儿就是一块土砖，里面埋了几个微缩版的“文物”，需要使用附送的洛阳铲定位、工兵铲刨土、挖出被埋的文物，将其表面的灰土刷拭干净。若是挖的时候用力过猛，把埋着的玩意儿给铲断了，那也有补救的法子——盒子里附送了胶水，可以把被摧残的碎块粘上<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我曾以此法拯救过在挖掘过程中断了双腿的“兵马俑”。用了以后，“兵马俑”老哥连连称好。
-">[1]</span></a></sup>。里面埋的东西挖出来之后，洗洗干净，可以当作摆件，而且挖的过程也挺有意思。我寻思着把这当作礼物，应该是个四平八稳的选择吧。于是，便下了单，写了张贺卡塞在包装盒里，想着今天送出去。</p>
-<p>　　但是到了今天，问了人家之后才知道，人家并不愿意收我的东西<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这背后的原因已经无法考证了。真是个悲伤的故事。
-">[2]</span></a></sup>。而我并不打算强塞给人家。那末，如何处理这玩意儿，便成了需要考虑的问题——稍加思索之后，便发现这大概是不成问题的问题：我不想将其转送他人，也懒得退货。既然没有别的去处，不如留着自己玩。</p>
-<h2 id="刨，刨个痛快！"><a href="#刨，刨个痛快！" class="headerlink" title="刨，刨个痛快！"></a>刨，刨个痛快！</h2><p>　　在结束今天上午的一场群面之后，我翻出了这盲盒、倒出了里面的工具、快速浏览了一下说明书后，便操起了洛阳铲开始干活。没想到，洛阳铲刚一下去，就被结结实实地顶了回来。好家伙，那么快就探出了一个被埋文物的位置嘛。我用工兵铲（？）刮去表面的灰土后，依稀辨认出，埋在下面的是官方命名为<a href="http://61.187.53.122/collection.aspx?id=1218&amp;lang=zh-CN">铜象尊</a>的文物。此后挖掘的过程无太多可说的，具体细节在此不表。最终，三下五除二，我用略微暴力的挖掘手法，将这🐘老哥从地底解放了出来。</p>
-<p><img src="/post/archeology-toy/site-1.jpg" alt="site-1"></p>
-<figure>
-    <img src="/post/archeology-toy/demo.gif">
-    <center><figcaption>（对焦大失败）</figcaption></center>
-</figure>
+    <title>对于“关系数据理论”的一些理解</title>
+    <url>/post/an-introduction-to-the-theory-of-relational-databases/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
+<ul>
+<li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
+<li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
+<li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li>
+</ul>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>　　为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
+<h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
+<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
+<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
+<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
+<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
+</ul>
+<h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
+<li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
+</li>
+<li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p>
+</li>
+<li><p><strong>超码：</strong>对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为<strong>超码。</strong></p>
+</li>
+<li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p>
+</li>
+</ul>
+<h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>　　对于范式的概念，特别不靠谱的理解如下：</p>
+<ul>
+<li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p>
+</li>
+<li><p><strong>第二范式(2NF)：</strong>在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为<strong>一个整体</strong>起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。</p>
+</li>
+<li><p><strong>第三范式(3NF)：</strong>在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。</p>
+</li>
+<li><p><strong>BCNF:</strong> 在满足3NF的基础上，将“对于一个关系内的<strong>非主</strong>属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的<strong>所有</strong>属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。</p>
+</li>
+<li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p>
+</li>
+</ul>
+<h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>　　当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
+<ul>
+<li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li>
+<li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
+<li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li>
+</ul>
+<p>　　由于<del>笔者太懒</del>异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
+<p>　　在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
+<p>　　对这个问题换一个更为具体的表述，那便成了：</p>
+<blockquote>
+<p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>
+</blockquote>
+<p>　　首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
+]]></content>
+      <tags>
+        <tag>数据库系统概论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Divinity: Original Sin 2</title>
+    <url>/post/an-review-of-DOS2/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>如果对于 RPG 类型的游戏有些兴趣的话，不妨试试“Divinity: Original Sin 2”吧！</p>
+</blockquote>
+<p>　　最近几天，“六个火枪手”<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="“六个火枪手”是高中室友的群名称，下文中的“弹簧”、“阿德”、“老周”均为室友的名号。
+">[1]</span></a></sup>的老哥们想要到线下一起聚聚。不过，由于弹簧所在区域的疫情突然加重，线下聚会便难以进行。于是，便开始讨论起了有什么联机游戏可以一起玩儿。</p>
+<p>　　在途中，我忽然想起了《神界：原罪2》，即 <a href="https://store.steampowered.com/app/435150/Divinity_Original_Sin_2__Definitive_Edition">Divinity: Original Sin 2</a>（下文简称DOS2），一个很好玩的 RPG 游戏，支持最多四人一起游玩。恰逢这游戏在 Steam 上打折，于是通过嘴炮将老周和阿德拉入了 DOS2 的坑。</p>
+<h2 id="好玩在哪儿？一时半会儿说不清！"><a href="#好玩在哪儿？一时半会儿说不清！" class="headerlink" title="好玩在哪儿？一时半会儿说不清！"></a>好玩在哪儿？一时半会儿说不清！</h2><p>　　这款游戏能给我留下的最深的印象，就是“有趣”。在这个 RPG 里，完全可以由着自己的性子，做出（游戏设计允许范围内的）各种操作——不论玩家怎么干，游戏都能提供一个合理的解决方案。此外，游戏内的机制很多，量大管饱，用文字描述多少有些苍白无力，只有亲身体会之后才能体验到其中的乐趣，在此选出了令笔者印象较深的几个机制：</p>
+<h3 id="传送术！"><a href="#传送术！" class="headerlink" title="传送术！"></a>传送术！</h3><p>　　这可以称得上是游戏里的核心技能了。使用方式包括但不限于：将队友传送到安全的位置、将敌方单位拉入己方包围圈、将装有重物的箱子传送到别人头上造成伤害、将别人传送到致死的地形上。</p>
+<h3 id="传送金字塔！"><a href="#传送金字塔！" class="headerlink" title="传送金字塔！"></a>传送金字塔！</h3><p>　　在进行游戏的过程中，所控制的队伍能获得至少2个互相绑定的“传送金字塔”。每个金字塔的效果是，立刻将金字塔的使用者传送至另外一个金字塔的所在地，且战斗中也可使用。它看起来似乎只是用于方便赶路的道具。然而，若是结合游戏内的另一机制加以考虑，情况便不一样了：在 DOS2 里，战斗时的时间流逝与非战斗状态的时间流逝是不一致的，当战斗中的时间停留在某一角色的行动回合时，战斗外的时间是继续流逝的。因此，在战斗时，1名携带金字塔的角色可以脱战、传送回能恢复状态的区域、使用金字塔传送回战场。</p>
+<h3 id="盗窃！"><a href="#盗窃！" class="headerlink" title="盗窃！"></a>盗窃！</h3><p>　　这游戏里可以盗窃NPC所携带的道具，以团伙作案为主要形式：1人负责与受害者对话，辅以烟雾弹或屏风等道具，以挡住受害人及路人的视野（若是受害者不会变动视野，那就不需要这一步骤）；另外1人则潜行至受害者背后，负责完成扒窃。</p>
+<p><img src="/post/an-review-of-DOS2/stealing.png" alt="盗窃的示意图"></p>
+<h3 id="相互交织的任务线！"><a href="#相互交织的任务线！" class="headerlink" title="相互交织的任务线！"></a>相互交织的任务线！</h3><p>　　DOS 的任务线属于网状结构，有主线任务与支线任务之分。若是细读任务的文本，便能发现主线任务与支线任务之间存在紧密的联系。在这一系列任务中，切入的时机与地点有很多，而它们具备着相同的起因。随着任务进度的推进，玩家可以抽丝剥茧地分析出整体的剧情。</p>
+<details>
+    <summary>突然想起了前作，即 DOS1 的一些剧情，有大量剧透。</summary>
+    　　以 DOS1 的剧情为例**（下含大量剧透）**：在DOS1里，2个主角到塞西尔镇调查杰克议员的谋杀案，在犯罪现场发现了某个路人公爵送给其妻子的情书，并在其妻子所开店铺的地下室发现了一本《完美犯罪》以及带血的匕首。尽管这些证据都指向了其妻子，但经过后续的调查之后，发现事情并没有那么简单：本应被埋葬在墓地里的杰克的尸体并不在此。向停尸房的负责人质询相关情况后，我们将偷走尸体的嫌疑人限定在以下范围：军团长奥里斯、镇长塞西尔、议员的妻子爱丝梅拉达（这名字和巴黎圣母院里的那位差不多？）以及医师学徒伊芙琳。回头一个一个找过去，发现伊芙琳跑路了。让她跑了那怎么行，得追啊。根据其因过于匆忙而未能带走的行李，追踪到了伊芙琳的藏身之处（其间还要经历一系列的支线任务，比如帮帮无辜的传销五人组对付阿户的失败机器人、处理灯塔外的守卫），并见到了被“复活"的杰克……后面的我忘了。
+</details>
 
-<p>　　在我刨到一半的时候，站在一旁围观的室友觉得这挺有意思。于是，在我挖出🐘之后，室友也加入了刨土的伟大事业。他操作起来比我精细得多，在探明了第2个被埋文物（是一头🐖，全名为<a href="http://61.187.53.122/collection.aspx?id=1219&amp;lang=zh-CN">豕形铜尊</a>的位置后，先是确定了整体的占地面积及形状，在周边削出了几条凹槽，再全程使用洛阳铲完成了剩余的挖掘操作。瞧这挖掘现场，真不愧是干净的男娃娃<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这老哥肤白貌美，曾经被陌生人拍照并放在所谓的“表白墙”上寻求联系方式，投稿者描述其有着“干净的外貌”。故此，我常以“干净”调侃他。
-">[3]</span></a></sup>：</p>
-<p><img src="/post/archeology-toy/site-2.jpg" alt="site-2"></p>
-<h2 id="成果展示（？）"><a href="#成果展示（？）" class="headerlink" title="成果展示（？）"></a>成果展示（？）</h2><p>　　下图便是挖掘的最终成果。一只<a href="http://61.187.53.122/collection.aspx?id=1218&amp;lang=zh-CN">铜象尊</a>，一只<a href="http://61.187.53.122/collection.aspx?id=1219&amp;lang=zh-CN">豕形铜尊</a>，还有最右侧的一个隐藏款文物，名为<a href="http://61.187.53.122/collection.aspx?id=1147&amp;lang=zh-CN">皿方罍(léi)</a>，但是只有上半截的皿顶<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="哦，这甜蜜的分割商法。发行方似乎是故意这么设计的。这是最值得诟病的一点。
-">[4]</span></a></sup>。<img src="/post/archeology-toy/items.jpg" alt="items"></p>
-<p>　　挖掘的过程还是挺有乐趣的。尽管此前曾经体验过这种挖掘玩具，但在时隔8年重新接触它以后，还是能感受到刨土带来的喜悦<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="或许，相比“挖出某个东西”而言，我更喜欢的，还是刨土的过程吧。或者是，吸引我的是刨土过程中所蕴含的破坏性？也说不定。
-">[5]</span></a></sup>。若是此前没有类似的体验，或许可以尝试一下。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我曾以此法拯救过在挖掘过程中断了双腿的“兵马俑”。用了以后，“兵马俑”老哥连连称好。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">这背后的原因已经无法考证了。真是个悲伤的故事。<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">这老哥肤白貌美，曾经被陌生人拍照并放在所谓的“表白墙”上寻求联系方式，投稿者描述其有着“干净的外貌”。故此，我常以“干净”调侃他。<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">哦，这甜蜜的分割商法。发行方似乎是故意这么设计的。这是最值得诟病的一点。<a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">或许，相比“挖出某个东西”而言，我更喜欢的，还是刨土的过程吧。或者是，吸引我的是刨土过程中所蕴含的破坏性？也说不定。<a href="#fnref:5" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+
+
+
+
+<h3 id="配乐！"><a href="#配乐！" class="headerlink" title="配乐！"></a>配乐！</h3><p>　　DOS2 的每一首都配乐非常契合游戏里的桥段。即便已经有一段时间没玩游戏了，但只要音乐一响，脑中就能立刻反映出相应的画面。另外，在配乐方面，DOS2 还有着一个与众不同的地方——在游戏一开始创建角色的时候，可以在给定的4种乐器中，选定1种作为背景音乐所使用的音色。以“Path of the Godwoken”为例，其有<a href="https://www.bilibili.com/video/BV1ix41177XM?p=25">班苏里笛版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=22">坦布拉琴版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=23">乌德琴版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=24">大提琴版</a>4种版本。若有兴趣，可试着听听，分辨其间的差异。</p>
+<p><img src="/post/an-review-of-DOS2/instrument.png" alt="instrument" title="可选乐器"></p>
+<h2 id="开发商的故事"><a href="#开发商的故事" class="headerlink" title="开发商的故事"></a>开发商的故事</h2><p>　　关于游戏本体，想说的就到此为止了。除了游戏本体的介绍外，还想在这儿写写该游戏的开发商，即拉瑞安工作室（Larian Studios）的故事<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="在吃了个好吃的鸡蛋之后，我觉得“看看下蛋的母鸡是怎么样的”还是有必要的。
+">[2]</span></a></sup>。笔者把拉瑞安工作室的创始人（即 Swen Vincke ）的采访和演讲都看了一遍，也通过2篇文章（分为<a href="https://gouhuo.qq.com/content/detail/0_20200317104816_U6tghH3ZT">上</a>、<a href="https://gouhuo.qq.com/content/detail/0_20200317111903_54DrAVBk8 。">下</a>两篇）大致了解了工作室的发展史<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="文章名为：《神界》的自我超越：拉瑞安工作室简史，分为上下两篇。
+">[3]</span></a></sup>。看完以后，我只能说，Swen Vincke 和他的团队确实热爱着游戏。如他在某次访谈中所提到的，他和他的工作室所做的事情，就是<strong><a href="https://www.bilibili.com/video/BV1y4411G7kT?share_source=copy_web">努力做游戏，做出他们自己喜欢玩的游戏</a></strong><sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="出自机核网对 Swen Vincke 的采访，详见 0:08:50 处。
+">[4]</span></a></sup>。而这一做便是20年——期间曾遭遇过数次发不出工资、员工纷纷出走的至暗时刻。在此过程中，Swen Vincke 和他的团队并没有死死抱着理想坐以待毙。为了维持生计，他们不得不去接下大量与主要项目无关的外包工作，制作一些质量粗糙的“垃圾”作品。尽管如此，他们也始终没有放弃，经历了数十年的挣扎之后，终于迎来了翻身的机会——他们做出了 DOS2 ，一款能在 RPG 发展史上留下名字的佳作。至此，他们实现了商业与口碑上的双丰收，暂时不用担心如何维系自身的生存，也能将更多的精力放在“制作一款好游戏”这件事情上了。</p>
+<p>　　在此，强烈推荐对于 RPG 不反感、又能抽出一大片连续时间的老哥老姐们，能在某个周末，抽出三四个小时试试这款游戏。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">“六个火枪手”是高中室友的群名称，下文中的“弹簧”、“阿德”、“老周”均为室友的名号。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">在吃了个好吃的鸡蛋之后，我觉得“看看下蛋的母鸡是怎么样的”还是有必要的。<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">文章名为：《神界》的自我超越：拉瑞安工作室简史，分为上下两篇。<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">出自机核网对 Swen Vincke 的采访，详见 0:08:50 处。<a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>找点乐子</category>
       </categories>
       <tags>
-        <tag>玩具</tag>
+        <tag>游戏</tag>
       </tags>
   </entry>
   <entry>
@@ -111,47 +177,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Divinity: Original Sin 2</title>
-    <url>/post/review-of-DOS2/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>如果对于 RPG 类型的游戏有些兴趣的话，不妨试试“Divinity: Original Sin 2”吧！</p>
-</blockquote>
-<p>　　最近几天，“六个火枪手”<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="“六个火枪手”是高中室友的群名称，下文中的“弹簧”、“阿德”、“老周”均为室友的名号。
-">[1]</span></a></sup>的老哥们想要到线下一起聚聚。不过，由于弹簧所在区域的疫情突然加重，线下聚会便难以进行。于是，便开始讨论起了有什么联机游戏可以一起玩儿。</p>
-<p>　　在途中，我忽然想起了《神界：原罪2》，即 <a href="https://store.steampowered.com/app/435150/Divinity_Original_Sin_2__Definitive_Edition">Divinity: Original Sin 2</a>（下文简称DOS2），一个很好玩的 RPG 游戏，支持最多四人一起游玩。恰逢这游戏在 Steam 上打折，于是通过嘴炮将老周和阿德拉入了 DOS2 的坑。</p>
-<h2 id="好玩在哪儿？一时半会儿说不清！"><a href="#好玩在哪儿？一时半会儿说不清！" class="headerlink" title="好玩在哪儿？一时半会儿说不清！"></a>好玩在哪儿？一时半会儿说不清！</h2><p>　　这款游戏能给我留下的最深的印象，就是“有趣”。在这个 RPG 里，完全可以由着自己的性子，做出（游戏设计允许范围内的）各种操作——不论玩家怎么干，游戏都能提供一个合理的解决方案。此外，游戏内的机制很多，量大管饱，用文字描述多少有些苍白无力，只有亲身体会之后才能体验到其中的乐趣，在此选出了令笔者印象较深的几个机制：</p>
-<h3 id="传送术！"><a href="#传送术！" class="headerlink" title="传送术！"></a>传送术！</h3><p>　　这可以称得上是游戏里的核心技能了。使用方式包括但不限于：将队友传送到安全的位置、将敌方单位拉入己方包围圈、将装有重物的箱子传送到别人头上造成伤害、将别人传送到致死的地形上。</p>
-<h3 id="传送金字塔！"><a href="#传送金字塔！" class="headerlink" title="传送金字塔！"></a>传送金字塔！</h3><p>　　在进行游戏的过程中，所控制的队伍能获得至少2个互相绑定的“传送金字塔”。每个金字塔的效果是，立刻将金字塔的使用者传送至另外一个金字塔的所在地，且战斗中也可使用。它看起来似乎只是用于方便赶路的道具。然而，若是结合游戏内的另一机制加以考虑，情况便不一样了：在 DOS2 里，战斗时的时间流逝与非战斗状态的时间流逝是不一致的，当战斗中的时间停留在某一角色的行动回合时，战斗外的时间是继续流逝的。因此，在战斗时，1名携带金字塔的角色可以脱战、传送回能恢复状态的区域、使用金字塔传送回战场。</p>
-<h3 id="盗窃！"><a href="#盗窃！" class="headerlink" title="盗窃！"></a>盗窃！</h3><p>　　这游戏里可以盗窃NPC所携带的道具，以团伙作案为主要形式：1人负责与受害者对话，辅以烟雾弹或屏风等道具，以挡住受害人及路人的视野（若是受害者不会变动视野，那就不需要这一步骤）；另外1人则潜行至受害者背后，负责完成扒窃。</p>
-<p><img src="/post/review-of-DOS2/stealing.png" alt="盗窃的示意图"></p>
-<h3 id="相互交织的任务线！"><a href="#相互交织的任务线！" class="headerlink" title="相互交织的任务线！"></a>相互交织的任务线！</h3><p>　　DOS 的任务线属于网状结构，有主线任务与支线任务之分。若是细读任务的文本，便能发现主线任务与支线任务之间存在紧密的联系。在这一系列任务中，切入的时机与地点有很多，而它们具备着相同的起因。随着任务进度的推进，玩家可以抽丝剥茧地分析出整体的剧情。</p>
-<details>
-    <summary>突然想起了前作，即 DOS1 的一些剧情，有大量剧透。</summary>
-    　　以 DOS1 的剧情为例**（下含大量剧透）**：在DOS1里，2个主角到塞西尔镇调查杰克议员的谋杀案，在犯罪现场发现了某个路人公爵送给其妻子的情书，并在其妻子所开店铺的地下室发现了一本《完美犯罪》以及带血的匕首。尽管这些证据都指向了其妻子，但经过后续的调查之后，发现事情并没有那么简单：本应被埋葬在墓地里的杰克的尸体并不在此。向停尸房的负责人质询相关情况后，我们将偷走尸体的嫌疑人限定在以下范围：军团长奥里斯、镇长塞西尔、议员的妻子爱丝梅拉达（这名字和巴黎圣母院里的那位差不多？）以及医师学徒伊芙琳。回头一个一个找过去，发现伊芙琳跑路了。让她跑了那怎么行，得追啊。根据其因过于匆忙而未能带走的行李，追踪到了伊芙琳的藏身之处（其间还要经历一系列的支线任务，比如帮帮无辜的传销五人组对付阿户的失败机器人、处理灯塔外的守卫），并见到了被“复活"的杰克……后面的我忘了。
-</details>
-
-
-
-
-
-<h3 id="配乐！"><a href="#配乐！" class="headerlink" title="配乐！"></a>配乐！</h3><p>　　DOS2 的每一首都配乐非常契合游戏里的桥段。即便已经有一段时间没玩游戏了，但只要音乐一响，脑中就能立刻反映出相应的画面。另外，在配乐方面，DOS2 还有着一个与众不同的地方——在游戏一开始创建角色的时候，可以在给定的4种乐器中，选定1种作为背景音乐所使用的音色。以“Path of the Godwoken”为例，其有<a href="https://www.bilibili.com/video/BV1ix41177XM?p=25">班苏里笛版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=22">坦布拉琴版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=23">乌德琴版</a>、<a href="https://www.bilibili.com/video/BV1ix41177XM?p=24">大提琴版</a>4种版本。若有兴趣，可试着听听，分辨其间的差异。</p>
-<p><img src="/post/review-of-DOS2/instrument.png" alt="instrument" title="可选乐器"></p>
-<h2 id="开发商的故事"><a href="#开发商的故事" class="headerlink" title="开发商的故事"></a>开发商的故事</h2><p>　　关于游戏本体，想说的就到此为止了。除了游戏本体的介绍外，还想在这儿写写该游戏的开发商，即拉瑞安工作室（Larian Studios）的故事<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="在吃了个好吃的鸡蛋之后，我觉得“看看下蛋的母鸡是怎么样的”还是有必要的。
-">[2]</span></a></sup>。笔者把拉瑞安工作室的创始人（即 Swen Vincke ）的采访和演讲都看了一遍，也通过2篇文章（分为<a href="https://gouhuo.qq.com/content/detail/0_20200317104816_U6tghH3ZT">上</a>、<a href="https://gouhuo.qq.com/content/detail/0_20200317111903_54DrAVBk8 。">下</a>两篇）大致了解了工作室的发展史<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="文章名为：《神界》的自我超越：拉瑞安工作室简史，分为上下两篇。
-">[3]</span></a></sup>。看完以后，我只能说，Swen Vincke 和他的团队确实热爱着游戏。如他在某次访谈中所提到的，他和他的工作室所做的事情，就是<strong><a href="https://www.bilibili.com/video/BV1y4411G7kT?share_source=copy_web">努力做游戏，做出他们自己喜欢玩的游戏</a></strong><sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="出自机核网对 Swen Vincke 的采访，详见 0:08:50 处。
-">[4]</span></a></sup>。而这一做便是20年——期间曾遭遇过数次发不出工资、员工纷纷出走的至暗时刻。在此过程中，Swen Vincke 和他的团队并没有死死抱着理想坐以待毙。为了维持生计，他们不得不去接下大量与主要项目无关的外包工作，制作一些质量粗糙的“垃圾”作品。尽管如此，他们也始终没有放弃，经历了数十年的挣扎之后，终于迎来了翻身的机会——他们做出了 DOS2 ，一款能在 RPG 发展史上留下名字的佳作。至此，他们实现了商业与口碑上的双丰收，暂时不用担心如何维系自身的生存，也能将更多的精力放在“制作一款好游戏”这件事情上了。</p>
-<p>　　在此，强烈推荐对于 RPG 不反感、又能抽出一大片连续时间的老哥老姐们，能在某个周末，抽出三四个小时试试这款游戏。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">“六个火枪手”是高中室友的群名称，下文中的“弹簧”、“阿德”、“老周”均为室友的名号。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">在吃了个好吃的鸡蛋之后，我觉得“看看下蛋的母鸡是怎么样的”还是有必要的。<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">文章名为：《神界》的自我超越：拉瑞安工作室简史，分为上下两篇。<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">出自机核网对 Swen Vincke 的采访，详见 0:08:50 处。<a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>找点乐子</category>
-      </categories>
-      <tags>
-        <tag>游戏</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>怕死</title>
-    <url>/post/thanatophobia/</url>
+    <url>/post/my-thanatophobia/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>多少葬礼从我们门前经过，但我们从不认真思考死亡。</p>
 </blockquote>
@@ -167,65 +194,38 @@
 ]]></content>
   </entry>
   <entry>
-    <title>对于“关系数据理论”的一些理解</title>
-    <url>/post/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
-<ul>
-<li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
-<li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
-<li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li>
-</ul>
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>　　为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
-<h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
-<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
-<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
-<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
-<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
-</ul>
-<h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
-<li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
-</li>
-<li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p>
-</li>
-<li><p><strong>超码：</strong>对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为<strong>超码。</strong></p>
-</li>
-<li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p>
-</li>
-</ul>
-<h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>　　对于范式的概念，特别不靠谱的理解如下：</p>
-<ul>
-<li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p>
-</li>
-<li><p><strong>第二范式(2NF)：</strong>在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为<strong>一个整体</strong>起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。</p>
-</li>
-<li><p><strong>第三范式(3NF)：</strong>在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。</p>
-</li>
-<li><p><strong>BCNF:</strong> 在满足3NF的基础上，将“对于一个关系内的<strong>非主</strong>属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的<strong>所有</strong>属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。</p>
-</li>
-<li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p>
-</li>
-</ul>
-<h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>　　当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
-<ul>
-<li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li>
-<li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
-<li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li>
-</ul>
-<p>　　由于<del>笔者太懒</del>异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
-<p>　　在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
-<p>　　对这个问题换一个更为具体的表述，那便成了：</p>
-<blockquote>
-<p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>
-</blockquote>
-<p>　　首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
-]]></content>
+    <title>刨土，然后假装考古</title>
+    <url>/post/playing-with-an-toy-about-archaeology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　今天是某个老哥的生日。按照过去的经验来看，我应该要在这天送点什么——至少我是这么认为的。</p>
+<p>　　我想送一点有意思的玩意儿，可是一时半会儿又想不出有啥合适的东西。正当我在淘宝上冲浪的时候，我看到了各个博物馆的文创产品里有这么一样玩意儿——一个被称作“考古盲盒”的玩具。我一看，就发现，这不是我初中时候曾经玩过的东西嘛？在我的印象里，这玩意儿就是一块土砖，里面埋了几个微缩版的“文物”，需要使用附送的洛阳铲定位、工兵铲刨土、挖出被埋的文物，将其表面的灰土刷拭干净。若是挖的时候用力过猛，把埋着的玩意儿给铲断了，那也有补救的法子——盒子里附送了胶水，可以把被摧残的碎块粘上<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我曾以此法拯救过在挖掘过程中断了双腿的“兵马俑”。用了以后，“兵马俑”老哥连连称好。
+">[1]</span></a></sup>。里面埋的东西挖出来之后，洗洗干净，可以当作摆件，而且挖的过程也挺有意思。我寻思着把这当作礼物，应该是个四平八稳的选择吧。于是，便下了单，写了张贺卡塞在包装盒里，想着今天送出去。</p>
+<p>　　但是到了今天，问了人家之后才知道，人家并不愿意收我的东西<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这背后的原因已经无法考证了。真是个悲伤的故事。
+">[2]</span></a></sup>。而我并不打算强塞给人家。那末，如何处理这玩意儿，便成了需要考虑的问题——稍加思索之后，便发现这大概是不成问题的问题：我不想将其转送他人，也懒得退货。既然没有别的去处，不如留着自己玩。</p>
+<h2 id="刨，刨个痛快！"><a href="#刨，刨个痛快！" class="headerlink" title="刨，刨个痛快！"></a>刨，刨个痛快！</h2><p>　　在结束今天上午的一场群面之后，我翻出了这盲盒、倒出了里面的工具、快速浏览了一下说明书后，便操起了洛阳铲开始干活。没想到，洛阳铲刚一下去，就被结结实实地顶了回来。好家伙，那么快就探出了一个被埋文物的位置嘛。我用工兵铲（？）刮去表面的灰土后，依稀辨认出，埋在下面的是官方命名为<a href="http://61.187.53.122/collection.aspx?id=1218&amp;lang=zh-CN">铜象尊</a>的文物。此后挖掘的过程无太多可说的，具体细节在此不表。最终，三下五除二，我用略微暴力的挖掘手法，将这🐘老哥从地底解放了出来。</p>
+<p><img src="/post/playing-with-an-toy-about-archaeology/site-1.jpg" alt="site-1"></p>
+<figure>
+    <img src="/post/playing-with-an-toy-about-archaeology/demo.gif">
+    <center><figcaption>（对焦大失败）</figcaption></center>
+</figure>
+
+<p>　　在我刨到一半的时候，站在一旁围观的室友觉得这挺有意思。于是，在我挖出🐘之后，室友也加入了刨土的伟大事业。他操作起来比我精细得多，在探明了第2个被埋文物（是一头🐖，全名为<a href="http://61.187.53.122/collection.aspx?id=1219&amp;lang=zh-CN">豕形铜尊</a>的位置后，先是确定了整体的占地面积及形状，在周边削出了几条凹槽，再全程使用洛阳铲完成了剩余的挖掘操作。瞧这挖掘现场，真不愧是干净的男娃娃<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这老哥肤白貌美，曾经被陌生人拍照并放在所谓的“表白墙”上寻求联系方式，投稿者描述其有着“干净的外貌”。故此，我常以“干净”调侃他。
+">[3]</span></a></sup>：</p>
+<p><img src="/post/playing-with-an-toy-about-archaeology/site-2.jpg" alt="site-2"></p>
+<h2 id="成果展示（？）"><a href="#成果展示（？）" class="headerlink" title="成果展示（？）"></a>成果展示（？）</h2><p>　　下图便是挖掘的最终成果。一只<a href="http://61.187.53.122/collection.aspx?id=1218&amp;lang=zh-CN">铜象尊</a>，一只<a href="http://61.187.53.122/collection.aspx?id=1219&amp;lang=zh-CN">豕形铜尊</a>，还有最右侧的一个隐藏款文物，名为<a href="http://61.187.53.122/collection.aspx?id=1147&amp;lang=zh-CN">皿方罍(léi)</a>，但是只有上半截的皿顶<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="哦，这甜蜜的分割商法。发行方似乎是故意这么设计的。这是最值得诟病的一点。
+">[4]</span></a></sup>。<img src="/post/playing-with-an-toy-about-archaeology/items.jpg" alt="items"></p>
+<p>　　挖掘的过程还是挺有乐趣的。尽管此前曾经体验过这种挖掘玩具，但在时隔8年重新接触它以后，还是能感受到刨土带来的喜悦<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="或许，相比“挖出某个东西”而言，我更喜欢的，还是刨土的过程吧。或者是，吸引我的是刨土过程中所蕴含的破坏性？也说不定。
+">[5]</span></a></sup>。若是此前没有类似的体验，或许可以尝试一下。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我曾以此法拯救过在挖掘过程中断了双腿的“兵马俑”。用了以后，“兵马俑”老哥连连称好。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">这背后的原因已经无法考证了。真是个悲伤的故事。<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">这老哥肤白貌美，曾经被陌生人拍照并放在所谓的“表白墙”上寻求联系方式，投稿者描述其有着“干净的外貌”。故此，我常以“干净”调侃他。<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">哦，这甜蜜的分割商法。发行方似乎是故意这么设计的。这是最值得诟病的一点。<a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">或许，相比“挖出某个东西”而言，我更喜欢的，还是刨土的过程吧。或者是，吸引我的是刨土过程中所蕴含的破坏性？也说不定。<a href="#fnref:5" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>找点乐子</category>
+      </categories>
       <tags>
-        <tag>数据库系统概论</tag>
+        <tag>玩具</tag>
       </tags>
   </entry>
   <entry>
     <title>浮点数的存储形式</title>
-    <url>/post/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</url>
+    <url>/post/the-value-range-of-floating-point-number/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p>
 <h2 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h2><p>　　若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。</p>
 <h3 id="IEEE754-标准"><a href="#IEEE754-标准" class="headerlink" title="IEEE754 标准"></a>IEEE754 标准</h3><p>　　根据IEEE浮点数标准，一个浮点数可表达为：</p>

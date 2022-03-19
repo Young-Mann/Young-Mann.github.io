@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：  一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对于“关系数据理论”的一些理解">
+<meta property="og:url" content="https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/index.html">
+<meta property="og:site_name" content="狗蛋日">
+<meta property="og:description" content="本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：  一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-18T11:31:10.000Z">
+<meta property="article:modified_time" content="2022-01-26T05:28:35.071Z">
+<meta property="article:author" content="Young Mann">
+<meta property="article:tag" content="数据库系统概论">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>对于“关系数据理论”的一些理解</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="狗蛋日" type="application/atom+xml" />
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/post/my-memory-of-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/post/the-value-range-of-floating-point-number/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=对于“关系数据理论”的一些理解"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=对于“关系数据理论”的一些理解"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=对于“关系数据理论”的一些理解&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=对于“关系数据理论”的一些理解&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=对于“关系数据理论”的一些理解"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96-Functional-Dependency"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%81-%E9%94%AE-Key"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%EF%BC%88Normal-Form%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%BC%95%E5%85%A5%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8F%8A%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        对于“关系数据理论”的一些理解
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Young Mann</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-18T11:31:10.000Z" itemprop="datePublished">2021-05-18</time>
+        
+        (Updated: <time datetime="2022-01-26T05:28:35.071Z" itemprop="dateModified">2022-01-26</time>)
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/" rel="tag">数据库系统概论</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
+<ul>
+<li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
+<li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
+<li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li>
+</ul>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>　　为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
+<h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
+<li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
+<li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
+<li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
+<li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
+</ul>
+<h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
+<li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
+</li>
+<li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p>
+</li>
+<li><p><strong>超码：</strong>对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为<strong>超码。</strong></p>
+</li>
+<li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p>
+</li>
+</ul>
+<h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>　　对于范式的概念，特别不靠谱的理解如下：</p>
+<ul>
+<li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p>
+</li>
+<li><p><strong>第二范式(2NF)：</strong>在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为<strong>一个整体</strong>起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。</p>
+</li>
+<li><p><strong>第三范式(3NF)：</strong>在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。</p>
+</li>
+<li><p><strong>BCNF:</strong> 在满足3NF的基础上，将“对于一个关系内的<strong>非主</strong>属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的<strong>所有</strong>属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。</p>
+</li>
+<li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p>
+</li>
+</ul>
+<h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>　　当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
+<ul>
+<li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li>
+<li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
+<li>删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。</li>
+</ul>
+<p>　　由于<del>笔者太懒</del>异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？</p>
+<p>　　在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
+<p>　　对这个问题换一个更为具体的表述，那便成了：</p>
+<blockquote>
+<p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>
+</blockquote>
+<p>　　首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/categories/">分类</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96-Functional-Dependency"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%81-%E9%94%AE-Key"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%EF%BC%88Normal-Form%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%BC%95%E5%85%A5%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8F%8A%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=对于“关系数据理论”的一些理解"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=对于“关系数据理论”的一些理解"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=对于“关系数据理论”的一些理解&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=对于“关系数据理论”的一些理解"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=对于“关系数据理论”的一些理解&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=对于“关系数据理论”的一些理解"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2022
+    Young Mann
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219613539-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-219613539-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'young-mann';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
