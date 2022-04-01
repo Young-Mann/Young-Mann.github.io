@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://young-mann.top/post/%E7%A6%8F%E6%9F%AF%E7%9A%84%E7%9B%B4%E8%A8%80/</loc>
+    
+    <lastmod>2022-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://young-mann.top/index.html</loc>
     
     <lastmod>2022-03-19</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>https://young-mann.top/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -111,28 +120,35 @@
   
   <url>
     <loc>https://young-mann.top/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://young-mann.top/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://young-mann.top/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://young-mann.top/tags/%E7%8E%A9%E5%85%B7/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://young-mann.top/tags/%E9%98%BF%E7%A6%8F/</loc>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -141,14 +157,14 @@
   
   <url>
     <loc>https://young-mann.top/categories/%E6%89%BE%E7%82%B9%E4%B9%90%E5%AD%90/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://young-mann.top/categories/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93%F0%9F%95%94/</loc>
-    <lastmod>2022-03-19</lastmod>
+    <lastmod>2022-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
