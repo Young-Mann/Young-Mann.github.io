@@ -439,11 +439,6 @@ body td {
   font-family: "Source Han Sans CN";
   src: url("../lib/NotoSerifSC/NotoSerifSC-Regular.ttf") format("truetype");
 }
-body {
-  font-style: normal;
-  font-family: "Source Han Sans CN";
-  src: url("../lib/NotoSerifSC/NotoSerifSC-Regular.ttf") format("truetype");
-}
 *,
 *:before,
 *:after {
