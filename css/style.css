@@ -439,6 +439,11 @@ body td {
   font-family: "Source Han Sans CN";
   src: url("../lib/NotoSerifSC/NotoSerifSC-Regular.ttf") format("truetype");
 }
+body {
+  font-style: normal;
+  font-family: "Source Han Sans CN";
+  src: url("../lib/NotoSerifSC/NotoSerifSC-Regular.ttf") format("truetype");
+}
 *,
 *:before,
 *:after {
@@ -460,7 +465,7 @@ body {
   font-display: swap;
   font-weight: 400;
   font-size: 15px;
-  font-family: "Source Han Sans CN", "Menlo", "Meslo LG", monospace;
+  font-family: "Source Han Sans CN";
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -1385,7 +1390,7 @@ article .content .caption {
   font-display: swap;
   font-weight: 400;
   font-size: 12px;
-  font-family: "Source Han Sans CN", "Menlo", "Meslo LG", monospace;
+  font-family: "Source Han Sans CN";
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1555,7 +1560,7 @@ pre {
   border: 1px dotted #666;
   border-radius: 4px;
   font-size: 13px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: "Source Han Sans CN";
   line-height: 22px;
   -webkit-border-radius: 4px;
 }
@@ -1576,7 +1581,7 @@ code {
   padding: 10px 15px;
   border-radius: 4px;
   background: #f5f5f5;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: "Source Han Sans CN";
   -webkit-border-radius: 4px;
 }
 .highlight figcaption {
