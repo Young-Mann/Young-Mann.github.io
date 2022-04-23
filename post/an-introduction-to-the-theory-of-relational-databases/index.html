@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：  一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？">
+    <meta name="description" content="预备知识 函数依赖(Functional Dependency) 码&#x2F;键(Key) 范式（Normal Form）   问题的引入——数据异常及规范化理论     　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对于“关系数据理论”的一些理解">
 <meta property="og:url" content="https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/index.html">
 <meta property="og:site_name" content="狗蛋日">
-<meta property="og:description" content="本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：  一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？">
+<meta property="og:description" content="预备知识 函数依赖(Functional Dependency) 码&#x2F;键(Key) 范式（Normal Form）   问题的引入——数据异常及规范化理论     　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-18T11:31:10.000Z">
-<meta property="article:modified_time" content="2022-01-26T05:28:35.071Z">
+<meta property="article:modified_time" content="2022-04-23T17:28:16.458Z">
 <meta property="article:author" content="Young Mann">
 <meta property="article:tag" content="数据库系统概论">
 <meta name="twitter:card" content="summary">
@@ -74,7 +74,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" aria-label="上一篇" href="/post/my-memory-of-2021/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="上一篇" href="/post/food-hoarding/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="下一篇" href="/post/the-value-range-of-floating-point-number/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -105,7 +105,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96-Functional-Dependency"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%81-%E9%94%AE-Key"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%EF%BC%88Normal-Form%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%BC%95%E5%85%A5%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8F%8A%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -131,7 +131,7 @@
       
         <time datetime="2021-05-18T11:31:10.000Z" itemprop="datePublished">2021-05-18</time>
         
-        (Updated: <time datetime="2022-01-26T05:28:35.071Z" itemprop="dateModified">2022-01-26</time>)
+        (Updated: <time datetime="2022-04-23T17:28:16.458Z" itemprop="dateModified">2022-04-24</time>)
         
       
     </div>
@@ -151,20 +151,35 @@
   
 
   <div class="content" itemprop="articleBody">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#yu-bei-zhi-shi">预备知识</a><ul>
+<li><a href="#han-shu-yi-lai-functional-dependency">函数依赖(Functional Dependency)</a></li>
+<li><a href="#ma-jian-key">码/键(Key)</a></li>
+<li><a href="#fan-shi-normal-form">范式（Normal Form）</a></li>
+</ul>
+</li>
+<li><a href="#wen-ti-de-yin-ru-shu-ju-yi-chang-ji-gui-fan-hua-li-lun">问题的引入——数据异常及规范化理论</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
 <ul>
 <li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
 <li>是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？<strong>（规范化理论）</strong></li>
 <li>在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？<strong>（Armstrong公理&amp;模式分解）</strong></li>
 </ul>
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>　　为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
-<h3 id="函数依赖-Functional-Dependency"><a href="#函数依赖-Functional-Dependency" class="headerlink" title="函数依赖(Functional Dependency)"></a>函数依赖(Functional Dependency)</h3><ul>
+<h2><span id="yu-bei-zhi-shi">预备知识</span><a href="#yu-bei-zhi-shi" class="header-anchor">#</a></h2><p>　　为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：</p>
+<h3><span id="han-shu-yi-lai-functional-dependency">函数依赖(Functional Dependency)</span><a href="#han-shu-yi-lai-functional-dependency" class="header-anchor">#</a></h3><ul>
 <li><strong>函数依赖：</strong>设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 <strong>X 函数确定 Y</strong> , 或 <strong>Y 函数依赖 X</strong> ，记作$X \rightarrow  Y$。</li>
 <li><strong>完全函数依赖：</strong>如果Y函数依赖X，但不依赖X的任何一个真子集，则称<strong>Y完全函数依赖X</strong>，记作$X \xrightarrow F Y$。</li>
 <li><strong>部分函数依赖：</strong>如果Y函数依赖X，但依赖于X的任何一个真子集，则称<strong>Y部分函数依赖X</strong>，记作$X \xrightarrow P Y$。</li>
 <li><strong>传递函数依赖：</strong>设Z也是U的一个子集。如果X决定Y，Y决定Z，且<strong>Y不决定X</strong>，那么称<strong>Z对X传递函数依赖</strong>，记作$X \xrightarrow {传递} Y$。</li>
 </ul>
-<h3 id="码-键-Key"><a href="#码-键-Key" class="headerlink" title="码/键(Key)"></a>码/键(Key)</h3><ul>
+<h3><span id="ma-jian-key">码/键(Key)</span><a href="#ma-jian-key" class="header-anchor">#</a></h3><ul>
 <li><p><strong>候选码：</strong>设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为<strong>候选码</strong>（K是一个集合！）</p>
 </li>
 <li><p><strong>主码：</strong>候选码若有多个，则选定其中的一个，称为<strong>主码</strong>。</p>
@@ -174,7 +189,7 @@
 <li><p><strong>主属性/非主属性：</strong>包含在任何一个候选码的属性都叫<strong>主属性</strong>，其他都叫<strong>非主属性</strong>。</p>
 </li>
 </ul>
-<h3 id="范式（Normal-Form）"><a href="#范式（Normal-Form）" class="headerlink" title="范式（Normal Form）"></a>范式（Normal Form）</h3><p>　　对于范式的概念，特别不靠谱的理解如下：</p>
+<h3><span id="fan-shi-normal-form">范式（Normal Form）</span><a href="#fan-shi-normal-form" class="header-anchor">#</a></h3><p>　　对于范式的概念，特别不靠谱的理解如下：</p>
 <ul>
 <li><p><strong>第一范式(1NF)：</strong>不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）</p>
 </li>
@@ -187,7 +202,7 @@
 <li><p><strong>第四范式(4NF)：</strong>原关系模式中不存在非平凡的多值依赖。</p>
 </li>
 </ul>
-<h2 id="问题的引入——数据异常及规范化理论"><a href="#问题的引入——数据异常及规范化理论" class="headerlink" title="问题的引入——数据异常及规范化理论"></a>问题的引入——数据异常及规范化理论</h2><p>　　当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
+<h2><span id="wen-ti-de-yin-ru-shu-ju-yi-chang-ji-gui-fan-hua-li-lun">问题的引入——数据异常及规范化理论</span><a href="#wen-ti-de-yin-ru-shu-ju-yi-chang-ji-gui-fan-hua-li-lun" class="header-anchor">#</a></h2><p>　　当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</p>
 <ul>
 <li>数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。</li>
 <li>更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。</li>
@@ -197,7 +212,7 @@
 <p>　　在第2小节里，我们将了解如何通过<strong>函数依赖</strong>描述一个关系模式。将借助<strong>函数依赖</strong>刻画关系模式的<strong>规范化程度</strong>，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的<strong>规范化程度</strong>，对于关系模式进行<strong>规范化</strong>，将具有糟糕性质的关系模式转化为更合适的形式。<br>一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为<strong>“一事一地”</strong>，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。</p>
 <p>　　对这个问题换一个更为具体的表述，那便成了：</p>
 <blockquote>
-<p>给定关系模式R <U, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</U,></p>
+<p>给定关系模式R <u, f>以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</u,></p>
 </blockquote>
 <p>　　首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）<br>（未完待续）</p>
 
@@ -229,7 +244,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BE%9D%E8%B5%96-Functional-Dependency"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%81-%E9%94%AE-Key"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8C%83%E5%BC%8F%EF%BC%88Normal-Form%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E7%9A%84%E5%BC%95%E5%85%A5%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E5%BC%82%E5%B8%B8%E5%8F%8A%E8%A7%84%E8%8C%83%E5%8C%96%E7%90%86%E8%AE%BA"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">函数依赖(Functional Dependency)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">码&#x2F;键(Key)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">范式（Normal Form）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">问题的引入——数据异常及规范化理论</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
