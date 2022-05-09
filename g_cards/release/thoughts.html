@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta property="og:type" content="website">
+    <meta name="description" content="thoughts">
+<meta property="og:type" content="website">
 <meta property="og:title" content="狗蛋日">
-<meta property="og:url" content="https://young-mann.top/categories/index.html">
+<meta property="og:url" content="https://young-mann.top/g_cards/release/thoughts.html">
 <meta property="og:site_name" content="狗蛋日">
+<meta property="og:description" content="thoughts">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-02T06:53:09.733Z">
-<meta property="article:modified_time" content="2022-02-08T05:48:56.291Z">
+<meta property="article:published_time" content="2022-05-09T18:17:32.812Z">
+<meta property="article:modified_time" content="2022-05-09T15:11:15.000Z">
 <meta property="article:author" content="Young Mann">
 <meta name="twitter:card" content="summary">
     
@@ -88,20 +90,81 @@
 
   <div class="content" itemprop="articleBody">
       
-          <div id="categories">
-            <div class="category-list-title">
-                
-                
-                  
-                    
-                  
-                
-                
-            </div>
-            <div class="category-list">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%89%BE%E7%82%B9%E4%B9%90%E5%AD%90/">找点乐子</a><span class="category-list-count">2</span></li></ul>
-            </div>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta uid="1652137867201">
+  <base target="_blank">
+  <title>thoughts</title>
+  <meta name="metro4:init" content="false"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metro/4.3.10/css/metro-all.min.css">
+  <link rel="stylesheet" href="./js/toastui-editor-viewer.min.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-double sided card->
+<div id="app" class="w-100 h-100" style="min-width: 600px; min-height: 2400px; overflow-x: scroll ;overflow-y: scroll ; " ondblclick="showCharm();">
+  <div v-for="(item, index) in items" :key="item.uri" :id="'card_' + index" class="flip-card effect-on-active" data-role="draggable" data-boundary-restriction="false" data-drag-element=".drag-element" style="width: 260px; height: 410px; z-index: 9;" data-on-drag-stop="onDragOver">
+    <div class="front">
+      <div class="card">
+        <div class="card-header drag-element w-100" :title="item.title">
+          <p class="text-ellipsis"></p>
+        </div>
+        <div class="card-content p-0">
+          <div v-bind:id="'viewerFront_' + index" style="height: 305px; overflow-y: auto">
           </div>
+        </div>
+        <div class="card-footer p-0">
+          <button class="flat-button mif-spinner4 mif-0.2x" v-on:click="toggleCard(index)"></button>
+          <a class="button light" target="_blank" :href="item.link.uri"><span class="mif-link mif-0.2x va-middle"></span> </a>
+
+        </div>
+      </div>
+    </div>
+    <div class="back">
+      <div class="card">
+        <div class="card-header drag-element w-100">
+          <p class="text-ellipsis"></p>
+        </div>
+        <div class="card-content p-0">
+          <div v-bind:id="'viewerBack_' + index" style="height: 305px; overflow-y: auto">
+
+          </div>
+        </div>
+        <div class="card-footer p-0">
+          <button class="flat-button mif-spinner4 mif-0.2x" v-on:click="toggleCard(index)"></button>
+          <a class="button light" target="_blank" :href="item.link.uri"> <span class="mif-link mif-0.2x va-middle"></span></a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div data-role="charms" id="charmJson" data-position="left" class="border bd-default p-2 bg-white fg-black">
+    <div class="grid" style="width: 400px;">
+        <div class="row">
+            <textarea id="textareaJson" class="w-100" style="height: 300px; overflow: scroll;"></textarea>
+        </div>
+        <div class="row p-3 flex-justify-center">
+            <button class="button info cycle outline" onclick="Metro.charms.close('charmJson');"><span class="mif-cross"></span></button>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script src="./js/lodash.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/metro.min.js"></script>
+<script src="./js/vue.min.js"></script>
+<script src="./js/toastui-editor-viewer.min.js"></script><script src="./thoughts.js"></script>
+
+</body>
+</html>
+
         
   </div>
 </article>
