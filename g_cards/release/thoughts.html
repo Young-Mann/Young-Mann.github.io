@@ -1,114 +1,29 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="thoughts">
-<meta property="og:type" content="website">
-<meta property="og:title" content="狗蛋日">
-<meta property="og:url" content="https://young-mann.top/g_cards/release/thoughts.html">
-<meta property="og:site_name" content="狗蛋日">
-<meta property="og:description" content="thoughts">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-09T18:17:32.812Z">
-<meta property="article:modified_time" content="2022-05-09T15:11:15.000Z">
-<meta property="article:author" content="Young Mann">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>狗蛋日</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-      <link rel="alternate" href="/true" title="狗蛋日" type="application/atom+xml" />
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body class="max-width mx-auto px3 ltr">    
-    <div class="content index py4">
-        
-          <header id="header">
-  <a href="/">
-  
-    
-      <div id="logo" style="background-image: url(/images/%E5%A4%AA%E9%98%B3.png);"></div>
-    
-  
-    <div id="title">
-      <h1>狗蛋日</h1>
-    </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-      <!--
-     --><li><a href="/">首页</a></li><!--
-   --><!--
-     --><li><a href="/about/">关于</a></li><!--
-   --><!--
-     --><li><a href="/archives/">归档</a></li><!--
-   --><!--
-     --><li><a href="/g_cards/**">map</a></li><!--
-   -->
-    </ul>
-  </div>
-</header>
-
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
-
-  <div class="content" itemprop="articleBody">
-      
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta uid="1652137867201">
-  <base target="_blank">
+  <base target="_blank" />
   <title>thoughts</title>
-  <meta name="metro4:init" content="false"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metro/4.3.10/css/metro-all.min.css">
-  <link rel="stylesheet" href="./js/toastui-editor-viewer.min.css">
+  <meta name="metro4:init" content="false"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/metro/4.3.10/css/metro-all.min.css'>
+  <link rel='stylesheet' href='./js/toastui-editor-viewer.min.css'>
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <!-double sided card->
-<div id="app" class="w-100 h-100" style="min-width: 600px; min-height: 2400px; overflow-x: scroll ;overflow-y: scroll ; " ondblclick="showCharm();">
-  <div v-for="(item, index) in items" :key="item.uri" :id="'card_' + index" class="flip-card effect-on-active" data-role="draggable" data-boundary-restriction="false" data-drag-element=".drag-element" style="width: 260px; height: 410px; z-index: 9;" data-on-drag-stop="onDragOver">
+<div id="app" class="w-100 h-100" style="min-width: 600px; min-height: 2400px; overflow-x: scroll ;overflow-y: scroll ; "
+     ondblclick="showCharm();">
+  <div v-for="(item, index) in items" :key="item.uri" :id="'card_' + index"
+       class="flip-card effect-on-active"
+       data-role="draggable"
+       data-boundary-restriction="false"
+       data-drag-element=".drag-element"
+       style="width: 260px; height: 410px; z-index: 9;"
+       data-on-drag-stop="onDragOver">
     <div class="front">
       <div class="card">
         <div class="card-header drag-element w-100" :title="item.title">
-          <p class="text-ellipsis"></p>
+          <p class="text-ellipsis">{{item.front.title}}</p>
         </div>
         <div class="card-content p-0">
           <div v-bind:id="'viewerFront_' + index" style="height: 305px; overflow-y: auto">
@@ -116,7 +31,7 @@
         </div>
         <div class="card-footer p-0">
           <button class="flat-button mif-spinner4 mif-0.2x" v-on:click="toggleCard(index)"></button>
-          <a class="button light" target="_blank" :href="item.link.uri"><span class="mif-link mif-0.2x va-middle"></span> </a>
+          <a class="button light" target="_blank" :href="item.link.uri"><span class="mif-link mif-0.2x va-middle"></span> {{item.link.name}}</a>
 
         </div>
       </div>
@@ -124,7 +39,7 @@
     <div class="back">
       <div class="card">
         <div class="card-header drag-element w-100">
-          <p class="text-ellipsis"></p>
+          <p class="text-ellipsis">{{item.back.title}}</p>
         </div>
         <div class="card-content p-0">
           <div v-bind:id="'viewerBack_' + index" style="height: 305px; overflow-y: auto">
@@ -133,7 +48,7 @@
         </div>
         <div class="card-footer p-0">
           <button class="flat-button mif-spinner4 mif-0.2x" v-on:click="toggleCard(index)"></button>
-          <a class="button light" target="_blank" :href="item.link.uri"> <span class="mif-link mif-0.2x va-middle"></span></a>
+          <a class="button light" target="_blank" :href="item.link.uri"> <span class="mif-link mif-0.2x va-middle"></span>{{item.link.name}}</a>
 
         </div>
       </div>
@@ -156,117 +71,11 @@
     </div>
 </div>
 <!-- partial -->
-<script src="./js/lodash.min.js"></script>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/metro.min.js"></script>
-<script src="./js/vue.min.js"></script>
-<script src="./js/toastui-editor-viewer.min.js"></script><script src="./thoughts.js"></script>
+<script src='./js/lodash.min.js'></script>
+<script src='./js/jquery.min.js'></script>
+<script src='./js/metro.min.js'></script>
+<script src='./js/vue.min.js'></script>
+<script src='./js/toastui-editor-viewer.min.js'></script><script  src="./thoughts.js"></script>
 
-</body>
-</html>
-
-        
-  </div>
-</article>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2019-2022
-    Young Mann
-	<span class="post-count"> ( 13.8k ) </span>
-	
-  </div>
-  
-  
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">首页</a></li><!--
-     --><!--
-       --><li><a href="/about/">关于</a></li><!--
-     --><!--
-       --><li><a href="/archives/">归档</a></li><!--
-     --><!--
-       --><li><a href="/g_cards/**">map</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Google Analytics -->
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219613539-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-219613539-1');
-    </script>
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-    <script type="text/javascript">
-        var disqus_shortname = 'young-mann';
-
-        (function(){
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        }());
-    </script>
-
-<!-- utterances Comments -->
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
