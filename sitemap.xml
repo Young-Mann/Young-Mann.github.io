@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://young-mann.top/post/writing/</loc>
+    <loc>https://young-mann.top/post/recipe/</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>https://young-mann.top/post/recipe/</loc>
+    <loc>https://young-mann.top/post/food-hoarding/</loc>
+    
+    <lastmod>2022-06-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://young-mann.top/post/writing/</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -111,15 +120,6 @@
   
   <url>
     <loc>https://young-mann.top/post/In-der-Strafkolonie/</loc>
-    
-    <lastmod>2022-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://young-mann.top/post/food-hoarding/</loc>
     
     <lastmod>2022-04-23</lastmod>
     

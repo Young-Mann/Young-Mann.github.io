@@ -216,7 +216,7 @@
       </tags>
   </entry>
   <entry>
-    <title>广积粮</title>
+    <title>无题</title>
     <url>/post/food-hoarding/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="toc">
 
@@ -347,7 +347,6 @@
 <li><a href="#dan-chao-fan">蛋炒饭</a></li>
 <li><a href="#fan-qie-chao-dan">番茄炒蛋</a></li>
 <li><a href="#pi-sa">披萨🍕</a></li>
-<li><a href="#cai">菜</a></li>
 </ul>
 <!-- tocstop -->
 </div>
@@ -357,9 +356,8 @@
 <h2><span id="fan-qie-chao-dan">番茄炒蛋</span><a href="#fan-qie-chao-dan" class="header-anchor">#</a></h2><p>锅里加油烧热，随后倒入蛋液，同时从锅里舀一勺热油淋在蛋液上方，蛋皮成型后捞出锅。下蕃茄酱、蒜末，大火炒香，再下番茄煸香，后将蛋皮重新入锅，加少许水、盐、糖，翻炒几下，出锅。</p>
 <h2><span id="pi-sa">披萨🍕</span><a href="#pi-sa" class="header-anchor">#</a></h2><p>原料：一块锅盔/烧饼，100g马苏里拉芝士，番茄酱，培根、香肠，番茄。</p>
 <p>步骤：放饼底，涂上一层酱，一层肉和菜，一层芝士。将经过上述处理的饼底放入空气炸锅，10分钟，火温180度。</p>
-<p><details><br>    <summary>样例</summary></details></p>
-<p><img src="/post/recipe/pizza-2022.06.20.jpg" alt="pizza-2022.06.20" title="堆料1号：番茄放太多了（2022.06.20）"></p>
-<h2><span id="cai">菜</span><a href="#cai" class="header-anchor">#</a></h2>]]></content>
+<p><details><br>    <summary>样例</summary><br><img src="/post/recipe/pizza-2022.06.20.jpg" alt="pizza-2022.06.20" title="堆料1号：番茄放太多了（2022.06.20）"></details></p>
+]]></content>
   </entry>
   <entry>
     <title>浮点数的取值范围</title>
