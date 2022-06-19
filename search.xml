@@ -345,6 +345,7 @@
 <ul>
 <li><a href="#dan-chao-fan">蛋炒饭</a></li>
 <li><a href="#fan-qie-chao-dan">番茄炒蛋</a></li>
+<li><a href="#pi-sa">披萨🍕</a></li>
 </ul>
 <!-- tocstop -->
 </div>
@@ -352,6 +353,9 @@
 <p>记录简化的菜谱留作自用。不严格按其行事。</p>
 <h2><span id="dan-chao-fan">蛋炒饭</span><a href="#dan-chao-fan" class="header-anchor">#</a></h2><p>锅里先加油烧热，随后冷饭下锅、烘干水分，再下蛋液，待饭与蛋交融后，在饭堆中间刨个小口，并将胡萝卜丁、洋葱碎、少许酱油、香油倒入其中，翻炒熟后，出锅。</p>
 <h2><span id="fan-qie-chao-dan">番茄炒蛋</span><a href="#fan-qie-chao-dan" class="header-anchor">#</a></h2><p>锅里加油烧热，随后倒入蛋液，同时从锅里舀一勺热油淋在蛋液上方，蛋皮成型后捞出锅。下蕃茄酱、蒜末，大火炒香，再下番茄煸香，后将蛋皮重新入锅，加少许水、盐、糖，翻炒几下，出锅。</p>
+<h2><span id="pi-sa">披萨🍕</span><a href="#pi-sa" class="header-anchor">#</a></h2><p>原料：一块锅盔/烧饼，100g马苏里拉芝士，番茄酱，培根、香肠，番茄。</p>
+<p>步骤：放饼底，涂上一层酱，一层肉和菜，一层芝士。将经过上述处理的饼底放入空气炸锅，10分钟，火温180度。</p>
+<p><img src="/post/recipe/pizza-2022.06.20.jpg" alt="pizza-2022.06.20" title="堆料1号：番茄放太多了（2022.06.20）"></p>
 ]]></content>
   </entry>
   <entry>
@@ -403,7 +407,7 @@ S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2</
 \begin{align}  (1.{\underbrace{000 ... 001}_{23位}})_2 \times 2^{-126}    &\approx (1.17549e-38)_{10}  \end{align}</script>]]></content>
   </entry>
   <entry>
-    <title>还是得多唠唠</title>
+    <title>无题</title>
     <url>/post/write-more/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="toc">
 
