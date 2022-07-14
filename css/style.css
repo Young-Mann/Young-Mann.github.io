@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +428,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: rgba(86,124,119,0.8);
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
 }
 body td {
   padding: 0 8px;
@@ -459,7 +459,7 @@ body {
   color: #22272a;
   font-display: swap;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Source Han Sans CN";
   line-height: 1.5;
   text-rendering: geometricPrecision;
@@ -547,7 +547,7 @@ body {
   }
 }
 .max-width {
-  max-width: 47rem;
+  max-width: 45rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1199,6 +1199,21 @@ article .content .caption {
     content: "|";
   }
 }
+figure {
+  border: thin #c0c0c0 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 300px;
+  margin: auto;
+}
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+  text-align: center;
+}
 #archive .post-year {
   list-style-type: none;
 }
@@ -1384,7 +1399,7 @@ article .content .caption {
   color: #fafafa;
   font-display: swap;
   font-weight: 400;
-  font-size: 12.8px;
+  font-size: 12px;
   font-family: "Source Han Sans CN";
   line-height: 1.5;
   text-rendering: geometricPrecision;

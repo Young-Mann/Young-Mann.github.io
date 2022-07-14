@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="如何描述概率——基于测度论角度 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   总结 参考文献     　　本文是 Stochastic Calculus for Financ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结 | 金融随机分析 | 1. 基于测度论的概率论基础">
+<meta property="og:url" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="狗蛋日 ∠( ᐛ 」∠)_">
+<meta property="og:description" content="如何描述概率——基于测度论角度 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   总结 参考文献     　　本文是 Stochastic Calculus for Financ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714210828516.png">
+<meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714212126653.png">
+<meta property="article:published_time" content="2022-07-14T09:45:55.000Z">
+<meta property="article:modified_time" content="2022-07-14T16:49:14.453Z">
+<meta property="article:author" content="Young Mann">
+<meta property="article:tag" content="概率论">
+<meta property="article:tag" content="金融随机分析">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714210828516.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>总结 | 金融随机分析 | 1. 基于测度论的概率论基础</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="狗蛋日 ∠( ᐛ 」∠)_" type="application/atom+xml" />
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/about/">KuliKuacha!</a></li><!--
+     --><!--
+       --><li><a href="/archives/">比较贫瘠的垃圾堆</a></li><!--
+     --><!--
+       --><li><a href="/g_cards/release/thoughts.html">单向度的棋牌室</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/post/check-out/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&text=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&is_video=false&description=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=总结 | 金融随机分析 | 1. 基于测度论的概率论基础&body=Check out this article: https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&name=总结 | 金融随机分析 | 1. 基于测度论的概率论基础&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&t=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——基于测度论角度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        总结 | 金融随机分析 | 1. 基于测度论的概率论基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Young Mann</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-07-14T09:45:55.000Z" itemprop="datePublished">2022-07-14</time>
+        
+        (Updated: <time datetime="2022-07-14T16:49:14.453Z" itemprop="dateModified">2022-07-15</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%89%BE%E7%82%B9%E4%B9%90%E5%AD%90/">找点乐子</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a>, <a class="tag-link-link" href="/tags/%E9%87%91%E8%9E%8D%E9%9A%8F%E6%9C%BA%E5%88%86%E6%9E%90/" rel="tag">金融随机分析</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="toc">
+
+<!-- toc -->
+<ul>
+<li><a href="#ru-he-miao-shu-gai-lu-ji-yu-ce-du-lun-jiao-du">如何描述概率——基于测度论角度</a><ul>
+<li><a href="#1-miao-shu-yang-ben-kong-jian-omega">1. 描述样本空间——$\Omega$</a></li>
+<li><a href="#2-miao-shu-shi-jian-omega-de-zi-ji">2. 描述事件——$\Omega$ 的子集</a></li>
+<li><a href="#3-miao-shu-shi-jian-de-ji-he-sigma-dai-shu-mathcal-f">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</a></li>
+<li><a href="#4-miao-shu-ke-ce-kong-jian-shang-de-ce-du-mu">4. 描述可测空间上的测度——$\mu$</a></li>
+<li><a href="#5-jiang-ce-du-te-hua-wei-gai-lu-ce-du-mathbb-p">5. 将测度特化为概率测度——$\mathbb{P}$</a></li>
+</ul>
+</li>
+<li><a href="#zong-jie">总结</a></li>
+<li><a href="#can-kao-wen-xian">参考文献</a></li>
+</ul>
+<!-- tocstop -->
+</div>
+
+<p>　　本文是 <a target="_blank" rel="noopener" href="https://neodb.social/books/489914/">Stochastic Calculus for Finance II: Continuous-Time Models</a> 第 1 章中基于测度论的概率论公理化的梳理，用以理解基于测度论的概率论的基本概念以及应用思路。</p>
+<h2><span id="ru-he-miao-shu-gai-lu-ji-yu-ce-du-lun-jiao-du">如何描述概率——基于测度论角度</span><a href="#ru-he-miao-shu-gai-lu-ji-yu-ce-du-lun-jiao-du" class="header-anchor">#</a></h2><p>　　粗略地讲，概率就是衡量「事件发生的可能性」的大小。可是，「事件」是什么？「可能性」又是什么？一种可行的思路是，可以借助集合论与测度论中的工具对于上述概念进行指代：用集合代表「事件」，集合系代表「事件的全体」，集合的测度代表「事件发生的可能性」。</p>
+<p>　　下文将尝试用测度的语言，从5个步骤入手<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此处参考了 [微观金融学及其数学基础](https://neodb.social/books/493599/) P597 的内容。
+">[1]</span></a></sup>，表述现代概率公理体系。为了便于理解，下文的阐述均基于「连续投掷2次硬币」这个随机试验。</p>
+<h3><span id="1-miao-shu-yang-ben-kong-jian-omega">1. 描述样本空间——$\Omega$</span><a href="#1-miao-shu-yang-ben-kong-jian-omega" class="header-anchor">#</a></h3><p>　　在「连续投掷2次硬币」这一随机试验中，将硬币的某一面记作正面，与其相反的一面记作反面。那么，若将「硬币投出了正面」记作 H ，将「硬币投出了反面」记作 T ，以一串序列的方式列出所有可能发生的结果，便可得样本空间 $\Omega$ ：</p>
+<script type="math/tex; mode=display">
+\Omega = \lbrace \text{HH, HT, TH, TT}\rbrace.</script><h3><span id="2-miao-shu-shi-jian-omega-de-zi-ji">2. 描述事件——$\Omega$ 的子集</span><a href="#2-miao-shu-shi-jian-omega-de-zi-ji" class="header-anchor">#</a></h3><p>　　样本空间 $\Omega$ 列出了随机试验所有可能发生的结果。在这些过程中，有一些结果可能是我们 <u>所关心的</u>。例如，我们可能会 <u>关心第1次掷币的结果是正面</u> 或者 <u>关心第2次掷币的结果是反面</u>。根据我们 <u>所关心的</u> 内容不同，我们可以对样本空间中的元素进行归类。这种归类有个学名，叫<strong>分割（decomposition）</strong>。其定义如下：对于一族集合$\lbrace C_i, i=1,2,\cdots\rbrace$，如果 $ C_i\cap C_j=\varnothing, \forall i \neq j $ 且 $\cup^\infty _{i=1}C_i=\Omega$ ，则称这一族集合 $\lbrace C_i, i=1,2,\cdots\rbrace$ 为 $\Omega$ 的一个分割（decomposition）或划分（partition）。</p>
+<p>　　为了更好地理解分割，我们来看这样一个例子：$\lbrace C_1=第1次掷币的结果是正面\rbrace;$$ \lbrace C_2=第1次掷币的结果是反面\rbrace $是 $\Omega$ 的子集。由于 $C_1= \lbrace \text{HH, HT}\rbrace, C_2= \lbrace \text{TH, TT}\rbrace$，因此 $ C_1\cap C_2=\varnothing$ 且 $C_1 \cup C_2 = \Omega$，所以 $\lbrace \text{HH, HT}\rbrace, \lbrace \text{TH, TT}\rbrace$ 是 $\Omega$ 的一个分割。同理可得，$\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 也是 $\Omega$ 的一个分割<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="不失一般性地，此处我们不考虑硬币投掷后竖直立起来的情况。
+">[3]</span></a></sup>。</p>
+<p>　　理解了分割后，便可以对事件进行定义了。所谓事件，就是由样本空间 $\Omega$ 的某一种分割通过不断的集合运算构造出的一些集合。比如说，「第1次掷币的结果是正面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace$ 基本分割的并，也可以是 $\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 两个基本分割并集的补。又比如说，「第1次掷币的结果既不是正面也不是反面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 基本分割并集的补，即 $\varnothing$，因此称该事件为不可能事件<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="而且这种分割相比前一种分割更加精细。
+">[2]</span></a></sup>；而「第1次掷币的结果是正面或反面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 基本分割的并集，即 $\Omega$，称其为确定事件。</p>
+<h3><span id="3-miao-shu-shi-jian-de-ji-he-sigma-dai-shu-mathcal-f">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span><a href="#3-miao-shu-shi-jian-de-ji-he-sigma-dai-shu-mathcal-f" class="header-anchor">#</a></h3><p>　　在上一节中，我们利用分割与集合的基本运算描述了事件的概念。如果对这些事件进一步施加一系列集合的基本运算，似乎就能将所有我们所关心的事件都表示成集合的形式。把我们所关心的事件全部列出来以后，我们好像就可以 <u>对这些事件对应的集合定义它们的测度</u>，进而衡量这些集合对应的事件发生的可能性了。未来似乎一片光明啊~</p>
+<p>　　可是，事情并没有那么简单。如果重新审视上文下划线的表述，我们又会碰上 2 个问题：</p>
+<ol>
+<li>我们关心的是某些事件发生的可能性，对应的是相应集合的测度。然而，不是每一个事件都可以被定义出概率的，也并不是每个集合都可以被定义出测度。</li>
+<li>在我们考虑不同的事件时，势必要对不同的事件进行组合、操作，将这些事件组合为更加复杂的事件。在这些操作中，会涉及集合的交、并、差等运算。万一运算出来的集合不在我们处理的能力范围内，那可咋整啊？</li>
+</ol>
+<p>　　第 1 个问题要求我们 <u>找出那些能被定义测度的集合，即所谓可测集</u>，将它们作为我们的研究对象，而第 2 个问题要求我们经过组合操作后所得到的输出结果，与输入内容的类型一致，仍然是可测集，因此需要 <u>找到这样的一个集合系，使得其中的集合在经过可数次运算后的结果不会超出这个集合系所能包含的范围</u>。那么，在集合论与测度论的工具箱里，是否有能够满足上述用下划线所标识的性质的工具呢？实际上，测度论中提到了这样的一个集合系，不仅可以保证其中的集合是可测集，而且这些集合对基本运算封闭。这个集合系，便是<strong>$\sigma-$代数</strong>，其定义如下：</p>
+<p><img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714210828516.png" alt="image-20220714210828516"></p>
+<p>　　简单解释一下 $\sigma-$代数 的含义。$\sigma-$代数 是以集合为元素的集合。从定义1.1中的3个性质入手，可以推出集合系中的空集、可数次交/并/差、上限集、下限集在运算后都能在该集合系中。通俗来说，$\sigma-$代数 里的某1个元素都代表1个最基本的事件，而 $\sigma-$代数 的某1个子集就代表1个更加复杂的事件。如果样本空间 $\Omega$ 中可能发生的情况共有 $N$ 种，那么由 $\Omega$ 中的元素经过集合运算生成的最小 $\sigma$-代数 就是 $\mathcal{F} = \lbrace \varnothing, \Omega \rbrace$，最大的 $\sigma$-代数 就是由所有的幂集构成，一共包含 $2^N$ 个元素。</p>
+<p>　　为了更好地理解$\sigma-$代数，接下来让我们看由基本分割产生的 $\sigma-$代数（记作$\mathcal{F}$）。定义$\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 这个基本分割，通过交、并、补所得的  $\sigma-$代数 包含 16 个元素，它们是：</p>
+<script type="math/tex; mode=display">
+\mathcal{F} = \lbrace \varnothing, \Omega, 
+\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace, \lbrace \text{TT}\rbrace,
+\lbrace \text{HH,HT}\rbrace, \lbrace \text{HH,TH}\rbrace, \lbrace \text{HH,TT}\rbrace, 
+\lbrace \text{HT,TH}\rbrace, 
+\\
+\lbrace \text{HT,TT}\rbrace,
+\lbrace \text{TH,TT}\rbrace, 
+\lbrace \text{HH,HT,TH}\rbrace, \lbrace \text{HH,HT,TT}\rbrace, \lbrace \text{HT,TH,TT}\rbrace,  \lbrace \text{HH,TH,TT}\rbrace
+\rbrace</script><p>　　$\sigma-$代数 包含了某一时刻我们所知道的「所有可能发生的事件的所有可能组合」，代表着我们在该时刻所知道的所有信息。比如说，上文由基本分割产生的 $\sigma-$代数 $\mathcal{F}$ 代表了我们对「连续投掷2次硬币」的结果所具备的<strong>信息</strong>，其中包含了所有可能的结果，表示我们对于「连续投掷2次硬币」这个随机试验已经达到了“全知”的程度。$\sigma$-代数  这种「承载我们所知的信息」的功能，将在后续的文章中阐释。</p>
+<hr>
+<p>　　有了样本空间 $\Omega$ 和 $\sigma$-代数 $\mathcal{F}$ 以后，我们可将它们写成 $( \Omega, \mathcal{F} )$，称之为可测空间（measurable space），而 $\mathcal{F}$ 中的元素<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="其中的元素都是集合哦。
+">[4]</span></a></sup>称为可测集（measurable set）。至此，我们便初步界定了「随机试验」中所关心的「事件」。接下来需要定义的，就是这些「事件」发生的可能性，即概率了。</p>
+<h3><span id="4-miao-shu-ke-ce-kong-jian-shang-de-ce-du-mu">4. 描述可测空间上的测度——$\mu$</span><a href="#4-miao-shu-ke-ce-kong-jian-shang-de-ce-du-mu" class="header-anchor">#</a></h3><p>　　概率的定义应该从哪里入手呢？不妨试着从我们刚刚得到的可测空间 $( \Omega, \mathcal{F} )$ 入手。 $( \Omega, \mathcal{F} )$ 之所以叫做<strong>可测</strong>空间，是因为其具备一些优良的性质，使得 $\mathcal{F}$ 中的任意一个集合都可以定义其测度。如果我们在可测空间 $ ( \Omega, \mathcal{F} )$ 上定义一个测度  $\mathbb{P}$，并进一步让这个测度  $\mathbb{P}$满足某些我们所期望「概率」应该具备的性质，那么不就能对 $\mathcal{F}$ 中的任意一个集合（也就是事件）定义其「可能性的大小」了吗？因此，我们接下来要做的事情就是：1. 定义 $ ( \Omega, \mathcal{F} )$ 上的测度 $\mathbb{P}$；2. 在  $\mathbb{P}$上增加某些性质，使之成为我们心目中的「概率」。</p>
+<p>　　这一节做的是第 1 件事，即定义 $ ( \Omega, \mathcal{F} )$ 上的测度。不严谨地讲，测度实际上是可测空间 $ ( \Omega, \mathcal{F} )$ 上存在的一个从 $\mathcal{F} $ 到 $[0,\infty)$ 的映射，记作 $\mathbb{P}:\mathcal{F} \rightarrow \text{R}^+$，其满足以下 3 个条件：</p>
+<ol>
+<li>$\mathbb{P}(\varnothing) = 0.$</li>
+<li>$\mathbb{P}(A)\geq 0, \forall A \in \mathcal{F}.$</li>
+<li>对于 $\mathcal{F}$ 中任意可数集合 $C_i,i=1,2,\cdots$，如果 $ C_i\cap C_j=\varnothing, \forall i \neq j $ ，有$\mathbb{P}(\cup^\infty_{i=1} C_i) = \Sigma^\infty_{i=1}\mathbb{P}(C_i)$.</li>
+</ol>
+<p>　　这样定义的函数关系就是所谓测度（measure）。将测度加入测度空间，则三位一体的 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 便称为测度空间。</p>
+<h3><span id="5-jiang-ce-du-te-hua-wei-gai-lu-ce-du-mathbb-p">5. 将测度特化为概率测度——$\mathbb{P}$</span><a href="#5-jiang-ce-du-te-hua-wei-gai-lu-ce-du-mathbb-p" class="header-anchor">#</a></h3><p>　　在第 4 节中测度定义中加上一个正则性要求，即 $\mathbb{P}(\Omega) = 1$，便可构造出 $\mathcal{F}$ 上的一个函数关系  $\mathbb{P}:\mathcal{F} \rightarrow [0,1]$，对于任意一个集合$A\in \mathcal{F}$都制定了$\left[0,1\right]$中的一个数 $\mathbb{P}(A)$<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这里的 $\mathbb{P}$ 特指概率测度，与上一节的含义不同。">[5]</span></a></sup>。$\mathbb{P}$ 便是我们所要的概率测度，简称为概率，而 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 便称为概率空间。此时我们便完成了对概率的公理化定义。</p>
+<p><img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714212126653.png" alt="image-20220714212126653"></p>
+<h2><span id="zong-jie">总结</span><a href="#zong-jie" class="header-anchor">#</a></h2><p>　　本文简单介绍了基于测度论的概率论，以随机试验的样本空间 $\Omega$ 为起点，在此基础上选取了 $\Omega$ 中使概率有定义的子集族 $\mathcal{F}$，并且定义了从 $\mathcal{F}$ 映射到 $[0,1]$ 的函数 $\mathbb{P}$，称之为概率测度。样本空间 $\Omega$ 、子集族 $\mathcal{F}$、概率测度 $\mathbb{P}$ 一同组成了概率空间 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ ，该空间以  $\mathbb{P}(\Omega) = 1$ 及 可数可加性：互不相交集合的概率等于各集合的概率之和 为 2 条公理。</p>
+<h2><span id="can-kao-wen-xian">参考文献</span><a href="#can-kao-wen-xian" class="header-anchor">#</a></h2><ol>
+<li><a target="_blank" rel="noopener" href="https://neodb.social/books/489914/">Stochastic Calculus for Finance II: Continuous-Time Models</a> </li>
+<li><a target="_blank" rel="noopener" href="https://neodb.social/books/493599/">微观金融学及其数学基础</a></li>
+</ol>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此处参考了 <a target="_blank" rel="noopener" href="https://neodb.social/books/493599/">微观金融学及其数学基础</a> P597 的内容。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">而且这种分割相比前一种分割更加精细。<a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">不失一般性地，此处我们不考虑硬币投掷后竖直立起来的情况。<a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">其中的元素都是集合哦。<a href="#fnref:4" rev="footnote"> ↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">这里的 $\mathbb{P}$ 特指概率测度，与上一节的含义不同。<a href="#fnref:5" rev="footnote"> ↩</a></span></li></ol></div></div>
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/about/">KuliKuacha!</a></li>
+         
+          <li><a href="/archives/">比较贫瘠的垃圾堆</a></li>
+         
+          <li><a href="/g_cards/release/thoughts.html">单向度的棋牌室</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——基于测度论角度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&text=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&is_video=false&description=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=总结 | 金融随机分析 | 1. 基于测度论的概率论基础&body=Check out this article: https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&title=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&name=总结 | 金融随机分析 | 1. 基于测度论的概率论基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/&t=总结 | 金融随机分析 | 1. 基于测度论的概率论基础"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2022
+    Young Mann
+	<span class="post-count"> ( 20.4k ) </span>
+	
+  </div>
+  
+  
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/about/">KuliKuacha!</a></li><!--
+     --><!--
+       --><li><a href="/archives/">比较贫瘠的垃圾堆</a></li><!--
+     --><!--
+       --><li><a href="/g_cards/release/thoughts.html">单向度的棋牌室</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219613539-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-219613539-1');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'young-mann';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+<!-- utterances Comments -->
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

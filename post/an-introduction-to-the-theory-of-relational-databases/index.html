@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <meta name="description" content="预备知识 函数依赖(Functional Dependency) 码&#x2F;键(Key) 范式（Normal Form）   问题的引入——数据异常及规范化理论     　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“关系数据理论”中的重要概念">
+<meta property="og:title" content="总结 | 关系数据理论">
 <meta property="og:url" content="https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/index.html">
 <meta property="og:site_name" content="狗蛋日 ∠( ᐛ 」∠)_">
 <meta property="og:description" content="预备知识 函数依赖(Functional Dependency) 码&#x2F;键(Key) 范式（Normal Form）   问题的引入——数据异常及规范化理论     　　本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-18T11:31:10.000Z">
-<meta property="article:modified_time" content="2022-06-19T17:44:30.253Z">
+<meta property="article:modified_time" content="2022-07-14T13:38:06.666Z">
 <meta property="article:author" content="Young Mann">
 <meta property="article:tag" content="数据库系统概论">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
       
     
     <!-- title -->
-    <title>“关系数据理论”中的重要概念</title>
+    <title>总结 | 关系数据理论</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -91,16 +91,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=“关系数据理论”中的重要概念"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=“关系数据理论”中的重要概念"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=“关系数据理论”中的重要概念&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=“关系数据理论”中的重要概念&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=“关系数据理论”中的重要概念"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=总结 | 关系数据理论"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=总结 | 关系数据理论"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=总结 | 关系数据理论&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=总结 | 关系数据理论&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=总结 | 关系数据理论"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -117,7 +117,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        “关系数据理论”中的重要概念
+        总结 | 关系数据理论
     </h1>
 
 
@@ -131,7 +131,7 @@
       
         <time datetime="2021-05-18T11:31:10.000Z" itemprop="datePublished">2021-05-18</time>
         
-        (Updated: <time datetime="2022-06-19T17:44:30.253Z" itemprop="dateModified">2022-06-20</time>)
+        (Updated: <time datetime="2022-07-14T13:38:06.666Z" itemprop="dateModified">2022-07-14</time>)
         
       
     </div>
@@ -250,16 +250,16 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=“关系数据理论”中的重要概念"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=“关系数据理论”中的重要概念"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=“关系数据理论”中的重要概念&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=“关系数据理论”中的重要概念"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=“关系数据理论”中的重要概念&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=“关系数据理论”中的重要概念"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&text=总结 | 关系数据理论"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&is_video=false&description=总结 | 关系数据理论"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=总结 | 关系数据理论&body=Check out this article: https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&title=总结 | 关系数据理论"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&name=总结 | 关系数据理论&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://young-mann.top/post/an-introduction-to-the-theory-of-relational-databases/&t=总结 | 关系数据理论"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -282,7 +282,7 @@
     
     2019-2022
     Young Mann
-	<span class="post-count"> ( 15.6k ) </span>
+	<span class="post-count"> ( 20.4k ) </span>
 	
   </div>
   
