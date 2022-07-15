@@ -400,7 +400,7 @@ body abbr {
 body ul,
 body ol,
 body dl {
-  line-height: 1.5;
+  line-height: 1.6;
 }
 body ul ul,
 body ol ul,
@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 13px;
+  font-size: 12px;
   overflow: auto;
   display: block;
 }
@@ -428,7 +428,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: rgba(86,124,119,0.8);
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 body td {
   padding: 0 8px;
@@ -459,9 +459,9 @@ body {
   color: #22272a;
   font-display: swap;
   font-weight: 400;
-  font-size: 15px;
-  font-family: "Source Han Sans CN";
-  line-height: 1.5;
+  font-size: 14px;
+  font-family: ;
+  line-height: 1.6;
   text-rendering: geometricPrecision;
   flex: 1;
   -moz-osx-font-smoothing: grayscale;
@@ -547,7 +547,7 @@ body {
   }
 }
 .max-width {
-  max-width: 45rem;
+  max-width: 43rem;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1399,9 +1399,9 @@ figcaption {
   color: #fafafa;
   font-display: swap;
   font-weight: 400;
-  font-size: 12px;
-  font-family: "Source Han Sans CN";
-  line-height: 1.5;
+  font-size: 11.200000000000001px;
+  font-family: ;
+  line-height: 1.6;
   text-rendering: geometricPrecision;
   text-align: center;
   word-wrap: break-word;
