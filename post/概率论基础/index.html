@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="如何描述概率——基于集合论与测度论 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   如何方便计算事件的概率——随机变量与分布 给事件贴上实数类型的标签——随机变量 $X$ 瞅瞅">
+    <meta name="description" content="如何描述概率——概率的公理化定义 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   如何方便计算事件的概率——随机变量与分布 给事件贴上实数类型的标签——随机变量 $X$ 瞅瞅随">
 <meta property="og:type" content="article">
 <meta property="og:title" content="总结 | 金融随机分析 | 1. 基于测度论的概率论基础">
 <meta property="og:url" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="狗蛋日 ∠( ᐛ 」∠)_">
-<meta property="og:description" content="如何描述概率——基于集合论与测度论 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   如何方便计算事件的概率——随机变量与分布 给事件贴上实数类型的标签——随机变量 $X$ 瞅瞅">
+<meta property="og:description" content="如何描述概率——概率的公理化定义 1. 描述样本空间——$\Omega$ 2. 描述事件——$\Omega$ 的子集 3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$ 4. 描述可测空间上的测度——$\mu$ 5. 将测度特化为概率测度——$\mathbb{P}$   如何方便计算事件的概率——随机变量与分布 给事件贴上实数类型的标签——随机变量 $X$ 瞅瞅随">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714210828516.png">
 <meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220714212126653.png">
@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715125417181.png">
 <meta property="og:image" content="https://young-mann.top/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715133402043.png">
 <meta property="article:published_time" content="2022-07-14T09:45:55.000Z">
-<meta property="article:modified_time" content="2022-07-15T05:47:21.877Z">
+<meta property="article:modified_time" content="2022-07-15T07:55:21.911Z">
 <meta property="article:author" content="Young Mann">
 <meta property="article:tag" content="概率论">
 <meta property="article:tag" content="金融随机分析">
@@ -116,7 +116,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——基于集合论与测度论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">如何方便计算事件的概率——随机变量与分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">给事件贴上实数类型的标签——随机变量 $X$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">如何知晓随机变量取值的“平均值”——数学期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">拓宽极限的概念——随机变量的收敛方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">以概率 1 收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">以概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.4.</span> <span class="toc-text">依 m 阶矩收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——概率的公理化定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">如何方便计算事件的概率——随机变量与分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">给事件贴上实数类型的标签——随机变量 $X$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">如何知晓随机变量取值的“平均值”——数学期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">拓宽极限的概念——随机变量的收敛方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">以概率 1 收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">以概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.4.</span> <span class="toc-text">依 m 阶矩收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -142,7 +142,7 @@
       
         <time datetime="2022-07-14T09:45:55.000Z" itemprop="datePublished">2022-07-14</time>
         
-        (Updated: <time datetime="2022-07-15T05:47:21.877Z" itemprop="dateModified">2022-07-15</time>)
+        (Updated: <time datetime="2022-07-15T07:55:21.911Z" itemprop="dateModified">2022-07-15</time>)
         
       
     </div>
@@ -171,7 +171,7 @@
 
 <!-- toc -->
 <ul>
-<li><a href="#ru-he-miao-shu-gai-lu-ji-yu-ji-he-lun-yu-ce-du-lun">如何描述概率——基于集合论与测度论</a><ul>
+<li><a href="#ru-he-miao-shu-gai-lu-gai-lu-de-gong-li-hua-ding-yi">如何描述概率——概率的公理化定义</a><ul>
 <li><a href="#1-miao-shu-yang-ben-kong-jian-omega">1. 描述样本空间——$\Omega$</a></li>
 <li><a href="#2-miao-shu-shi-jian-omega-de-zi-ji">2. 描述事件——$\Omega$ 的子集</a></li>
 <li><a href="#3-miao-shu-shi-jian-de-ji-he-sigma-dai-shu-mathcal-f">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</a></li>
@@ -198,9 +198,17 @@
 <!-- tocstop -->
 </div>
 
-<p>　　本文是 <a target="_blank" rel="noopener" href="https://neodb.social/books/489914/">“Stochastic Calculus for Finance II: Continuous-Time Models”</a> 第 1 章与<a target="_blank" rel="noopener" href="https://neodb.social/books/493599/">《微观金融学及其数学基础》</a>第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念。</p>
-<h2><span id="ru-he-miao-shu-gai-lu-ji-yu-ji-he-lun-yu-ce-du-lun">如何描述概率——基于集合论与测度论</span><a href="#ru-he-miao-shu-gai-lu-ji-yu-ji-he-lun-yu-ce-du-lun" class="header-anchor">#</a></h2><p>　　粗略地讲，概率就是衡量「事件发生的可能性」的大小。可是，「事件」是什么？「可能性」又是什么？一种可行的思路是，可以借助集合论与测度论中的工具对于上述概念进行指代：用集合代表「事件」，集合系代表「事件的全体」，集合的测度代表「事件发生的可能性」。</p>
-<p><a name="experiment"></a></p>
+<div class="admonition error"><p class="admonition-title">这篇文章讲了啥？
+</p><p>本文是 <a target="_blank" rel="noopener" href="https://neodb.social/books/489914/">“Stochastic Calculus for Finance II: Continuous-Time Models”</a> 第 1 章与<a target="_blank" rel="noopener" href="https://neodb.social/books/493599/">《微观金融学及其数学基础》</a>第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念：</p>
+<ol>
+<li>概率的公理化定义</li>
+<li>随机变量与分布</li>
+<li>随机变量的期望</li>
+<li>随机变量的收敛方式</li>
+</ol>
+</div>
+
+<h2><span id="ru-he-miao-shu-gai-lu-gai-lu-de-gong-li-hua-ding-yi">如何描述概率——概率的公理化定义</span><a href="#ru-he-miao-shu-gai-lu-gai-lu-de-gong-li-hua-ding-yi" class="header-anchor">#</a></h2><p>　　粗略地讲，概率就是衡量「事件发生的可能性」的大小。可是，「事件」是什么？「可能性」又是什么？一种可行的思路是，可以借助集合论与测度论中的工具对于上述概念进行指代：用集合代表「事件」，集合系代表「事件的全体」，集合的测度代表「事件发生的可能性」。<br>    <a name="experiment"></a>  </p>
 <p>　　下文将尝试用测度的语言，从5个步骤入手<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此处参考了 [微观金融学及其数学基础](https://neodb.social/books/493599/) P597 的内容。
 ">[1]</span></a></sup>，表述现代概率公理体系。为了便于理解，下文的阐述均基于<strong>「连续投掷2次硬币」</strong>这个随机试验。在<strong>「连续投掷2次硬币」</strong>这一随机试验中，将硬币的某一面记作正面，与其相反的一面记作反面。将「硬币投出了正面」记作 H （假设其可能性为 $p,p&gt;0$），将「硬币投出了反面」记作 T （假设其可能性为 $q, q=1-p&gt;0$）。</p>
 <h3><span id="1-miao-shu-yang-ben-kong-jian-omega">1. 描述样本空间——$\Omega$</span><a href="#1-miao-shu-yang-ben-kong-jian-omega" class="header-anchor">#</a></h3><p>　　以一串序列（$w_1w_2w_3\cdots w_n$，其中$w_i的可能取值为H或T$）列出所有可能发生的结果，便可得样本空间 $\Omega$ ：</p>
@@ -231,7 +239,8 @@
 \lbrace \text{HH,HT,TH}\rbrace, \lbrace \text{HH,HT,TT}\rbrace, \lbrace \text{HT,TH,TT}\rbrace,  \lbrace \text{HH,TH,TT}\rbrace
 \rbrace</script><p>　　$\sigma-$代数 包含了某一时刻我们所知道的「所有可能发生的事件的所有可能组合」，代表着我们在该时刻所知道的所有信息。比如说，上文由基本分割产生的 $\sigma-$代数 $\mathcal{F}$ 代表了我们对<strong>「连续投掷2次硬币」</strong>的结果所具备的<strong>信息</strong>，其中包含了所有可能的结果，表示我们对于<strong>「连续投掷2次硬币」</strong>这个随机试验已经达到了“全知”的程度。$\sigma$-代数  这种「承载我们所知的信息」的功能，将在后续的文章中阐释。</p>
 <hr>
-<p>　　有了样本空间 $\Omega$ 和 $\sigma$-代数 $\mathcal{F}$ 以后，我们可将它们写成 $( \Omega, \mathcal{F} )$，称之为可测空间（measurable space），而 $\mathcal{F}$ 中的元素<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="其中的元素都是集合哦。">[4]</span></a></sup>称为可测集（measurable set）。至此，我们便初步界定了「随机试验」中所关心的「事件」。接下来需要定义的，就是这些「事件」发生的可能性，即概率了。</p>
+<p>　　有了样本空间 $\Omega$ 和 $\sigma$-代数 $\mathcal{F}$ 以后，我们可将它们写成 $( \Omega, \mathcal{F} )$，称之为可测空间（measurable space），而 $\mathcal{F}$ 中的元素<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="其中的元素都是集合哦。
+">[4]</span></a></sup>称为可测集（measurable set）。至此，我们便初步界定了「随机试验」中所关心的「事件」。接下来需要定义的，就是这些「事件」发生的可能性，即概率了。</p>
 <h3><span id="4-miao-shu-ke-ce-kong-jian-shang-de-ce-du-mu">4. 描述可测空间上的测度——$\mu$</span><a href="#4-miao-shu-ke-ce-kong-jian-shang-de-ce-du-mu" class="header-anchor">#</a></h3><p>　　概率的定义应该从哪里入手呢？不妨试着从我们刚刚得到的可测空间 $( \Omega, \mathcal{F} )$ 入手。 $( \Omega, \mathcal{F} )$ 之所以叫做<strong>可测</strong>空间，是因为其具备一些优良的性质，使得 $\mathcal{F}$ 中的任意一个集合都可以定义其测度。如果我们在可测空间 $ ( \Omega, \mathcal{F} )$ 上定义一个测度  $\mu$，并进一步让这个测度  $\mathbb{P}$满足某些我们所期望「概率」应该具备的性质，那么不就能对 $\mathcal{F}$ 中的任意一个集合（也就是事件）定义其「可能性的大小」了吗？因此，我们接下来要做的事情就是：1. 定义 $ ( \Omega, \mathcal{F} )$ 上的测度 $\mu$ ；2. 在 $\mu$ 上增加某些性质，使之成为我们心目中的「概率」。</p>
 <p>　　这一节做的是第 1 件事，即定义 $ ( \Omega, \mathcal{F} )$ 上的测度。不严谨地讲，测度实际上是可测空间 $ ( \Omega, \mathcal{F} )$ 上存在的一个从 $\mathcal{F} $ 到 $[0,\infty)$ 的映射，记作 $\mu:\mathcal{F} \rightarrow \text{R}^+$，其满足以下 3 个条件：</p>
 <ol>
@@ -295,7 +304,8 @@ S_2(\omega) &=
 \\
 \mathbb{E}X = \sum_{k=1}^\infty X(\omega_k)\mathbb{P}(\omega_k)</script><p>　　然而，如果$\Omega$ 是不可数的无限空间，由于不可数的无穷和不能定义，我们只能借助其它工具计算期望。这个工具便是积分。那么，直接用我们之前微积分里学过的黎曼（Riemann）积分可以吗？不太行，因为黎曼积分基本上是设计给连续光滑函数的，只有在充分小的区间上、函数值的改变也非常小的时候才能取到极限。然而，我们现在设计的函数是随机变量，其定义域是事件的集合 $\mathcal{F}$，因此按定义域划分的原则就很难采用：一方面，将  $\mathcal{F}$ 划分为可测集的和，再让这些集合的概率测度趋于 0 ，这种划分方法未必存在；另一方面，即便前面所述的划分方式存在，也只适用于那些在概率测度充分小的集合上 $X$ 的取值改变很小的特殊情况。</p>
 <p>　　因此，我们采用勒贝格积分，通过将函数值域划分为小区间，并进行加总，从而将随机变量的数学期望这个概念转化成了在概率空间 $\Omega, \mathcal(F), \mathbb{P})$ 上以概率测度 \mathbb{P}) 为积分算子，以随机变量 $X$ 为被积函数的勒贝格积分。</p>
-<p>　　设 $X$ 是概率空间 $\Omega, \mathcal(F), \mathbb{P})$ 上的随机变量。勒贝格积分具有下图中的基本性质<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这一节中的图片截自 [Stochastic Calculus for Finance II: Continuous-Time Models](https://neodb.social/books/489914/) 的 1.3 小节。">[5]</span></a></sup>：</p>
+<p>　　设 $X$ 是概率空间 $\Omega, \mathcal(F), \mathbb{P})$ 上的随机变量。勒贝格积分具有下图中的基本性质<sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="这一节中的图片截自 [Stochastic Calculus for Finance II: Continuous-Time Models](https://neodb.social/books/489914/) 的 1.3 小节。
+">[5]</span></a></sup>：</p>
 <p><img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715125045787.png" alt="image-20220715125045787"></p>
 <p>　　了解了勒贝格积分的性质后，便可对随机变量的期望进行定义：<br>　　<img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715124953487.png" alt="image-20220715124953487"><br>　　根据勒贝格积分的性质推导出期望的性质：<br>　　<img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715125115937.png" alt="image-20220715125115937"></p>
 <p>　　下面的定理给出了黎曼积分与勒贝格积分之间的关系。可以说，只要黎曼积分有定义，黎曼积分和勒贝格积分就一定相等，需要计算时，就可以利用微积分学过的计算黎曼积分的技巧处理勒贝格积分。<br>　　<img src="/post/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/image-20220715125417181.png" alt="image-20220715125417181"></p>
@@ -352,7 +362,7 @@ S_2(\omega) &=
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——基于集合论与测度论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">如何方便计算事件的概率——随机变量与分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">给事件贴上实数类型的标签——随机变量 $X$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">如何知晓随机变量取值的“平均值”——数学期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">拓宽极限的概念——随机变量的收敛方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">以概率 1 收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">以概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.4.</span> <span class="toc-text">依 m 阶矩收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">如何描述概率——概率的公理化定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.1.</span> <span class="toc-text">1. 描述样本空间——$\Omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text">2. 描述事件——$\Omega$ 的子集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.</span> <span class="toc-text">3. 描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.4.</span> <span class="toc-text">4. 描述可测空间上的测度——$\mu$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.5.</span> <span class="toc-text">5. 将测度特化为概率测度——$\mathbb{P}$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">如何方便计算事件的概率——随机变量与分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">给事件贴上实数类型的标签——随机变量 $X$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.2.</span> <span class="toc-text">瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">如何知晓随机变量取值的“平均值”——数学期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">拓宽极限的概念——随机变量的收敛方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.1.</span> <span class="toc-text">以概率 1 收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.2.</span> <span class="toc-text">以概率收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.3.</span> <span class="toc-text">依分布收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">4.4.</span> <span class="toc-text">依 m 阶矩收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
