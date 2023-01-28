@@ -1,0 +1,7 @@
+main:
+  - name: 关于我
+    url: '/posts/about/'
+    weight: 1
+  - name: 文章
+    url: /posts/
+    weight: 2
