@@ -1,0 +1,23 @@
+name: Push to GitHub Pages on push to main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+      - name: Deploy the site
+        uses: benmatselby/hugo-deploy-gh-pages@main
+        env:
+          HUGO_VERSION: 0.88.0
+          TARGET_REPO: Young-Mann/Young-Mann.github.io
+          TARGET_BRANCH: main
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '-t eureka'
+          CNAME: young-mann.top
