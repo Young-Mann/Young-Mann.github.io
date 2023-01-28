@@ -19,5 +19,4 @@ jobs:
           TARGET_REPO: Young-Mann/Young-Mann.github.io
           TARGET_BRANCH: main
           TOKEN: ${{ secrets.TOKEN }}
-          HUGO_ARGS: '-t academic'
           CNAME: young-mann.top
