@@ -1,5 +1,4 @@
 name: github pages
-
 on:
   push:
     branches:
