@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 狗蛋日</title>
+    <link>https://young-mann.github.io/zh/posts/</link>
+    <description>Recent content in Posts on 狗蛋日</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Thu, 29 Dec 2022 19:31:10 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/zh/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何克服面对上位者的怯意？</title>
+      <link>https://young-mann.github.io/zh/posts/%E9%9C%B2%E6%80%AF/</link>
+      <pubDate>Thu, 29 Dec 2022 19:31:10 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E9%9C%B2%E6%80%AF/</guid>
+      <description>与他人社交时，我常会问自己，自己能为对方提供什么用处？ 这一反问，实际上反映了于我对人际交往的认识：人与人之间的交际建立在资源的交换上，亦即价值的交换。</description>
+    </item>
+    
+    <item>
+      <title>侃侃「贷款创造理论」</title>
+      <link>https://young-mann.github.io/zh/posts/%E8%B4%B7%E6%AC%BE%E5%88%9B%E9%80%A0%E5%AD%98%E6%AC%BE/</link>
+      <pubDate>Fri, 21 Oct 2022 17:02:58 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E8%B4%B7%E6%AC%BE%E5%88%9B%E9%80%A0%E5%AD%98%E6%AC%BE/</guid>
+      <description>在《货币创造的逻辑形成和历史演进——对传统货币理论的批判》一文里，孙国峰总结了「贷款创造存款」理论（loan creates deposit, LCD）的逻辑以及发展。 LCD 的内涵1包括</description>
+    </item>
+    
+    <item>
+      <title>蒙特卡罗估计简介</title>
+      <link>https://young-mann.github.io/zh/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E7%AE%80%E4%BB%8B/</guid>
+      <description>本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。 蒙特卡洛原理 蒙特卡洛方法是什么？ 蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法</description>
+    </item>
+    
+    <item>
+      <title>狗蛋日辞典：初中篇</title>
+      <link>https://young-mann.github.io/zh/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</link>
+      <pubDate>Thu, 06 Oct 2022 17:12:42 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</guid>
+      <description>人在消逝。我想起了初中里的一些人。下文以经过加密的姓名首字母缩写，作为初中同学各自的指代。 KKZ：写的作文常作为示范文章，和 14 结伴出没，放学回家时常常</description>
+    </item>
+    
+    <item>
+      <title>拾遗5月</title>
+      <link>https://young-mann.github.io/zh/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</link>
+      <pubDate>Mon, 15 Aug 2022 17:21:50 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</guid>
+      <description>2019.5.4 今天或许是个好日子。我不知道。 老爸忙着粉刷家的外墙，弄得自己一身涂料，头发上也沾了些许。明明小区里不久后就会有专人去做这件事的。 老妈最近则是沉浸在了</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; design patterns and derivatives pricing</title>
+      <link>https://young-mann.github.io/zh/posts/design-patterns-and-derivatives-pricing/</link>
+      <pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/design-patterns-and-derivatives-pricing/</guid>
+      <description>Book Link: C++ Design Patterns and Derivatives Pricing 本文用于记录读完 C++ design patterns and derivatives pricing 后的代码实践。 ch1-VanillaCallOption 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部</description>
+    </item>
+    
+    <item>
+      <title>基于测度论的概率论基础</title>
+      <link>https://young-mann.github.io/zh/posts/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 14 Jul 2022 17:45:55 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/</guid>
+      <description>本文是 Stochastic Calculus for Finance II: Continuous-Time Models 第 1 章与《微观金融学及其数学基础》第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念： 概率的公理化定义 随机变量与分布 随机变量</description>
+    </item>
+    
+    <item>
+      <title>退宿日</title>
+      <link>https://young-mann.github.io/zh/posts/%E9%80%80%E5%AE%BF/</link>
+      <pubDate>Tue, 05 Jul 2022 22:47:21 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E9%80%80%E5%AE%BF/</guid>
+      <description>今天处理完了毕业所需的所有手续，主要做了「退宿」一事。当我回到寝室的时候，恰有一个室友在收拾行李。许久未见，收拾着行李，我们有一搭没一搭地聊着，简单交</description>
+    </item>
+    
+    <item>
+      <title>为啥还有人直接用 LSTM 预测股价嘞？</title>
+      <link>https://young-mann.github.io/zh/posts/%E5%88%AB%E7%94%A8lstm%E9%A2%84%E6%B5%8B%E8%82%A1%E4%BB%B7/</link>
+      <pubDate>Sun, 05 Jun 2022 02:34:12 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E5%88%AB%E7%94%A8lstm%E9%A2%84%E6%B5%8B%E8%82%A1%E4%BB%B7/</guid>
+      <description>最近提交了论文的最终稿，闲来无事和其他同学交流了一下，发现有俩同学在用 LSTM 预测股价。简单扫了一遍他们的文章，发现他在数据的处理上比较粗糙，没有太大实用价</description>
+    </item>
+    
+    <item>
+      <title>我能写点什么？</title>
+      <link>https://young-mann.github.io/zh/posts/writing/</link>
+      <pubDate>Tue, 17 May 2022 00:52:24 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/writing/</guid>
+      <description>近些年来，觉得自己的表达欲望以及表达能力越来越弱。这里的“表达”特指写作这件事。我偶尔会产生想要写点东西的冲动，可当我真的摊开笔记本、拿起笔，或是坐在</description>
+    </item>
+    
+    <item>
+      <title>Sekiro: Shadows Die Twice</title>
+      <link>https://young-mann.github.io/zh/posts/sekiro/</link>
+      <pubDate>Sun, 01 May 2022 13:19:23 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/sekiro/</guid>
+      <description>“犹豫，就会败北。”这是笔者今天听到最多的话语。经历了6个小时的挣扎，在那片芒草地里，笔者终于击败了全盛一心，走向了“龙之归乡”。结局之余，想简单写点</description>
+    </item>
+    
+    <item>
+      <title>记一次复试经历</title>
+      <link>https://young-mann.github.io/zh/posts/ecnu%E5%A4%8D%E8%AF%95/</link>
+      <pubDate>Sat, 16 Apr 2022 21:45:01 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/ecnu%E5%A4%8D%E8%AF%95/</guid>
+      <description>复试的面试已经是10天前的事情了。其分为行政面与专业面。行政面的内容在此不表，就写写专业面的内容吧。专业面分为2部分，一是英语能力测试，二是你来我往的</description>
+    </item>
+    
+    <item>
+      <title>侃侃「直言」</title>
+      <link>https://young-mann.github.io/zh/posts/parrh%C4%93sia/</link>
+      <pubDate>Fri, 01 Apr 2022 22:04:47 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/parrh%C4%93sia/</guid>
+      <description>今天读了福柯文选《自我技术》中的2篇文章，即《何谓直言？》与《说真话的勇气》。前一篇结合了诸多对于古希腊文献的分析，对于“直言”这一概念的词源、定义及</description>
+    </item>
+    
+    <item>
+      <title>刨土，然后假装考古</title>
+      <link>https://young-mann.github.io/zh/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</link>
+      <pubDate>Sat, 26 Feb 2022 23:29:12 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</guid>
+      <description>今天是那家伙的生日。按照过去的经验来看，我得在这天送点什么，尽管我俩目前几近断交了。 正当苦恼于该送什么时，我看到了淘宝上各个博物馆的“考古盲盒”。我初</description>
+    </item>
+    
+    <item>
+      <title>2021：摇摇晃摇</title>
+      <link>https://young-mann.github.io/zh/posts/my-memory-of-2021/</link>
+      <pubDate>Sun, 06 Feb 2022 22:16:42 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/my-memory-of-2021/</guid>
+      <description>是像现在这样，继续以逃避的姿态面对前路、懵懵懂懂地度日呢？ 还是，去经历比现在更加痛苦的事，然后，变得比现在，稍稍幸福一些呢…… 还是睡不着。拖到现在，终</description>
+    </item>
+    
+    <item>
+      <title>关系数据理论</title>
+      <link>https://young-mann.github.io/zh/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Tue, 18 May 2021 19:31:10 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
+      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些</description>
+    </item>
+    
+    <item>
+      <title>Kulikuacha!</title>
+      <link>https://young-mann.github.io/zh/posts/about/</link>
+      <pubDate>Tue, 18 May 2021 18:36:42 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/about/</guid>
+      <description>此地是我的自留地，名为「狗蛋日的小白板」。 这里没啥有意思的玩意儿。你所能看到的，大多是某个不愿透露姓名的年轻菜鸡的的自怨自艾，以及个人生活的流水账， 亦</description>
+    </item>
+    
+    <item>
+      <title>浮点数的取值范围</title>
+      <link>https://young-mann.github.io/zh/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</link>
+      <pubDate>Tue, 23 Feb 2021 22:58:40 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</guid>
+      <description>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码</description>
+    </item>
+    
+    <item>
+      <title>某场统计学期末试题</title>
+      <link>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Sat, 27 Jun 2020 10:36:38 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</guid>
+      <description>考试要求：根据各自学号的某个特征，挑选出相应的股票代码，并对该股票进行一系列的统计分析，具体要求见每一节的标题。 所选股票为深市的九阳股份，股票代码为0</description>
+    </item>
+    
+    <item>
+      <title>The Innovator&#39;s Dilemma</title>
+      <link>https://young-mann.github.io/zh/posts/the-innovators-dilemma/</link>
+      <pubDate>Fri, 19 Jun 2020 10:09:56 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/the-innovators-dilemma/</guid>
+      <description>What does the dilemma refer to? 本书的作者是克里斯坦森，曾担任哈佛商学院教授，他的研究主要集中于新产品和技术开发管理以及如何为新技术开拓 市场等方面，并首次提出了颠覆式创新</description>
+    </item>
+    
+    <item>
+      <title>拉面好吃</title>
+      <link>https://young-mann.github.io/zh/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</link>
+      <pubDate>Wed, 20 May 2020 22:28:53 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</guid>
+      <description>不知怎么的，我突然想吃面了。 我的初中附近吃的很多。但我独爱校门口不远处的那家牛肉面馆。面馆外挂着个“兰州牛肉拉面”的LED招牌，随处可见的那种，乍一看</description>
+    </item>
+    
+    <item>
+      <title>在流放地</title>
+      <link>https://young-mann.github.io/zh/posts/in-der-strafkolonie/</link>
+      <pubDate>Mon, 30 Mar 2020 02:01:50 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/in-der-strafkolonie/</guid>
+      <description>今天读完了卡夫卡的《在流放地》。 文中共出现了4名角色：旅行者、军官、兵士与罪犯。 其中，军官这个角色，是其笔下的典型角色：他秉持着某种为世俗所不容的理念</description>
+    </item>
+    
+    <item>
+      <title>记一篇阴阳怪气的文章</title>
+      <link>https://young-mann.github.io/zh/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</link>
+      <pubDate>Wed, 15 Jan 2020 21:10:01 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</guid>
+      <description>下午开车至嘉定，自 5 点待到 9 点。期间，一开始对四周环境的好奇，不久后便转为了疲惫，于是看起了知乎，刷到关于一篇高级黑文章《生态经济学集成框架的理论与实</description>
+    </item>
+    
+    <item>
+      <title>怕死</title>
+      <link>https://young-mann.github.io/zh/posts/thanatophobia/</link>
+      <pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/thanatophobia/</guid>
+      <description>无端端今年开始很怕死 年轻一点 一点都不顾忌 轮到未 最怕活着 但是没运气 争口气 人一生很少多于一世纪 还醒起很多任务未做不等於有期 够我逐件逐件地办理 重新整理 谈恋爱</description>
+    </item>
+    
+    <item>
+      <title>记忆里的食谱</title>
+      <link>https://young-mann.github.io/zh/posts/recipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/recipe/</guid>
+      <description>天已经亮了，但还是蒙蒙黑。我躺在床上，两眼生疼。 我大概的确是老了。支持我做出此判断的，并不是我年龄的绝对值大小——虽然我已经 88 岁了，但我仍有劳动的余力</description>
+    </item>
+    
+    <item>
+      <title>攀岩杂记</title>
+      <link>https://young-mann.github.io/zh/posts/%E4%B8%80%E6%97%A5%E6%94%80%E5%B2%A9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E4%B8%80%E6%97%A5%E6%94%80%E5%B2%A9/</guid>
+      <description>前天一时兴起想去岩馆爬墙，于是约了某个老哥同去。结果今天临时被鸽，只好独自前行。 到岩馆时已经是下午了。原则上这段时间他们这种门店还不能对外开放。刚进门</description>
+    </item>
+    
+  </channel>
+</rss>
