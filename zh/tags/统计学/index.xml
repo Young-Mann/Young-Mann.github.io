@@ -1,1 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>统计学 on 狗蛋日</title><link>https://young-mann.github.io/zh/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link><description>Recent content in 统计学 on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>zh</language><copyright>&amp;copy; 2021 &lt;a href="https://www.wangchucheng.com/">WANG Chucheng&lt;/a> and &lt;a href="https://www.ruiqima.com/">MA Ruiqi&lt;/a></copyright><lastBuildDate>Sat, 27 Jun 2020 10:36:38 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/zh/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/index.xml" rel="self" type="application/rss+xml"/><item><title>某场统计学期末试题</title><link>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</link><pubDate>Sat, 27 Jun 2020 10:36:38 +0800</pubDate><guid>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</guid><description>考试要求：根据各自学号的某个特征，挑选出相应的股票代码，并对该股票进行一系列的统计分析，具体要求见每一节的标题。 所选股票为深市的九阳股份，股票代码为0</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>统计学 on 狗蛋日</title>
+    <link>https://young-mann.github.io/zh/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/</link>
+    <description>Recent content in 统计学 on 狗蛋日</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Sat, 27 Jun 2020 10:36:38 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/zh/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>某场统计学期末试题</title>
+      <link>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Sat, 27 Jun 2020 10:36:38 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/zh/posts/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98/</guid>
+      <description>考试要求：根据各自学号的某个特征，挑选出相应的股票代码，并对该股票进行一系列的统计分析，具体要求见每一节的标题。 所选股票为深市的九阳股份，股票代码为0</description>
+    </item>
+    
+  </channel>
+</rss>
