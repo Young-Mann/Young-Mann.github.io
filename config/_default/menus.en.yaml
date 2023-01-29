@@ -1,7 +1,0 @@
-main:
-  # - name: About
-  #   url: '/posts/about/'
-  #   weight: 2
-  - name: Posts
-    url: /posts/
-    weight: 1

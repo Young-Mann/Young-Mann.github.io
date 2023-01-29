@@ -6,6 +6,7 @@ tags:
 categories:
 series:
 featuredImage:
+description: A collection of good phrases.
 draft: false
 ---
 
