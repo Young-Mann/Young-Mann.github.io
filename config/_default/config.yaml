@@ -30,7 +30,7 @@ markup:
   tableOfContents:
     startLevel: 2
     endLevel: 6
-    ordered: true
+    ordered: false
   goldmark:
     renderer:
       unsafe: true

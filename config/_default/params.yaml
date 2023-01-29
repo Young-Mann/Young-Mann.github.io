@@ -44,10 +44,10 @@ math:
 
 comment:
   # Options: disqus, commento, valine and utterances.
-  handler:
+  handler: disqus
 
-  # disqus:
-  #   shortname:
+  disqus:
+    shortname: young-mann
 
   # utterances:
   #   # Browse https://utteranc.es/ to see the options available.
