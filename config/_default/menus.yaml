@@ -5,3 +5,6 @@ main:
   - name: 文章
     url: /posts/
     weight: 2
+  - name: 笔记
+    url: /docs/
+    weight: 3

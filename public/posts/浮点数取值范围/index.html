@@ -206,6 +206,7 @@ hr:after {
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
             <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">笔记</a>
         </div>
 
         <div class="flex">
@@ -389,6 +390,29 @@ $$
 
 
 
+  
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "young-mann" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
     </div>
     
       <div class="col-span-2">
@@ -405,21 +429,21 @@ $$
   class="sticky-toc  hidden px-6 pb-6 lg:block"
 >
   <nav id="TableOfContents">
-  <ol>
+  <ul>
     <li><a href="#前置知识">前置知识</a>
-      <ol>
+      <ul>
         <li><a href="#ieee754-标准">IEEE754 标准</a></li>
         <li><a href="#阶码的存储形式移码-excess-n-system">阶码的存储形式——移码 (Excess-N System)</a>
-          <ol>
+          <ul>
             <li><a href="#为啥不能用补码存储阶码">为啥不能用补码存储阶码？</a></li>
             <li><a href="#那有啥更好的方法存储阶码">那有啥更好的方法存储阶码？</a></li>
             <li><a href="#等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿">等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？</a></li>
-          </ol>
+          </ul>
         </li>
-      </ol>
+      </ul>
     </li>
     <li><a href="#float类型浮点数的取值范围">float类型浮点数的取值范围</a></li>
-  </ol>
+  </ul>
 </nav>
 </div>
 <script>
