@@ -46,15 +46,15 @@ comment:
   # Options: disqus, commento, valine and utterances.
   handler: disqus
 
-  disqus:
-    shortname: young-mann
+  # disqus:
+  #   shortname: young-mann
 
-  # utterances:
-  #   # Browse https://utteranc.es/ to see the options available.
-  #   # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
-  #   repo:
-  #   issue-term:
-  #   theme:
+  utterances:
+    # Browse https://utteranc.es/ to see the options available.
+    # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
+    repo: "Young-Mann/giscus"
+    issue-term: "pathname"
+    theme: eureka
 
   # commento:
   #   # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.
