@@ -212,7 +212,6 @@ hr:after {
         <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
             <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
             <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
-            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">笔记</a>
         </div>
 
         <div class="flex">
@@ -547,29 +546,6 @@ $$
 
 
 
-  
-<div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "young-mann" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
     </div>
     
       <div class="col-span-2">
@@ -586,34 +562,34 @@ $$
   class="sticky-toc  hidden px-6 pb-6 lg:block"
 >
   <nav id="TableOfContents">
-  <ul>
+  <ol>
     <li><a href="#如何描述概率概率的公理化定义">如何描述概率——概率的公理化定义</a>
-      <ul>
+      <ol>
         <li><a href="#描述样本空间omega">描述样本空间——$\Omega$</a></li>
         <li><a href="#描述事件omega-的子集">描述事件——$\Omega$ 的子集</a></li>
         <li><a href="#描述事件的集合sigma-代数--mathcalf">描述事件的集合——$\sigma-$代数 $ \mathcal{F}$</a></li>
         <li><a href="#描述可测空间上的测度mu">描述可测空间上的测度——$\mu$</a></li>
         <li><a href="#将测度特化为概率测度mathbbp">将测度特化为概率测度——$\mathbb{P}$</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#如何方便计算事件的概率随机变量与分布">如何方便计算事件的概率——随机变量与分布</a>
-      <ul>
+      <ol>
         <li><a href="#给事件贴上实数类型的标签随机变量-x">给事件贴上实数类型的标签——随机变量 $X$</a></li>
         <li><a href="#瞅瞅随机变量取值有啥特征分布测度-mu_x累积分布函数-f-与">瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#如何知晓随机变量取值的平均值数学期望">如何知晓随机变量取值的“平均值”——数学期望</a></li>
     <li><a href="#拓宽极限的概念随机变量的收敛方式">拓宽极限的概念——随机变量的收敛方式</a>
-      <ul>
+      <ol>
         <li><a href="#以概率-1-收敛">以概率 1 收敛</a></li>
         <li><a href="#以概率收敛">以概率收敛</a></li>
         <li><a href="#依分布收敛">依分布收敛</a></li>
         <li><a href="#依-m-阶矩收敛">依 m 阶矩收敛</a></li>
-      </ul>
+      </ol>
     </li>
     <li><a href="#总结">总结</a></li>
     <li><a href="#参考文献">参考文献</a></li>
-  </ul>
+  </ol>
 </nav>
 </div>
 <script>

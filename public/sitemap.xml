@@ -2,31 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://young-mann.github.io/docs/demo/p3/p3/1/</loc>
-    <lastmod>2023-03-06T21:21:52+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/docs/demo/p3/p31/</loc>
-    <lastmod>2023-03-06T21:17:50+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/docs/demo/p3/</loc>
-    <lastmod>2023-03-06T21:16:39+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/docs/demo/p2/</loc>
-    <lastmod>2023-03-06T21:16:34+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/docs/demo/p1/</loc>
-    <lastmod>2023-03-06T21:16:30+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/docs/</loc>
-    <lastmod>2023-03-06T21:21:52+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.github.io/</loc>
-    <lastmod>2023-03-06T21:21:52+08:00</lastmod>
-  </url><url>
     <loc>https://young-mann.github.io/posts/drafts/</loc>
     <lastmod>2023-01-28T23:02:18+08:00</lastmod>
   </url><url>
     <loc>https://young-mann.github.io/posts/</loc>
+    <lastmod>2023-01-28T23:02:18+08:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.github.io/</loc>
     <lastmod>2023-01-28T23:02:18+08:00</lastmod>
   </url><url>
     <loc>https://young-mann.github.io/categories/</loc>
