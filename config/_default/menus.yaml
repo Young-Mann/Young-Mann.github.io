@@ -5,6 +5,6 @@ main:
   - name: 文章
     url: /posts/
     weight: 2
-  # - name: 文档
-  #   url: /docs/
-  #   weight: 3
+  - name: 玩具
+    url: /toys/
+    weight: 3
