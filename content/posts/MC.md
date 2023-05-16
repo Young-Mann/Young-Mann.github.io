@@ -2,8 +2,8 @@
 title: 蒙特卡罗估计简介
 tags:
 - 概率
-- 金融随机分析
 - Monte Carlo
+categories: [工具::代码实现]
 description: 又开新坑了，大概会落得贪多嚼不烂的下场。
 toc: true
 series:

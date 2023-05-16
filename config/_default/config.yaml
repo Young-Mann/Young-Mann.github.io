@@ -5,6 +5,7 @@ title: 狗蛋日
 # theme: eureka
 # Comment when not installing with Hugo Modules
 theme: wangchucheng.com/hugo-eureka
+# theme: hugo-theme-stack
 # If you cannot access the Github mirror, you can also use the Gitee mirror: gitee.com/wangchucheng/hugo-eureka
 
 paginate: 5

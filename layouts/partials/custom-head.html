@@ -1,5 +1,15 @@
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
 <style>
+
+  :root {
+    --sys-font-family: "Noto Sans SC";
+    --zh-font-family: "Noto Sans SC";
+    --base-font-family: "Noto Sans SC";
+    --code-font-family: "Noto Sans SC";
+    --article-font-family: "Noto Sans SC";
+  }
 
 
 p {
@@ -37,3 +47,16 @@ blockquote p{
 text-indent: 0;
 }
 </style>
+
+<script>
+  (function () {
+    const customFont = document.createElement("link");
+    customFont.href =
+      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+
+    customFont.type = "text/css";
+    customFont.rel = "stylesheet";
+
+    document.head.appendChild(customFont);
+  })();
+</script>

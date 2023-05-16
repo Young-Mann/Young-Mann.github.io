@@ -7,7 +7,7 @@ date: 2022-04-01 22:04:47
 tags: 
 
 categories:
-- 杂谈
+- 图一乐
 description: 记录福柯书中 2 个有意思的阐释/概念。
 
 toc: true

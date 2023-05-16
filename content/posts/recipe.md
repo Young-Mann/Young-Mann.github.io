@@ -3,7 +3,7 @@ title: 记忆里的食谱
 tags: 
 - 食与物
 categories:
-- 回忆
+- 图一乐
 description: 距离 2022 已过去了 66 年，我很怀念它。
 toc: true
 series:

@@ -1,5 +1,5 @@
 ---
-title: "Drafts"
+title: "草稿纸"
 date: 2023-01-28T23:02:18+08:00
 toc: true
 tags: 
@@ -8,6 +8,7 @@ series:
 featuredImage:
 description: A collection of good phrases.
 draft: false
+weight: 1
 ---
 
 ## Cyberbullying
@@ -23,4 +24,10 @@ The greatest thing about social media is how it gives a voice to voiceless peopl
 But now, we are creating a surveillance society, where every one of us may **fall the victim to the cyberbullying**. You may **lead a good, ethical life,** but some bad phraseology on social network can overwhelm it all, becoming a clue to your so-called “secret inner evil”. 
 
 Under this circumstance, maybe the smartest way to survive is to go back to being voiceless. However, if we just hang back and reserve, doing nothing, we will find that the situation get even worse. People may just **create a stage for artificial high dramas**, where everybody is either a magnificent hero or a sickening villain, even though we know that’s not true about our fellow humans. What is really true, is that we are clever and stupid, that we are all living in grey areas.
+
+
+
+## MISC
+
+Schaut her, schaut her, schaut keinem ins gesicht.
 

@@ -1,7 +1,7 @@
 ---
 title: 记一次复试经历
 categories:
-- 回忆
+- 经验分享
 description: 一次尴尬的面试经历。
 toc: true
 series:

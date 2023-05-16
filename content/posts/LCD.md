@@ -4,8 +4,7 @@ description: 偶然看到了与教科书上不同思路的货币理论，故记�
 toc: true
 tags: 
 - 货币政策
-- 宏观经济
-categories:
+categories: [工具::经济]
 series:
 date: '2022-10-21T17:02:58+08:00'
 featuredImage:
