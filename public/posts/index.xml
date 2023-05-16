@@ -1,1520 +1,247 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Posts on 狗蛋日</title>
-        <link>https://young-mann.github.io/posts/</link>
-        <description>Recent content in Posts on 狗蛋日</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh</language>
-        <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+  <channel>
+    <title>Posts on 狗蛋日</title>
+    <link>https://young-mann.github.io/posts/</link>
+    <description>Recent content in Posts on 狗蛋日</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
 </copyright>
-        <lastBuildDate>Tue, 16 May 2023 14:31:37 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>草稿纸</title>
-        <link>https://young-mann.github.io/posts/drafts/</link>
-        <pubDate>Sat, 28 Jan 2023 23:02:18 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/drafts/</guid>
-        <description>&lt;h2 id=&#34;cyberbullying&#34;&gt;Cyberbullying&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The following passage are an excerpt from a TED speech about cyberbullying (and I’ve forgotten the full name of this speech).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;When chatting online, we may think our words are just the words. We don’t need to take responsibility for what we have said, even when our words really hurt others &amp;ndash; we just keep silent, &lt;strong&gt;having no courage to confess it&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Social network is basically a mutual approval machine. We just surround ourselves with people who feel the same way we do, and we approve each other. That’s a really good feeling.&lt;/p&gt;
-&lt;p&gt;The greatest thing about social media is how it gives a voice to voiceless people. I still remember the early days of social network, when people admit shameful secrets about themselves, and others would say, “Oh, that’s also what I’m thinking about.”&lt;/p&gt;
-&lt;p&gt;But now, we are creating a surveillance society, where every one of us may &lt;strong&gt;fall the victim to the cyberbullying&lt;/strong&gt;. You may &lt;strong&gt;lead a good, ethical life,&lt;/strong&gt; but some bad phraseology on social network can overwhelm it all, becoming a clue to your so-called “secret inner evil”.&lt;/p&gt;
-&lt;p&gt;Under this circumstance, maybe the smartest way to survive is to go back to being voiceless. However, if we just hang back and reserve, doing nothing, we will find that the situation get even worse. People may just &lt;strong&gt;create a stage for artificial high dramas&lt;/strong&gt;, where everybody is either a magnificent hero or a sickening villain, even though we know that’s not true about our fellow humans. What is really true, is that we are clever and stupid, that we are all living in grey areas.&lt;/p&gt;
-&lt;h2 id=&#34;misc&#34;&gt;MISC&lt;/h2&gt;
-&lt;p&gt;Schaut her, schaut her, schaut keinem ins gesicht.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>事件域在金融随机分析中的含义</title>
-        <link>https://young-mann.github.io/posts/sigma-algebra/</link>
-        <pubDate>Tue, 16 May 2023 14:31:37 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/sigma-algebra/</guid>
-        <description>&lt;h2 id=&#34;事件域划分的精细程度代表所知信息的多寡&#34;&gt;事件域——划分的精细程度代表所知信息的多寡&lt;/h2&gt;
-&lt;p&gt;简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来对样本空间 $\Omega$ 中的样本路径 $\omega$ 进行归类。这些分类，实际上表示我们对于当前样本路径的了解程度：我们在某一阶段 $T$ 所知道的信息越多，这一阶段的事件域 $\mathcal F _T$ 所包含的元素就越多，表示我们 $\omega$ 所能采用的分类也就越多。&lt;/p&gt;
-&lt;p&gt;这些分类是怎样描述「所知道的信息」的？一种可行的思路是思路是，对于某个随机过程，我们会面临一条事前确定的样本路径 $\omega_i$ 。然而，尽管这条样本路径是已经被「固定」的，但我们并不知道 $\omega_i$ 是 $\Omega$ 中的哪一个 $\omega$ ——我们仅能知道，&lt;u&gt;&lt;strong&gt;对于给定的 $\Omega$ 的某个子集，$\omega_i$ 是不是在这个子集里面&lt;/strong&gt;&lt;/u&gt;。而前一句中 能够被判断是否包含 $\omega_i$ 的这些 $\Omega$ 的子集，就是我们在第一段中提到的，事件域 $\mathcal F$ 所包含的「分类」。如果对集合的划分越精细，「分类」就越多，表示我们知道的信息就更多。&lt;/p&gt;
-&lt;h2 id=&#34;一个例子&#34;&gt;一个例子&lt;/h2&gt;
-&lt;p&gt;对于分类如何刻画信息，现在就来举个直观的例子。假设我现在要扔一枚质地均匀的硬币，扔个 2 次。将硬币的某一面记作正面，与其相反的一面记作反面。将「硬币投出了正面」记作 H （假设其可能性为 $p,p&amp;gt;0$ ），将「硬币投出了反面」记作 T （假设其可能性为 0&amp;quot;&amp;gt;$q, q=1-p&amp;gt;0$ ）。以一串序列 $\omega$ （其中 $\omega=\omega_1\omega_2$ ， 的可能取值为或$\omega_i的可能取值为H或T$ ）列出所有可能发生的结果，便可得样本空间 $\Omega = \lbrace \text{HH, HT, TH, TT}\rbrace.$&lt;/p&gt;
-&lt;p&gt;再定义一个随机变量 $S$ ，用于表示股票价格：&lt;/p&gt;
-&lt;p&gt;$$
-\begin{align} S_0(\omega) &amp;amp;= 4, \forall \omega \in \Omega \\ S_1(\omega) &amp;amp;= \begin{cases} 8, &amp;amp; 如果 \omega_1=H \ 2, &amp;amp; 如果 \omega_1=T \ \end{cases} \\ S_2(\omega) &amp;amp;= \begin{cases} 16, &amp;amp; 如果 \omega_1=\omega_2=H \ 4, &amp;amp; 如果 \omega_1\neq \omega_2 \ 1, &amp;amp; 如果 \omega_1=\omega_2=T \end{cases} \end{align}
-$$&lt;/p&gt;
-&lt;p&gt;接下来，假设我们只能观察到 $S(\omega)$ ，而不能直接看到 $\omega$ 是什么。那么接下来，我们便可以用 $\mathcal F$ 刻画该随机过程中所有的信息了。&lt;/p&gt;
-&lt;ol start=&#34;0&#34;&gt;
-&lt;li&gt;首先是没扔硬币的时候。此时，$\mathcal{F_0} = \lbrace \varnothing, \Omega \rbrace 。$ 这个不难理解。对于给出的一个 $S_0(\omega)$ 的取值，如果该取值不是 4，那说明我们现在不在掷硬币 2 次的这个路径。反之，我们可以推断，我们马上就要开始扔硬币了。此时，我们所知道的信息是：我们是否处于 $\omega$ 的某一可能路径上。&lt;/li&gt;
-&lt;li&gt;接着，是扔 1 次硬币。此时， $S_1(\omega)$的合理取值是 2 或 8 ，对应的事件域是 。$\mathcal{F_1} = \lbrace \varnothing, \Omega, \lbrace HH,HT \rbrace, \lbrace TH,TT \rbrace \rbrace 。$ 这个事件域的含义是，对于观测到的 $S_1(\omega)$ 的取值，我们除了知道「 $S(\omega)$ 对应的 $\omega$ 是否在 $\varnothing 或 \Omega$ 」以外，还能知道 $\omega$ 是哪个值（ 还是 $H 还是T?$ ）开头的样本路径，即 $\omega$ 到底是属于 $\lbrace HH,HT \rbrace$ ，还是属于 $\lbrace HH,HT \rbrace$ 。&lt;/li&gt;
-&lt;li&gt;最后，是扔第 2 次硬币：
-$$\begin{equation} \mathcal{F_2} = \lbrace \ \varnothing, \Omega, \ \lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace, \lbrace \text{TT}\rbrace, \ \lbrace \text{HH,HT}\rbrace, \lbrace \text{HH,TH}\rbrace, \lbrace \text{HH,TT}\rbrace,\lbrace \text{HT,TH}\rbrace, \lbrace \text{HT,TT}\rbrace, \lbrace \text{TH,TT}\rbrace, \ \lbrace \text{HH,HT,TH}\rbrace, \lbrace \text{HH,HT,TT}\rbrace, \lbrace \text{HT,TH,TT}\rbrace, \lbrace \text{HH,TH,TT}\rbrace \ \rbrace \end{equation}.
-$$&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;此时，除了没扔硬币和第一次扔硬币的信息以外，我们可以从 $S_2(\omega)$ 获取了更多关于 $\omega$ 的信息，并对它们进行更精细的分类。&lt;/p&gt;
-&lt;p&gt;观察上述的事件域 $\mathcal{F_0}, \mathcal{F_1}, \mathcal{F_2}$ ，不难看出，在每个事件域中，我们都可以找到对应的分类，并将所观察到的随机试验的结果及其背后根本的样本路径归入这个类别里。比如，当 $S_0=4$ 时，我们知道 $\omega \in \Omega$ ；当  $S_1=8$ 时，我们不仅知道 $\omega \in \Omega$ ，还能知道更准确的信息，即 $\omega \in \lbrace{HH,HT\rbrace} \subseteq \Omega$ ；当 $S_2=16$ 时，我们便能知道更准确的信息，即 $\omega \in \lbrace{HH\rbrace}\subseteq \lbrace{HH,HT\rbrace} \subseteq \Omega$ 。&lt;/p&gt;
-&lt;p&gt;不难看出，随着时间的推移（体现在脚标的数值不断增大）， $\mathcal{F_T}$ 所包含的元素越来越多，其中的分类也越来越多，我们也越能确定 $\omega$ 究竟是什么什么样的。那么，一种很自然的想法是，如何刻画这种「随着时间不断增加的信息」。为此，我们便以 Shreve 书中对 filtration 的定义，结束这一小节：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/05/16/sDeMEdznYLNlVmP.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;对上例的修正&#34;&gt;对上例的修正&lt;/h2&gt;
-&lt;p&gt;看到这里，似乎一切都大功告成了。我们通过一个例子，了解了事件域如何表示信息，并获得了 filtration 的定义。&lt;/p&gt;
-&lt;p&gt;然而，这个回答并不能这样结束，因为其中还有个很大的问题。&lt;/p&gt;
-&lt;p&gt;回到上一节中的 $\mathcal{F_2}$ ，我们会发现，这里的事件域超出了随机变量 $S$ 所能提供的信息范围。如果我们仔细回顾 $S(\omega)$ 的定义，会发现 $S_2(HT)=S_2(TH)$ 。也就是说，我们无法根据 $S_2=4$ 来判断 $\omega$ 究竟是 $TH$ 还是 $HT$ ——我们只能说， $\omega \in \lbrace{TH,HT\rbrace}$ 。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/05/16/5GYUh8aTnfIlCKX.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;因此，如果我们真的想表示 $S_2$ 所能提供的信息，那么需要进行一些调整。将随机变量生成的 sigma 代数定义为：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/05/16/gTSrw5LUzis6bCV.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;方便起见，将 $A_{HH}$ 表示以 $A_{HH}, A_{HT}, A_{TH}, A_{TT}$ 分别表示 以开头的序列 $\lbrace{以 HH 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 HT 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 TH 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 TT开头的序列\rbrace}$ 。可推得：&lt;/p&gt;
-&lt;p&gt;是一个集合，由以及这些集合的并集和余集组成。$\sigma(S_2)$是一个集合， which 由 $\varnothing, \Omega, A_{HH}, A_{HT}\cup A_{TH}, A_{TT}$以及这些集合的并集和余集组成。&lt;/p&gt;
-&lt;p&gt;不难看出，不光是 $\sigma(S_2)$ ，其他的 $\sigma(S_T)$ 都包含于 $\mathcal{F_T}$ ，因此我们可以说随机变量 $S$ 是 可测的 $\mathcal{F-}可测的$ 。可测的定义如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/05/16/X6pd1EwljnkU3Zo.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>APS经历记录</title>
-        <link>https://young-mann.github.io/posts/aps/</link>
-        <pubDate>Mon, 06 Mar 2023 21:57:37 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/aps/</guid>
-        <description>&lt;p&gt;03-06 APS 寄送材料&lt;/p&gt;
-&lt;p&gt;03-16 出审核号&lt;/p&gt;
-&lt;p&gt;03-30 审核部发邮件通知补充信息（我于同日发邮件补充了信息）&lt;/p&gt;
-&lt;p&gt;04-03 材料审核完成，面谈考位开始排队&lt;/p&gt;
-&lt;p&gt;05-15 通知面谈时间&lt;/p&gt;
-&lt;p&gt;05-29 面谈&lt;/p&gt;
-&lt;p&gt;APS 审核流程为：准备审核材料、汇款、邮寄材料（材料寄送阶段） &amp;ndash;&amp;gt; 等待通知面谈时间、复习 &amp;ndash;&amp;gt; 审核当天（面谈+笔试） &amp;ndash;&amp;gt; 收到 APS 证书。下面简要记录个人的 APS 准备记录。&lt;/p&gt;
-&lt;h2 id=&#34;1-材料寄送阶段&#34;&gt;1. 材料寄送阶段&lt;/h2&gt;
-&lt;p&gt;下图列举了“一般国内申请人审核程序”程序下，申请 APS 面谈所需的材料&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;img src=&#34;https://s2.loli.net/2023/03/06/Ymibc3wkWH9dMIV.png&#34; style=&#34;zoom:50%;margin:0 auto;&#34; /&gt;
-&lt;p&gt;作为毕业生，需要准备的主要包括：&lt;/p&gt;
-&lt;h3 id=&#34;1-在线注册证明&#34;&gt;(1) 在线注册证明&lt;/h3&gt;
-&lt;p&gt;通过在 APS 官网注册审核程序、填写相关信息后，1. 下载并打印其提供的 PDF 文件，2. 贴上一张护照规格的 2 寸证件照，3. 在文件的最后，签名并填写时间地点，即可。&lt;/p&gt;
-&lt;p&gt;在注册过程中，有一点需要注意：&lt;strong&gt;从开始注册在线审核程序的 15 天后，所填写的审核信息（即填写的基础教育、高考、高等教育、语言水平）就不能修改了&lt;/strong&gt;，就像下图这样。过了 15 天以后，如果还想修改审核信息，就得发邮件给审核部沟通，属于不必要的麻烦。所以，&lt;strong&gt;务必确保自己在注册审核程序后的 15 天内，完成正确信息的填写。&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&#34;https://s2.loli.net/2023/03/06/9vrTuSzx6YCBGZn.png&#34; style=&#34;zoom:50%;margin:0 auto;&#34; /&gt;
-&lt;h3 id=&#34;2-汇款单复印件&#34;&gt;(2) 汇款单复印件&lt;/h3&gt;
-&lt;p&gt;通过网银或柜台汇款至北京审核部后，打印汇款单/电子回单，在空白处写上个人信息，包括：汇款人姓名、申请人姓名、注册号、汇款金额、汇款日期、汇出银行、汇出省市）。北京审核部的汇款信息为&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Empfänger:&lt;/th&gt;
-&lt;th&gt;德国驻华使馆文化处留德人员审核部&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Kontonummer:&lt;/td&gt;
-&lt;td&gt;332 456 013 427&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Name der Bank:&lt;/td&gt;
-&lt;td&gt;中国银行北京亮马河大厦支行&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;3-身份证复印件&#34;&gt;(3) 身份证复印件&lt;/h3&gt;
-&lt;p&gt;这个直接去打印店复印就行，身份证正反面都要复印。另外，如果有护照，那护照也要复印。&lt;/p&gt;
-&lt;h3 id=&#34;4-大学录取花名册&#34;&gt;(4) 大学录取花名册&lt;/h3&gt;
-&lt;p&gt;录取花名册可以办中英双语密封件或中英翻译公证件。我办的是公证件。录取花名册的原件是不可能拿到的，而复印件，可以从 A 楼一站式服务中心的 2 楼获取，会直接给你中文版。然而，我当时忘记问有没有英文版的录取花名册可以提供&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，所以去了就近的公证处做公证。由于做公证需要收走录取花名册的复印件，所以在一站式服务中心可以多要几份。&lt;/p&gt;
-&lt;h3 id=&#34;5-毕业证和学位证&#34;&gt;(5) 毕业证和学位证&lt;/h3&gt;
-&lt;p&gt;同样，毕业证和学位证可以办中英双语密封件或中英翻译公证件。我办的是密封件，需要准备的材料有：英文学位证明、英文学历证明&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、毕业证复印件、学位证复印件，以及印有“上海大学”字样的信封&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;。至于密封件所需的档案馆的公章，得去A 楼一站式服务中心的 2 楼获取，和获取录取花名册的窗口是同一个地方。提前将材料装入上大信封，到了窗口和老师说明来意后，老师会给你档案馆公章让你自己盖，盖骑缝章即可。我当时在每个信封的封口处上盖了 3 个章，像下面这样：&lt;/p&gt;
-&lt;img src=&#34;https://s2.loli.net/2023/03/06/JFwH8s312pXg4WR.png&#34; style=&#34;zoom:50%;margin:0 auto;&#34;/&gt;
-&lt;h3 id=&#34;6-毕业成绩单&#34;&gt;(6) 毕业成绩单&lt;/h3&gt;
-&lt;p&gt;这个只能办中英双语密封件。流程和上一部分类似，只是材料换成了成绩单，故在此不赘述。另外，我是把毕业证&amp;amp;学位证的密封件和成绩单的密封件分开放的。&lt;/p&gt;
-&lt;h3 id=&#34;7-语言水平证明复印件&#34;&gt;(7) 语言水平证明复印件&lt;/h3&gt;
-&lt;p&gt;有啥成绩就交啥成绩的复印件，有四六级就交四六级证书的复印件，有雅思就交雅思的复印件。&lt;/p&gt;
-&lt;h3 id=&#34;8-表格式简历&#34;&gt;(8) 表格式简历&lt;/h3&gt;
-&lt;p&gt;这个我没交，因为我毕业还没到一年。&lt;/p&gt;
-&lt;h3 id=&#34;寄送材料&#34;&gt;寄送材料&lt;/h3&gt;
-&lt;p&gt;准备好上述材料后，就可以提交了，邮寄或者线下提交都可以，我当时选择的是 EMS 邮寄。寄到之后，从审核部官网能看到收到材料的通知。之后就可以等审核部通知了。审核部会提前两周的时间通知面谈时间。一旦通知，没有特殊理由就不会允许更改时间。如果没有到场，就只能算作审核不通过，三个月后再次预约。&lt;/p&gt;
-&lt;h2 id=&#34;2-面谈阶段&#34;&gt;2. 面谈阶段&lt;/h2&gt;
-&lt;h3 id=&#34;如何准备面谈&#34;&gt;如何准备面谈？&lt;/h3&gt;
-&lt;p&gt;对照自己的成绩单，参考课程的教材，写成逐字稿，遵循以下的逻辑：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;这门课的教了哪些内容？&lt;/li&gt;
-&lt;li&gt;这门课的框架是什么，其下细分知识点有哪些？&lt;/li&gt;
-&lt;li&gt;（对于实践类课程而言：）这门课要做什么，你又实现了什么？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;（若是薯🍟大管院的管科专业，或可发邮件至我的邮箱了解相关信息~&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;）&lt;/p&gt;
-&lt;h3 id=&#34;面谈流程&#34;&gt;面谈流程&lt;/h3&gt;
-&lt;p&gt;【未完待续】&lt;/p&gt;
-&lt;h2 id=&#34;相关链接&#34;&gt;相关链接&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;【官网】&lt;a class=&#34;link&#34; href=&#34;https://www.aps.org.cn/zh/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;德国驻华大使馆文化处留德人员审核部 (aps.org.cn)&lt;/a&gt;：所有关于 APS 审核的信息均以官网上的说法为准。&lt;/li&gt;
-&lt;li&gt;【论坛】&lt;a class=&#34;link&#34; href=&#34;https://www.51deguo.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;www.51deguo.com&lt;/a&gt;, &lt;a class=&#34;link&#34; href=&#34;http://bbs.abcdv.net/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;abcdv.net&lt;/a&gt;：聚焦于德国留学的 2 个论坛，关于 APS 面审有不少资源。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;具体文件可在 &lt;a class=&#34;link&#34; href=&#34;https://www.aps.org.cn/zh/verfahren-und-services-deutschland/chinaverfahren&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;一般国内申请人审核程序&lt;/a&gt; 中“相关链接”的 &lt;a class=&#34;link&#34; href=&#34;https://www.aps.org.cn/wp-content/uploads/211_merkblatt_verfahren_china_interview_chn.pdf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;一般中国境内申请人（审核面谈_Interview）须知&lt;/a&gt; 找到。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;关于汇款信息，详见：&lt;a class=&#34;link&#34; href=&#34;https://www.aps.org.cn/zh/kontoverbindung&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;审核费汇款须知 | 德国驻华大使馆文化处留德人员审核部 (aps.org.cn)&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;如果有同学知道的话，可以回复一下，感激不尽~&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;英文学位证明、英文学历证明，以及后面提到的成绩单都可以在档案馆的远程服务平台进行办理，也可以选择去一站式服务中心自助打印。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;印有上海大学字样的信封在教育超市可以买到。我当时在 D 楼的教超买的。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;不过我不会直接给。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>如何克服面对上位者的怯意？</title>
-        <link>https://young-mann.github.io/posts/%E9%9C%B2%E6%80%AF/</link>
-        <pubDate>Thu, 29 Dec 2022 19:31:10 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E9%9C%B2%E6%80%AF/</guid>
-        <description>&lt;p&gt;与他人社交时，我常会问自己，自己能为对方提供什么用处？&lt;/p&gt;
-&lt;p&gt;这一反问，实际上反映了于我对人际交往的认识：人与人之间的交际建立在资源的交换上，亦即价值的交换。因此，如何各取所需，在自己身上找出「人无我有」的东西、与对方交换「人有我无」的东西，是人际关系得以开展的关键之处。&lt;/p&gt;
-&lt;p&gt;在与对方所持资源差距不大、各有所需时，我尚能通过这种检定，找到那么点能让对方获益的东西，并得以心安、笃笃定定与对方建立联系。&lt;/p&gt;
-&lt;p&gt;然而，在我面对具备我所需资源且资源量级远大于我的人时，我更倾向于认为自己不具备某些东西，which 是对方所需要且难以取得的。毕竟，到了对方那种层次，手下是不会缺各类低成本且好用的工具人的，即便我腆着脸想给对方做工具人，对方也不一定要。那么，在我无法为对方提供有效资源的情况下，我该如何说服对方与我建立人际关系？&lt;/p&gt;
-&lt;p&gt;此时，我便会露怯，甚至止步于此，不再寻求进一步推动这段关系。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;那么，如何克服这种怯意呢？我现在想要实践的一种方式是，在面对持有优势资源的上位者时，摈弃「我自己有啥东西能和对方交换的念头」。在此基础上，「做自己」，并在上位者面前多露面，刷刷存在感。当一个人本身能够给上位者留下相对深刻且靠谱的印象时，上位者说不定就愿意施以小惠，给这人以机会，看看他到底怎么样。要记住，很多让我们感觉很厉害的资源，对于上位者其实不算什么。给你一点机会更像是对于你「不同于常人」的一种奖励。若能抓住这个机会，便能迈出从零到一的第一步了。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>侃侃「贷款创造理论」</title>
-        <link>https://young-mann.github.io/posts/lcd/</link>
-        <pubDate>Fri, 21 Oct 2022 17:02:58 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/lcd/</guid>
-        <description>&lt;p&gt;在《货币创造的逻辑形成和历史演进——对传统货币理论的批判》一文里，孙国峰总结了「贷款创造存款」理论（loan creates deposit, LCD）的逻辑以及发展。&lt;/p&gt;
-&lt;p&gt;LCD 的内涵&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;包括：第一，货币创造是「银行放贷行为」本身，而不是传统教科书中所说的「先有存款进银行，银行再拿这笔钱放贷，就这样存了贷、贷了继续存」。第二，银行放贷是银行与客户的债权债务交换行为，其中，银行获得贷款债权，客户获得存款债权。第三，客户需付出额外的利差才可获取存款债权。客户之所以愿意接受利差，是因为其从银行获得的存款债权也被其他人认可，转移起来比较方便。这样的存款债权，就可成为信用货币。这种信用货币，并不是一种作为基础物质存在的实物「货币金额」，而是债权债务关系的的反映，是在记录这种债权债务关系、存款贷款同时出现的过程中「无中生有」的。相比之下，货币银行理论认为，在每一笔存款与每一笔贷款之间，都是有实实在在的「货币金额」为内容的经济行为，并没有任何「凭空创造」的意思。第四，为了支持贷款创造货币的行为，银行需要持有基础货币。&lt;/p&gt;
-&lt;p&gt;下面来举一个简单的例子，从资产负债表的角度说明 LCD 与传统货币银行理论在货币创造上的解释有所不同。&lt;/p&gt;
-&lt;p&gt;假设法定存款准备金率为 20 %，客户将现金存入银行后不会提现。第一家银行（记作 A）首先吸收了 100 元的「原始存款」，其中 20 元用于「缴存存款准备金」，剩下的 80 元放贷。客户得到了 80 元贷款后，用于支付给另一个客户，而这个新客户会将 80 元存入另一家银行（记作 B）。银行 B 再缴存 16元存款准备金后，再放贷 64 元。经历了这 2 个步骤后，银行 A 与银行 B 的资产负债表如下图所示。经历如此这般「存款-贷款-再存款-再放贷」的一轮轮接力后，最初存入银行的 100 元的「原始存款」全部变成准备金，再也无法拿出去放贷。此时，计算银行总体的资产负债表，会发现负债端有 500 元存款，资产端有 400 元贷款和 100 元准备金。&lt;/p&gt;
-&lt;p&gt;然而，在 LCD 这里，第 2 布的资产负债表就不太一样了。不同之处在于，在银行 A 放出一笔 80 元的新贷款的时候，就已经创造出了新的 80 元存款货币（也就是资产端	下方新出现的 80 元现金），并在此时向中央银行存入 16 元作为存款准备金。如果客户在贷款后继续购买商品，那么银行 A 与银行 B 的资产负债表还会发生变化，但这个变化的过程已经和传统货币银行理论中所描述的不一样了。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;若想了解更多孙国峰对 LCD 的阐释，可见孙国峰（2019）。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>蒙特卡罗估计简介</title>
-        <link>https://young-mann.github.io/posts/mc/</link>
-        <pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/mc/</guid>
-        <description>&lt;p&gt;本文是对&lt;a class=&#34;link&#34; href=&#34;https://book.douban.com/subject/25727712/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《金融工程中的蒙特卡罗方法》&lt;/a&gt;一书的读书笔记。&lt;/p&gt;
-&lt;h2 id=&#34;蒙特卡洛原理&#34;&gt;蒙特卡洛原理&lt;/h2&gt;
-&lt;h3 id=&#34;蒙特卡洛方法是什么&#34;&gt;蒙特卡洛方法是什么？&lt;/h3&gt;
-&lt;p&gt;蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法。借助测度论的语言，我们可对概率论做一种公理化定义&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，将随机试验中随机发生的事件与一个集合对应起来（这个集合包含了事件发生时的所有可能结果），将总体也与一个集合对应起来（这个集合包含了随机试验的所有可能结果），从而将概率定义为：&lt;/p&gt;
-&lt;p&gt;$$某事件的概率 := \frac{该事件对应集合的容量}{总体对应集合的容量}$$&lt;/p&gt;
-&lt;p&gt;确定了这个定义之后，我们便可以通过计算事件对应集合的容量与总体对应集合的容值，计算某个事件的概率——而实际上蒙特卡罗方法就是这么做的。比如，我们现在想要计算某个事件发生的概率。那么，我们可以做的是，在所有可能结果组成的总体中随机抽样，然后计算落入事件对应集合的样本点所占总体的比例，以此比例「估计」事件对应集合的容量。在这一过程中，大数定律保证了这个估计会随着抽样的增加而收敛于真实值&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，中心极限定理则给出了在有限次抽样下估计误差的可能幅度。&lt;/p&gt;
-&lt;p&gt;为了更方便地计算集合的度量，我们可以引入积分这个工具。考虑一个简单的例子：假设我们现在需要估计一个给定函数$f$在单位区间上的积分值。为书写方便起见，我们可以将这个积分值记作 $\alpha$，则有：
-$$
-\alpha = \int^1_0f(x) \mathop{}!\mathrm{d}x.
-$$
-$\alpha$ 可以被看作期望值 $\mathbb{E}[f(U)]$，其中 $U \sim\text{Uniform}(0,1)$。假设我们可以在 $[0,1]$ 上独立均匀地抽样得到 $U_1,U_2,\cdots$，那么计算 $f$ 在这些样本点上的取值并求平均，便可得到欲求积分值的一个蒙特卡洛估计：
-$$
-\hat \alpha &lt;em&gt;n = \frac1n \sum^n&lt;/em&gt;{i=1}f(U_i).
-$$
-如果函数 $f$ 满足一些特定性质，我们就能得到一个误差较低的 $\alpha$ 估计值，并且可以显式地求出这个估计的误差值。&lt;/p&gt;
-&lt;p&gt;先来看看 $\alpha$ 的具体估计取值。如果函数 $f$ 在 $[0,1]$ 上可积，那么根据强大数定律，有：
-$$
-当\ n \to \infty \ 时,\  \hat \alpha_n \stackrel{a.s.}  \longrightarrow \alpha.
-$$
-再来看看估计的误差值。如果函数 $f$ 平方可积，那么蒙特卡洛估计中的误差项 $\hat \alpha_n - \alpha$ 近似服从于 $\text{Normal}(0, {\sigma_f^2}/{ n})$，而且 $n$ 越大，这个误差项就越近似于上述的正态分布。需要补充的是，这个正态分布中的总体方差 $\sigma_f$ 定义如下：
-$$
-\sigma_f^2 = \int^1_0 (f(x)-\alpha)^2 \mathop{}!\mathrm{d}x.
-$$
-要注意的是，上述 $\sigma_f$ 定义里用到了 $\alpha$ ，而这是一个总体的真实值，通常是未知的，从而导致 $\sigma_f$ 也是未知的。为了解决这个问题，我们可以转而使用样本标准差 $s_f$ 来估计误差值：
-$$
-s_f = \sqrt {\frac 1 {n-1} \sum^n_{i=1} (f(U_i) - \hat \alpha_i)^2}.
-$$
-至此，我们得到一个误差较低的 $\hat \alpha _n$ 估计值，以及本次估计的误差值 $s_f$。&lt;/p&gt;
-&lt;h3 id=&#34;蒙特卡洛估计的误差有多大&#34;&gt;蒙特卡洛估计的误差有多大？&lt;/h3&gt;
-&lt;p&gt;在上一小节里，我们曾提到，蒙特卡洛估计中的误差值近似服从于 $\text{Normal}(0, {\sigma_f^2}/{ n})$。现在让我们进一步分析蒙特卡洛估计误差的分布。&lt;/p&gt;
-&lt;p&gt;考察这个分布中的标准差 ${\sigma_f}/{\sqrt n}$，容易知道，若想在原有的基础上减少一半的标准差，就需要相当于原有样本点 4 倍数量的样本点；如果想要增加一个数量级的精度，就需要原有基础上 100 倍数量的样本点。更准确地来说，蒙特卡洛估计的误差以 $O(n^{-1/2})$ 的速度收敛。&lt;/p&gt;
-&lt;p&gt;以 $O(n^{-1/2})$ 的速度收敛？这速度算快算慢？说实话，不算快。举个例子，假设此前提到的函数 $f$ 二阶连续可导，如果直接将 $n$ 个梯形面积之和作为定积分的估计值的话，这种估计的误差收敛速度为 $O(n^{-2})$，似乎更快：&lt;/p&gt;
-&lt;p&gt;欸，既然有别的估计方法的误差收敛得比蒙特卡洛更快，那我们为什么还要学蒙特卡洛方法呢？&lt;/p&gt;
-&lt;p&gt;答案是，蒙特卡罗方法的标准差收敛速度&lt;strong&gt;不会随着维度的增加而增加&lt;/strong&gt;。实际上，我们在上一节中所估计的积分可以推广到任何维度 $d$ 下 $[0,1]^d$ 上的积分。此时，对于蒙特卡罗方法而言，尽管函数 $f$ 与 相应的 $\sigma _f$ 会发生变化，但其标准差仍会保有 $\sigma _f / \sqrt n$ 的形式。换而言之，$O(n^{-1/2})$ 的收敛速度对任何维度 $d$ 都成立。相比之下，$d$ 维中利用梯形法则的误差为 $O(n^{-2/d})$，随着维度增加，收敛速度也会降低。&lt;/p&gt;
-&lt;p&gt;这种优势在我们为衍生品定价时尤为重要。资产定价理论的一个重要假设是，在某些情况下，衍生品的价格可以表示为其期望值，从而将衍生品的定价简化成了期望值的计算工作。在此过程中，如果要将期望值写成积分形式，我们便会发现，它的维数很大，甚至是无限的。这个时候，我们用蒙特卡洛方法就比较好——它的收敛速度不会随着维度增加而增加。&lt;/p&gt;
-&lt;h3 id=&#34;如何比较不同蒙特卡洛估计的好坏&#34;&gt;如何比较不同蒙特卡洛估计的好坏？&lt;/h3&gt;
-&lt;p&gt;《金融工程中的蒙特卡罗方法》的第 4 章到第 6 章主要说明了如何改进蒙特卡洛估计，使其运行得更「好」。那么，这种「好」对应的评价标准是什么呢？在这一节里，我们介绍原书中提到的 3 个用于比较不同估计的评价标准：计算时间，偏差，以及方差。不严谨地讲，评价标准可被描述如下：&lt;/p&gt;
-&lt;p&gt;在无偏估计下，在其它此处未被提及的条件均等价的情况下，如果 2 个不同估计量所需要的计算时间一致，那么我们选「方差更小」的估计量；如果所需要的计算时间有差别，且有更小方差的估计量需要更多的计算时间，那么我们选「每次重复实验的方差与每次重复实验的期望计算时间之积」最小的那个。&lt;/p&gt;
-&lt;h4 id=&#34;无偏估计下的比较估计量的方差计算时间&#34;&gt;无偏估计下的比较——估计量的方差、计算时间&lt;/h4&gt;
-&lt;p&gt;让我们来考虑最简单的无偏估计的情形。假定
-$$
-\hat C_n  = \frac 1 n \sum^n_{i=1}C_i,
-$$
-其中 $C_i$ 是独立同分布变量，$\mathbb{E}[C_i] = C$ 且 $\text{Var}[C_i] = \sigma_C &amp;lt; \infty$。由中心极限定理可知，随着重复次数 $n$ 的不断增大，标准估计值 $(\hat C_n - C)/(\sigma_C/\sqrt{n})$ 收敛于正态分布，即：
-$$
-\frac {(\hat C_n - C)} {(\sigma_C/\sqrt{n})} \Rightarrow \text{Normal}(0,1),
-$$
-或者等价于：
-$$
-{\sqrt n (\hat C_n - C)}  \Rightarrow \text{Normal}(0,\sigma_C^2).
-$$
-上面的「$\Rightarrow$」表示收敛于某个分布。从上式可推得：
-$$
-\lim_{n \to \infty} \mathop{P}\left(\frac {\hat C_n - C} {\sigma_C/\sqrt{n}} \leq x\right)  = \Phi(x)
-$$
-对于所有的 $x$ 成立。这个式子重要的地方在于，如果将 $\sigma_C$ 用样本标准差 $S_C$ 代替，那么这个极限依旧成立。&lt;/p&gt;
-&lt;p&gt;再利用中心极限定理，可以近似地有：
-$$
-\hat C_n-C \approx \text{Normal}(0,\sigma_C^2/n).
-$$
-上式说明左边的误差近似地有右边的分布。根据这个结论，我们可以认为，在其他条件不变的情况下，比较同一值的两个估计量时，我们应该选择方差更小的估计量，使得估计误差尽量小。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;若想了解更多基于测度论的概率论的定义，可参考&lt;a class=&#34;link&#34; href=&#34;../%e6%a6%82%e7%8e%87%e8%ae%ba%e5%9f%ba%e7%a1%80/&#34; &gt;《基于测度论的概率论基础》&lt;/a&gt;一文。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;由此不难看出，蒙特卡罗方法体现了频率学派对于概率的观点。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>狗蛋日辞典：初中篇</title>
-        <link>https://young-mann.github.io/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</link>
-        <pubDate>Thu, 06 Oct 2022 17:12:42 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</guid>
-        <description>&lt;!-- toc --&gt;
-&lt;p&gt;人在消逝。我想起了初中里的一些人。下文以经过加密的姓名首字母缩写，作为初中同学各自的指代。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;KKZ：写的作文常作为示范文章，和 14 结伴出没，放学回家时常常与其在同一个公交站台等车，曾经搭伴互相纠错英语，送过我块南瓜头形状的点心，印象里是个细腻而直率的姑娘。&lt;/li&gt;
-&lt;li&gt;NMN：学习成绩算不错？有次语文默写需要互相批改，互相放水被老师发现了。&lt;/li&gt;
-&lt;li&gt;AVZ：好像学过跳舞。&lt;/li&gt;
-&lt;li&gt;CBC：哭的次数比较多，印象里有点 mean。&lt;/li&gt;
-&lt;li&gt;COX：没太多印象了，算是憨厚。&lt;/li&gt;
-&lt;li&gt;JR：没太多印象，似乎总是眯着眼。&lt;/li&gt;
-&lt;li&gt;GFF：数学课代表，值周班长，讲话柔声细语，喜欢足球，与 29，39 常聊足球。&lt;/li&gt;
-&lt;li&gt;ESE：没啥印象了。&lt;/li&gt;
-&lt;li&gt;HSS：英语课代表之一，脾气略显暴戾，与 7 不太对付。&lt;/li&gt;
-&lt;li&gt;MB：似乎是体育课代表，我记不得了。&lt;/li&gt;
-&lt;li&gt;HUH：喜欢捏别人脸，某次被我反抗后，实施了致命打🐔。&lt;/li&gt;
-&lt;li&gt;EKZ：坐在前排，曾有俩人为其争锋。&lt;/li&gt;
-&lt;li&gt;FLE：画画的大触？也是写作的大触。&lt;/li&gt;
-&lt;li&gt;KMZ：常和 1 同行，讲话时语调平缓。&lt;/li&gt;
-&lt;li&gt;NM：喜欢画画，喜欢 cosplay？但成绩不太好，常被老师嘲讽。&lt;/li&gt;
-&lt;li&gt;VOU：但私底下常传有其抄答案的传闻。&lt;/li&gt;
-&lt;li&gt;OQA：认真的姑娘。&lt;/li&gt;
-&lt;li&gt;VKB：语文课代表，值周班长，名字读起来和隔壁班的某个壮汉差不多，但两人的形象大相径庭，是个伶俐而利落的姑娘。&lt;/li&gt;
-&lt;li&gt;EV：唱歌好听，曾被 31 喜欢。&lt;/li&gt;
-&lt;li&gt;SRS：数学课代表，但数学成绩不太好，常被老师评价为，脾气火爆。&lt;/li&gt;
-&lt;li&gt;CKC：真没啥印象了。&lt;/li&gt;
-&lt;li&gt;XUF：和 12 坐在一块儿，给人柔弱的感觉。&lt;/li&gt;
-&lt;li&gt;PI：物理课代表；胖嘟嘟的男孩儿，受语文老师喜爱；虽然成绩并非顶尖一档，但敢于问问题，问问题这一点常被跳跳表扬；平日里待不错，但我不太能应付得了他的热情，逐渐疏远了他，现在想来也有些惭愧；LOL 里常玩蛮王、狗熊，也玩机器人、锤石；和32、37 一起玩过赛尔号2。&lt;/li&gt;
-&lt;li&gt;JKW：常常迟到，不写作业；数学老师评价其算是聪明的，但就是不愿意学；LOL 里玩索拉卡。&lt;/li&gt;
-&lt;li&gt;KPV：有时候的测试成绩挺猛的，但被抽到回答问题时却又讲不出思路，故被跳跳揶揄作 wēi 哥。&lt;/li&gt;
-&lt;li&gt;WYH：没太多印象了。&lt;/li&gt;
-&lt;li&gt;RI：高个子，爸爸是学校里的体育老师。&lt;/li&gt;
-&lt;li&gt;DYV：老是不及时交作业；他的外号今天看来有些忌讳，急性子，常被批评，哭的次数比较多；爱玩游戏，DNF、LOL；曾在 12 课桌的桌肚里放过礼物，为此与 23 互呛。&lt;/li&gt;
-&lt;li&gt;JFM：物理课代表；外号「丸丸」，而此外号的原意更为恶趣味；爱足球，和 7、39 关系不错。&lt;/li&gt;
-&lt;li&gt;BXC：常被说成脸皮厚，成绩不好，但属于乐天派，常常自黑博他人一笑，与 10 曾有一段不错的关系。&lt;/li&gt;
-&lt;li&gt;BDV：数学课代表，数学成绩不错；看上去像是资深老宅，老二次元（？）了，喜欢东方；似乎有点斜视。&lt;/li&gt;
-&lt;li&gt;FDQ：体育课代表；在说话的过程中会出现瞬时的音调变高，也因此被某人说是驴叫（不记得是谁了）；喜欢海贼王；玩过赛尔号2。&lt;/li&gt;
-&lt;li&gt;MFX：弱气，和 28、30 玩得比较多。&lt;/li&gt;
-&lt;li&gt;KTF：印象是「泰山崩于眼前而色不变」，眯眯眼；忘了什么原因，得外号为屌丝；和 42、43 玩得挺好，似乎都喜欢高达，曾经一起自制过卡牌类桌游，不过只记得卡牌背面是个滑稽表情了。&lt;/li&gt;
-&lt;li&gt;IBH：不怕冷，冬天穿短袖的哥们；曾遭 9 以「不卫生」为由的言语攻击；有往猛男硬汉风发展的倾向。&lt;/li&gt;
-&lt;li&gt;CGT：数学课代表，值周班长之一；由于其有几根头发耷落在前额，故被唤作「三毛」；曾与 23、37 关系不错，会攀岩；英语课上做展示时常 neta 曾小贤&amp;amp;love radio。&lt;/li&gt;
-&lt;li&gt;JSN：英语课代表，值周班长之一。老玻璃心了，LOL 打得挺菜，曾经以龙女辅助带崩全场。&lt;/li&gt;
-&lt;li&gt;IOV：外号与学号一致；LOL 里喜欢浪，印象里常常把优势局带崩，但也有一些 carry 局，算是神经刀；异性缘似乎不错。&lt;/li&gt;
-&lt;li&gt;FUM：英语课代表，值周班长之一。印象里比较 aggressive，直率，有话直说，但有事求人不成翻脸时也挺吓人，可能与我相性不合。&lt;/li&gt;
-&lt;li&gt;QMQ：有点胖胖的。其它没啥印象了。&lt;/li&gt;
-&lt;li&gt;NRV：名作「小哥」，老二次元，行为举止有些猥琐，平日里接受着全班的恶意，似乎试过自杀；有次和他组队比赛拿了小奖后，大多数人也只来祝贺我。&lt;/li&gt;
-&lt;li&gt;POS：「小尼玛」，座位处于前排，和 12、20、22 她们玩得比较好，也和 34、43 玩得比较好；我还记得他讲过拿避孕套当气球吹的故事。&lt;/li&gt;
-&lt;li&gt;QXP：眉眼有些女性化，画画不错。&lt;/li&gt;
-&lt;li&gt;KHQ：中途转学来的，没啥印象了。&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>拾遗5月</title>
-        <link>https://young-mann.github.io/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</link>
-        <pubDate>Mon, 15 Aug 2022 17:21:50 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</guid>
-        <description>&lt;h2 id=&#34;201954&#34;&gt;2019.5.4&lt;/h2&gt;
-&lt;p&gt;今天或许是个好日子。我不知道。&lt;/p&gt;
-&lt;p&gt;老爸忙着粉刷家的外墙，弄得自己一身涂料，头发上也沾了些许。明明小区里不久后就会有专人去做这件事的。&lt;/p&gt;
-&lt;p&gt;老妈最近则是沉浸在了拼多多的种菜活动里，想着用种菜所得的代币换取点米吃吃，也许是一个人在家太久，无聊了吧。&lt;/p&gt;
-&lt;p&gt;老姐去青岛参加别人的婚礼了，吃了不少海鲜，回来以后上吐下泻，在保温杯里泡枸杞，喝起了白粥。&lt;/p&gt;
-&lt;p&gt;说实话，我在学校里的时候，很少会想他们。有时感受到这种淡漠，就会想，是什么消磨了彼此之间的联系呢？他们对我的确很好，我能感受得到，但我又想逃避他们。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;老周最近碰上了情坎。听他说：「她说她不喜欢我。我喜欢她好久了啊，虽然我胆子小一直不敢直接说，但她明明早就知道，而且一直对我这么好，现在突然说这种话，我不知道该怎么办了。」&lt;/p&gt;
-&lt;p&gt;这算是他不为人知的一面。说了几句安慰的话后，他睡前谢了我。我有点同情。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;地铁志愿者的日常活动，我一刻也不想多待了。做的事情无所裨益，还得面对着路人的警觉与不屑。而我也没能想出什么改善的方法。我可能曾从志愿者活动中感受过些许助人的快乐，但还是无所事事的空窗期更多。&lt;/p&gt;
-&lt;h2 id=&#34;201955&#34;&gt;2019.5.5&lt;/h2&gt;
-&lt;p&gt;昨夜睡得很糟。躁动的意识难以平静，扰得我难以入眠。抬头一看，已无灯还亮着，就连 FZ 都睡了——他一向是寝室里睡得最晚的那位。这一定不早了。我不记得我是否做了什么梦，只能感到身上的阵阵灼热。努力入眠后，再度惊醒，一看手表，已然五点半了。&lt;/p&gt;
-&lt;p&gt;好想睡到自然醒。&lt;/p&gt;
-&lt;p&gt;上午的语文课讲了诗歌。从楚辞讲到了唐诗宋词。说起来，我真正感受到诗词之美时，已经到了高中的后期。以前教辅上对于诗歌内容的解析，在我眼里只是食之无味的糠咽菜，学习它们不过是为了应付考试。不过，当我试着了解作者人生的故事、揣摩诗词的结构时，似乎有什么在心里迸发。&lt;/p&gt;
-&lt;p&gt;晚上出来和 walawala 君讨论了某一门课的展示，还意外收获了杯奶茶。讨论到后来，竟变成了 4399 双人局。很久没那么开心了。&lt;/p&gt;
-&lt;p&gt;结果晚上又睡不着了。或许不该喝那杯奶茶的。&lt;/p&gt;
-&lt;h2 id=&#34;201956&#34;&gt;2019.5.6&lt;/h2&gt;
-&lt;p&gt;看了《数理逻辑》的前两章。&lt;/p&gt;
-&lt;h2 id=&#34;201958&#34;&gt;2019.5.8&lt;/h2&gt;
-&lt;p&gt;剑桥晚清民国史一课的展示做得很糟糕。或许我们本就没有做好准备，而最后呈现出的效果也与想象中的有很大差别。&lt;/p&gt;
-&lt;h2 id=&#34;201959&#34;&gt;2019.5.9&lt;/h2&gt;
-&lt;p&gt;录了离部寄语，当时说了：&lt;/p&gt;
-&lt;p&gt;「我想，你们是，打破那昏庸陈旧的小束、踏着一瞬的光。我湖南世界里有一丢丢亮起来了。我彷徨，我紧张，但心底，有种奇怪的感觉在膨胀，它告诉我，瞧啊瞧，你的曙光。」&lt;/p&gt;
-&lt;p&gt;现在想想好尴尬。&lt;/p&gt;
-&lt;h2 id=&#34;2019516&#34;&gt;2019.5.16&lt;/h2&gt;
-&lt;p&gt;今天看了半天的宏观经济学。即使此前有多少不解，现在也终归是有点开窍的感觉了。不过，真正在课上开始做题的时候，仍是有些力不从心，希望之后会好点吧。&lt;/p&gt;
-&lt;p&gt;北岛的《守夜》到了。速读一波，得妙句一枚：「比事故更陌生/比废墟更完整」。&lt;/p&gt;
-&lt;p&gt;上完管理学后，去跑了 2 km。摘下眼镜后，才发现世界如此朦胧，摇曳树影映着柔光，琴王在琴房里游荡。看着双杠、吹着晚风，很舒服。&lt;/p&gt;
-&lt;p&gt;Z 君明天要考 F3 了，祝其好运。&lt;/p&gt;
-&lt;h2 id=&#34;2019517&#34;&gt;2019.5.17&lt;/h2&gt;
-&lt;p&gt;昨日上午的语文课，大抵讲了些许中国各朝代的小说，不过读过的实在太少，故未能有什么共鸣。下午时，不甘于停留在校园里，想要出走，却又不知往何处去，于是乘地铁到了大华三路。下车后，骑车开始了漫无目的地游荡，途中有些有意思的人：在岚皋路那块儿岑感到有俩骑着摩拜&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;的蓝西装人士，有一人穿着黄皮革制成的皮鞋，很亮眼，骑了不久在长寿路又遇到了他们；也见到一个老爷爷和老奶奶迈着小步走入银行。老爷子一手搭着老伴的肩膀，不时歪过头来看向老奶奶，两人的步伐出奇一致；行人较少的街道一旁开着占卜点，经过时有一股熏香，地图上没搜到其介绍。&lt;/p&gt;
-&lt;p&gt;骑了一个小时后，累了。于是到附近的瑞幸里点了杯类似星冰乐的饮料。坐了一会儿，有一男一女与我一同拼桌。他们应该是附近公司的职员，我猜想。聊了几句之后，得知他们是从日本来的，在此待了已经有3年。这名日本老哥♂挺爱看圣经，说几句就言必称圣经，说这是智慧之书。东聊一句，西聊一句，竟也聊了一个小时。之后，我们双双有事，便就此告别。&lt;/p&gt;
-&lt;p&gt;晚上是部门的最后一次联谊。原本觉得会很无聊，但看到部门的合照、听着强哥蒋姐对我说的话时，我突然很感动。&lt;/p&gt;
-&lt;p&gt;之后，我们吃了蛙锅，去了 KTV ，各回各寝，结束了这一天。&lt;/p&gt;
-&lt;h2 id=&#34;2019518&#34;&gt;2019.5.18&lt;/h2&gt;
-&lt;p&gt;9 点多才起床……把张之洞的初稿写完了。&lt;/p&gt;
-&lt;p&gt;头昏，于是去操场跑了 5 km，花了 28 分钟，挺慢，但是跑完舒服得很，之后去尔美吃了米粉。&lt;/p&gt;
-&lt;p&gt;之后，去沃尔玛买了毛巾和洗手液，到附近的水果店里买了些水果。&lt;/p&gt;
-&lt;h2 id=&#34;2019519&#34;&gt;2019.5.19&lt;/h2&gt;
-&lt;p&gt;参加了思辙的一场讲座，大意为：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;不要神话别人，神话你自己&lt;/li&gt;
-&lt;li&gt;组织的 slogan -&amp;gt; 行事风格 -&amp;gt; 个人&lt;/li&gt;
-&lt;li&gt;T 型之思&lt;/li&gt;
-&lt;li&gt;scarcity&lt;/li&gt;
-&lt;li&gt;do what you love&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;看到摩拜恍若隔世。现在是哈罗（蓝）、青桔（绿）的天下了。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>C&#43;&#43; design patterns and derivatives pricing</title>
-        <link>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</link>
-        <pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</guid>
-        <description>&lt;p&gt;&lt;strong&gt;Book Link:&lt;/strong&gt; &lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493600/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;C++ Design Patterns and Derivatives Pricing&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;本文用于记录读完 &lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493600/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;em&gt;C++ design patterns and derivatives pricing&lt;/em&gt;&lt;/a&gt; 后的代码实践。&lt;/p&gt;
-&lt;h1 id=&#34;ch1-vanillacalloption&#34;&gt;ch1-VanillaCallOption&lt;/h1&gt;
-&lt;p&gt;在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 &lt;code&gt;SimpleMCMain1.cpp&lt;/code&gt; ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 &lt;code&gt;Random1.h&lt;/code&gt; ，以及具体实现该功能的头文件 &lt;code&gt;Random1_Implementation.h&lt;/code&gt; &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/CIUwl3ykpuzsQ8e.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h1 id=&#34;ch2-encapsulation&#34;&gt;ch2-Encapsulation&lt;/h1&gt;
-&lt;p&gt;在第 2 章，对于常用的功能进行了封装。这章用到的文件具体如下（表格内省略了用于实现接口的文件，例如 “Random1_Implementation.h”，后文的表格皆是如此）：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;文件名称&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;用途&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Random1.h&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;生成随机数的函数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;PayOff1.h&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;以 Strike 与 TheOptionsType 为私有变量的 PayOff 类，主要特点由：1. 以 &lt;code&gt;enum OptionType {call, put}&lt;/code&gt;  区分不同类型期权的定价方式（这里是 2 种：看涨期权、看跌期权）；2. 通过&lt;code&gt;double operator() (double Spot) const&lt;/code&gt; 重载运算符 &lt;code&gt;()&lt;/code&gt; ，以计算给定期权的 PayOff&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;SimpleMC.h&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;用于最终定价的 Monte-Carlo 函数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;SimpleMCMain2.cpp&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;主程序&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/TCehDSMZ6tal3zj.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h1 id=&#34;ch3-inheritanceandvirtualfunction&#34;&gt;ch3-InheritanceAndVirtualFunction&lt;/h1&gt;
-&lt;p&gt;第 2 章的程序在扩展性上有待优化，考虑以下 2 个问题：&lt;/p&gt;
-&lt;p&gt;第 1 个问题。如果我们现在希望引入 call, put 之外类型的期权，对其进行定价，那要怎么修改源程序呢？在上一章里，我们区分不同类型期权的 PayOff 利用了 &lt;code&gt;enum OptionType {call, put}&lt;/code&gt; ，因此很容易想到的一种方法是，直接向 OptionType 添加新的类型。但是，而这东西是定义在 PayOff 类里面的，如果我们想要添加新类型，那就得修改之前写过的代码，不利于后续的维护——我们更希望后续新增的代码能“即插即用”，不需要我们为了适配新功能而调整之前的代码。&lt;/p&gt;
-&lt;p&gt;对于这个问题，本书的做法是采用&lt;strong&gt;继承&lt;/strong&gt;，将我们此前实现的 PayOff 类作为基类，衍生出新的子类，如 PayOffCall 类、PayOffPut 类。&lt;/p&gt;
-&lt;p&gt;第 2 个问题，如果我们引入的新类型期权（比如 Double Digital Option），与之前的看涨期权、看跌期权都不一样，那怎么办？在上一章里，我们重载了运算符 &lt;code&gt;()&lt;/code&gt; 以输出给定期权的 PayOff，那我是不是可以对每一个衍生出来的期权类，都重写 1 个同名函数呢？不行。在已经采用&lt;strong&gt;继承&lt;/strong&gt;的方法下，这种思路会有些问题，不能子类与基类之间的“is-a”关系。以下面的代码为例，对于 1 个子类对象，能够调用出 2 种不同功能却同名的函数，会产生一致性问题&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;class A 
-{
-    public:
-        void foo();
-};
-
-class B : public A 
-{
- public:
-     void foo();
-};
-
-B instanceOfB;
-A* ptrBase = &amp;amp;instanceOfB;
-A* ptrDerived = &amp;amp;instanceOfB;
-
-// 对于同一个类实例对象能调用出实现 2 种功能的同名函数
-ptrBase -&amp;gt; foo(); // A::foo()
-ptrDerived -&amp;gt; foo(); // B::foo()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;那么，如果对每一个衍生出来的期权类，我都在该类里重写一个新的计算 PayOff 的函数呢？也不行。比如，PayOffCall 类里写个 &lt;code&gt;CalPayOffCall()&lt;/code&gt;、PayOffPut 类里写个 &lt;code&gt;CalPayOffPut()&lt;/code&gt;？如果未来还需要引入其它新类型的期权，功能相同、但个个不同名的函数一多，维护起来太麻烦，所以这样也不太好。&lt;/p&gt;
-&lt;p&gt;对于这个问题，本书的做法是采用&lt;strong&gt;虚函数&lt;/strong&gt;，在 PayOff 基类中，将 &lt;code&gt;operator()&lt;/code&gt; 与 析构函数 &lt;code&gt;~PayOff()&lt;/code&gt; 写成虚函数。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;引入&lt;strong&gt;继承&lt;/strong&gt;与&lt;strong&gt;虚函数&lt;/strong&gt;后，便可改写 PayOff 类，新增的文件有：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;文件名称&lt;/th&gt;
-&lt;th&gt;用途&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;PayOff2.h&lt;/td&gt;
-&lt;td&gt;在 PayOff1.h 的基础上，引入了继承与虚函数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;SimpleMC2.h&lt;/td&gt;
-&lt;td&gt;改动了 &lt;code&gt;#include&lt;/code&gt; 的头文件，即 PayOff2.h&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;SimpleMCMain3.cpp&lt;/td&gt;
-&lt;td&gt;新的主程序&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;此外，通过继承，我们便可实现“即插即用”。本章引入了 DoubleDigital 类作为示例。新增的文件如下：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;文件名称&lt;/th&gt;
-&lt;th&gt;用途&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;SimpleMCMain4.cpp&lt;/td&gt;
-&lt;td&gt;在 SimpleMCMain3.cpp 的基础上，利用 if 判断期权的类型（是call？还是 put？）&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;DoubleDigital.h&lt;/td&gt;
-&lt;td&gt;基于 PayOff 所衍生出的 PayOffDoubleDigital 子类&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;SimpleMCMain5.cpp&lt;/td&gt;
-&lt;td&gt;计算 DoubleDigital 期权的主程序&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;与原书相比，对于“实现接口功能”的文件的命名上，笔者采用了另外的方式。以 Random1 为例，原书中对于接口文件与实现文件的命名分别是 Random1.h 、Random1.cpp。而本仓库中则以 Random1.h 、Random1_Implementation.h 的方式命名。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;不过，这个问题其实在 PayOff 类里并不会出现，但为了设计的一致性，还是需要避免。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>基于测度论的概率论基础</title>
-        <link>https://young-mann.github.io/posts/prob-theory/</link>
-        <pubDate>Thu, 14 Jul 2022 17:45:55 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/prob-theory/</guid>
-        <description>&lt;p&gt;本文是 &lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/489914/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Stochastic Calculus for Finance II: Continuous-Time Models&lt;/a&gt;&lt;/em&gt; 第 1 章与&lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493599/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;《微观金融学及其数学基础》&lt;/a&gt;第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;概率的公理化定义&lt;/li&gt;
-&lt;li&gt;随机变量与分布&lt;/li&gt;
-&lt;li&gt;随机变量的期望&lt;/li&gt;
-&lt;li&gt;随机变量的收敛方式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;微观金融研究领域中有两大核心概念：不确定性，以及时间或动态过程。而概率论便是用于构造不确定环境下金融模型的基本工具。在本文里，我们会借助测度论的语言，将我们以前学过的初等概率论中的概念重新表述一遍，了解如何“说好现代概率论里的行话”。&lt;/p&gt;
-&lt;p&gt;为什么要在概率论中引入测度论呢？假如我就想用初等概率论来解决问题不行吗？不是不可以，但是初等概率论所能解决的问题实在有限。举个简单的例子。就以「扔一枚均匀硬币」的随机试验为例。当我扔硬币的次数仅限于有限次的时候，你可以用以前学过的概率论知识算出扔出正面的概率是多少。但是，如果我不停扔这枚均匀硬币，问你永远都是正面的概率是多少，你也许可以用初等概率论的方法告诉我是0。但如果你再仔细想下去，想想我问你这个事件发生的概率的时候，我到底是在问什么呢？换而言之，「概率」是什么？你可能没有仔细思考过这个概念。你并没有真的认真深入的思考过这个问题，因为实际上当你的概率空间是无穷次抛硬币的结果的时候，就不像抛有限次的情况，因为你不能对所有“事件”定义概率了。另一个例子是，条件期望是什么？什么叫某个随机变量 X 一定时另一个随机变量 Y 的期望？虽然直观上好像可以理解成“平均值”，但很难用初等概率论给出一般情况下的严格定义的，可能需要分类讨论X, Y是连续或离散随机变量，或他们的混合，或更复杂。&lt;/p&gt;
-&lt;p&gt;你可能对「概率」有些懵懂的认识：或许你会将其视作某个事件在多次重复实验中发生的频率，或许你认为概率是自己于某个事件可能发生的信服程度，亦或者，你可能将其视作逻辑的扩展（如果你是这么想的话，那你或许能在 E.T.Jaynes 所著的 &lt;em&gt;Probability Theory: The Logic of Science&lt;/em&gt; 找到共鸣）。但是光有观念还不够，为了使用现成的、方便的定量方法解决问题，你还得深究下去，想办法办法把你的这些观念转化成数学语言，把你想要达到的目标转写成良定义的问题——测度论就是一种可选的语言，可用于说清楚「概率」到底是什么。&lt;/p&gt;
-&lt;p&gt;本章的具体内容如下：第一，简要回顾初等概率论中对于概率及随机变量的定义，用严格的测度语言表述它们；第二，考察在随机分析中非常重要的期望与条件期望的概念与相关性质；第三，进一步考察随机变量的主要数值特征，借助这些数值特征，描述几个在研究金融资产价格运动时必须牢固把握的概率分布；第四，对于随机变量的收敛进行简要探讨。&lt;/p&gt;
-&lt;h2 id=&#34;如何描述概率概率的公理化定义&#34;&gt;如何描述概率——概率的公理化定义&lt;/h2&gt;
-&lt;p&gt;粗略地讲，概率就是衡量「事件发生的可能性」的大小。可是，「事件」是什么？「可能性」又是什么？一种可行的思路是，可以借助集合论与测度论中的工具对于上述概念进行指代：用集合代表「事件」，集合系代表「事件的全体」，集合的测度代表「事件发生的可能性」。&lt;/p&gt;
-&lt;p&gt;下文将尝试用测度的语言，从5个步骤入手&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，表述现代概率公理体系。为了便于理解，下文的阐述均基于「连续投掷2次硬币」这个随机试验。在「连续投掷2次硬币」这一随机试验中，将硬币的某一面记作正面，与其相反的一面记作反面。将「硬币投出了正面」记作 H （假设其可能性为 $p,p&amp;gt;0$），将「硬币投出了反面」记作 T （假设其可能性为 $q, q=1-p&amp;gt;0$）。&lt;/p&gt;
-&lt;h3 id=&#34;描述样本空间omega&#34;&gt;描述样本空间——$\Omega$&lt;/h3&gt;
-&lt;p&gt;以一串序列（$w_1w_2w_3\cdots w_n$，其中$w_i的可能取值为H或T$）列出所有可能发生的结果，便可得样本空间 $\Omega$ ：
-$$
-\Omega = \lbrace \text{HH, HT, TH, TT}\rbrace.
-$$&lt;/p&gt;
-&lt;h3 id=&#34;描述事件omega-的子集&#34;&gt;描述事件——$\Omega$ 的子集&lt;/h3&gt;
-&lt;p&gt;样本空间 $\Omega$ 列出了随机试验所有可能发生的结果。在这些过程中，有一些结果可能是我们 &lt;u&gt;所关心的&lt;/u&gt;。例如，我们可能会 &lt;u&gt;关心第1次掷币的结果是正面&lt;/u&gt; 或者 &lt;u&gt;关心第2次掷币的结果是反面&lt;/u&gt;。根据我们 &lt;u&gt;所关心的&lt;/u&gt; 内容不同，我们可以对样本空间中的元素进行归类。这种归类有个学名，叫分割（decomposition）。其定义如下：对于一族集合$\lbrace C_i, i=1,2,\cdots\rbrace$，如果 $ C_i\cap C_j=\varnothing, \forall i \neq j $ 且 $\cup^\infty _{i=1}C_i=\Omega$ ，则称这一族集合 $\lbrace C_i, i=1,2,\cdots\rbrace$ 为 $\Omega$ 的一个分割（decomposition）或划分（partition）。&lt;/p&gt;
-&lt;p&gt;为了更好地理解分割，我们来看这样一个例子：$\lbrace C_1=第1次掷币的结果是正面\rbrace;$$ \lbrace C_2=第1次掷币的结果是反面\rbrace $是 $\Omega$ 的子集。由于 $C_1= \lbrace \text{HH, HT}\rbrace, C_2= \lbrace \text{TH, TT}\rbrace$，因此 $ C_1\cap C_2=\varnothing$ 且 $C_1 \cup C_2 = \Omega$，所以 $\lbrace \text{HH, HT}\rbrace, \lbrace \text{TH, TT}\rbrace$ 是 $\Omega$ 的一个分割。同理可得，$\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 也是 $\Omega$ 的一个分割&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-&lt;p&gt;理解了分割后，便可以对事件进行定义了。所谓事件，就是由样本空间 $\Omega$ 的某一种分割通过不断的集合运算构造出的一些集合。比如说，「第1次掷币的结果是正面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace$ 基本分割的并，也可以是 $\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 两个基本分割并集的补。又比如说，「第1次掷币的结果既不是正面也不是反面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 基本分割并集的补，即 $\varnothing$，因此称该事件为不可能事件&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;；而「第1次掷币的结果是正面或反面」这一事件就是 $\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 基本分割的并集，即 $\Omega$，称其为确定事件。&lt;/p&gt;
-&lt;h3 id=&#34;描述事件的集合sigma-代数--mathcalf&#34;&gt;描述事件的集合——$\sigma-$代数 $ \mathcal{F}$&lt;/h3&gt;
-&lt;p&gt;在上一小节中，我们利用分割与集合的基本运算描述了事件的概念。如果对这些事件进一步施加一系列集合的基本运算，似乎就能将所有我们所关心的事件都表示成集合的形式。把我们所关心的事件全部列出来以后，我们好像就可以 &lt;u&gt;对这些事件对应的集合定义它们的测度&lt;/u&gt;，进而衡量这些集合对应的事件发生的可能性了。未来似乎一片光明啊~&lt;/p&gt;
-&lt;p&gt;可是，事情并没有那么简单。如果重新审视上文下划线的表述，我们又会碰上 2 个问题：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;我们关心的是某些事件发生的可能性，对应的是相应集合的测度。然而，不是每一个事件都可以被定义出概率的，也并不是每个集合都可以被定义出测度。&lt;/li&gt;
-&lt;li&gt;在我们考虑不同的事件时，势必要对不同的事件进行组合、操作，将这些事件组合为更加复杂的事件。在这些操作中，会涉及集合的交、并、差等运算。万一运算出来的集合不在我们处理的能力范围内，那可咋整啊？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;第 1 个问题要求我们 &lt;u&gt;找出那些能被定义测度的集合，即所谓可测集&lt;/u&gt;，将它们作为我们的研究对象，而第 2 个问题要求我们经过组合操作后所得到的输出结果，与输入内容的类型一致，仍然是可测集，因此需要 &lt;u&gt;找到这样的一个集合系，使得其中的集合在经过可数次运算后的结果不会超出这个集合系所能包含的范围&lt;/u&gt;。那么，在集合论与测度论的工具箱里，是否有能够满足上述用下划线所标识的性质的工具呢？实际上，测度论中提到了这样的一个集合系，不仅可以保证其中的集合是可测集，而且这些集合对基本运算封闭。这个集合系，便是$\sigma-$代数，其定义如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/sA2JiwZ7S3hdrHU.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;简单解释一下 $\sigma-$代数 的含义。$\sigma-$代数 是以集合为元素的集合。从定义1.1中的3个性质入手，可以推出集合系中的空集、可数次交/并/差、上限集、下限集在运算后都能在该集合系中。通俗来说，$\sigma-$代数 里的某1个元素都代表1个最基本的事件，而 $\sigma-$代数 的某1个子集就代表1个更加复杂的事件。如果样本空间 $\Omega$ 中可能发生的情况共有 $N$ 种，那么由 $\Omega$ 中的元素经过集合运算生成的最小 $\sigma$-代数 就是 $\mathcal{F} = \lbrace \varnothing, \Omega \rbrace$，最大的 $\sigma$-代数 就是由所有的幂集构成，一共包含 $2^N$ 个元素。&lt;/p&gt;
-&lt;p&gt;为了更好地理解$\sigma-$代数，接下来让我们看由基本分割产生的 $\sigma-$代数（记作$\mathcal{F}$）。定义$\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace,\lbrace \text{TT}\rbrace$ 这个基本分割，通过交、并、补所得的  $\sigma-$代数 包含 16 个元素，它们是：&lt;/p&gt;
-&lt;p&gt;$$
-\mathcal{F} = \lbrace \varnothing, \Omega,
-\lbrace \text{HH}\rbrace,\lbrace \text{HT}\rbrace,\lbrace \text{TH}\rbrace, \lbrace \text{TT}\rbrace,
-\lbrace \text{HH,HT}\rbrace, \lbrace \text{HH,TH}\rbrace, 
-\
-\lbrace \text{HH,TT}\rbrace,
-\lbrace \text{HT,TH}\rbrace,
-\lbrace \text{HT,TT}\rbrace,
-\lbrace \text{TH,TT}\rbrace,
-\
-\lbrace \text{HH,HT,TH}\rbrace, \lbrace \text{HH,HT,TT}\rbrace, \lbrace \text{HT,TH,TT}\rbrace,  \lbrace \text{HH,TH,TT}\rbrace
-\rbrace
-$$
-$\sigma-$代数 包含了某一时刻我们所知道的「所有可能发生的事件的所有可能组合」，代表着我们在该时刻所知道的所有信息。比如说，上文由基本分割产生的 $\sigma-$代数 $\mathcal{F}$ 代表了我们对「连续投掷2次硬币」的结果所具备的信息，其中包含了所有可能的结果，表示我们对于「连续投掷2次硬币」这个随机试验已经达到了“全知”的程度。$\sigma$-代数  这种「承载我们所知的信息」的功能，详见&lt;a class=&#34;link&#34; href=&#34;../sigma-algebra&#34; &gt;这篇文章&lt;/a&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;有了样本空间 $\Omega$ 和 $\sigma$-代数 $\mathcal{F}$ 以后，我们可将它们写成 $( \Omega, \mathcal{F} )$，称之为可测空间（measurable space），而 $\mathcal{F}$ 中的元素&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;称为可测集（measurable set）。至此，我们便初步界定了「随机试验」中所关心的「事件」。接下来需要定义的，就是这些「事件」发生的可能性，即概率了。&lt;/p&gt;
-&lt;h3 id=&#34;描述可测空间上的测度mu&#34;&gt;描述可测空间上的测度——$\mu$&lt;/h3&gt;
-&lt;p&gt;概率的定义应该从哪里入手呢？不妨试着从我们刚刚得到的可测空间 $( \Omega, \mathcal{F} )$ 入手。 $( \Omega, \mathcal{F} )$ 之所以叫做可测空间，是因为其具备一些优良的性质，使得 $\mathcal{F}$ 中的任意一个集合都可以定义其测度。如果我们在可测空间 $ ( \Omega, \mathcal{F} )$ 上定义一个测度  $\mu$，并进一步让这个测度  $\mathbb{P}$满足某些我们所期望「概率」应该具备的性质，那么不就能对 $\mathcal{F}$ 中的任意一个集合（也就是事件）定义其「可能性的大小」了吗？因此，我们接下来要做的事情就是：1. 定义 $ ( \Omega, \mathcal{F} )$ 上的测度 $\mu$ ；2. 在 $\mu$ 上增加某些性质，使之成为我们心目中的「概率」。&lt;/p&gt;
-&lt;p&gt;这一节做的是第 1 件事，即定义 $ ( \Omega, \mathcal{F} )$ 上的测度。不严谨地讲，测度实际上是可测空间 $ ( \Omega, \mathcal{F} )$ 上存在的一个从 $\mathcal{F} $ 到 $[0,\infty)$ 的映射，记作 $\mu:\mathcal{F} \rightarrow \text{R}^+$，其定义为：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;$\mu(\varnothing) = 0.$&lt;/li&gt;
-&lt;li&gt;$\mu(A)\geq 0, \forall A \in \mathcal{F}.$&lt;/li&gt;
-&lt;li&gt;对于 $\mathcal{F}$ 中任意可数集合 $C_i,i=1,2,\cdots$，如果 $ C_i\cap C_j=\varnothing, \forall i \neq j $ ，有$\mu(\cup^\infty_{i=1} C_i) = \Sigma^\infty_{i=1}\mu(C_i)$.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这样定义的函数关系就是所谓测度（measure）。将测度加入测度空间，则三位一体的 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 便称为测度空间。&lt;/p&gt;
-&lt;h3 id=&#34;将测度特化为概率测度mathbbp&#34;&gt;将测度特化为概率测度——$\mathbb{P}$&lt;/h3&gt;
-&lt;p&gt;在第 4 节中测度定义中加上一个正则性要求，即 $\mathbb{P}(\Omega) = 1$，便可构造出 $\mathcal{F}$ 上的一个函数关系  $\mathbb{P}:\mathcal{F} \rightarrow [0,1]$，对于任意一个集合$A\in \mathcal{F}$都制定了$\left[0,1\right]$中的一个数 $\mathbb{P}(A)$。$\mathbb{P}$ 便是我们所要的概率测度，简称为概率，而 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 便称为概率空间。此时我们便完成了对概率的公理化定义。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/cjHPxamZG95kqXV.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;如何方便计算事件的概率随机变量与分布&#34;&gt;如何方便计算事件的概率——随机变量与分布&lt;/h2&gt;
-&lt;h3 id=&#34;给事件贴上实数类型的标签随机变量-x&#34;&gt;给事件贴上实数类型的标签——随机变量 $X$&lt;/h3&gt;
-&lt;p&gt;我们已经有了一系列的公理概念。但是，我们考察的对象都是集合这一类型。如果我们能将集合转化到我们熟知的实数系，就能用上更多好用的运算工具（比如微积分）。为了实现这一点，我们需要引入随机变量这一概念：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/UTyrmsHf8CBicYt.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;从直观上理解，假设存在 2 个可测空间 $(\Omega,\mathcal{F})$  和 $(\text{R},\mathcal{B})$ ，那么随机变量 X 就是这样的一个函数关系 $X:\Omega \rightarrow \text{R}$，其作用相当于为 $\mathcal{F}$ 中的每一个元素（即事件）都安排一个对应的实数，从而将 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 引导到了一个新的概率空间 $ ( \text{R}, \mathcal{B}, \mathbb{L} )$ 上。&lt;/p&gt;
-&lt;p&gt;随机变量 $X$ 是一个数值的量，其具体数值由 $\omega \in \Omega$ 的随机试验所确定，可以视作样本空间 $\Omega$ 里事件的别名。因此，我们原本对「事件发生可能性大小」的注意力，就可以转移到对「随机变量 $X$ 取不同值的概率」了。不过，在很多时候，$X$ 取特定值的概率都是 0 。因此，我们将主要考虑 $X$ 取值在某一集合上的概率（即 $\mathbb{P}\lbrace X \in 某个集合\rbrace$），而不是取特定值的概率（即 $\mathbb{P}\lbrace X = 某个特定值\rbrace$)。下一节里我们将通过理解随机变量的分布，了解计算 $X$ 取值在某一集合上的概率。&lt;/p&gt;
-&lt;h3 id=&#34;瞅瞅随机变量取值有啥特征分布测度-mu_x累积分布函数-f-与&#34;&gt;瞅瞅随机变量取值有啥特征——分布测度 $\mu_X$、累积分布函数 $F$ 与……&lt;/h3&gt;
-&lt;p&gt;简单来说，随机变量的分布用于揭示随机变量 2 方面的信息：1. 可以取到哪些值？2. 取得这些值（连续情况下，则是某一区间）的概率分别是多少？。这种分布，可以通过分布测度，或概率质量函数，或密度函数，进行描述。&lt;/p&gt;
-&lt;p&gt;先来看个例子。回顾我们一开始&lt;a class=&#34;link&#34; href=&#34;#experiment&#34; &gt;「连续投掷2次硬币」&lt;/a&gt;随机试验结果的空间 $ ( \Omega, \mathcal{F}, \mathbb{P} )$。给定一个随机变量 $S$，用于表示股票价格，其定义如下：&lt;/p&gt;
-&lt;p&gt;$$
-\begin{align}
-S_0(\omega) &amp;amp;= 4, \forall  \omega \in \Omega
-\\
-S_1(\omega) &amp;amp;=
-\begin{cases}
-8, &amp;amp; 如果 \omega_1=H \
-2, &amp;amp; 如果 \omega_1=T \
-\end{cases}
-\\
-S_2(\omega) &amp;amp;=
-\begin{cases}
-16, &amp;amp; 如果 \omega_1=\omega_2=H \
-4, &amp;amp; 如果 \omega_1\neq \omega_2 \
-1, &amp;amp; 如果 \omega_1=\omega_2=T
-\end{cases}
-\end{align}
-$$&lt;/p&gt;
-&lt;p&gt;这些都是随机变量，它们对于每个可能的掷币结果结果序列，都指定了相应的数值。藉此我们可以计算这些随机变量取不同值的概率，确定这些随机变量的分布。例如，
-$$
-\begin{align}
-\mathbb{P}\lbrace S_2&amp;amp;=16\rbrace=\mathbb{P}(\lbrace HH \rbrace)=p^2
-\\
-\mathbb{P}\lbrace S_2&amp;amp;=4\rbrace=\mathbb{P}(\lbrace HT \rbrace \cup \lbrace TH \rbrace)=2pq
-\\
-\mathbb{P}\lbrace S_2&amp;amp;=1\rbrace=\mathbb{P}(\lbrace TT \rbrace )=q^2
-\end{align}
-$$&lt;/p&gt;
-&lt;p&gt;可以将 $S_2$ 的分布设想为，将数量为 1 的质量分配到三块地方：1 块大小为 $p^2$ 的质量位于 16；1 块大小为 $2pq$ 的质量位于4；1 块大小为 $q^2$ 的位于 1。这样，我们就能全面了解 $S_2$ 的所有可能取值。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/MgKRkvSsOVLcp26.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;但是，我们刚才讨论的只是离散情况下的随机变量。如果情况推广到连续情况下，就需要考虑随机变量将单位质量“连续地”分布于整条直线。为此，我们需要将随机变量的分布设想为「在一个集合内有多少质量」，而不是「在某一点有多少质量」。换而言之，随机变量的分布本质上其实也是概率测度，只不过它是在 $\mathbb{R}$ 的子集上的测度。其定义如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/c1w5WzbITJqVaFt.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;在这个定义中，集合 $B$ 可以仅仅包含一个数。比如说，如果 $B=\lbrace 4\rbrace$，则有 $\mu_{S_2}(B)=2pq$；如果 $B=[2,5]$，我们仍然有 $\mu_{S_2}(B)=2pq$，因为 $S_2$ 在 $[2,5]$ 里只有放在数字 4 的那一块质量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/grMxju4pn5UvXyO.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;除了指定分布测度 $\mu_X$ 以外，还有其他记录随机变量的方法。我们可以用累积分布函数来描述随机变量的分布，即：$F(x) = \mathbb{P} \lbrace X\leq x \rbrace, x \in \mathbb{R}$。一方面，如果我们已知分布测度 $\mu_X$ ，则可以通过 $F(x) = \mu_X(-\infty,x]$得到累积分布函数 $F$。另一方面，如果已知累积分布函数 $F$，我们就能计算分布测度 $\mu_X(x,y] = F(y)-F(x)$，其中$x&amp;lt;y $。
-在两种特别的情况下，我们可以更详细地描述随机变量的分布。&lt;/p&gt;
-&lt;p&gt;第一种情况，存在密度函数 $f(x)$，对于所有 $x\in \mathbb{R}$ 有定义，并且满足：
-$$
-\mu_X[a,b] = \mathbb{P}\lbrace a \leq X \leq b\rbrace = \int^b_a f(x)dx, -\infty&amp;lt;a\leq b&amp;lt;\infty
-$$
-第二种情况，存在概率质量函数，即存在有限序列 $x_1,x_2,\cdots,x_N$ 或者无穷序列 $x_1,x_2,\cdots$ 使得随机变量 $X$ 以概率 1 取序列中的某一个值。定义 $p_i = \mathbb{P}\lbrace X=x_i\rbrace$，则每一个 $p_i$ 非负，并且 $\sum_ip_i=1$。由 $X$ 的分布测度在博雷尔集 $B\subset \mathbb{R}$ 上指定的质量为：
-$$
-\mu_X(B) = \sum_{\lbrace i;x_i \in B\rbrace}{p_i}, B \in \mathcal{B}(\mathbb{R})
-$$&lt;/p&gt;
-&lt;p&gt;某些随机变量的分布可以通过密度函数刻画，而其他的一些随机变量则必须由概率质量函数刻画。不过也存在一些随机变量，其分布由密度函数与概率质量函数混合给出，也有些随机变量的分布既无成块的质量也无密度。&lt;/p&gt;
-&lt;h2 id=&#34;如何知晓随机变量取值的平均值数学期望&#34;&gt;如何知晓随机变量取值的“平均值”——数学期望&lt;/h2&gt;
-&lt;p&gt;设 $X$ 是定义在概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量。随机变量的可能取值有很多个，而我们希望计算随机变量的“平均值”，并在计算时考虑到概率的因素。如果 $\Omega$ 是有限空间或者可数的无限空间，便可分别如下计算平均值：
-$$
-\begin{align}
-\mathbb{E}X &amp;amp;= \sum_{\omega \in \Omega} X(\omega)\mathbb{P}(\omega)
-\\
-\mathbb{E}X &amp;amp;= \sum_{k=1}^\infty X(\omega_k)\mathbb{P}(\omega_k)
-\end{align}
-$$
-然而，如果$\Omega$ 是不可数的无限空间，由于不可数的无穷和不能定义，我们只能借助其它工具计算期望。这个工具便是积分。那么，直接用我们之前微积分里学过的黎曼（Riemann）积分可以吗？不太行，因为黎曼积分基本上是设计给连续光滑函数的，只有在充分小的区间上、函数值的改变也非常小的时候才能取到极限。然而，我们现在设计的函数是随机变量，其定义域是事件的集合 $\mathcal{F}$，因此按定义域划分的原则就很难采用：一方面，将  $\mathcal{F}$ 划分为可测集的和，再让这些集合的概率测度趋于 0 ，这种划分方法未必存在；另一方面，即便前面所述的划分方式存在，也只适用于那些在概率测度充分小的集合上 $X$ 的取值改变很小的特殊情况。&lt;/p&gt;
-&lt;p&gt;因此，我们采用勒贝格积分，通过将函数值域划分为小区间，并进行加总，从而将随机变量的数学期望这个概念转化成了在概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上以概率测度 $\mathbb{P}$) 为积分算子，以随机变量 $X$ 为被积函数的勒贝格积分。&lt;/p&gt;
-&lt;p&gt;设 $X$ 是概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量。勒贝格积分具有下图中的基本性质&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/hOkoIxHEu71cviZ.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;了解了勒贝格积分的性质后，便可对随机变量的期望进行定义：
-&lt;img src=&#34;https://s2.loli.net/2022/10/09/PmbQTv138BsX7jI.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;
-根据勒贝格积分的性质，可得期望的性质：
-&lt;img src=&#34;https://s2.loli.net/2022/10/09/pPjWqs3gBtV7KFQ.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;下面的定理给出了黎曼积分与勒贝格积分之间的关系。可以说，只要黎曼积分有定义，黎曼积分和勒贝格积分就一定相等，需要计算时，就可以利用微积分学过的计算黎曼积分的技巧处理勒贝格积分。
-&lt;img src=&#34;https://s2.loli.net/2022/10/09/vbomVnzxslE7T1c.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;拓宽极限的概念随机变量的收敛方式&#34;&gt;拓宽极限的概念——随机变量的收敛方式&lt;/h2&gt;
-&lt;p&gt;本节介绍随机变量序列的几种收敛方式——几乎必然收敛、概率收敛、分布收敛和依 m 阶矩收敛以及它们之间的关系。值得一提的是，随机变量序列的几乎必然收敛、概率收敛分别对应一般测度空间上可测函数序列的几乎处处收敛、测度收敛。&lt;/p&gt;
-&lt;h3 id=&#34;以概率-1-收敛&#34;&gt;以概率 1 收敛&lt;/h3&gt;
-&lt;p&gt;假设 $\lbrace X_n \rbrace_{n \geq 1}$ 是一组定义在概率空间 $ (\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量序列，$X$ 是定义在同一空间上的随机变量。如果有 $N \in \mathcal{F}$，且 $\mathbb{P}(N)=0$，则对于所有 $\omega \notin N$，随机变量序列 $\lbrace X_n \rbrace_{n \geq 1}$ 在一般意义上收敛于 $X(\omega)$ ，即：
-$$
-\mathbb{P}\lbrace \omega:\lim_{n \to \infty} X_n(\omega) = X(\omega) \rbrace  =1
-$$
-则称 $\lbrace X_n \rbrace_{n \geq 1}$ 几乎必然或者以概率 1 收敛于$X$，记作：$X_n \stackrel{a.s.}  \longrightarrow X$ 或者 $X_n \longrightarrow X \quad w.p.1$。&lt;/p&gt;
-&lt;h3 id=&#34;以概率收敛&#34;&gt;以概率收敛&lt;/h3&gt;
-&lt;p&gt;假设 $\lbrace X_n \rbrace_{n \geq 1}$ 是一组定义在概率空间 $ (\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量序列，$X$ 是定义在同一空间上的随机变量。如果对任何 $\epsilon &amp;gt; 0$ ，有：
-$$
-\lim_{n \to \infty} \mathbb{P}(|X_n-X|&amp;gt;\epsilon) = 0
-$$
-则称 $\lbrace X_n \rbrace$ 以概率收敛于$X$，记为 $X_n \stackrel{P}  \longrightarrow X$ 。这表明随机变量 $X_n$ 与 $X$ 发生任意确定的正偏差的概率随着n的无限增大而趋近于 0 。&lt;/p&gt;
-&lt;h3 id=&#34;依分布收敛&#34;&gt;依分布收敛&lt;/h3&gt;
-&lt;p&gt;假设 $\lbrace X_n \rbrace_{n \geq 1}$ 是一组定义在概率空间 $(\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量序列，设 $\lbrace X_n \rbrace$ 的分布函数是 $\mathcal{D}_n, n=1,2,\cdots$，$X$ 的分布函数是 $\mathcal{D}$。如果对于 $\mathcal{D}$ 的每一个连续点 $x$ 都有：&lt;/p&gt;
-&lt;p&gt;$$
-\lim_{n\to \infty} \mathcal{D}_n(x) = \mathcal{D}(x)
-$$
-则称 $\lbrace X_n \rbrace$ 依分布收敛于$X$，记为 $X_n \stackrel{\mathcal{D}}  \longrightarrow X$ 。&lt;/p&gt;
-&lt;h3 id=&#34;依-m-阶矩收敛&#34;&gt;依 m 阶矩收敛&lt;/h3&gt;
-&lt;p&gt;假设 $\lbrace X_n \rbrace_{n \geq 1}$ 是一组定义在概率空间 $ (\Omega, \mathcal{F}, \mathbb{P})$ 上的随机变量序列，$X$ 是定义在同一空间上的随机变量。如果：
-$$
-\lim_{n \to \infty}E(X_n-X)^m=0
-$$
-则称 $X_n$ 依 $m$ 阶矩（moment）收敛于 $X$ 。特别地，当 $m=1$ 时称为均值收敛，$m=2$时称为在均方意义上收敛（mean square convergence）。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;这几种收敛方式的关系如下图所示&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;。其中，箭头符号代表起始端点代表的收敛方式蕴含终点端点代表的收敛方式。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/ViToGJmIcK4ORaz.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;p&gt;本文简单介绍了基于测度论的概率论，以随机试验的样本空间 $\Omega$ 为起点，在此基础上选取了 $\Omega$ 中使概率有定义的子集族 $\mathcal{F}$，并且定义了从 $\mathcal{F}$ 映射到 $[0,1]$ 的函数 $\mathbb{P}$，称之为概率测度。样本空间 $\Omega$ 、子集族 $\mathcal{F}$、概率测度 $\mathbb{P}$ 一同组成了概率空间 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ ，该空间以  $\mathbb{P}(\Omega) = 1$ 及 可数可加性：互不相交集合的概率等于各集合的概率之和 为 2 条公理。&lt;/p&gt;
-&lt;p&gt;在此基础上，本文介绍了随机变量及其分布。从直观上理解，假设存在 2 个可测空间 $(\Omega,\mathcal{F})$  和 $(\text{R},\mathcal{B})$ ，那么随机变量 X 就是这样的一个函数关系 $X:\Omega \rightarrow \text{R}$，其作用相当于为 $\mathcal{F}$ 中的每一个元素（即事件）都安排一个对应的实数，从而将 $ ( \Omega, \mathcal{F}, \mathbb{P} )$ 引导到了一个新的概率空间 $ ( \text{R}, \mathcal{B}, \mathbb{L} )$ 上。随机变量 $X$ 是一个数值的量，其具体数值由 $\omega \in \Omega$ 的随机试验所确定，可以视作样本空间 $\Omega$ 里事件的别名。&lt;/p&gt;
-&lt;p&gt;另外，本文简单介绍了随机变量期望的定义方式：勒贝格积分，以及随机变量的收敛方式：几乎必然收敛、概率收敛、分布收敛和依 m 阶矩收敛。&lt;/p&gt;
-&lt;h2 id=&#34;参考文献&#34;&gt;参考文献&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/489914/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Stochastic Calculus for Finance II: Continuous-Time Models&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493599/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;微观金融学及其数学基础&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;此处参考了 &lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493599/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;微观金融学及其数学基础&lt;/a&gt; P597 的内容。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;而且这种分割相比前一种分割更加精细。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;不失一般性地，此处我们不考虑硬币投掷后竖直立起来的情况。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;其中的元素都是集合哦。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;这一节中的图片截自 &lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/489914/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Stochastic Calculus for Finance II: Continuous-Time Models&lt;/a&gt; 的 1.3 小节。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;该图出自 &lt;a class=&#34;link&#34; href=&#34;https://neodb.social/books/493599/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;微观金融学及其数学基础&lt;/a&gt; P605。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>退宿日</title>
-        <link>https://young-mann.github.io/posts/%E9%80%80%E5%AE%BF/</link>
-        <pubDate>Tue, 05 Jul 2022 22:47:21 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E9%80%80%E5%AE%BF/</guid>
-        <description>&lt;p&gt;今天处理完了毕业所需的所有手续，主要做了「退宿」一事。当我回到寝室的时候，恰有一个室友在收拾行李。许久未见，收拾着行李，我们有一搭没一搭地聊着，简单交流了一下彼此的前程。顺便，我俩交流了最近某个数据库被泄露的事件。聊到一半的时候，我在被泄露的数据库样本里一查找，居然还翻到了一个和他同名的家伙。途中，附近寝室的老哥邀请我们一起下楼吃午饭，室友立马答应了，而我拿出了提前买好的 1+1+1+1 回绝了那老哥。此后，下楼扔了 3 趟垃圾，抛弃了一叠与我没有关系的书籍，打包好了所有的行李，和室友找宿管阿姨交还了寝室的公物，完成了「退宿」。&lt;/p&gt;
-&lt;p&gt;这时，今日领取双证的截止时间快到了。本着「今天弄好以后就不用再来」的想法，我俩匆匆扫开共享单车，赶在值班老师下班前蹬到了领取双证的大楼。领取双证的手续不复杂，但比较繁琐。室友在我之前办理好了所有的手续。他本该直接走的——但等我拿好毕业证，处理完额外的手续后，抬头看了眼，发现他还在那儿等着我。我觉得没必要如此，大可先行离开。作为浪费他时间的赔礼，我带他到了楼下小卖部，打算请他吃雪糕。我直接在冰柜里抓了根带榛子的梦龙。他则在思索许久，拿了瓶冰红茶，说是冰淇淋太甜，容易腻味。拿完双证后便可回家了。我和室友并不顺路。于是，在学校大门的刷脸闸机前，我俩挥着各自手里的梦龙与冰红茶，就此别过了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;再说些不那么相关的。&lt;/p&gt;
-&lt;p&gt;回到家后，我姐问我「有没有和别人拍毕业照」，我的回答是「完全没有」。而今天，当我到领取双证的办公室时，发放双证的老师也问我和室友「不去拍点毕业照之类的东西吗」，我回答的是「没有，我没有什么好留念的了」。&lt;/p&gt;
-&lt;p&gt;我没有拍任何毕业照，现在也没有打算。我一向讨厌被拍照，讨厌看到相片里的自己，这种厌恶在个人照上尤甚。至于集体照，在过去，我有时会应朋友的邀请“被迫营业”一下，但现在连这一点也很难实现了——我曾经或许能有些可以一起拍毕业照的朋友，但我把和他们的关系都搞砸了。&lt;/p&gt;
-&lt;p&gt;不过，点进一些朋友的微信朋友圈，看到大伙儿一起撒欢的模样时，我还是能感到一阵悸动——我似乎对毕业照，或者说毕业照所反映的（表面上）良好的人际关系仍保有一丝憧憬。但这些已经与我无关了。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>攀岩杂记</title>
-        <link>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</link>
-        <pubDate>Wed, 29 Jun 2022 21:01:50 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</guid>
-        <description>&lt;p&gt;前天一时兴起想去岩馆爬墙，于是约了某个老哥同去。结果今天临时被鸽，只好独自前行。&lt;/p&gt;
-&lt;p&gt;到岩馆时已经是下午了。原则上这段时间他们这种门店还不能对外开放。刚进门不久，就听到老板和他人的对话，听说他们是偷偷开馆的。似乎附近有一家偷偷开馆的还被举报了。挺惨的。&lt;/p&gt;
-&lt;p&gt;简单热身后，先观察了别人一段时间，回忆起大致规则后，挑了一条 V1 的线，靠蛮力在第 3 次尝试的时候爬成了。随后又小试了几条 V1，结果都没完成，试了几次就力竭了。看到我的几次尝试后，旁边有人告诉我肩膀没放松，这样腿部不好发力。的确如此。在某些脚点上，我没把握好让肩膀放松的姿势。在岩馆霍霍了 2 小时后，手上破了点皮，决定归家。
-　&lt;/p&gt;
-&lt;p&gt;在路上看到家港式小吃的餐馆，开放堂食，于是进去吃了点炸串和咖喱牛腩。饭饱后，坐地铁回家。&lt;/p&gt;
-&lt;p align=&#34;right&#34;&gt;2022.06.29&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>为啥还有人直接用 LSTM 预测股价嘞？</title>
-        <link>https://young-mann.github.io/posts/lstm/</link>
-        <pubDate>Sun, 05 Jun 2022 02:34:12 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/lstm/</guid>
-        <description>&lt;p&gt;最近提交了论文的最终稿，闲来无事和其他同学交流了一下，发现有俩同学在用 LSTM 预测股价。简单扫了一遍他们的文章，发现他在数据的处理上比较粗糙，没有太大实用价值。支撑我作出这个判断的，是他们没做到以下几件事：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在数据处理上，股价数据属于时序数据，需要先做平稳性检验，对输入数据做对数差分，保证预测变量和特征变量都是平稳的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在模型选择上，由于金融时序数据的信噪比比较低，所以模型的参数不能太多，以免过拟合。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在预测目标上，选择了股价的绝对值（而非收益率），而股价这玩意是不稳定序列，任何扰动都是永续的，因此方差随时间会趋向无穷大。同时，从实际应用的角度上看，我们其实更希望得到的是下一期的股价和这一期相比，是涨了还是跌了，而不是预测股票价格的绝对值。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;如果中了以上几条，相当于训练模型前啥准备工作都没做。这会导致什么结果呢？根据笔者以前的试验，LSTM 大概率只能学到一堆噪声（$y_t^{&amp;rsquo;}=y_{t-1}+\epsilon^{&amp;rsquo;}$），甚至直接把前一期的收盘价作为当期的预测值输出——在这种情况下，假设单日内股价涨跌幅限制 10%（比如 A 股市场），那么在使用 MSE 的情况下，预测的误差也一定不会超过 10%。虽然预测误差看起来不大，但实际上模型没学到啥有用的东西，没法用于在股市里的获利。&lt;/p&gt;
-&lt;p&gt;举个例子，某只股票今天的价格是10元，用模型预测其明天的价格是10.25元，结果真的到了第二天，发现股票价格跌到了 9.75 元。这时候，你计算绝对股价的误差，可能会发现，$(10.25-9.75)/9.75 = 5.13%$，好像预测差距并不大，但问题就是，股票每天的波动本来就不大。如果你真拿这个模型去股市里实战，你可能会发现，这个模型虽然可以做到每天预测股价的绝对值的误差都都很小，但是每天的涨跌其实都是乱猜的，怕不是没多久就赔麻了。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>我能写点什么？</title>
-        <link>https://young-mann.github.io/posts/writing/</link>
-        <pubDate>Tue, 17 May 2022 00:52:24 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/writing/</guid>
-        <description>&lt;p&gt;近些年来，觉得自己的表达欲望以及表达能力越来越弱。这里的“表达”特指写作这件事。我偶尔会产生想要写点东西的冲动，可当我真的摊开笔记本、拿起笔，或是坐在电脑面前的时候，我却又感到无从下手，甚至倍感压力。 这种压力的来源，与其说是害怕写得不好，更不如说是害怕暴露真实的自己，害怕暴露自己的真实水平，亦或是展示出自己的真实想法——尽管我知道（也许）并没有所谓的“他人”会看我写下的这些东西。&lt;/p&gt;
-&lt;p&gt;不过现在，我想要改变这种状态，尽管做出改变的动机尚不明朗——可能我就是想多说点什么，不为别的什么。那么，为此，我需要做到的第一件事，就是降低甚至消除因为“表达”这件事而自我诱发的压力。毕竟，敢于将自己创作出来的东西发表出来是非常重要的，哪怕它烂得不像样。如果做不到这点，只想着自己还需要提升能力、等到自己写出能拿得出手的东西再发不出来的话，那么设想的那个时机可能永远不会到来罢。想到什么，就写什么，就发什么，不必深思熟虑。只有降低了写作的压力，才会有更多的随手打开编辑器开始写作的机会，正如现在的我在这儿正写下一些短小的文字。&lt;/p&gt;
-&lt;p&gt;说起来，我能写些什么呢？根据个人经验，我将常见的写作内容分为两类。&lt;/p&gt;
-&lt;p&gt;第一类，自己的人生历程与感悟，作为未来自我考古的材料而存在。这类文段用作记录自己的人生历程与生活感悟，抑或是对于自身之外的事物的点评，仅是实际对象的一种摹仿，因此大多不会花费太多的心思，只要保证文字没有歧义、表意基本清晰即可，记录的内容多为某年某月某日我去了哪里哪里、我囤了多少粮食、我玩了那些游戏、我今天碰到了什么我好开心，等等。但有时候写着写着，也会生出诸如”我干嘛要写自己再熟悉不过的东西呢？”这类的疑惑。&lt;/p&gt;
-&lt;p&gt;第二类，自己新近思考的一些&lt;strong&gt;主题&lt;/strong&gt;，我称之为“探索性写作”。&lt;/p&gt;
-&lt;p&gt;先不说“探索性写作”具体是怎么一回事。先来回顾一下，你是否遇到过这样的情景：在阅读某本书的时候，书中的某段论述是否让你觉得，其中的论证过程可同样应用于解释“某个问题”？或者，书中可能对某种现象产生的原因进行了阐释，而你觉得作者列举的原因不符合你的理解，但又没法立马给出作为替代的解释？&lt;/p&gt;
-&lt;p&gt;如果是我，在出现这些情况的时候会怎么做？以下是我的想法：简而言之，就是记笔记+记录原始出处。对于那些激发了我的疑惑感的问题，那我想必也有些许感想，将自己的想法写下来记在旁边就行。写完之后，再将 这个段落的原文、原始位置及自己的笔记（我称这三者合一的东西为索引） 记录在某个我常常翻阅、经常会看到的地方。这些索引具体放在哪个实际的物理位置，其实并不关键，因为这些索引最大的作用在于，锚定了这样或那样的一个 &lt;strong&gt;你所关心的问题&lt;/strong&gt;，尽管此时你还也许还没有廓清这个 问题 到底是什么。&lt;/p&gt;
-&lt;p&gt;这类片段不必是长篇大论，可能只是几个零散的片段，未必有发表价值，但是能够澄清、阐明、重述你在最近阅读过程中收获的特定概念、观点、论证与问题。它们相互之间可能没有什么联系，篇幅也不需要很长，少则几百字，多则几千字。但是，它们一定是用你自己的话表达出来的——它们是你对于某个问题持久的思考中慢慢浮现的，是一种对自己的思考的阶段性记录。这样的片段一旦开始写起来，常常需要反复阅读和修改，而且能让 &lt;strong&gt;你自己&lt;/strong&gt; 感到有意思（至于其他读者觉得是否有意思就是另一回事了）。&lt;/p&gt;
-&lt;p&gt;当然上述的两种分类只是性质上的划分，并没有互斥性——对于人生历程的记录也可能引发对于某个主题的疑惑感，而对于某些问题的疑惑可能让你更注重于记录生活中的某些方面。我也无意对它们进行价值判断、非要把两者分出个高低。非要说的话，两者都是“试图完成某种链接”的 &lt;strong&gt;尝试&lt;/strong&gt; ：在前进的路上，收集一块块自己感兴趣的石头，用于一步一个脚印地澄清自己的问题和疑惑，让“点连成线”，进而寻找自己的解决方案。&lt;/p&gt;
-&lt;p&gt;另外值得一提的是，在这个过程里，定期重复“写”的动作是有必要的。正如人们需要定期进行运动以身体保持健康，我们也需要定期执行“写”的动作，以确保相应的官能可以达到随取随用的状态，随时。但是，也不必强求自己天天写。写微博也好，写小作文也罢，都是写的形式。不要一直不写就可以了。&lt;/p&gt;
-&lt;p&gt;最后想说的还是，只要产生了想写的念头，无论想要写下的是什么，写就是了。怕写得不好？是是是，写得不好，污了别人的眼睛。然后呢？本来就只在我自己圈出来的这一小块儿地放出来了自己写的东西，是为了进行自我建构，而不是为了满足别人的窥私欲而写。那末，别人说我写得好不好又怎么样呢？&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>记一次复试经历</title>
-        <link>https://young-mann.github.io/posts/ecnu%E5%A4%8D%E8%AF%95/</link>
-        <pubDate>Sat, 16 Apr 2022 21:45:01 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/ecnu%E5%A4%8D%E8%AF%95/</guid>
-        <description>&lt;p&gt;复试的面试已经是10天前的事情了。其分为行政面与专业面。行政面的内容在此不表，就写写专业面的内容吧。专业面分为2部分，一是英语能力测试，二是你来我往的一问一答环节。&lt;/p&gt;
-&lt;p&gt;先是英语能力测试，测试内容是：第一，读一段文献然后翻译 。我抽到的是关于交通时空数据的网络流预测，读下来没啥问题。第二，从给出的4个概念里选出1个，然后用英文解释。我选了“分类”，但是没想好从哪里讲起，没讲出来什么，从有监督学习出发，草草讲了几句，就当场尬住，不再讲下去了。&lt;/p&gt;
-&lt;p&gt;接下来则是专业知识的面试环节。首先是做个自我介绍，我就讲了三部分：个人基本信息、报考动机、未来规划。自我介绍结束之后，有2位老师进行了提问。&lt;/p&gt;
-&lt;p&gt;第1位老师的提问如下：&lt;strong&gt;第一&lt;/strong&gt;，是关于跨专业动机的询问：在我刚才的自我介绍中，提到了我想做 ██████ 这个方向。那么，我是因为什么理由，想要做这方面的内容的？对此，我回答的是，这是因为我想做一些兼具可解释性与实践性的工作。在我本科专业的学习过程中，所做的工作大多是用计量方法对某些经济现象做解释，想要“tell a good story”，但我觉得这种文章的贡献还是有点虚无缥缈，仅限于做解释，对于改变现实世界无济于事，有点圈地自嗨的感觉。所以我想，做一些需要动手实践、对他人有实际作用的东西会不会更适合好一些？所以我首先考虑了工科的一些方向。然后，在工科的领域内， ███ 领域的东西对于实验耗材的要求较低，而且我也有一些相关基础（尽管少得几乎没有），所以就考虑报考 ███ 方向。我又想，既然想做，那就得在接下来的几年里持续钻研某个领域，不如就做最难的东西，了解下来觉得 ██████ 是比较硬核的东西，所以就选择报考这里。&lt;strong&gt;第二&lt;/strong&gt;，是关于研究兴趣的询问：既然你想做这个方向的东西，那么你是否对于某个子方向有了解、或者说感兴趣？我回答的是还没有，因为我确实没开始看相关的文献。我回答的是，想做完毕业论文后，再做这方面内容的综述&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。&lt;strong&gt;第三&lt;/strong&gt;，是关于编程能力的询问：老师提到，做这个方向可能用 C++ 之类的语言，而且需要不少计算机基础。那么，你对此有什么准备吗？我只能回答，在语言上，我稍微了解一点 C++ ，看过侯捷用 C++ 讲解的面向对象编程。也翻阅过“effective C++”这类讲解语言细节的书；在代码能力上，我大概的确挺弱的，确实没做过多少代码项目，大部分时候都只是在调包，自己写过的也就一个很简单的数据库的 demo 。另外，计算机基础课也比较薄弱，像操作系统之类的基础课都还没学。&lt;/p&gt;
-&lt;p&gt;第2位老师的提问如下：&lt;strong&gt;第一&lt;/strong&gt;，看我简历里提到过，我曾经做过某个数据分析项目，说说你都干了什么。我就讲了讲从爬取数据到最后训练模型的整个流程，但这个项目里做的东西并不多，很简单。我寻思老师也没能找出什么值得深挖的地方，于是进入了下一个问题。&lt;strong&gt;第二&lt;/strong&gt;，看我简历中提到了 XGBoost ，说一下对它的认识。我事前估计会被问到这个问题，但了解得并不充分，主要是从 GDBT 和 XGBoost 之间的关系入手讲解的。&lt;strong&gt;第三&lt;/strong&gt;，问完第2个问题后，老师本来不打算继续追问，声称的理由是“看我那么紧张，就不继续问下去了”。但我说没关系，还能继续问，于是问了我：讲解一个你最熟悉的模型？我就选了线性回归，结合计量经济学里曾经学过的东西出来说，介绍了应用多元线性回归所需要的前提假设以及模型本身的一些性质。&lt;/p&gt;
-&lt;p&gt;随后便草草结束了这次面试。我羞愧难当，大伙儿也都没说啥话，就让我离开了会议。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;第1个问题里明明提到自己想做这方向，但实际上却没付出多少实际行动。这种表现被直接否决也毫不意外。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>侃侃「直言」</title>
-        <link>https://young-mann.github.io/posts/parrh%C4%93sia/</link>
-        <pubDate>Fri, 01 Apr 2022 22:04:47 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/parrh%C4%93sia/</guid>
-        <description>&lt;p&gt;今天读了福柯文选《自我技术》中的2篇文章，即《何谓直言？》与《说真话的勇气》。前一篇结合了诸多对于古希腊文献的分析，对于“直言”这一概念的词源、定义及特征进行解释。后一篇文章则延续了前一篇文章对于“直言”的讨论，简要阐明了指明了“直言”在“自我实践”的发展历程中极为重要。这种重要性体现在“直言”能够作为一种特定的标准判断“他者”，而这种“他者”在“述说自己之真”的自我实践是必不可少的。&lt;/p&gt;
-&lt;p&gt;说实话，这两篇文章里，比较吸引我的，一是福柯对于自己所用的方法论（即“问题化置疑”）的阐述，二是福柯提出的“直言”这一概念。在此，笔者尝试对于文本中的观点及论证进行选择性的转述，权当是今天的写作练习（？）了。由于笔者的福柯文本并没有多少阅读量，对于书中使用的诸多概念或许都存在理解偏差。因此，还请谨慎对待文中所提到的福柯的观点。&lt;/p&gt;
-&lt;h2 id=&#34;福柯的问题化置疑&#34;&gt;福柯的“问题化置疑”&lt;/h2&gt;
-&lt;p&gt;“问题化置疑”是什么？简而言之，就是研究 &lt;strong&gt;如今被视作问题的事物&lt;/strong&gt; 是 &lt;strong&gt;为何&lt;/strong&gt; 且 &lt;strong&gt;如何&lt;/strong&gt; 在当今成为（或者说被视作）问题的。在《何谓直言？》一文里，福柯将自己视作一名“思想史”学者（而非“观念史学者”），澄清了“观念史”与“思想史”在研究方法论上的差异：前者关注某个特定的概念是何时出现的，如何产生、发展的，又和其他相关的概念如何相互影响；而思想史的学者则不然——他们关注的，是某个 未曾被问题化的 经验领域或实践类型（这些经验和实践在过去是被人们理所当然、习以为常的、寂寂无名的），如何成为一个亟需解决的问题，从而引发了一系列探讨和争论，煽动了新的反对与抗争，并为过去的那一系列行为、习惯、实践、制度带来危机。研究某些事物是为何且如何成为问题，关注这类曾经不成问题的事物“问题化”的过程，便是福柯的研究切入点。&lt;/p&gt;
-&lt;p&gt;在福柯看来，这种研究方法论既不像他人批评的那样，属于历史唯心主义，也不是完全脱离了具体历史背景的空想。他认为，“问题化置疑”并不是再现一个历史上早已存在的对象，也不是通过术语创造一个完全不存在的对象，而是通过一套话语或非话语实践，践让某物进入真实-虚假的游戏中，将它构建为思考的对象。这种问题化不是某一种泛泛宏观的过程、不是随着历史阶段不断推演而自然而然地产生的。这些问题的起源本身就和关心这些问题的微观主体息息相关。基于某种预设的、确定的宏观条件，所能得到的问题化命题很有可能出现不同；反过来说，面对某一个特定的问题化命题，我们也只能说，这是由某个特定主体所提出的、与这个主体的具体经历、身处环境、先验知识息息相关的产物。不同的个体，能够产出不一样的问题化命题。某个事物问题化的标志是，身处当时历史情景下的某些特定主体对于这些问题进行了应答。&lt;/p&gt;
-&lt;h2 id=&#34;作为他者甄选标准的直言&#34;&gt;作为“他者甄选标准”的“直言”&lt;/h2&gt;
-&lt;p&gt;人们使用何种话语、何种实践，来尝试言说关于主体的真理？&lt;/p&gt;
-&lt;p&gt;对于这个问题，福柯做出了一个假设：主体想要获取主体的真理时，是通过一种 允许“可能且能够谈论自身” 的话语形式，而非通过 被告知 的话语形式，实现这种真理的获取。当主体言说真相时，主体就呈现出了其自身。换而言之，通过这种 被声称而且也被认为是真实的话语的特有结构类型 所隐含的诸多条件和形式，主体认为自己言说了真相，也被他人承认为言说了真相；不仅自己将自己建构为、而且也被他人建构为话语真理的一个主体：他向自己展示、也像他人展示自己是讲真话的人。基于这个假设，福柯进行了一些历史的分析，回顾历史上“述说自我之真”的实践，将这些实践置于“关心自己，应用于自身”（epimeleia heautou）的思想背景与框架下加以考察。这种“关心自己”的原则促进了“自我教化”这一现象的发展，随之而来的，是一整套的自我实践被构想、实现和传播。此间，福柯提及了希腊和罗马文化中对于“述说自我之真”的鼓励。例如，毕达哥拉斯学派及斯多葛学派主张频繁、持久、连续的内心审视的实践；交流“道德”、“精神”话题的往来书信也很常见；更有意思的是，人们被建议保存他们自己的日记，或是作为对所经历或思考的内容的回顾，留待日后的引用，或是作为梦醒之后对于梦境的记录。&lt;/p&gt;
-&lt;p&gt;在“述说自己之真”这一实践中，“他者”的存在是必不可少的。在基督教出现很久以前，“述说自己之真”这一实践是涉及几个人的活动，是和他人一起的活动，或者是，是与另一个人的活动。在基督教时代以及现代，我们都熟悉有这样的一个他者。可是，再在此之前，这样的“他者”形象就更加模糊、不明确、捉摸不透了——他可以是一位年长的老师，也许是一个私人的朋友，也可能是任意一个人。这种他者是多面向的，或许是政治的、医学的或是教育的。这种他者，并不像基督教文化中的忏悔师，或是先待的心理分析师那样，需要从机制性的代表那里获取资格。相应的，他们所需要的资格，是一种实践，是某种言说的方式，也就是“直言”（parrhēsia）。&lt;/p&gt;
-&lt;p&gt;直言（parrhēsia）的意思是“说出一切”。直言者（parrhēsiastēs）是说出心中所想之一切的言说者，即使他所说的东西可能会危及其生命——例如，在他的言论与国王或绝大多数民众所相信的东西不相符合的情况下。“直言”意味着告知一切，且告知的内容与真理相联系。直言者深信自己所说的东西为真，而且他们所说的东西实际上也确实为真。此外，“直言”是需要冒风险的。因为，要想言说真理，就应当越出对话者所持有的所谓“共同价值观”。这种“越出”将成为直言之批判维度的根基所在。一旦“直言”，就必须造成和直面冒犯他人、使他人烦躁、激怒他人、刺激他人，乃至诉诸极端暴力行为的危险——这是一种挑战，是地位相对低者对地位相对高者的挑战，是冒着打破和结束和他者的关系的危险 所进行的一种实践。最后，“直言”还与直言者的道德责任感息息相关——直言者本可以享有“保持沉默的自由。没有人强迫他说话，但他觉得自己有这样做的责任……因此，直言与自由和责任息息相关”。为了在直言的意义上说真话，一个人必须有通过说谎或缄口不言而不说真话的自由。要想说出真理，说真话者需要与自身建立起某种伦理关系。直言者“冒着死亡的危险去说出真理，而非停留于真理未曾言明的安全地带……他宁肯做一个说真话者，而不是过一种自欺欺人的生活”。在道德层面上，说真话是值得钦佩的，因为相较于不说真话，说真话要更加举步维艰。&lt;/p&gt;
-&lt;p&gt;除了上述内容以外，福柯还讨论了“直言”的积极用法与消极用法、“直言”和修辞之间的关系，以及“直言”和其他3种说真话方式的不同。不过，笔者对于这些部分的内容并无太多兴趣，因此不打算再做转述。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>刨土，然后假装考古</title>
-        <link>https://young-mann.github.io/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</link>
-        <pubDate>Sat, 26 Feb 2022 23:29:12 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</guid>
-        <description>&lt;p&gt;今天是那家伙的生日。按照过去的经验来看，我得在这天送点什么，尽管我俩目前几近断交了。&lt;/p&gt;
-&lt;p&gt;正当苦恼于该送什么时，我看到了淘宝上各个博物馆的“考古盲盒”。我初中时玩过类似的东西。在我的印象里，这玩意儿就是一块土砖，里面埋了几个微缩版的“文物”，需要使用附送的洛阳铲定位、工兵铲刨土、挖出被埋的文物，将其表面的灰土刷拭干净。若是挖的时候用力过猛，把埋着的玩意儿给铲断了，那也有补救的法子——盒子里附送了胶水，可以把被摧残的碎块粘上&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。里面埋的东西挖出来之后，洗洗干净，可以当作摆件，而且挖的过程也挺有意思。我寻思着把这当作礼物，应该是个四平八稳的选择吧。于是，便下了单，写了张贺卡塞在包装盒里，想着今天送出去。&lt;/p&gt;
-&lt;p&gt;但是到了今天，问了之后才知道，那家伙并不愿意收我的东西&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。那末，如何处理这玩意儿，便成了需要考虑的问题——稍加思索之后，便发现这大概是不成问题的问题：我不想将其转送他人，也懒得退货。既然没有别的去处，不如留着自己玩。&lt;/p&gt;
-&lt;h2 id=&#34;刨刨个痛快&#34;&gt;刨，刨个痛快&lt;/h2&gt;
-&lt;p&gt;在结束今天上午的一场群面之后，我翻出了这盲盒、倒出了里面的工具、快速浏览了一下说明书后，便操起了洛阳铲开始干活。没想到，洛阳铲刚一下去，就被结结实实地顶了回来。好家伙，那么快就探出了一个被埋文物的位置嘛。我用工兵铲（？）刮去表面的灰土后，依稀辨认出，埋在下面的是官方命名为&lt;a class=&#34;link&#34; href=&#34;http://61.187.53.122/collection.aspx?id=1218&amp;amp;lang=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;铜象尊&lt;/a&gt;的文物。此后挖掘的过程无太多可说的，具体细节在此不表。最终，三下五除二，我用略微暴力的挖掘手法，将这🐘老哥从地底解放了出来。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/74Azh2xtEgBGZjV.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;在我刨到一半的时候，站在一旁围观的室友觉得这挺有意思。于是，在我挖出🐘之后，室友也加入了刨土的伟大事业。他操作起来比我精细得多，在探明了第2个被埋文物（是一头🐖，全名为&lt;a class=&#34;link&#34; href=&#34;http://61.187.53.122/collection.aspx?id=1219&amp;amp;lang=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;豕形铜尊&lt;/a&gt;的位置后，先是确定了整体的占地面积及形状，在周边削出了几条凹槽，再全程使用洛阳铲完成了剩余的挖掘操作。瞧这挖掘现场，真不愧是干净的男娃娃&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/igFCW2qh19mSNX3.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h2 id=&#34;成果展示&#34;&gt;成果展示（？）&lt;/h2&gt;
-&lt;p&gt;下图便是挖掘的最终成果。一只&lt;a class=&#34;link&#34; href=&#34;http://61.187.53.122/collection.aspx?id=1218&amp;amp;lang=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;铜象尊&lt;/a&gt;，一只&lt;a class=&#34;link&#34; href=&#34;http://61.187.53.122/collection.aspx?id=1219&amp;amp;lang=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;豕形铜尊&lt;/a&gt;，还有最右侧的一个隐藏款文物，名为&lt;a class=&#34;link&#34; href=&#34;http://61.187.53.122/collection.aspx?id=1147&amp;amp;lang=zh-CN&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;皿方罍(léi)&lt;/a&gt;，但是只有上半截的皿顶&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。&lt;img src=&#34;https://s2.loli.net/2022/10/09/GoOPm3LuB8ZAwYW.jpg&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;挖掘的过程还是挺有乐趣的。尽管此前曾经体验过这种挖掘玩具，但在时隔8年重新接触它以后，还是能感受到刨土带来的喜悦&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;。若是此前没有类似的体验，或许可以尝试一下。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;我曾以此法拯救过在挖掘过程中断了双腿的“兵马俑”。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;说实话有些意外，但仔细想想也很合理。我不愿想下去了。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;这老哥曾被陌生人放在所谓的“表白墙”上寻求联系方式，据称“具有干净的外貌”。故此，我常以“干净”调侃他。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;此乃分割商法。发行方似乎是故意这么设计的。这是最值得诟病的一点。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;或许，相比“挖出某个东西”而言，我更喜欢的，还是刨土的过程吧。或者是，吸引我的是刨土过程中所蕴含的破坏性？也说不定。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>2021：摇摇晃摇</title>
-        <link>https://young-mann.github.io/posts/my-memory-of-2021/</link>
-        <pubDate>Sun, 06 Feb 2022 22:16:42 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/my-memory-of-2021/</guid>
-        <description>&lt;blockquote&gt;
-&lt;p&gt;是像现在这样，继续以逃避的姿态面对前路、懵懵懂懂地度日呢？ 还是，去经历比现在更加痛苦的事，然后，变得比现在，稍稍幸福一些呢……&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;还是睡不着。拖到现在，终于下定决心，写写所谓的年终总结了。在此之前，我曾犹豫了许久。因为，说实话，我对过去的一年所留下的印象并不多，就像是做了一个梦。我似乎还能记得做梦时经历过的喜怒哀乐，可是这些情感具体是怎样的、又因何而起，我却已经记不真切了。那些曾鲜活的记忆，早已黯然无光、消失在了某个角落。我突然想把它们翻出来看一看。&lt;/p&gt;
-&lt;p&gt;还有的救吗？我还能否找回它们吗？说实在的，我手边尚有少量文字与相片，都是我信手写下的/拍下的。我不知道当时为什么要这么做，或许只是觉得作为一项行为的记录比较好玩，亦或单纯只是收藏癖在发作。借着这些材料，我按图索骥，找回了些许记忆碎片。我站定、侧过头、远远地观望着这些碎片——它们就像被打破的窗户底下散落的一地玻璃渣子，锐利、凌乱、躺在那儿。不知为何，我觉得它们陌生又怪异。&lt;/p&gt;
-&lt;p&gt;要是平时的我，在路上看到类似玻璃渣子的东西，定会远远地绕开它们，生怕沾染上其中的一二。一部分原因是因为担心被它们割伤，但更为关键的是，看到它们会让我联想到自己——我就像这些破碎的渣，本身就是破坏所带来的产物，虽有一点回收的价值，但处理起来实在麻烦，若是不缠上几层透明胶，很容易伤着别人。可是这一次，回望这些记忆，盯着这些毫无生机的玩意儿，我忽然感到一阵头晕目眩。&lt;/p&gt;
-&lt;p&gt;一股莫名的恶心与愤怒从胃里涌了上来。我突然不太想看它们了，可此时我已经无法回身。我扼住了自己的喉咙，干呕、干呕、不住地干呕起来。强忍着一股恶心，我还是弯下了腰，将这些碎片拢到一块儿，胡乱塞进了嘴里。随后，恶心与愤怒消失殆尽。掺杂着不甘与羞耻，我的嘴里、耳里充斥着贯穿所有观感的爆裂声，头顶左侧被反复撕扯，血管在哀鸣，喉咙里能感受到液体流过。那大概是血。也许是吧，我不确定。&lt;/p&gt;
-&lt;p&gt;我边呕边吞&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。胆汁、血液、碎渣，以及其它不可名状的东西，被我吐了一地。可奇怪的是，被吐出来的它们并没有混合起来，彼此分界得清楚，清楚到我无法确认它们是否真的是胆汁、血液、碎渣，是否是我吐出了它们。&lt;/p&gt;
-&lt;p&gt;看着地上的秽物，我突然感觉理解了什么。我停下了手上的动作。我大概的确是理解了。&lt;/p&gt;
-&lt;p&gt;我想起了些什么。&lt;/p&gt;
-&lt;h2 id=&#34;摇摆逃避与恶心&#34;&gt;摇摆、逃避与恶心&lt;/h2&gt;
-&lt;h3 id=&#34;摇摇晃摇&#34;&gt;摇，摇，晃，摇&lt;/h3&gt;
-&lt;p&gt;我的同辈们似乎猛得很，至少大部分如此。他们坚定得很，有着明确的追求目标，踏实地沿着自己所选的路径一步步走下去。简而言之，他们的去向有仨：继续升学、就业以及考公。&lt;/p&gt;
- &lt;details&gt;
-&lt;summary&gt;
-升学
-&lt;/summary&gt;
-往往意味着出国、保研或考研。前两者要求熟练掌握应付课程考试及论文的本事，争取取得高绩点。另外，做项目、发论文、参加比赛也或多或少需要参与的。对于考研，则需要根据自己的意向专业及知识基础，制定复习及刷题计划。
-&lt;/details&gt;
- &lt;details&gt;
-&lt;summary&gt;
-就业
-&lt;/summary&gt;
-相比本专业同学的常见的去向，我更了解的是转码当开发的常见路径，因此下文以此为例。如果想到互联网大厂里做开发岗，则需尽早开始刷题，大一搞好绩点的同时学点基础技能，大二试着做项目或比赛，暑假里去二线厂乃至一线厂实习，大三则争取秋招实习直接去一线厂，等大四秋招时再拿转正校招offer。
-&lt;/details&gt;
- &lt;details&gt;
-&lt;summary&gt;
-考公
-&lt;/summary&gt;
-我不太了解。或许是在党团组织或当地的基层组织里多干事儿，备战选调考试，或是国考省考。
-&lt;/details&gt;
-&lt;p&gt;这些路径随着前辈流传下来的经验逐渐固化，层垒起来，形成了几乎固定的攻略。想做什么，就要按照攻略一步步走，走错一步，或者是缺少一步，可能就没有理想的结果。我很羡慕同辈们具备这种坚定走下去的决心。不过，在看到他们不断奋进的同时，我也想知道，在我们选择了这些既有的成型路径时，我们到底选择了什么？我们了解自己想要成为的样子吗？如果确定了自己想要成为的样子，那么这些路径是否是目前已知的最优实现途径？如果在毕业的时候，既没有弄明白自己想要成为什么样，也没有加入大部队、通过上述路径，实现出国/保研/考研进入名校或师从名导师，或是入职大厂拿个好点的白菜价，亦或是考公成功进入体制，就称不上是过了&lt;strong&gt;成功&lt;/strong&gt;的四年，是吗？又是否会有越来越多的学生，将这些既有的路径视作大学期间的最优目标，而不考虑其它可能的出路呢？&lt;/p&gt;
-&lt;p&gt;在过去的3年里，我光顾着怀疑它们了。要不要升学读个研？这已经成了身边许多人在本科毕业后的首选，或许是为了做学术，或许是为了拔高学历、为以后的就业铺路。可是，我无志于学术与科研，在读研后能收获的，无外乎一段入门级别的科研能力、（似有似无的）思维模式与方法的转变，以及一项镀金的学历，这些是否能够覆盖读研的机会成本？如果不这么做的话，要不要毕业后工作或者考公呢？我此前并没有仔细考虑过，只是觉得这样做的话，似乎宣告了平庸生活的加速到来，未来的生活似乎一眼就能望穿……&lt;/p&gt;
-&lt;p&gt;我对上述的路径都没有显著的偏好，也没有试着为自己培养相关的偏好。我光顾着怀疑，而没有做出一点儿尝试。我一直在闭门造车，通过网上冲浪了解这些路径，而没有去和具有相关经验的前人当面聊聊。我也不认为有人可以替我回答这些疑惑。这种怀疑论的倾向，固然能让我在理论上难以被打垮，心安理得地说服自己不去干某事，但是也让我成了个行动上的懒汉——我始终没有迈出新的步子，光顾着消解而不在意建构，大概想着的是，暂时不做选择也是一种选择。在这个阶段，我大概就是用战术上的勤奋掩盖战略上的懒惰，混着日子。&lt;/p&gt;
-&lt;p&gt;但这种不做选择的状态终究是暂时的。随着一些关键时点的到来，我不得不做出新的选择。在去年年初，我姑且将升学作为了自己的目标&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;（尽管我并没有对于某个专业产生想要研究下去的追求&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;），而且放弃了保研和出国的两条路，选择了备战考研。为什么不选择保研或是出国呢？我当时的想法包括但不限于以下原因：&lt;/p&gt;
-&lt;p&gt;先是保研。说实话，在保研结果正式出来前，我对于自己能否保研完全没有底气，也完全没有往这方向考虑。在真正提交保研资格申请书的时候，我准备了相关的材料。但当我真的走到了教学秘书的办公室门口时，我却又不想进去了。当时的我完全没有参加过夏令营，若是我真的得到了这个资格，估计也只能留在本校的本专业了。而我恰恰不想停留在此了。与其这样占用一个名额，倒不如让给别人得了。&lt;/p&gt;
-&lt;p&gt;再是出国。这项我曾考虑过不少时间，但最终诸如预算、专业选择、以及人生规划等原因，让我放弃了它。如果没有目标，只是为了换个不同的地理环境、体验不同的生活方式，单纯为了出国而出国，那感觉性价比挺低的。&lt;/p&gt;
-&lt;p&gt;现在想想，我那时的想法幼稚得可怕。我就这样以近乎草率的方式做出了考研的选择，姑且让自己有了个前进的方向。但是，在亲身感受选择所带来的后果时，我才真正理解其代价。我也的确付出了代价。&lt;/p&gt;
-&lt;h3 id=&#34;一不留神就开始跑路&#34;&gt;一不留神就开始跑路&lt;/h3&gt;
-&lt;p&gt;自去年年初，确定了报考院校与专业以后，就开始复习起来，刷数学题、学起数据结构与数据库系统概论、零零散散地看一点政治、不时写一两篇英语文章，紧赶慢赶，在10月中旬的时候，算是复习得差不多了。&lt;/p&gt;
-&lt;p&gt;可这时候，我又开始止步不前了。&lt;/p&gt;
-&lt;p&gt;我是那种循规蹈矩的人，绝非那种拼了命、打破规则也要得到想要东西的人&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。 之所以选择考研只是因为不知道还可以干嘛，之所以选择现在被选的专业也只是因为就业市场有些需求。可我想要的是什么呢？如果考完研了，那又怎么样呢？我现在就死掉，和我过了几十年以后再死掉，会发生多大的变化呢？&lt;/p&gt;
-&lt;p&gt;不知道。反正我哭了起来，甚至想要弃考，开始考虑是否要去做各种奇怪的打工，也曾恶心到每天晚上完全不想睡觉，通宵了几次，就只是坐在床边发呆，一直坐到凌晨四五点，看着窗外都亮了起来。我就这样停滞，开始用别的东西&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;用以转移自己的注意力。&lt;/p&gt;
-&lt;p&gt;这大概就是逃避了。我又想跑路了。不说从小到大了。光是进入大学以来，我就不知逃避了多少次，既有草率参与某个活动之后，因为不喜所作的内容而临阵脱逃，也有在面对未知的前路时，干脆放弃选择，随波逐流的情况发生。纵观这些逃避之举，大多是在自觉力有不逮的基础上而下意识做出的、直觉性的选择。 可是，当我不愿意做这类事情的时候，我究竟在回避些什么？为什么一定要在自己定能胜任这件事的时候才去做呢？明明很多事情都是在未完全了解的情况下开始着手的。就像写这篇文章一样，如果我在正式开始写这篇文章之前就已经知道了自己最终想要写下的话，我还会有勇气将它写下来吗？&lt;/p&gt;
-&lt;p&gt;另外，在11月的时候，我又逃避了些情感上的事情。每当回想起与之相关的事情，便会使自我恶心的情绪再度浮现。我暂时未能消弭其带来的影响，在此暂且不表。&lt;/p&gt;
-&lt;p&gt;在最后的两周里，我重拾了政治和专业课，将数学与英语抛之不顾。上了考场，交了卷。&lt;/p&gt;
-&lt;h3 id=&#34;泛滥的恶心&#34;&gt;泛滥的恶心&lt;/h3&gt;
-&lt;p&gt;说实话，本科里的大部分时光是比较快乐的。 然而，回过头来看，理性上还是不免为这些年来的生活感到难过，感觉自己还是蹉跎了不少。前三年里，没什么目标，只是如此专注当下，细细品尝心流。但临近毕业之际，在现实生活的重重压力下，我没有坚定的目标，也不再能单纯地聚焦当下。 所有的一切都能引发恶心的悸动。&lt;/p&gt;
-&lt;p&gt;当我躺上床，注视着周边的黑暗时，我开始胡思乱想。我是什么，又如何成我所是？我究竟要做点什么呢？无论做什么，最终都会消亡。或许能留下点什么供后人凭吊，可后人也会消亡。把时间的尺度放大点看，那些原本我们所认为的意义，都会消失。无论我们如何讨论意义，死亡都是难以避开的话题。没有死亡作为标杆，一切意义层面的讨论都是镜花水月。这一切究竟是从何而来的，为什么会存在人、会存在这样的一个世界？如果这一切都只是偶然的结果，那么这种偶然能否能赋予其本身以意义呢？接着又开始想着，现在的自己实在太弱了，需要变成更为强大的存在，才能真正抓住一点儿方向。在此之前，我的身体究竟能支撑到什么时候呢？ 我的人生又还有多少年可以挥霍……&lt;/p&gt;
-&lt;p&gt;这种情绪时有发生。我很少担心自己的健康状况。可在过去的一年（尤其是年末的那三个月）里，我的作息及饮食习惯出现了较大的变化，出现了些不大不小的症状。身体上的不适有时会诱发恶心感。 进入那种状态时，灵与肉大概在干呕，“我烂透了”的言语萦绕在我的心头。我觉得自己不值得被爱，也不值得过快乐的生活。一想到自己的懈怠、拖延，觉得周边人的不幸都是因我而起，只有远离我才能让别人得到幸福。再接着，当我意识到我正在自我厌恶时，我又会开始进入下一层的自我厌恶，开始厌恶这个厌恶自己的自己，接着又会厌恶这个厌恶这个自己的自己的自己，就这样递归式地自我恶心，直到我惊觉“不能再如此沉沦了”，才抵达了递归的出口。&lt;/p&gt;
-&lt;p&gt;胡适曾经引用易卜生的话说：“真正的个人主义在于把你自己这块材料铸造成个东西”。但若我自己并不知道自己是块什么材料呢？我太喜欢在乎自己了，因此也不大可能狠下心，把自己姑且当作某类材料炼了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“我擅长做什么？”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;我都快毕业了。到了这个时候还在问自己到底 &lt;strong&gt;擅长&lt;/strong&gt; 什么，似乎显得挺不靠谱。但我仍忍不住去想这件事。我始终没法让自己确信，我找到了（或者说，能够找到）足以让我花一辈子从事的工作。至少，就目前而言，我没有这样或那样的东西，是能够让我大胆拿出来、拍拍胸脯和别人说“这是我自己做的”。在过去的近四年里，我大抵是个失败者，将那么多时间精力用在无效劳动上，既没有痛痛快快地去玩，也没有做出能让我珍视的成果。&lt;/p&gt;
-&lt;p&gt;而我又是这样的一个人——如果觉得一件事自己做不好（至少是达不到自己心中所设想的那个标准），我就会开始动摇自己是否要去做它。过去的一年里，尤其是去年的最后3个月里，我曾消沉过不少时间。“有点想要试试死亡”。“如果我死了会怎么样？”我曾经冒出过这样的念头。&lt;/p&gt;
-&lt;p&gt;说实话，我并不是真的想死。我曾翻阅过《完全自杀手册》，也曾设想自己可能的死亡情景。每当想象到临终的最后时刻时，眉头那块儿便会一拧，不愿再多想下去。至少，现在的生活可以说是幸福的。我满足于当前的生活状态，一种被家人所塑造的和谐状态。当“好想死啊”这4个字在我脑中出现的时候，它实际上是指向这样一种感受：我不想见到现在的这个自己，一个无法创造价值的人。我本可以（should have done）用自己的时间去做更多的事情，但我却在自我厌恶和羞耻的螺旋中不断沉沦，而不自知。我也不太愿意照镜子。&lt;/p&gt;
-&lt;p&gt;在自怨自艾低沉了一段时间后，我又得重新问自己：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;“我到底该做什么？”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;考虑做大多数人认为稳定的事情，怎么样？像是考编制、不读博、不创业，说实话，都是追求稳定的表现。可我又觉得，如果观测的尺度放大一点，那么这个世界看起来哪有什么稳定一说？毕竟，国企可以改制、来自上面的一纸政策直接将一个行业打入寒冬；局部战争时刻可能爆发、卢布可以贬得一文不值、核弹也可能从天而降。&lt;/p&gt;
-&lt;p&gt;那么，或许应该像很多人说的那样，趁早做点自己喜欢且对他人没有害处的事情？可话说回来，我自认为没有称得上”喜欢“做的事情。我正处于考虑将自己手头的资源（即未来的时间、经历）投入到什么方向的一个阶段。在这个时候，每当我想到某个可能的方向时，一种常见的疑虑是，”我不喜欢“或者”我不擅长“这件事情。问题在于，过去的我对于很多事情都是浅尝辄止，稍微做一点后就会以”没兴趣“为借口脱身。在对某件事情没有投入太多时间进行了解的情况下，谈何喜欢不喜欢呢？&lt;/p&gt;
-&lt;p&gt;所以，我目前想到的解决方案就是，先动起来！不一定要逼着自己去找出喜欢做，或者说有兴趣做的事情。与其纠结自己到底&lt;strong&gt;喜欢&lt;/strong&gt;什么，倒不如换个角度想想自己&lt;strong&gt;擅长&lt;/strong&gt;做什么，把时间经历先投入到自己擅长做的东西，从外界得到源源不断的正反馈，收获物质上的回报及精神上的自我认可，让自己爽起来。到那时候，再想之后要做什么或许就容易得多了。&lt;/p&gt;
-&lt;h2 id=&#34;要变得锐利些&#34;&gt;要变得锐利些&lt;/h2&gt;
-&lt;p&gt;“要变得锐利些”，是我原来拟的小标题。只不过，拟这个标题时所想到的东西，已经和最终写下来的这部分内容不太相关了。但我还是想保留它。&lt;/p&gt;
-&lt;p&gt;写到这里，我觉得愈发恶心。我突然不再想写下去了。我为何会写下那么多浮夸、荒唐的句子呢？我写作是为了回忆某些情境，应该信手拈来，不多加雕琢。可我写下上面的文字时，我有时像傻瓜一样兴奋，有时又陷入自媚的自我厌恶。我听之任之，觉得有趣，但现在又觉得恶心起来。&lt;/p&gt;
-&lt;p&gt;那就长话短说了吧。我暂时要抛弃那些虚无的意义了，它们粘稠、混沌而难以把握。我现在只想捏紧那些碎的渣，狠狠地捏着它们。从它们那儿，我还能拓出些许愉悦的记忆——在一家人围在桌旁一起吃饭的时候、在和老姐与粒哥一道去公园散步的时候、在老家和表哥表姐们一块儿吃着烧烤扯皮聊天，亦或是在夜晚点着了束束烟火时，我感受到了一种实在感，感受到我与他人之间的联结。我或许就是个小学生&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;，我想要生活，我想要动起来，痛起来。&lt;/p&gt;
-&lt;p&gt;也许有一天我能学会不再质疑自己将要走上、或是已走上的路，那时我一定很幸福。但那一天终究还没有来。而且我怀疑它大概的确是不会到来的。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;这些描写都不是真实的哦。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;更确切地说，是&lt;strong&gt;假装&lt;/strong&gt;把升学作为了自己的目标。我始终无法确信自己该这样走下去。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;这大概是我至今不能确定一个方向走下去的原因。在过去的几年里，我倒也不是啥事都没做，稍稍接触了几个领域，但也只是浅尝辄止，没有再深入下去。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;如果好奇我为什么会变成这样，可以看这篇文章：（可惜了，它被我删了，等我改完再放出来）。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;其实就是学了两个月的前端，想着干脆打工去得了。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:6&#34;&gt;
-&lt;p&gt;这个评价来自我的表哥，大概是我过今年春节时的表现过于狂野了。不过我现在还挺喜欢这称呼。&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>关系数据理论</title>
-        <link>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
-        <pubDate>Tue, 18 May 2021 19:31:10 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
-        <description>&lt;p&gt;本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？&lt;strong&gt;（问题的引入）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？&lt;strong&gt;（规范化理论）&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？&lt;strong&gt;（Armstrong公理&amp;amp;模式分解）&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;预备知识&#34;&gt;预备知识&lt;/h2&gt;
-&lt;p&gt;为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：&lt;/p&gt;
-&lt;h3 id=&#34;函数依赖functional-dependency&#34;&gt;函数依赖(Functional Dependency)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;**函数依赖：**设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 &lt;strong&gt;X 函数确定 Y&lt;/strong&gt; , 或 &lt;strong&gt;Y 函数依赖 X&lt;/strong&gt; ，记作$X \rightarrow  Y$。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;完全函数依赖：&lt;strong&gt;如果Y函数依赖X，但不依赖X的任何一个真子集，则称&lt;/strong&gt;Y完全函数依赖X&lt;/strong&gt;，记作$X \xrightarrow F Y$。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;部分函数依赖：&lt;strong&gt;如果Y函数依赖X，但依赖于X的任何一个真子集，则称&lt;/strong&gt;Y部分函数依赖X&lt;/strong&gt;，记作$X \xrightarrow P Y$。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;传递函数依赖：&lt;strong&gt;设Z也是U的一个子集。如果X决定Y，Y决定Z，且&lt;/strong&gt;Y不决定X&lt;/strong&gt;，那么称&lt;strong&gt;Z对X传递函数依赖&lt;/strong&gt;，记作$X \xrightarrow {传递} Y$。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;码键key&#34;&gt;码/键(Key)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;候选码：&lt;strong&gt;设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为&lt;/strong&gt;候选码&lt;/strong&gt;（K是一个集合！）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;主码：&lt;strong&gt;候选码若有多个，则选定其中的一个，称为&lt;/strong&gt;主码&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;超码：&lt;strong&gt;对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为&lt;/strong&gt;超码。&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;主属性/非主属性：&lt;strong&gt;包含在任何一个候选码的属性都叫&lt;/strong&gt;主属性&lt;/strong&gt;，其他都叫&lt;strong&gt;非主属性&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;范式normal-form&#34;&gt;范式（Normal Form）&lt;/h3&gt;
-&lt;p&gt;对于范式的概念，特别不靠谱的理解如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;**第一范式(1NF)：**不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;第二范式(2NF)：&lt;strong&gt;在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为&lt;/strong&gt;一个整体&lt;/strong&gt;起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;**第三范式(3NF)：**在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;BCNF:&lt;/strong&gt; 在满足3NF的基础上，将“对于一个关系内的&lt;strong&gt;非主&lt;/strong&gt;属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的&lt;strong&gt;所有&lt;/strong&gt;属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;**第四范式(4NF)：**原关系模式中不存在非平凡的多值依赖。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;问题的引入数据异常及规范化理论&#34;&gt;问题的引入——数据异常及规范化理论&lt;/h2&gt;
-&lt;p&gt;当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数据冗余 (Redundancy) ：在某些元组中，部分信息会重复出现，占用了不必要的存储空间。&lt;/li&gt;
-&lt;li&gt;更新异常 (Update Anomalities) ：在更新该表中的信息时，可能导致数据库中的数据不一致。&lt;/li&gt;
-&lt;li&gt;删除异常 (Deletion Anomalities) ：在删除某个元组的信息时，可能删除其它不应该删除的信息。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;由于&lt;del&gt;笔者太懒&lt;/del&gt;异常操作的例子实在过于常见的缘故，笔者在此便不列举具体的例子了。我们更关心的是，这些异常背后到底意味着关系模式设计中的哪些不良性质？&lt;/p&gt;
-&lt;p&gt;在第2小节里，我们将了解如何通过&lt;strong&gt;函数依赖&lt;/strong&gt;描述一个关系模式。将借助&lt;strong&gt;函数依赖&lt;/strong&gt;刻画关系模式的&lt;strong&gt;规范化程度&lt;/strong&gt;，根据该关系模式属性之间的依赖程度，将该关系模式区分为某一种特定范式，以甄别该关系模式中是否存在引发上述问题的糟糕性质。接着，在第3小节内，我们将了解如何根据特定的&lt;strong&gt;规范化程度&lt;/strong&gt;，对于关系模式进行&lt;strong&gt;规范化&lt;/strong&gt;，将具有糟糕性质的关系模式转化为更合适的形式。
-一个设计不当的数据库在操作时之所以会出现那么多异常，其根源在于我们在设计关系模式时忽视了不恰当的部分/传递函数依赖（无论是有意的，还是无意的）。如果我们能事先识别出关系模式中出现的所有可能的函数依赖，那不就可以直接把那些不恰当的函数依赖挑出来，把它们扼杀在摇篮里了吗？规范化的基本思想可被归结为**“一事一地”**，即让每一个关系只描述一个概念、一个实体或者实体之间的联系。这种规范化，可以通过模式分解的手段完成，将低一级的关系模式分解为多个高一级的关系模式，从而消除关系模式中不合适的数据依赖关系。&lt;/p&gt;
-&lt;p&gt;对这个问题换一个更为具体的表述，那便成了：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;给定关系模式R &amp;lt;U, F&amp;gt;以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出&lt;b&gt;该关系模式中被F逻辑蕴含的函数依赖的全体&lt;/b&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;首先，通过定义&lt;strong&gt;逻辑蕴含&lt;/strong&gt;的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Kulikuacha!</title>
-        <link>https://young-mann.github.io/posts/about/</link>
-        <pubDate>Tue, 18 May 2021 18:36:42 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/about/</guid>
-        <description>&lt;p&gt;此地是我的自留地。你所能看到的，大多是某个不愿透露姓名的年轻菜鸡的的自怨自艾，以及个人生活的流水账， 亦或是些许胡思乱想。&lt;/p&gt;
-&lt;h2 id=&#34;如何称呼我&#34;&gt;如何称呼我？&lt;/h2&gt;
-&lt;p&gt;“名称”是具有魔力的。因此，我想先说说我在过去所被叫过的名称。假设我的全名为 “李狗蛋”，将较为常规的称呼排除之后，根据时间顺序的先后，认识的人们曾称我为：37&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、小麻雀、羊仔&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、King Kong&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、僵尸&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、少年&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;。在回忆这些称呼的过程中，我也从脑子里的犄角旮旯里搜刮出了许多旧玩意儿。这种感觉，好像在河里淘金——从沉积的泥沙中筛出一粒粒的沙金。将它们一粒粒捻到小盆儿里，聚成一堆以后，就熔铸成了片片回忆。现在看来，有些缅怀，但更多的还是唏嘘。&lt;/p&gt;
-&lt;h2 id=&#34;我有什么爱好&#34;&gt;我有什么爱好？&lt;/h2&gt;
-&lt;p&gt;真可惜，我目前没有什么拿得出手的东西能称得上爱好，大概属于没有兴趣爱好的无聊人士。虽然什么东西都能掺上两手，但是啥也做不久，做不深，属实是“三分钟热度”。最后大多是一事无成，没啥进展。&lt;/p&gt;
-&lt;details&gt;
-    &lt;summary&gt;玩游戏是这样子的：&lt;/summary&gt;
-&lt;img src=&#34;https://s2.loli.net/2022/01/02/VelIT79ZDEAsnRd.png&#34; &gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;写的代码运行起来是这个样子的：&lt;/summary&gt;
-&lt;img src=&#34; https://s2.loli.net/2022/01/02/3fRr1mhDlGTyPZV.gif&#34; &gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;我做菜的时候是这个样子的：&lt;/summary&gt;
-&lt;img src=&#34;https://s2.loli.net/2022/01/02/zS3KjvkOYoduUWZ.gif&#34;&gt;
-&lt;/details&gt;
-&lt;details&gt;
-&lt;summary&gt;我做出的海报是这个样子的：&lt;/summary&gt;
-&lt;img src=&#34;https://s2.loli.net/2022/01/02/I29uv5lXhBLWygH.jpg&#34; &gt;
-&lt;/details&gt;
-&lt;h2 id=&#34;我为什么需要这个博客&#34;&gt;我为什么需要这个博客？&lt;/h2&gt;
-&lt;p&gt;无论是过去还是现在，我都不习惯于以自我为对象进行思考，自我意识的不在场已经成为了常态。 这让年少的我度过了开心惬意的生活，却也使得我的肉体养成了慵懒疏散的习惯——每当面临需要自我出场的问题时， 我的大脑🧠似乎就立马失去了活性，成为了填充头部的一坨烂肉。 当外界的信息刺激我的大脑时，其所能给出的反馈并不是基于自身立场、知识与经验的个人观点，而是“脑子进水”的涟漪，无论敲打得多厉害，都只能听见“哐当哐当”的响声，别无其它反馈。 若是就这么蠢而不自知地活下去，倒也不会出现什么大问题。 可是，从高三的某一场班会开始（ &lt;a class=&#34;link&#34; href=&#34;../thanatophobia/&#34; &gt;我从那时候开始意识到了“死亡”的存在 &lt;/a&gt;），我似乎感受到了所谓的“自我意识”的诞生。此后，当我回顾过去的所作所为时，才发现以前的我有多糟糕——过去的我随性随意、慵懒疏散、天真呆滞，不知惹了多少麻烦而不自知。明的暗的，不知又有多少人支撑着我肆意撒欢。 意识到这一点后，便再也没法无忧无虑地混日子了，迫切想做出些许改变。&lt;/p&gt;
-&lt;p&gt;那么从哪里开始呢？简单考虑了一下，发现最容易开始的一步，就是获取自我特征的数据——既然希望对自我进行思考，那自然需要些用于思考的材料。 想给自己的经历、情绪、想法腾一块儿自留地，这部分摞在一起，就成了比较贫瘠的垃圾堆。&lt;/p&gt;
-&lt;p&gt;在收集到材料之后，我还得试着拿它们做出点儿事、造出点儿东西出来。就算我最后倒腾出来的东西只是废品，它们也属于 &lt;strong&gt;我&lt;/strong&gt; 所亲手造出来的废品，是属于 &lt;strong&gt;我自个儿&lt;/strong&gt; 的——这些便是我做这个博客的原始动机。&lt;/p&gt;
-&lt;p&gt;如果要说是什么催生了我的这种动机的话，那大概是谢益辉的&lt;a class=&#34;link&#34; href=&#34;https://yihui.org/cn/2019/07/inner-peace/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;「我网故我在」&lt;/a&gt;以及刘未鹏的&lt;a class=&#34;link&#34; href=&#34;http://mindhacks.cn/2011/11/04/how-to-interview-a-person-for-two-years/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;这篇博客&lt;/a&gt;。用谢益辉的话说，那便是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;网站是用来积累成就的，而简历可以是成就的堆砌汇总处。最初可以从堆砌小成就开始，把你写的作业、拍的照片、做的菜肴统统发上来。勿以事小而不堆。很多小事的价值，要过很多年你才能发现（比如&lt;a class=&#34;link&#34; href=&#34;https://d.cosx.org/d/420778&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;十一年&lt;/a&gt;）。除非你记忆力超群，否则凡是没有写下来的东西你很快就会忘，而你忘记的事情跟没做也没什么区别。换句话说，你差不多算是在白活。记住“堆砌”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;其实，我有时也会心血来潮，在有所思所想之后，想要在某些平台上发布些许想法，但最后真这么干的次数屈指可数。一方面，我过于在意他人对我的看法。我会担心是否所编辑的文本是否能够准确（且有趣）地传达我的想法、别人看了这条想法后对我又会有哪方面的改念。另一方面，只觉得没有什么好用的平台可以写写东西，微信朋友圈感觉更适合发发照片拍拍食物。另外，若是自己一时口快，说了些他人看来不恰当的话，则会给未来的自己留下不少麻烦。所以，想来还是这儿最适合我随便写点东西。毕竟，写的东西主要面向自己，而且潜在的看客少，正好不会有发完文章就会收到一堆评价的压力，最好可以和别人发生一定的交互，但又不要太多。&lt;/p&gt;
-&lt;p&gt;不过，我常被负面情绪所裹挟：我的技术很烂，表达很烂，也因此感到自卑、无望。等到哪天自我厌恶的情绪再度来袭，看到自己所做的一切都感到尴尬、不喜时，我或许会忍不住将这些东西全部粉碎——那一天或许迟早会到来的。&lt;/p&gt;
-&lt;h2 id=&#34;联系方式&#34;&gt;联系方式？&lt;/h2&gt;
-&lt;p&gt;若有任何想说的话，可发邮件至：young-mann1043#outlook.com。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;初中时的学号。说起来，&lt;a class=&#34;link&#34; href=&#34;../%e5%88%9d%e4%b8%ad%e7%9a%84%e4%b8%80%e4%ba%9b%e4%ba%ba%e4%b8%8e%e4%ba%8b/&#34; &gt;我还记得班里每个人的学号/姓名&lt;/a&gt;，大概是收过4年作业的缘故。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;初中时的称呼，来自某位对我很好的老哥。不过，那时我觉得他与我的距离过近，心生恐惧，便有意无意地疏远了他。现在想来，若是我当时处理得更妥当些就好了。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;高中时住宿，住的是下铺。那段时间，我时常在就寝时间翻到别人的床上，包括但不限于“引体向上接前滚翻”翻到上铺、“拉伸四肢接大跨步”从上铺翻到对面的上铺，随后开展一系列恼人举动，令室友苦不堪言。&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;来自高中的某同学。之所以被这么叫，或许是因为那时的行为举止过于僵硬。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34;&gt;
-&lt;p&gt;高中时我常以此称呼他人，叫多了以后，别人也以此称作为我的代称。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>浮点数的取值范围</title>
-        <link>https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</link>
-        <pubDate>Tue, 23 Feb 2021 22:58:40 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</guid>
-        <description>&lt;p&gt;本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。&lt;/p&gt;
-&lt;h2 id=&#34;前置知识&#34;&gt;前置知识&lt;/h2&gt;
-&lt;p&gt;若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。&lt;/p&gt;
-&lt;h3 id=&#34;ieee754-标准&#34;&gt;IEEE754 标准&lt;/h3&gt;
-&lt;p&gt;根据IEEE浮点数标准，一个浮点数可表达为：
-$$
-V=(-1)^s \times M \times 2^E
-$$&lt;/p&gt;
-&lt;p&gt;其中，&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;V 表示所表示的浮点数的实际值&lt;/li&gt;
-&lt;li&gt;s 为符号位(Sign)，表示该浮点数为正数或负数。若为正数，则 s 取值为0；若为负数，则 s 取值为1 (注：对于数值0的符号位需要特殊处理)&lt;/li&gt;
-&lt;li&gt;M 为尾数(Mantissa)，是一个二进制小数，用于确定浮点数的精度，以定点数的形式存储在计算机内部（注意：此处的尾数的形式实为1.ffffff，而非0.fffffff，这个特征在下文讨论移码时会被重新提及）&lt;/li&gt;
-&lt;li&gt;E 为阶码(Exponent)，用于对浮点数进行加权 (!!!注意!!!：阶码的取值可正可负，是一个有符号数，分别代表小数点是向左移还是向右移。出于使用上的便利，在存储阶码时用到了特别的方式，即下文即将提到的移码(Excess-N System) ）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;将浮点数的位表示划分为三个字段，并分别对这些值进行编码，便可表示出浮点数的实际值。以单精度浮点格式为例。在单精度浮点格式中，符号位s、阶码E和尾数M的尾数分别为1位、8位和23位，将三者联立便可得到以32位表示出的浮点数，具体形式可参见下图&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://smms.app/image/bOQYmsygdRkIa2q&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg&#34; alt=&#34;IEEE754_1.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;阶码的存储形式移码-excess-n-system&#34;&gt;阶码的存储形式——移码 (Excess-N System)&lt;/h3&gt;
-&lt;h4 id=&#34;为啥不能用补码存储阶码&#34;&gt;为啥不能用补码存储阶码？&lt;/h4&gt;
-&lt;p&gt;在上文中我们提到，阶码 E 是一个有符号数，用于表示小数点需要向左或向右移动的位数。那么，在存储阶码时，根据此前所学的知识，我们自然会想到以补码 (2&amp;rsquo;s complement) 的形式存储阶码。&lt;/p&gt;
-&lt;p&gt;但是，我们在课本上看到的阶码可不是用补码表示的。这是为什么呢？说实话，我不太确定真正的原因，现在能想到的理由如下：以补码表示的阶码会出现一个新的符号位（区别于上文 IEEE754 标准中所提到的符号位s），使得一个浮点数中出现两个符号位：浮点数本身的，以及浮点数阶码前的。这时，如果要对浮点数进行运算或者比较，无法采用整数那样的简单的二进制比较，所以算起来并不方便。&lt;/p&gt;
-&lt;h4 id=&#34;那有啥更好的方法存储阶码&#34;&gt;那有啥更好的方法存储阶码？&lt;/h4&gt;
-&lt;p&gt;既然不能用补码，那我们只能另辟蹊径了。回顾用补码表示阶码所产生的问题，可以发现，阶码作为有符号数时具备的符号位是引发麻烦的源头，那么为了方便起见，只能想着除去符号位了。基于这种思想，前人提出了&lt;strong&gt;移码(Excess-N System)&lt;strong&gt;的存储方式。简单而言，补码在存储阶码时所起到的作用，便是对于 作为有符号数的阶码 的所有可能取值，分别增加一个特定的值N（即$2^{m_E-1}-1$，也是上文中Excess-N中N的含义），从而将原本所有可能的取值映射到一个新的正数集合。基于该正数集合，我们可以找出与原阶码一一对应的无符号数。通过&lt;/strong&gt;移码&lt;/strong&gt;，我们不再需要考虑如何处理原本作为有符号数的阶码所包含的&lt;strong&gt;符号位&lt;/strong&gt;（因为阶码的所有可能取值已经被我们映射到了一个正整数集合）。因此，当我们需要对阶码进行运算或比较时，便可以将这些运算或比较先作用于新的整数集合上，再通过映射的逆操作得到我们所需的阶码值。&lt;/p&gt;
-&lt;h4 id=&#34;等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿&#34;&gt;等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？&lt;/h4&gt;
-&lt;p&gt;至此，移码在阶码存储中的用途便讲得差不多了……不过，我是不是忘了什么？哦，在读上面那段的时候，你可能在想，那个$2^{m_E-1}-1$是啥？简单来说，这是将有符号数的阶码全部映射成正整数的一个比较合适的取值，其中$m_E$ 表示的是存储阶码可用的存储单元的位数，在单精度浮点格式里是8位。&lt;/p&gt;
-&lt;p&gt;还是以单精度浮点格式为例。上文中，我们提到，作为有符号数的阶码有正有负，在单精度浮点格式里的取值范围是 -126~127 （为啥不是 -128~127 ? 在定义移码的时候，我们是以定点小数0.ffffff作为尾数 M 的，这样算出来的阶码范围确实是-128~127。但是，尾数 M 实际上并不是这么被定义的—— IEEE754 中，尾数 M 是被规范化为1.ffffff，而非0.ffffff，因此要将尾数 M 的小数点左移一位，才符合移码的定义，也就是在此前算出来的阶码范围的基础上加1，即-127~128。在此基础上，还需要掐头去尾，从而得到-126~127）。与此同时，8位无符号数的取值范围为0～255，但是因为 $(0000 0000)_2$ 和 $(1111 1111)_2$ 有着特殊含义，所以需要去除这两个数，使得无符号数的取值范围变为1～254。那么，对于-126~127，只需增加127，就能完成从-126~127到1~254的映射，如下图所示&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://smms.app/image/bOQYmsygdRkIa2q&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg&#34; alt=&#34;IEEE754_1.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;总而言之，我们在存储阶码时，实际上是以无符号数的形式完成存储的。只不过，这些无符号数的取值并非阶码的实际值，而是由（本应是有符号数的）阶码的实际值统一增加$2^{m_E-1}-1$个单位得到的。&lt;/p&gt;
-&lt;h2 id=&#34;float类型浮点数的取值范围&#34;&gt;float类型浮点数的取值范围&lt;/h2&gt;
-&lt;p&gt;默认存储的数值为&lt;strong&gt;规格化数&lt;/strong&gt;的前提下进行的。而在IEEE 754标准中规定，当指数位阶码均为1时，该数取值为 NaN 或 $\pm \infty$ ；当指数位阶码均为0时，则表示0。这两种情况均不属于&lt;strong&gt;规格化数&lt;/strong&gt;，因此可知，当数位和尾数位取得&lt;strong&gt;可能取值&lt;/strong&gt;的最大值，即：&lt;/p&gt;
-&lt;div&gt;
-$$
-S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2
-$$
-&lt;/div&gt;
-此时，指数的位移量为：
-&lt;div&gt;
-$$
-(11111110)_2-(2^7)_{10} = (127)_{10}
-$$
-&lt;/div&gt;
-所以浮点数的 **最大规格化数** 为：
-&lt;div&gt;
-$$
-\begin{align}  (1.{\underbrace{111 ... 110}_{23位}})_2 \times 2^{127}   &amp;= (1+2^{-1}+2^{-2}+2^{-3}+ ... +2^{-23})\times 2^{127}  \\ &amp;=\frac{1-(2^{-1})^{24}}{1-2^{-1}}\times 2^{127}  \\ &amp;\approx (3.402823e +38)_{10}  \end{align}
-$$
-&lt;/div&gt;
-同理可得单精度浮点格式下的**最小规格化数**为：
-&lt;div&gt;
-$$
-\begin{align}  (1.{\underbrace{000 ... 001}_{23位}})_2 \times 2^{-126}    &amp;\approx (1.17549e-38)_{10}  \end{align}
-$$
-&lt;/div&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;图源：&amp;ldquo;Foundations of Computer Science (2018)&amp;rdquo;, Behrouz Forouzan&amp;quot;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;
-&lt;p&gt;图源：&amp;ldquo;Foundations of Computer Science (2018)&amp;rdquo;, Behrouz Forouzan&amp;quot;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        <item>
-        <title>拉面好吃</title>
-        <link>https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</link>
-        <pubDate>Wed, 20 May 2020 22:28:53 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</guid>
-        <description>&lt;p&gt;不知怎么的，我突然想吃面了。&lt;/p&gt;
-&lt;p&gt;我的初中附近吃的很多。但我独爱校门口不远处的那家牛肉面馆。面馆外挂着个“兰州牛肉拉面”的LED招牌，随处可见的那种，乍一看，和其他拉面馆别无两样。但比起这家店，其他面馆总感觉差些什么，似乎只有初中门口这家最好吃。每逢周五放学，或是平日做完值日，兜里还有点闲钱，便约上三两同学一同去吃面。&lt;/p&gt;
-&lt;p&gt;这家店地方不大，不过很洁净。大部分时候，店里的客人并不多，因此从不担心没有座位。常常会选个面向大门的位置坐。落座以后，便开始考虑要吃什么。若仅仅是为了垫垫肚子，而对味道没有特殊要求的话，便会点一碗大份的牛肉拉面。原味的牛肉拉面，刚上桌的时候总是热气腾腾的，在冬天尤为暖心。分量不少，管饱，而且还算便宜，即便是大份的拉面，再加个煎荷包蛋，也只需要十元。有时，为了找到一起吃面的同伴，我往往会请客。虽然不想承认，但不得不说，若是能有些许朋友一道吃面，那还是满闹腾的。&lt;/p&gt;
-&lt;p&gt;上了高中后，我曾路过此处，便想重温经典，点了份油泼辣子面，试着找回曾经的味道。只不过，这次的面似乎和我记忆中的味道产生了些许偏差。面条没那么劲道了，有些粘牙，总感觉失去了活力。辣油和面也腻腻的，吃上去没那么香了。附赠的面汤倒还是那个味，但对于现在的我而言，或许还是太咸了，稍吮几口便不再喝下去。&lt;/p&gt;
-&lt;p&gt;面馆或许还在，但一起吃面的同伴倒不多了。不知以后还能不能尝到这种味道。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>在流放地</title>
-        <link>https://young-mann.github.io/posts/in-der-strafkolonie/</link>
-        <pubDate>Mon, 30 Mar 2020 02:01:50 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/in-der-strafkolonie/</guid>
-        <description>&lt;p&gt;今天读完了卡夫卡的《在流放地》。
-文中共出现了4名角色：旅行者、军官、兵士与罪犯。
-其中，军官这个角色，是其笔下的典型角色：他秉持着某种为世俗所不容的理念，与别人相比是如此荒诞、偏执，在人群中显得格格不入。一方面，他对于自己所执的那份信仰，对于美好的旧时光怀有一种难以挽回过去的追忆感，内心深处藏着某种孤独；另一方面，他又是时代的弃子，作为旧时代的遗老，为那些已被抛弃的落后事物引以为豪。对于前者，卡夫卡描绘出了某种类似于理想主义者的形象；而对于后者，则若有若无地渲染了军官的不可思议，凸显了一种荒诞感。这两种属性，撕扯着军官这个形象，使其表现出了两种截然不同的状态，引向了其最终的殉道之举，令人想要同情，却又不敢靠近这种异端，于是只是远远地望着他，心中不知是什么滋味。&lt;/p&gt;
-&lt;p align=&#34;right&#34;&gt;2020.3.30&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>记一篇阴阳怪气的文章</title>
-        <link>https://young-mann.github.io/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</link>
-        <pubDate>Wed, 15 Jan 2020 21:10:01 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</guid>
-        <description>&lt;p&gt;下午开车至嘉定，自 5 点待到 9 点。期间，一开始对四周环境的好奇，不久后便转为了疲惫，于是看起了知乎，刷到关于一篇高级黑文章《生态经济学集成框架的理论与实践（I）:集成思想的领悟之道》的问题，顺便拜读了原文，不由被作者深厚的「高级黑」功力所震撼到。全文都在影射导师目中无人、学术浮夸、占用他人成果、走后门、利益人情交换，似夸实骂，「阴阳怪气」的方式包括但不限于：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;neta 了康德的《论有美感和崇高感》，并表示导师具备仁、义、礼、智四德，但是无「信」：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/CIVykzRL6XY39Qe.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;暗示利益集团的存在，以及导师利益分配不均：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/ApufTQzkYmlWMHt.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;大大大！小小小！&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2022/10/09/6ZjmyoOa81LgNfu.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;笑过之后，想想作者作文时的心境，又无比唏嘘。作者是不是在导师门下的利益斗争中失败、不受重用、饱受冷落，才万念俱灰，以作出同归于尽之举？真可谓是：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;世人笑我太疯颠，我笑他人看不穿。埋雷七载无人踏，今日炸响始开颜。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;不过，更离谱的是其他人对这篇文章的引用——引用此文者大概都是为了在参考文献里多加几篇文献，就在搜索引擎里搜了几个关键词，不看内容、直接把相关文献加进了参考文献吧。这也挺好笑。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>怕死</title>
-        <link>https://young-mann.github.io/posts/thanatophobia/</link>
-        <pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/thanatophobia/</guid>
-        <description>&lt;p&gt;　&lt;/p&gt;
-&lt;hr&gt;
-&lt;center&gt;
-    无端端今年开始很怕死 &lt;br&gt;
-    年轻一点 一点都不顾忌&lt;br&gt;
-    轮到未 最怕活着&lt;br&gt;
-    但是没运气&lt;br&gt;
-    争口气&lt;br&gt;
-    人一生很少多于一世纪&lt;br&gt;
-    还醒起很多任务未做不等於有期&lt;br&gt;
-    够我逐件逐件地办理&lt;br&gt;
-    重新整理&lt;br&gt;
-    谈恋爱 游天地&lt;br&gt;
-    做喜欢的工作和享受游戏&lt;br&gt;
-    一死了 怎细味&lt;br&gt;
-    一想死&lt;br&gt;
-    la...la...la...&lt;br&gt;
-    强壮地吸口气&lt;br&gt;
-    来看戏 来打机&lt;br&gt;
-    来接吻 来添饭&lt;br&gt;
-    来签些卡也好过去死
-&lt;/center&gt;
-&lt;hr&gt;
-&lt;p&gt;在人生如此多的不确定当中，似乎只有死亡是确定的。某种意义上而言，它是生活中唯一确定的、每个人都必须独自面对而无法逃避的。无论在生前做出了多少大事，随着活力的逝去，终究会化作一沓沓纸钱。然而，在青年时代，我们往往着眼于未来，而将死亡的存在抛诸脑后。随着看到的死亡愈来愈多，某种异样的、从未有过的情感便在内心中萌发，在某种契机的刺激下，最终意识到：人终究是会死的。&lt;/p&gt;
-&lt;p&gt;人必会死亡，也避讳死亡。在我们的成长过程中，关于死亡的教育及思考是极少的。人们，尤其是那些上了年纪的长辈，对于死亡大多是诲而不言，一旦和他提及相关的话题，便开始急眼，责备你为什么整天要想一些不好的事情。亦或者，干脆将死亡上升到了舍生取义的高度，在宣传中大夸特夸其卓越的精神，却对个体性的死亡避而不谈。&lt;/p&gt;
-&lt;p&gt;我记得，我是在准备高三时某一次班会上的分享时，想到这个问题的。在临睡前，当我回顾完这一天发生的事情后，开始思考要在班会上分享什么时，突然开始想“如果自己死亡了”会怎么样。意识到“我再也不会存在后”，心中就会泛起阵阵恐惧。这样想着想着，便睡不着了，不知在床上翻来覆去了多久。也因此，那几周的睡眠质量遭受了严重的打击。&lt;/p&gt;
-&lt;p&gt;若一直被这种思绪所困扰，那我很难投入精力去做别的事。所以我就开始考虑，如何才能处理好这种因为意识到死亡这个概念而莫名出现的焦虑情绪。在稍作思考后，我认为可以从以下三步入手：一，看看焦虑的来源究竟是什么；二，判断自己能否消除来源，如果可以的话，便进入第三步，即消除恐惧的来源，否则就不继续想下去了。&lt;/p&gt;
-&lt;p&gt;在稍微搜索了相关的资料之后，我认为这种焦虑的根源来自生理构造，是由我们基因所决定的。基因的本能之一是延续自身。为了让我们这些基因的载体们存活得尽量长久，以保证基因的延续，基因设置了“遇到危险——感到恐惧”的反馈回路，从而促使我们为了消除这种与威胁相伴的恐惧，促使我们赶紧做些什么来逃避危险。&lt;/p&gt;
-&lt;p&gt;所以说，这种焦虑情绪是难以被抹除的，而带来这种焦虑的源头，即死亡，更是难以避免。无论是焦虑，还是死亡本身，都难以着手改变。因此，可以说，我找不出一个答案，能够帮助我克服这种死亡焦虑。它必将一生与我相随，不断地折磨我。&lt;/p&gt;
-&lt;p&gt;听上去怪恐怖的。也许如此，但是，其实这样想了几周以后，我发觉，在这个过程中，我形成了非常清晰的“我”这种感觉。只有在意识到一切都会死去，让自己直接面对那赤裸裸、黑暗的死亡恐惧时，我的自我才真正出场，我也才会意识到自己的生命从根本上不能依靠于外界的力量，是自己想要去活的。&lt;/p&gt;
-&lt;p&gt;我草率地将这种自我意识的出场归因为死亡焦虑的出现，以及我对其的一系列反应。这种死亡焦虑之所以能够促使自我意识的演进，是因为，死亡作为一种终结的象征，，能够消抹掉现有许多事物的意义，而我们为了弥补这些意义的空白，就必须试着赋予某些事物以新的意义。就比如，我们在现实生活中往往会因许多事情而困扰，担心自己考不上研，担心自己绩点不高，担心自己找不到工作，担心自己找不到一个人生伴侣。诸如此类的烦恼将会是永无止尽的，但是在死亡面前，它们都显得微不足道：毕竟，如果一切都注定要死亡，那么，即便我获得了上面的一切之后又有什么意义？这些东西在已有的社会架构下也许是有意义的，看似与我们构建自己的角色息息相关。可是，当我们不断地追问这个问题时，我们会发现，这些东西好像又是没什么意义的。这时我们会意识到，那些大家都在谈论的东西不一定是我所感兴趣的事物，而那些约定俗成的规矩，似乎也不那么合理了。此时，身边的一切似乎都不在那么坚定。我们便会陷入一种迷茫，开始重新审视自己周边的一切，乃至自己。心中难免会生出“从来如此，便对吗”的疑惑。 在惴惴不安之余，我们便难免会开始琢磨，如何将自己诸如生命之类的有限资源分配到实处。这可表现为，我们在面对那些曾经习以为常的事物时，开始频繁地追问自己，这件事的意义是什么，我之所以会选择做这件事究竟是为了什么。&lt;/p&gt;
-&lt;p&gt;这是一个很痛苦的过程。但是，在经历这一系列挣扎之后，我发现，或者说更愿意相信，世界归根到底还是有意义的，但它只有在面向我这个个体的存在时才具有意义。为了探寻到这种意义究竟何为，我们就得从自己的生活中，攫取那些最为鲜活的个人体验，感受到自己真正关心的事物，并意识到对我而言，它们与其他事物的不同之处，通过你自己的方式来刻画出它们的模样，从而构建出一个由你自身所组成的、自我的小世界。在此时此刻，自我的意识便完成了出场。我们每个人在世界上留存的时间非常有限，所以必须完全的为自己负责，要意识到你度过的每一分每一秒都是属于你自己的。&lt;/p&gt;
-&lt;p&gt;但是说实话，我还是没法廓清“意义”的定义究竟何为（而我现在也放弃了厘清其定义）。如果现在问我这个问题，我大概会回答，在活着的时候（甚至再持久点，在死后一段时间里），尽可能帮助和我有交集、我喜爱的人们，多多少少贡献些许正外部性，让他们过得稍快乐点。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>记忆里的食谱</title>
-        <link>https://young-mann.github.io/posts/recipe/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/recipe/</guid>
-        <description>&lt;p&gt;天已经亮了，但还是蒙蒙黑。我躺在床上，两眼生疼。&lt;/p&gt;
-&lt;p&gt;我大概的确是老了。支持我做出此判断的，并不是我年龄的绝对值大小——虽然我已经 88 岁了，但我仍有劳动的余力，在统计口径里尚属中年，仍可顶上半边天。那么，我为何这么说？&lt;/p&gt;
-&lt;p&gt;我年轻的时候，听过这么一种说法：一旦人开始频繁追忆过去，絮絮叨叨向旁人讲述自己年轻时候的经历，就代表他已经步入老年阶段了。现在的我倒没有说个不停的念头&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;。只是，最近我常常做梦，梦到过去的些许记忆，主要是和吃的有关。具体的菜品我记得的不多了，好像有老妈做的红烧肉，老爸做的玫瑰大肉，那是他们还在的时候常做的菜。此外，好像就是 66 年前，我开始记录了简单的菜谱——而根据菜谱做出的稀烂成品，似乎也历历在目。能记起的，大概有下面的这些：&lt;/p&gt;
-&lt;h2 id=&#34;蛋炒饭&#34;&gt;蛋炒饭&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;主料：2 个鸡蛋，1 盘冷饭。&lt;/li&gt;
-&lt;li&gt;锅里先加油烧热，随后冷饭下锅、烘干水分，再下蛋液，待饭与蛋交融后，在饭堆中间刨个小口，并将胡萝卜丁、洋葱碎、少许酱油、香油倒入其中，翻炒熟后，即可出锅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;披萨&#34;&gt;披萨🍕&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;主料：1 块锅盔/新疆烤馕，100g马苏里拉芝士，番茄酱，培根、香肠。&lt;/li&gt;
-&lt;li&gt;步骤：放饼底，涂上一层酱，一层肉和菜，一层芝士。将经过上述处理的饼底放入空气炸锅，10分钟，火温180度，即可出锅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;番茄炒蛋&#34;&gt;番茄炒蛋&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;主料：鸡蛋🥚、番茄。&lt;/li&gt;
-&lt;li&gt;步骤：锅里加油烧热，随后倒入蛋液，同时从锅里舀一勺热油淋在蛋液上方，蛋皮成型后捞出锅。下番茄酱、蒜末，大火炒香，再下番茄煸香，后将蛋皮重新入锅，加少许水、盐、糖，翻炒几下，即可出锅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;蒸蛋&#34;&gt;蒸蛋&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;主料：鸡蛋🥚，牛奶🥛/（可选择加盐的）凉白开水。&lt;/li&gt;
-&lt;li&gt;步骤打蛋，将蛋液与牛奶/凉白开以 1:(1.5~3) 的容积比混合。将混合后的蛋液置入蒸锅，中大火蒸 10~15 分钟，后以小火焖 3~5 分钟，淋上生抽（或其它辅料）后即可出锅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;红烧排骨&#34;&gt;红烧排骨&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;主料：排骨，冰糖（懒得炒糖色可多用点生抽），香料（香叶、桂皮、姜片）
-步骤：香料加水备用。排骨焯水出锅备用。之后，锅中加少许油，加入 3 把冰糖，小火炒糖色，待融化的糖液冒泡后，加入此前的排骨，翻炒几下后加入香料，加 5 勺生抽、2 勺料酒，小火焖数分钟，待汤汁不多后，大火收汁，即可出锅。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;一直到现在，我再也没吃到以前吃过的那般好的菜了，尽管我已经忘记了它们的味道——不知我怀念的是菜，还是那些做出菜的人们。&lt;/p&gt;
-&lt;p&gt;起床站定，稍作伸展，待眼部的不适稍有缓解后，我留意着地面，慢步走到桌旁，捏起小瓶营养液，开盖喝了起来。我一直不喜欢喝这营养液，但我也没有其他的可选项了——在今天，营养液是最廉价的营养来源，瓜果蔬菜都已成了奢侈品，我负担不起。这玩意儿淡黄淡黄的，入口黏糊糊的，有些甜，绝非我喜欢的甜味，恶心得像草莓味的泰诺。&lt;/p&gt;
-&lt;p&gt;该出门了，不然上工要迟到了。今天的记录就到此为止吧。&lt;/p&gt;
-&lt;p&gt;2088 年 6 月 15 日，狗蛋日记于 Kapfa 区。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;
-&lt;p&gt;更何况，就算我真的有这种倾诉的冲动，也找不到一个能听我说这些的人。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        </item>
-        
-    </channel>
+    <lastBuildDate>Tue, 16 May 2023 14:31:37 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>草稿纸</title>
+      <link>https://young-mann.github.io/posts/drafts/</link>
+      <pubDate>Sat, 28 Jan 2023 23:02:18 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/drafts/</guid>
+      <description>Cyberbullying The following passage are an excerpt from a TED speech about cyberbullying (and I’ve forgotten the full name of this speech). When chatting online, we may think our words are just the words. We don’t need to take responsibility for what we have said, even when our words really hurt others &amp;ndash; we just keep silent, having no courage to confess it. Social network is basically a</description>
+    </item>
+    
+    <item>
+      <title>事件域在金融随机分析中的含义</title>
+      <link>https://young-mann.github.io/posts/sigma-algebra/</link>
+      <pubDate>Tue, 16 May 2023 14:31:37 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/sigma-algebra/</guid>
+      <description>事件域——划分的精细程度代表所知信息的多寡 简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来</description>
+    </item>
+    
+    <item>
+      <title>APS经历记录</title>
+      <link>https://young-mann.github.io/posts/aps/</link>
+      <pubDate>Mon, 06 Mar 2023 21:57:37 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/aps/</guid>
+      <description>03-06 APS 寄送材料 03-16 出审核号 03-30 审核部发邮件通知补充信息（我于同日发邮件补充了信息） 04-03 材料审核完成，面谈考位开始排队 05-15 通知面谈时间 05-29 面谈 APS 审核流程为：准备审核</description>
+    </item>
+    
+    <item>
+      <title>如何克服面对上位者的怯意？</title>
+      <link>https://young-mann.github.io/posts/%E9%9C%B2%E6%80%AF/</link>
+      <pubDate>Thu, 29 Dec 2022 19:31:10 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E9%9C%B2%E6%80%AF/</guid>
+      <description>与他人社交时，我常会问自己，自己能为对方提供什么用处？ 这一反问，实际上反映了于我对人际交往的认识：人与人之间的交际建立在资源的交换上，亦即价值的交换。</description>
+    </item>
+    
+    <item>
+      <title>侃侃「贷款创造理论」</title>
+      <link>https://young-mann.github.io/posts/lcd/</link>
+      <pubDate>Fri, 21 Oct 2022 17:02:58 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/lcd/</guid>
+      <description>在《货币创造的逻辑形成和历史演进——对传统货币理论的批判》一文里，孙国峰总结了「贷款创造存款」理论（loan creates deposit, LCD）的逻辑以及发展。 LCD 的内涵1包括</description>
+    </item>
+    
+    <item>
+      <title>蒙特卡罗估计简介</title>
+      <link>https://young-mann.github.io/posts/mc/</link>
+      <pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/mc/</guid>
+      <description>本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。 蒙特卡洛原理 蒙特卡洛方法是什么？ 蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法</description>
+    </item>
+    
+    <item>
+      <title>狗蛋日辞典：初中篇</title>
+      <link>https://young-mann.github.io/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</link>
+      <pubDate>Thu, 06 Oct 2022 17:12:42 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/</guid>
+      <description>人在消逝。我想起了初中里的一些人。下文以经过加密的姓名首字母缩写，作为初中同学各自的指代。 KKZ：写的作文常作为示范文章，和 14 结伴出没，放学回家时常常</description>
+    </item>
+    
+    <item>
+      <title>拾遗5月</title>
+      <link>https://young-mann.github.io/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</link>
+      <pubDate>Mon, 15 Aug 2022 17:21:50 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E6%8B%BE%E9%81%97%E5%BD%95/</guid>
+      <description>2019.5.4 今天或许是个好日子。我不知道。 老爸忙着粉刷家的外墙，弄得自己一身涂料，头发上也沾了些许。明明小区里不久后就会有专人去做这件事的。 老妈最近则是沉浸在了</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; design patterns and derivatives pricing</title>
+      <link>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</link>
+      <pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</guid>
+      <description>Book Link: C++ Design Patterns and Derivatives Pricing 本文用于记录读完 C++ design patterns and derivatives pricing 后的代码实践。 ch1-VanillaCallOption 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部</description>
+    </item>
+    
+    <item>
+      <title>基于测度论的概率论基础</title>
+      <link>https://young-mann.github.io/posts/prob-theory/</link>
+      <pubDate>Thu, 14 Jul 2022 17:45:55 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/prob-theory/</guid>
+      <description>本文是 Stochastic Calculus for Finance II: Continuous-Time Models 第 1 章与《微观金融学及其数学基础》第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念： 概率的公理化定义 随机变量与分布 随机变量</description>
+    </item>
+    
+    <item>
+      <title>退宿日</title>
+      <link>https://young-mann.github.io/posts/%E9%80%80%E5%AE%BF/</link>
+      <pubDate>Tue, 05 Jul 2022 22:47:21 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E9%80%80%E5%AE%BF/</guid>
+      <description>今天处理完了毕业所需的所有手续，主要做了「退宿」一事。当我回到寝室的时候，恰有一个室友在收拾行李。许久未见，收拾着行李，我们有一搭没一搭地聊着，简单交</description>
+    </item>
+    
+    <item>
+      <title>攀岩杂记</title>
+      <link>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</link>
+      <pubDate>Wed, 29 Jun 2022 21:01:50 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</guid>
+      <description>前天一时兴起想去岩馆爬墙，于是约了某个老哥同去。结果今天临时被鸽，只好独自前行。 到岩馆时已经是下午了。原则上这段时间他们这种门店还不能对外开放。刚进门</description>
+    </item>
+    
+    <item>
+      <title>为啥还有人直接用 LSTM 预测股价嘞？</title>
+      <link>https://young-mann.github.io/posts/lstm/</link>
+      <pubDate>Sun, 05 Jun 2022 02:34:12 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/lstm/</guid>
+      <description>最近提交了论文的最终稿，闲来无事和其他同学交流了一下，发现有俩同学在用 LSTM 预测股价。简单扫了一遍他们的文章，发现他在数据的处理上比较粗糙，没有太大实用价</description>
+    </item>
+    
+    <item>
+      <title>我能写点什么？</title>
+      <link>https://young-mann.github.io/posts/writing/</link>
+      <pubDate>Tue, 17 May 2022 00:52:24 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/writing/</guid>
+      <description>近些年来，觉得自己的表达欲望以及表达能力越来越弱。这里的“表达”特指写作这件事。我偶尔会产生想要写点东西的冲动，可当我真的摊开笔记本、拿起笔，或是坐在</description>
+    </item>
+    
+    <item>
+      <title>记一次复试经历</title>
+      <link>https://young-mann.github.io/posts/ecnu%E5%A4%8D%E8%AF%95/</link>
+      <pubDate>Sat, 16 Apr 2022 21:45:01 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/ecnu%E5%A4%8D%E8%AF%95/</guid>
+      <description>复试的面试已经是10天前的事情了。其分为行政面与专业面。行政面的内容在此不表，就写写专业面的内容吧。专业面分为2部分，一是英语能力测试，二是你来我往的</description>
+    </item>
+    
+    <item>
+      <title>侃侃「直言」</title>
+      <link>https://young-mann.github.io/posts/parrh%C4%93sia/</link>
+      <pubDate>Fri, 01 Apr 2022 22:04:47 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/parrh%C4%93sia/</guid>
+      <description>今天读了福柯文选《自我技术》中的2篇文章，即《何谓直言？》与《说真话的勇气》。前一篇结合了诸多对于古希腊文献的分析，对于“直言”这一概念的词源、定义及</description>
+    </item>
+    
+    <item>
+      <title>刨土，然后假装考古</title>
+      <link>https://young-mann.github.io/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</link>
+      <pubDate>Sat, 26 Feb 2022 23:29:12 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</guid>
+      <description>今天是那家伙的生日。按照过去的经验来看，我得在这天送点什么，尽管我俩目前几近断交了。 正当苦恼于该送什么时，我看到了淘宝上各个博物馆的“考古盲盒”。我初</description>
+    </item>
+    
+    <item>
+      <title>2021：摇摇晃摇</title>
+      <link>https://young-mann.github.io/posts/my-memory-of-2021/</link>
+      <pubDate>Sun, 06 Feb 2022 22:16:42 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/my-memory-of-2021/</guid>
+      <description>是像现在这样，继续以逃避的姿态面对前路、懵懵懂懂地度日呢？ 还是，去经历比现在更加痛苦的事，然后，变得比现在，稍稍幸福一些呢…… 还是睡不着。拖到现在，终</description>
+    </item>
+    
+    <item>
+      <title>关系数据理论</title>
+      <link>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
+      <pubDate>Tue, 18 May 2021 19:31:10 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
+      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些</description>
+    </item>
+    
+    <item>
+      <title>Kulikuacha!</title>
+      <link>https://young-mann.github.io/posts/about/</link>
+      <pubDate>Tue, 18 May 2021 18:36:42 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/about/</guid>
+      <description>此地是我的自留地。你所能看到的，大多是某个不愿透露姓名的年轻菜鸡的的自怨自艾，以及个人生活的流水账， 亦或是些许胡思乱想。 如何称呼我？ “名称”是具有魔力</description>
+    </item>
+    
+    <item>
+      <title>浮点数的取值范围</title>
+      <link>https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</link>
+      <pubDate>Tue, 23 Feb 2021 22:58:40 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</guid>
+      <description>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码</description>
+    </item>
+    
+    <item>
+      <title>拉面好吃</title>
+      <link>https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</link>
+      <pubDate>Wed, 20 May 2020 22:28:53 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/</guid>
+      <description>不知怎么的，我突然想吃面了。 我的初中附近吃的很多。但我独爱校门口不远处的那家牛肉面馆。面馆外挂着个“兰州牛肉拉面”的LED招牌，随处可见的那种，乍一看</description>
+    </item>
+    
+    <item>
+      <title>在流放地</title>
+      <link>https://young-mann.github.io/posts/in-der-strafkolonie/</link>
+      <pubDate>Mon, 30 Mar 2020 02:01:50 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/in-der-strafkolonie/</guid>
+      <description>今天读完了卡夫卡的《在流放地》。 文中共出现了4名角色：旅行者、军官、兵士与罪犯。 其中，军官这个角色，是其笔下的典型角色：他秉持着某种为世俗所不容的理念</description>
+    </item>
+    
+    <item>
+      <title>记一篇阴阳怪气的文章</title>
+      <link>https://young-mann.github.io/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</link>
+      <pubDate>Wed, 15 Jan 2020 21:10:01 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/</guid>
+      <description>下午开车至嘉定，自 5 点待到 9 点。期间，一开始对四周环境的好奇，不久后便转为了疲惫，于是看起了知乎，刷到关于一篇高级黑文章《生态经济学集成框架的理论与实</description>
+    </item>
+    
+    <item>
+      <title>怕死</title>
+      <link>https://young-mann.github.io/posts/thanatophobia/</link>
+      <pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/thanatophobia/</guid>
+      <description>无端端今年开始很怕死 年轻一点 一点都不顾忌 轮到未 最怕活着 但是没运气 争口气 人一生很少多于一世纪 还醒起很多任务未做不等於有期 够我逐件逐件地办理 重新整理 谈恋爱</description>
+    </item>
+    
+    <item>
+      <title>记忆里的食谱</title>
+      <link>https://young-mann.github.io/posts/recipe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/recipe/</guid>
+      <description>天已经亮了，但还是蒙蒙黑。我躺在床上，两眼生疼。 我大概的确是老了。支持我做出此判断的，并不是我年龄的绝对值大小——虽然我已经 88 岁了，但我仍有劳动的余力</description>
+    </item>
+    
+  </channel>
 </rss>

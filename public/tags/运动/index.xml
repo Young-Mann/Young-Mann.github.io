@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>运动 on 狗蛋日</title>
-        <link>https://young-mann.github.io/tags/%E8%BF%90%E5%8A%A8/</link>
-        <description>Recent content in 运动 on 狗蛋日</description>
-        <generator>Hugo -- gohugo.io</generator>
-        <language>zh</language>
-        <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+  <channel>
+    <title>运动 on 狗蛋日</title>
+    <link>https://young-mann.github.io/tags/%E8%BF%90%E5%8A%A8/</link>
+    <description>Recent content in 运动 on 狗蛋日</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
 </copyright>
-        <lastBuildDate>Wed, 29 Jun 2022 21:01:50 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/tags/%E8%BF%90%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>攀岩杂记</title>
-        <link>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</link>
-        <pubDate>Wed, 29 Jun 2022 21:01:50 +0800</pubDate>
-        
-        <guid>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</guid>
-        <description>&lt;p&gt;前天一时兴起想去岩馆爬墙，于是约了某个老哥同去。结果今天临时被鸽，只好独自前行。&lt;/p&gt;
-&lt;p&gt;到岩馆时已经是下午了。原则上这段时间他们这种门店还不能对外开放。刚进门不久，就听到老板和他人的对话，听说他们是偷偷开馆的。似乎附近有一家偷偷开馆的还被举报了。挺惨的。&lt;/p&gt;
-&lt;p&gt;简单热身后，先观察了别人一段时间，回忆起大致规则后，挑了一条 V1 的线，靠蛮力在第 3 次尝试的时候爬成了。随后又小试了几条 V1，结果都没完成，试了几次就力竭了。看到我的几次尝试后，旁边有人告诉我肩膀没放松，这样腿部不好发力。的确如此。在某些脚点上，我没把握好让肩膀放松的姿势。在岩馆霍霍了 2 小时后，手上破了点皮，决定归家。
-　&lt;/p&gt;
-&lt;p&gt;在路上看到家港式小吃的餐馆，开放堂食，于是进去吃了点炸串和咖喱牛腩。饭饱后，坐地铁回家。&lt;/p&gt;
-&lt;p align=&#34;right&#34;&gt;2022.06.29&lt;/p&gt;
-</description>
-        </item>
-        
-    </channel>
+    <lastBuildDate>Wed, 29 Jun 2022 21:01:50 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/tags/%E8%BF%90%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>攀岩杂记</title>
+      <link>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</link>
+      <pubDate>Wed, 29 Jun 2022 21:01:50 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/%E6%94%80%E5%B2%A9/</guid>
+      <description>前天一时兴起想去岩馆爬墙，于是约了某个老哥同去。结果今天临时被鸽，只好独自前行。 到岩馆时已经是下午了。原则上这段时间他们这种门店还不能对外开放。刚进门</description>
+    </item>
+    
+  </channel>
 </rss>

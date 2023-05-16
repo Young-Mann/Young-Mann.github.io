@@ -1,200 +1,346 @@
 <!DOCTYPE html>
-<html lang="zh" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。'>
-<title>事件域在金融随机分析中的含义</title>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel='canonical' href='https://young-mann.github.io/posts/sigma-algebra/'>
 
-<link rel="stylesheet" href="/scss/style.scss"><meta property='og:title' content='事件域在金融随机分析中的含义'>
-<meta property='og:description' content='初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。'>
-<meta property='og:url' content='https://young-mann.github.io/posts/sigma-algebra/'>
-<meta property='og:site_name' content='狗蛋日'>
-<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='概率论' /><meta property='article:tag' content='随机分析' /><meta property='article:published_time' content='2023-05-16T14:31:37&#43;08:00'/><meta property='article:modified_time' content='2023-05-16T14:31:37&#43;08:00'/>
-<meta name="twitter:title" content="事件域在金融随机分析中的含义">
-<meta name="twitter:description" content="初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。">
-    </head>
-    <body class="
-    article-page
-    ">
-    <script>
-        (function() {
-            const colorSchemeKey = 'StackColorScheme';
-            localStorage.setItem(colorSchemeKey, "auto");
-        })();
-    </script><script>
-    (function() {
-        const colorSchemeKey = 'StackColorScheme';
-        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
-        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+<title>事件域在金融随机分析中的含义 | 狗蛋日</title>
 
-        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-            
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
 
-            document.documentElement.dataset.scheme = 'dark';
-        } else {
-            document.documentElement.dataset.scheme = 'light';
-        }
-    })();
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
 </script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --sys-font-family: "Noto Sans SC";
+    --zh-font-family: "Noto Sans SC";
+    --base-font-family: "Noto Sans SC";
+    --code-font-family: "Noto Sans SC";
+    --article-font-family: "Noto Sans SC";
+  }
+
+
+p {
+	text-align: justify; 
+	text-justify: inter-ideograph; 
+	color: #000000;
+	text-indent: 2em;
+}
+
+
+   hr
+{
+	border: solid;
+    height: 5px;
+color: #000000;
+    margin: 36px 0;
+	overflow: visible;
+    text-align: center;
+}
+
+
+hr:after {
+    background: #fff;
+    content: 'd=(╹ڡ╹ )>';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+.footnotes p{
+text-indent: 0;
+}
+
+blockquote p{
+text-indent: 0;
+}
+</style>
+
+<script>
+  (function () {
+    const customFont = document.createElement("link");
+    customFont.href =
+      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+
+    customFont.type = "text/css";
+    customFont.rel = "stylesheet";
+
+    document.head.appendChild(customFont);
+  })();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://young-mann.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"事件域在金融随机分析中的含义",
+      "item":"https://young-mann.github.io/posts/sigma-algebra/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://young-mann.github.io/posts/sigma-algebra/"
+    },
+    "headline": "事件域在金融随机分析中的含义 | 狗蛋日","datePublished": "2023-05-16T14:31:37+08:00",
+    "dateModified": "2023-05-16T14:31:37+08:00",
+    "wordCount":  1875 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "YANG Huaicheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://young-mann.github.io/images/icon.png"
+        }
+        },
+    "description": "初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。"
+}
+</script><meta property="og:title" content="事件域在金融随机分析中的含义 | 狗蛋日" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://young-mann.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://young-mann.github.io/posts/sigma-algebra/" />
+
+
+
+<meta property="og:description" content="初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2023-05-16T14:31:37&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2023-05-16T14:31:37&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="概率论" />
+
+<meta property="article:tag" content="随机分析" />
+
+
+
+
+
+<meta property="og:see_also" content="https://young-mann.github.io/posts/prob-theory/" />
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
     </button>
 
-    <header>
-        
-            
-            <figure class="site-avatar">
-                <a href="/">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
-                            height="300" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-                </a>
-                
-            </figure>
-            
-        
-        
-        <div class="site-meta">
-            <h1 class="site-name"><a href="/">狗蛋日</a></h1>
-            <h2 class="site-description"></h2>
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
         </div>
-    </header><ol class="menu" id="main-menu">
-        
-        
-        
-        <li >
-            <a href='/posts/about/' >
-                
-                
-                
-                <span>关于我</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/posts/' >
-                
-                
-                
-                <span>文章</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/categories/' >
-                
-                
-                
-                <span>分类</span>
-            </a>
-        </li>
-        
-        
-        <li >
-            <a href='/tags/' >
-                
-                
-                
-                <span>标签</span>
-            </a>
-        </li>
-        
 
-        <div class="menu-bottom-section">
-            
-            
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
         </div>
-    </ol>
-</aside>
-
-    
-
-            <main class="main full-width">
-    <article class="main-article">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/" >
-                工具::数学
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/posts/sigma-algebra/">事件域在金融随机分析中的含义</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。
-        </h3>
-        
     </div>
 
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">May 16, 2023</time>
-            </div>
-        
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
 
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    
-                </time>
-            </div>
-        
-    </footer>
+</nav>
+<script>
     
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
 
-    
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">事件域在金融随机分析中的含义</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2023-05-16</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/" class="hover:text-eureka"
+          >工具::数学</a
+        >
+      
+    </div>
+  
+
+  
 </div>
 
-</header>
 
-    <section class="article-content">
-    
-    
-    <h2 id="事件域划分的精细程度代表所知信息的多寡">事件域——划分的精细程度代表所知信息的多寡</h2>
+  
+  
+
+  <h2 id="事件域划分的精细程度代表所知信息的多寡">事件域——划分的精细程度代表所知信息的多寡</h2>
 <p>简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来对样本空间 $\Omega$ 中的样本路径 $\omega$ 进行归类。这些分类，实际上表示我们对于当前样本路径的了解程度：我们在某一阶段 $T$ 所知道的信息越多，这一阶段的事件域 $\mathcal F _T$ 所包含的元素就越多，表示我们 $\omega$ 所能采用的分类也就越多。</p>
 <p>这些分类是怎样描述「所知道的信息」的？一种可行的思路是思路是，对于某个随机过程，我们会面临一条事前确定的样本路径 $\omega_i$ 。然而，尽管这条样本路径是已经被「固定」的，但我们并不知道 $\omega_i$ 是 $\Omega$ 中的哪一个 $\omega$ ——我们仅能知道，<u><strong>对于给定的 $\Omega$ 的某个子集，$\omega_i$ 是不是在这个子集里面</strong></u>。而前一句中 能够被判断是否包含 $\omega_i$ 的这些 $\Omega$ 的子集，就是我们在第一段中提到的，事件域 $\mathcal F$ 所包含的「分类」。如果对集合的划分越精细，「分类」就越多，表示我们知道的信息就更多。</p>
 <h2 id="一个例子">一个例子</h2>
@@ -214,208 +360,147 @@ $$</li>
 <p>此时，除了没扔硬币和第一次扔硬币的信息以外，我们可以从 $S_2(\omega)$ 获取了更多关于 $\omega$ 的信息，并对它们进行更精细的分类。</p>
 <p>观察上述的事件域 $\mathcal{F_0}, \mathcal{F_1}, \mathcal{F_2}$ ，不难看出，在每个事件域中，我们都可以找到对应的分类，并将所观察到的随机试验的结果及其背后根本的样本路径归入这个类别里。比如，当 $S_0=4$ 时，我们知道 $\omega \in \Omega$ ；当  $S_1=8$ 时，我们不仅知道 $\omega \in \Omega$ ，还能知道更准确的信息，即 $\omega \in \lbrace{HH,HT\rbrace} \subseteq \Omega$ ；当 $S_2=16$ 时，我们便能知道更准确的信息，即 $\omega \in \lbrace{HH\rbrace}\subseteq \lbrace{HH,HT\rbrace} \subseteq \Omega$ 。</p>
 <p>不难看出，随着时间的推移（体现在脚标的数值不断增大）， $\mathcal{F_T}$ 所包含的元素越来越多，其中的分类也越来越多，我们也越能确定 $\omega$ 究竟是什么什么样的。那么，一种很自然的想法是，如何刻画这种「随着时间不断增加的信息」。为此，我们便以 Shreve 书中对 filtration 的定义，结束这一小节：</p>
-<p><img src="https://s2.loli.net/2023/05/16/sDeMEdznYLNlVmP.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
+<p><img src="https://s2.loli.net/2023/05/16/sDeMEdznYLNlVmP.png" alt=""></p>
 <h2 id="对上例的修正">对上例的修正</h2>
 <p>看到这里，似乎一切都大功告成了。我们通过一个例子，了解了事件域如何表示信息，并获得了 filtration 的定义。</p>
 <p>然而，这个回答并不能这样结束，因为其中还有个很大的问题。</p>
 <p>回到上一节中的 $\mathcal{F_2}$ ，我们会发现，这里的事件域超出了随机变量 $S$ 所能提供的信息范围。如果我们仔细回顾 $S(\omega)$ 的定义，会发现 $S_2(HT)=S_2(TH)$ 。也就是说，我们无法根据 $S_2=4$ 来判断 $\omega$ 究竟是 $TH$ 还是 $HT$ ——我们只能说， $\omega \in \lbrace{TH,HT\rbrace}$ 。</p>
-<p><img src="https://s2.loli.net/2023/05/16/5GYUh8aTnfIlCKX.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
+<p><img src="https://s2.loli.net/2023/05/16/5GYUh8aTnfIlCKX.png" alt=""></p>
 <p>因此，如果我们真的想表示 $S_2$ 所能提供的信息，那么需要进行一些调整。将随机变量生成的 sigma 代数定义为：</p>
-<p><img src="https://s2.loli.net/2023/05/16/gTSrw5LUzis6bCV.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
+<p><img src="https://s2.loli.net/2023/05/16/gTSrw5LUzis6bCV.png" alt=""></p>
 <p>方便起见，将 $A_{HH}$ 表示以 $A_{HH}, A_{HT}, A_{TH}, A_{TT}$ 分别表示 以开头的序列 $\lbrace{以 HH 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 HT 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 TH 开头的序列\rbrace},$ 以开头的序列 $\lbrace{以 TT开头的序列\rbrace}$ 。可推得：</p>
 <p>是一个集合，由以及这些集合的并集和余集组成。$\sigma(S_2)$是一个集合， which 由 $\varnothing, \Omega, A_{HH}, A_{HT}\cup A_{TH}, A_{TT}$以及这些集合的并集和余集组成。</p>
 <p>不难看出，不光是 $\sigma(S_2)$ ，其他的 $\sigma(S_T)$ 都包含于 $\mathcal{F_T}$ ，因此我们可以说随机变量 $S$ 是 可测的 $\mathcal{F-}可测的$ 。可测的定义如下：</p>
-<p><img src="https://s2.loli.net/2023/05/16/X6pd1EwljnkU3Zo.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
+<p><img src="https://s2.loli.net/2023/05/16/X6pd1EwljnkU3Zo.png" alt=""></p>
 
-</section>
-
-
-    <footer class="article-footer">
-    
-    <section class="article-tags">
-        
-            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
-        
-            <a href="/tags/%E9%9A%8F%E6%9C%BA%E5%88%86%E6%9E%90/">随机分析</a>
-        
-    </section>
-
-
-    </footer>
-
-
-    
 </article>
 
+
+      
+        <div class="my-4">
     
-
+    <a href="https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#概率论</a>
     
+    <a href="https://young-mann.github.io/tags/%E9%9A%8F%E6%9C%BA%E5%88%86%E6%9E%90/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#随机分析</a>
+    
+</div>
+      
 
-<aside class="related-content--wrapper">
-    <h2 class="section-title"></h2>
-    <div class="related-content">
-        <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/posts/prob-theory/">
-        
-        
+      
 
-        <div class="article-details">
-            <h2 class="article-title">基于测度论的概率论基础</h2>
-        </div>
-    </a>
-</article>
 
-            
-        </div>
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://young-mann.github.io/posts/drafts/" class="block">草稿纸</a>
+      
     </div>
-</aside>
-
-     
-    
-        
-    
-
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-        2023 狗蛋日
-    </section>
-    
-    <section class="powerby">
-         <br />
-        
-    </section>
-</footer>
-
-
-    
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    
-    <div class="pswp__bg"></div>
-
-    
-    <div class="pswp__scroll-wrap">
-
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://young-mann.github.io/posts/aps/" class="block">APS经历记录</a>
+      
     </div>
+  </div>
 
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
 
-            </main>
-        </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+      
+
+
+
+  <script id="giscus" src="https://giscus.app/client.js"
+                data-category=Announcements
+                data-category-id=DIC_kwDOIz0nrM4CTsvo
+                data-emit-metadata=0
+                data-input-position=top
+                data-lang=zh-CN
+                data-mapping=pathname
+                data-reactions-enabled=1
+                data-repo=Young-Mann/giscus
+                data-repo-id=R_kgDOIz0nrA
+        crossorigin="anonymous"
+        async>
+</script>
 <script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
-
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
-
-        document.head.appendChild(customFont);
-    }());
+    if (storageColorScheme == "Light") {
+        document.getElementById('giscus').setAttribute('data-theme', 'light')
+    } else if (storageColorScheme == "Dark") {
+        document.getElementById('giscus').setAttribute('data-theme', 'dark')
+    }
 </script>
 
-    </body>
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#事件域划分的精细程度代表所知信息的多寡">事件域——划分的精细程度代表所知信息的多寡</a></li>
+    <li><a href="#一个例子">一个例子</a></li>
+    <li><a href="#对上例的修正">对上例的修正</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+      <div
+        class=" bg-secondary-bg prose col-span-2 rounded p-6 lg:col-span-6"
+      >
+        <h3>相关</h3>
+        
+          <a href="https://young-mann.github.io/posts/prob-theory/" class="no-underline">基于测度论的概率论基础</a>
+          <br />
+        
+      </div>
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
 </html>
