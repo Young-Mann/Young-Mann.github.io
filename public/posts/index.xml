@@ -8,7 +8,7 @@
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
 </copyright>
-    <lastBuildDate>Tue, 16 May 2023 14:31:37 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 May 2023 20:25:00 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>草稿纸</title>
       <link>https://young-mann.github.io/posts/drafts/</link>
@@ -16,6 +16,15 @@
       
       <guid>https://young-mann.github.io/posts/drafts/</guid>
       <description>Cyberbullying The following passage are an excerpt from a TED speech about cyberbullying (and I’ve forgotten the full name of this speech). When chatting online, we may think our words are just the words. We don’t need to take responsibility for what we have said, even when our words really hurt others &amp;ndash; we just keep silent, having no courage to confess it. Social network is basically a</description>
+    </item>
+    
+    <item>
+      <title>对无套利定价的一点理解</title>
+      <link>https://young-mann.github.io/posts/derivative-pricing/</link>
+      <pubDate>Tue, 16 May 2023 20:25:00 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/derivative-pricing/</guid>
+      <description>在课本上看到套利定价模型和衍生品定价的时候，总会看到无套利定价的思路。尽管其思想很容易理解，但还是很好奇为什么特意要强调这种定价方法呢？另外，这种定价</description>
     </item>
     
     <item>
@@ -28,12 +37,21 @@
     </item>
     
     <item>
+      <title>GMAT简记</title>
+      <link>https://young-mann.github.io/posts/gmat/</link>
+      <pubDate>Sat, 13 May 2023 21:56:40 +0800</pubDate>
+      
+      <guid>https://young-mann.github.io/posts/gmat/</guid>
+      <description>有一说一，这分数不算高，但对于无 G 成绩的我来说，能从零到一有个成绩还是挺重要的。 简单记录一下备考过程与考试流程。 备考时间线 4.15 -5.3 用到的材料 Q：OG202</description>
+    </item>
+    
+    <item>
       <title>APS经历记录</title>
       <link>https://young-mann.github.io/posts/aps/</link>
       <pubDate>Mon, 06 Mar 2023 21:57:37 +0800</pubDate>
       
       <guid>https://young-mann.github.io/posts/aps/</guid>
-      <description>03-06 APS 寄送材料 03-16 出审核号 03-30 审核部发邮件通知补充信息（我于同日发邮件补充了信息） 04-03 材料审核完成，面谈考位开始排队 05-15 通知面谈时间 05-29 面谈 APS 审核流程为：准备审核</description>
+      <description>最近处理完了 APS 审核的相关事务，流程为：准备审核材料、汇款、邮寄材料（材料寄送阶段） &amp;ndash;&amp;gt; 等待通知面谈时间、复习 &amp;ndash;&amp;gt; 审核当天（笔试+面谈） &amp;ndash;&amp;gt; 收到 APS 证书。下面简</description>
     </item>
     
     <item>

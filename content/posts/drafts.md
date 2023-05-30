@@ -31,3 +31,22 @@ Under this circumstance, maybe the smartest way to survive is to go back to bein
 
 Schaut her, schaut her, schaut keinem ins gesicht.
 
+---
+
+Hallo! 
+
+Hallo. Wie heißen Sie?
+
+Ich heiße GDR. Woher kommen Sie?
+
+Ich komme aus China. 
+
+So, wo wohnen Sie?
+
+Ich wohne in Shanghai.
+
+O, ich wohne auch in Shanghai. 
+
+Wohin kommst du?
+
+Ich komme nach Deutschland. 
