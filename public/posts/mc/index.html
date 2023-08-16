@@ -1,342 +1,95 @@
 <!DOCTYPE html>
-<html
-  lang="zh"
-  dir="ltr"
-  
-><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<title>蒙特卡罗估计简介 | 狗蛋日</title>
-
-<meta name="generator" content="Hugo Eureka 0.9.3" />
-<link rel="stylesheet" href="https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
-<script defer src="https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
-  as="style" onload="this.onload=null;this.rel='stylesheet'">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
-   media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
-   crossorigin></script>
-  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
-     crossorigin></script>
-<link rel="stylesheet" href="https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
-
-
-<script defer type="text/javascript" src="https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js"></script>
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
-   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
-  onload="this.media='all';this.onload=null" crossorigin>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
-  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
-   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    renderMathInElement(document.body, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-        { left: "\\[", right: "\\]", display: true }
-      ],
-    });
-  });
-</script>
-
-
-<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
-  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
-<style>
-
-  :root {
-    --sys-font-family: "Noto Sans SC";
-    --zh-font-family: "Noto Sans SC";
-    --base-font-family: "Noto Sans SC";
-    --code-font-family: "Noto Sans SC";
-    --article-font-family: "Noto Sans SC";
-  }
-
-
-p {
-	text-align: justify; 
-	text-justify: inter-ideograph; 
-	color: #000000;
-	text-indent: 2em;
-}
-
-
-   hr
-{
-	border: solid;
-    height: 5px;
-color: #000000;
-    margin: 36px 0;
-	overflow: visible;
-    text-align: center;
-}
-
-
-hr:after {
-    background: #fff;
-    content: 'd=(╹ڡ╹ )>';
-    padding: 0 4px;
-    position: relative;
-    top: -13px;
-}
-
-.footnotes p{
-text-indent: 0;
-}
-
-blockquote p{
-text-indent: 0;
-}
-</style>
-
-<script>
-  (function () {
-    const customFont = document.createElement("link");
-    customFont.href =
-      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
-
-    customFont.type = "text/css";
-    customFont.rel = "stylesheet";
-
-    document.head.appendChild(customFont);
-  })();
-</script>
-<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png">
-
-<meta name="description"
-  content="又开新坑了，大概会落得贪多嚼不烂的下场。">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1 ,
-      "name":"Posts",
-      "item":"https://young-mann.github.io/posts/"},{
-      "@type": "ListItem",
-      "position": 2 ,
-      "name":"蒙特卡罗估计简介",
-      "item":"https://young-mann.github.io/posts/mc/"}]
-}
-</script>
-
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://young-mann.github.io/posts/mc/"
-    },
-    "headline": "蒙特卡罗估计简介 | 狗蛋日","datePublished": "2022-10-20T21:50:02+08:00",
-    "dateModified": "2022-10-20T21:50:02+08:00",
-    "wordCount":  2464 ,
-    "publisher": {
-        "@type": "Person",
-        "name": "YANG Huaicheng",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://young-mann.github.io/images/icon.png"
-        }
-        },
-    "description": "又开新坑了，大概会落得贪多嚼不烂的下场。"
-}
-</script><meta property="og:title" content="蒙特卡罗估计简介 | 狗蛋日" />
-<meta property="og:type" content="article" />
-
-
-<meta property="og:image" content="https://young-mann.github.io/images/icon.png">
-
-
-<meta property="og:url" content="https://young-mann.github.io/posts/mc/" />
-
-
-
-<meta property="og:description" content="又开新坑了，大概会落得贪多嚼不烂的下场。" />
-
-
-
-<meta property="og:locale" content="zh" />
-
-
-
-
-<meta property="og:site_name" content="狗蛋日" />
-
-
-
-
-
-
-<meta property="article:published_time" content="2022-10-20T21:50:02&#43;08:00" />
-
-
-<meta property="article:modified_time" content="2022-10-20T21:50:02&#43;08:00" />
-
-
-
-<meta property="article:section" content="posts" />
-
-
-<meta property="article:tag" content="概率" />
-
-<meta property="article:tag" content="Monte Carlo" />
-
-
-
-
-
-
-  <body class="flex min-h-screen flex-col">
-    <header
-      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
-    >
-      <div class="mx-auto w-full max-w-screen-xl"><script>
-    let storageColorScheme = localStorage.getItem("lightDarkMode")
-    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
-        document.getElementsByTagName('html')[0].classList.add('dark')
-    }
-</script>
-<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
-    <a href="/" class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
-    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <div id="target"
-        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
-        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
-            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
-            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
-        </div>
-
-        <div class="flex">
-            <div class="relative pt-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
-                    <i class="fas fa-adjust"></i>
-                </div>
-                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
-                </div>
-                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
-                    id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
-    </div>
-
-</nav>
-<script>
+<html lang="zh"><head>
+  <meta charset="utf-8" />
+	
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。
+蒙特卡洛原理 蒙特卡洛方法是什么？ 蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法。借助测度论的语言，我们可对概率论做一种公理化定义1，将随机试验中随机发生的事件与一个集合对应起来（这个集合包含了事件发生时的所有可能结果），将总体也与一个集合对应起来（这个集合包含了随机试验的所有可能结果），从而将概率定义为：
+$$某事件的概率 := \frac{该事件对应集合的容量}{总体对应集合的容量}$$
+确定了这个定义之后，我们便可以通过计算事件对应集合的容量与总体对应集合的容值，计算某个事件的概率——而实际上蒙特卡罗方法就是这么做的。比如，我们现在想要计算某个事件发生的概率。那么，我们可以做的是，在所有可能结果组成的总体中随机抽样，然后计算落入事件对应集合的样本点所占总体的比例，以此比例「估计」事件对应集合的容量。在这一过程中，大数定律保证了这个估计会随着抽样的增加而收敛于真实值2，中心极限定理则给出了在有限次抽样下估计误差的可能幅度。
+为了更方便地计算集合的度量，我们可以引入积分这个工具。考虑一个简单的例子：假设我们现在需要估计一个给定函数$f$在单位区间上的积分值。为书写方便起见，我们可以将这个积分值记作 $\alpha$，则有： $$ \alpha = \int^1_0f(x) \mathop{}!\mathrm{d}x. $$ $\alpha$ 可以被看作期望值 $\mathbb{E}[f(U)]$，其中 $U \sim\text{Uniform}(0,1)$。假设我们可以在 $[0,1]$ 上独立均匀地抽样得到 $U_1,U_2,\cdots$，那么计算 $f$ 在这些样本点上的取值并求平均，便可得到欲求积分值的一个蒙特卡洛估计： $$ \hat \alpha n = \frac1n \sum^n{i=1}f(U_i). $$ 如果函数 $f$ 满足一些特定性质，我们就能得到一个误差较低的 $\alpha$ 估计值，并且可以显式地求出这个估计的误差值。
+先来看看 $\alpha$ 的具体估计取值。如果函数 $f$ 在 $[0,1]$ 上可积，那么根据强大数定律，有： $$ 当\ n \to \infty \ 时,\ \hat \alpha_n \stackrel{a.s.} \longrightarrow \alpha. $$ 再来看看估计的误差值。如果函数 $f$ 平方可积，那么蒙特卡洛估计中的误差项 $\hat \alpha_n - \alpha$ 近似服从于 $\text{Normal}(0, {\sigma_f^2}/{ n})$，而且 $n$ 越大，这个误差项就越近似于上述的正态分布。需要补充的是，这个正态分布中的总体方差 $\sigma_f$ 定义如下： $$ \sigma_f^2 = \int^1_0 (f(x)-\alpha)^2 \mathop{}!">  
+
+  <title>
     
-    let element = document.getElementById('lightDarkMode')
-    if (storageColorScheme == null || storageColorScheme == 'Auto') {
-        document.addEventListener('DOMContentLoaded', () => {
-            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
-        })
-    } else if (storageColorScheme == "Light") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'sun')
-        element.firstElementChild.classList.add('fa-sun')
-    } else if (storageColorScheme == "Dark") {
-        element.firstElementChild.classList.remove('fa-adjust')
-        element.firstElementChild.setAttribute("data-icon", 'moon')
-        element.firstElementChild.classList.add('fa-moon')
+      蒙特卡罗估计简介
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.2e19336bd246f7896b7ba90cb9f8474545b7162f4009e840138d78c1921d55b55c580c1950ca60c4d264905facf47740158e0b93bbe0a4f01795bd925c25d48e.css" integrity="sha512-Lhkza9JG94lre6kMufhHRUW3Fi9ACehAE414wZIdVbVcWAwZUMpgxNJkkF&#43;s9HdAFY4Lk7vgpPAXlb2SXCXUjg==" />
+   <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     }
+  };
 
-    document.addEventListener('DOMContentLoaded', () => {
-        getcolorscheme();
-        switchBurger();
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
     });
+
 </script>
-</div>
-    </header>
-    <main class="grow pt-16">
-        <div class="pl-scrollbar">
-          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
-  
-  
-  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
-    <div
-      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
-    >
-      <article class="prose">
-  <h1 class="mb-4">蒙特卡罗估计简介</h1>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ 
 
-  <div
-  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
->
-  <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
-    <span
-      >2022-10-20</span
-    >
-  </div>
-  <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
-    <span>5分钟阅读时长</span>
-  </div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+</head>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">回到主页</a>
 
-  
-    <div class="me-6 my-2">
-      <i class="fas fa-folder me-1"></i>
-      
-        <a href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" class="hover:text-eureka"
-          >工具::代码实现</a
-        >
-      
+<article>
+
+    <h1>蒙特卡罗估计简介</h1>
+    <div class="post-meta">
+||
+        <span datetime="2022-10-20 21:50:02 &#43;0800 CST">        2022-10-20        </span>
+	- 
+        <span datetime="2022-10-20 21:50:02 &#43;0800 CST">        2022-10-20     </span>
+
+||
+
+
+
+
     </div>
-  
-
-  
-</div>
 
 
-  
-  
 
-  <p>本文是对<a href="https://book.douban.com/subject/25727712/">《金融工程中的蒙特卡罗方法》</a>一书的读书笔记。</p>
+    
+        <aside >
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#蒙特卡洛原理">蒙特卡洛原理</a>
+      <ul>
+        <li><a href="#蒙特卡洛方法是什么">蒙特卡洛方法是什么？</a></li>
+        <li><a href="#蒙特卡洛估计的误差有多大">蒙特卡洛估计的误差有多大？</a></li>
+        <li><a href="#如何比较不同蒙特卡洛估计的好坏">如何比较不同蒙特卡洛估计的好坏？</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </aside>
+    
+
+    <p>本文是对<a href="https://book.douban.com/subject/25727712/">《金融工程中的蒙特卡罗方法》</a>一书的读书笔记。</p>
 <h2 id="蒙特卡洛原理">蒙特卡洛原理</h2>
 <h3 id="蒙特卡洛方法是什么">蒙特卡洛方法是什么？</h3>
 <p>蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法。借助测度论的语言，我们可对概率论做一种公理化定义<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，将随机试验中随机发生的事件与一个集合对应起来（这个集合包含了事件发生时的所有可能结果），将总体也与一个集合对应起来（这个集合包含了随机试验的所有可能结果），从而将概率定义为：</p>
@@ -411,130 +164,6 @@ $$
 
 </article>
 
-
-      
-        <div class="my-4">
-    
-    <a href="https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#概率</a>
-    
-    <a href="https://young-mann.github.io/tags/monte-carlo/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#Monte Carlo</a>
-    
-</div>
-      
-
-      
-
-
-
-      
-
-      
-  <div
-    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
-  >
-    <div>
-      
-        <span class="text-primary-text block font-bold"
-          >上一页</span
-        >
-        <a href="https://young-mann.github.io/posts/lcd/" class="block">侃侃「贷款创造理论」</a>
-      
-    </div>
-    <div class="mt-4 md:mt-0 md:text-right">
-      
-        <span class="text-primary-text block font-bold">下一页</span>
-        <a href="https://young-mann.github.io/posts/%E5%88%9D%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BA%BA%E4%B8%8E%E4%BA%8B/" class="block">狗蛋日辞典：初中篇</a>
-      
-    </div>
-  </div>
-
-
-      
-
-
-
-  <script id="giscus" src="https://giscus.app/client.js"
-                data-category=Announcements
-                data-category-id=DIC_kwDOIz0nrM4CTsvo
-                data-emit-metadata=0
-                data-input-position=top
-                data-lang=zh-CN
-                data-mapping=pathname
-                data-reactions-enabled=1
-                data-repo=Young-Mann/giscus
-                data-repo-id=R_kgDOIz0nrA
-        crossorigin="anonymous"
-        async>
-</script>
-<script>
-    if (storageColorScheme == "Light") {
-        document.getElementById('giscus').setAttribute('data-theme', 'light')
-    } else if (storageColorScheme == "Dark") {
-        document.getElementById('giscus').setAttribute('data-theme', 'dark')
-    }
-</script>
-
-    </div>
-    
-      <div class="col-span-2">
-        
-        
-          <div
-  class="
-    bg-primary-bg
-   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
->
-  <h3>本页内容</h3>
-</div>
-<div
-  class="sticky-toc  hidden px-6 pb-6 lg:block"
->
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#蒙特卡洛原理">蒙特卡洛原理</a>
-      <ul>
-        <li><a href="#蒙特卡洛方法是什么">蒙特卡洛方法是什么？</a></li>
-        <li><a href="#蒙特卡洛估计的误差有多大">蒙特卡洛估计的误差有多大？</a></li>
-        <li><a href="#如何比较不同蒙特卡洛估计的好坏">如何比较不同蒙特卡洛估计的好坏？</a>
-          <ul>
-            <li><a href="#无偏估计下的比较估计量的方差计算时间">无偏估计下的比较——估计量的方差、计算时间</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    enableStickyToc();
-  });
-</script>
-
-        
-      </div>
-    
-
-    
-    
-  </div>
-
-  
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        hljs.highlightAll();
-      });
-    </script>
-
-          </div>
-        </div>
-      
-    </main>
-    <footer class="pl-scrollbar">
-      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
- &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
-</div></div>
-    </footer>
-  </body>
-</html>
+            </div>
+        </main>
+    </body></html>

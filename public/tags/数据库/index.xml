@@ -2,20 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据库 on 狗蛋日</title>
-    <link>https://young-mann.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <link>https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <description>Recent content in 数据库 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Tue, 18 May 2021 19:31:10 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 19:31:10 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关系数据理论</title>
-      <link>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
+      <link>https://example.com/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
       <pubDate>Tue, 18 May 2021 19:31:10 +0800</pubDate>
       
-      <guid>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
-      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些</description>
+      <guid>https://example.com/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
+      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：
+一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？（规范化理论） 在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？（Armstrong公理&amp;amp;模式分解） 预备知识 为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：
+函数依赖(Functional Dependency) **函数依赖：**设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 X 函数确定 Y , 或 Y 函数依赖 X ，记作$X \rightarrow Y$。 完全函数依赖：如果Y函数依赖X，但不依赖X的任何一个真子集，则称Y完全函数依赖X，记作$X \xrightarrow F Y$。 部分函数依赖：如果Y函数依赖X，但依赖于X的任何一个真子集，则称Y部分函数依赖X，记作$X \xrightarrow P Y$。 传递函数依赖：设Z也是U的一个子集。如果X决定Y，Y决定Z，且Y不决定X，那么称Z对X传递函数依赖，记作$X \xrightarrow {传递} Y$。 码/键(Key) 候选码：设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为候选码（K是一个集合！）
+主码：候选码若有多个，则选定其中的一个，称为主码。
+超码：对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为超码。
+主属性/非主属性：包含在任何一个候选码的属性都叫主属性，其他都叫非主属性。
+范式（Normal Form） 对于范式的概念，特别不靠谱的理解如下：
+**第一范式(1NF)：**不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）
+第二范式(2NF)：在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为一个整体起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。
+**第三范式(3NF)：**在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。
+BCNF: 在满足3NF的基础上，将“对于一个关系内的非主属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的所有属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。
+**第四范式(4NF)：**原关系模式中不存在非平凡的多值依赖。
+问题的引入——数据异常及规范化理论 当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</description>
     </item>
     
   </channel>

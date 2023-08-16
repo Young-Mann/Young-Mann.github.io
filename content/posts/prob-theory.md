@@ -11,6 +11,7 @@ series:
 date: '2022-07-14T17:45:55+08:00'
 featuredImage:
 draft: false
+mathjax: true
 ---
 
 本文是 *[Stochastic Calculus for Finance II: Continuous-Time Models](https://neodb.social/books/489914/)* 第 1 章与[《微观金融学及其数学基础》](https://neodb.social/books/493599/)第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念：

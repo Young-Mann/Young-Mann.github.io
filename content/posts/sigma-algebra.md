@@ -6,6 +6,7 @@ toc: true
 tags: [概率论,随机分析]
 categories: [工具::数学]
 draft: false
+mathjax: true
 ---
 ## 事件域——划分的精细程度代表所知信息的多寡
 
