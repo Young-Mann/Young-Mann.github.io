@@ -1,6 +1,0 @@
-[submodule "themes/eureka"]
-	path = themes/eureka
-	url = https://github.com/wangchucheng/hugo-eureka.git
-[submodule "themes/minima"]
-	path = themes/minima
-	url = https://github.com/mivinci/hugo-theme-minima.git
