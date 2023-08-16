@@ -10,7 +10,6 @@ series:
 date: '2022-10-20T21:50:02+08:00'
 featuredImage:
 draft: false
-mathjax: true
 ---
 
 

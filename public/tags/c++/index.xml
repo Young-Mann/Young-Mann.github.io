@@ -2,22 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on 狗蛋日</title>
-    <link>https://example.com/tags/c&#43;&#43;/</link>
+    <link>https://young-mann.github.io/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 09 Aug 2022 00:42:05 +0800</lastBuildDate><atom:link href="https://example.com/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 09 Aug 2022 00:42:05 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; design patterns and derivatives pricing</title>
-      <link>https://example.com/posts/design-patterns-and-derivatives-pricing/</link>
+      <link>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</link>
       <pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate>
       
-      <guid>https://example.com/posts/design-patterns-and-derivatives-pricing/</guid>
-      <description>Book Link: C++ Design Patterns and Derivatives Pricing
-本文用于记录读完 C++ design patterns and derivatives pricing 后的代码实践。
-ch1-VanillaCallOption 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 SimpleMCMain1.cpp ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 Random1.h ，以及具体实现该功能的头文件 Random1_Implementation.h 1。
-ch2-Encapsulation 在第 2 章，对于常用的功能进行了封装。这章用到的文件具体如下（表格内省略了用于实现接口的文件，例如 “Random1_Implementation.h”，后文的表格皆是如此）：
-文件名称 用途 Random1.h 生成随机数的函数 PayOff1.h 以 Strike 与 TheOptionsType 为私有变量的 PayOff 类，主要特点由：1. 以 enum OptionType {call, put} 区分不同类型期权的定价方式（这里是 2 种：看涨期权、看跌期权）；2. 通过double operator() (double Spot) const 重载运算符 () ，以计算给定期权的 PayOff SimpleMC.h 用于最终定价的 Monte-Carlo 函数 SimpleMCMain2.</description>
+      <guid>https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/</guid>
+      <description>Book Link: C++ Design Patterns and Derivatives Pricing 本文用于记录读完 C++ design patterns and derivatives pricing 后的代码实践。 ch1-VanillaCallOption 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部</description>
     </item>
     
   </channel>

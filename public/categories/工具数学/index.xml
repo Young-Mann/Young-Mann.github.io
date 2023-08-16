@@ -2,60 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>工具::数学 on 狗蛋日</title>
-    <link>https://example.com/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/</link>
+    <link>https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/</link>
     <description>Recent content in 工具::数学 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 16 May 2023 14:31:37 +0800</lastBuildDate><atom:link href="https://example.com/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 16 May 2023 14:31:37 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>事件域在金融随机分析中的含义</title>
-      <link>https://example.com/posts/sigma-algebra/</link>
+      <link>https://young-mann.github.io/posts/sigma-algebra/</link>
       <pubDate>Tue, 16 May 2023 14:31:37 +0800</pubDate>
       
-      <guid>https://example.com/posts/sigma-algebra/</guid>
-      <description>事件域——划分的精细程度代表所知信息的多寡 简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来对样本空间 $\Omega$ 中的样本路径 $\omega$ 进行归类。这些分类，实际上表示我们对于当前样本路径的了解程度：我们在某一阶段 $T$ 所知道的信息越多，这一阶段的事件域 $\mathcal F _T$ 所包含的元素就越多，表示我们 $\omega$ 所能采用的分类也就越多。
-这些分类是怎样描述「所知道的信息」的？一种可行的思路是思路是，对于某个随机过程，我们会面临一条事前确定的样本路径 $\omega_i$ 。然而，尽管这条样本路径是已经被「固定」的，但我们并不知道 $\omega_i$ 是 $\Omega$ 中的哪一个 $\omega$ ——我们仅能知道，对于给定的 $\Omega$ 的某个子集，$\omega_i$ 是不是在这个子集里面。而前一句中 能够被判断是否包含 $\omega_i$ 的这些 $\Omega$ 的子集，就是我们在第一段中提到的，事件域 $\mathcal F$ 所包含的「分类」。如果对集合的划分越精细，「分类」就越多，表示我们知道的信息就更多。
-一个例子 对于分类如何刻画信息，现在就来举个直观的例子。假设我现在要扔一枚质地均匀的硬币，扔个 2 次。将硬币的某一面记作正面，与其相反的一面记作反面。将「硬币投出了正面」记作 H （假设其可能性为 $p,p&amp;gt;0$ ），将「硬币投出了反面」记作 T （假设其可能性为 0&amp;quot;&amp;gt;$q, q=1-p&amp;gt;0$ ）。以一串序列 $\omega$ （其中 $\omega=\omega_1\omega_2$ ， 的可能取值为或$\omega_i的可能取值为H或T$ ）列出所有可能发生的结果，便可得样本空间 $\Omega = \lbrace \text{HH, HT, TH, TT}\rbrace.$
-再定义一个随机变量 $S$ ，用于表示股票价格：
-$$ \begin{align} S_0(\omega) &amp;amp;= 4, \forall \omega \in \Omega \\ S_1(\omega) &amp;amp;= \begin{cases} 8, &amp;amp; 如果 \omega_1=H \ 2, &amp;amp; 如果 \omega_1=T \ \end{cases} \\ S_2(\omega) &amp;amp;= \begin{cases} 16, &amp;amp; 如果 \omega_1=\omega_2=H \ 4, &amp;amp; 如果 \omega_1\neq \omega_2 \ 1, &amp;amp; 如果 \omega_1=\omega_2=T \end{cases} \end{align} $$</description>
+      <guid>https://young-mann.github.io/posts/sigma-algebra/</guid>
+      <description>事件域——划分的精细程度代表所知信息的多寡 简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来</description>
     </item>
     
     <item>
       <title>基于测度论的概率论基础</title>
-      <link>https://example.com/posts/prob-theory/</link>
+      <link>https://young-mann.github.io/posts/prob-theory/</link>
       <pubDate>Thu, 14 Jul 2022 17:45:55 +0800</pubDate>
       
-      <guid>https://example.com/posts/prob-theory/</guid>
-      <description>本文是 Stochastic Calculus for Finance II: Continuous-Time Models 第 1 章与《微观金融学及其数学基础》第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念：
-概率的公理化定义 随机变量与分布 随机变量的期望 随机变量的收敛方式 微观金融研究领域中有两大核心概念：不确定性，以及时间或动态过程。而概率论便是用于构造不确定环境下金融模型的基本工具。在本文里，我们会借助测度论的语言，将我们以前学过的初等概率论中的概念重新表述一遍，了解如何“说好现代概率论里的行话”。
-为什么要在概率论中引入测度论呢？假如我就想用初等概率论来解决问题不行吗？不是不可以，但是初等概率论所能解决的问题实在有限。举个简单的例子。就以「扔一枚均匀硬币」的随机试验为例。当我扔硬币的次数仅限于有限次的时候，你可以用以前学过的概率论知识算出扔出正面的概率是多少。但是，如果我不停扔这枚均匀硬币，问你永远都是正面的概率是多少，你也许可以用初等概率论的方法告诉我是0。但如果你再仔细想下去，想想我问你这个事件发生的概率的时候，我到底是在问什么呢？换而言之，「概率」是什么？你可能没有仔细思考过这个概念。你并没有真的认真深入的思考过这个问题，因为实际上当你的概率空间是无穷次抛硬币的结果的时候，就不像抛有限次的情况，因为你不能对所有“事件”定义概率了。另一个例子是，条件期望是什么？什么叫某个随机变量 X 一定时另一个随机变量 Y 的期望？虽然直观上好像可以理解成“平均值”，但很难用初等概率论给出一般情况下的严格定义的，可能需要分类讨论X, Y是连续或离散随机变量，或他们的混合，或更复杂。
-你可能对「概率」有些懵懂的认识：或许你会将其视作某个事件在多次重复实验中发生的频率，或许你认为概率是自己于某个事件可能发生的信服程度，亦或者，你可能将其视作逻辑的扩展（如果你是这么想的话，那你或许能在 E.T.Jaynes 所著的 Probability Theory: The Logic of Science 找到共鸣）。但是光有观念还不够，为了使用现成的、方便的定量方法解决问题，你还得深究下去，想办法办法把你的这些观念转化成数学语言，把你想要达到的目标转写成良定义的问题——测度论就是一种可选的语言，可用于说清楚「概率」到底是什么。
-本章的具体内容如下：第一，简要回顾初等概率论中对于概率及随机变量的定义，用严格的测度语言表述它们；第二，考察在随机分析中非常重要的期望与条件期望的概念与相关性质；第三，进一步考察随机变量的主要数值特征，借助这些数值特征，描述几个在研究金融资产价格运动时必须牢固把握的概率分布；第四，对于随机变量的收敛进行简要探讨。
-如何描述概率——概率的公理化定义 粗略地讲，概率就是衡量「事件发生的可能性」的大小。可是，「事件」是什么？「可能性」又是什么？一种可行的思路是，可以借助集合论与测度论中的工具对于上述概念进行指代：用集合代表「事件」，集合系代表「事件的全体」，集合的测度代表「事件发生的可能性」。
-下文将尝试用测度的语言，从5个步骤入手1，表述现代概率公理体系。为了便于理解，下文的阐述均基于「连续投掷2次硬币」这个随机试验。在「连续投掷2次硬币」这一随机试验中，将硬币的某一面记作正面，与其相反的一面记作反面。将「硬币投出了正面」记作 H （假设其可能性为 $p,p&amp;gt;0$），将「硬币投出了反面」记作 T （假设其可能性为 $q, q=1-p&amp;gt;0$）。
-描述样本空间——$\Omega$ 以一串序列（$w_1w_2w_3\cdots w_n$，其中$w_i的可能取值为H或T$）列出所有可能发生的结果，便可得样本空间 $\Omega$ ： $$ \Omega = \lbrace \text{HH, HT, TH, TT}\rbrace. $$
-描述事件——$\Omega$ 的子集 样本空间 $\Omega$ 列出了随机试验所有可能发生的结果。在这些过程中，有一些结果可能是我们 所关心的。例如，我们可能会 关心第1次掷币的结果是正面 或者 关心第2次掷币的结果是反面。根据我们 所关心的 内容不同，我们可以对样本空间中的元素进行归类。这种归类有个学名，叫分割（decomposition）。其定义如下：对于一族集合$\lbrace C_i, i=1,2,\cdots\rbrace$，如果 $ C_i\cap C_j=\varnothing, \forall i \neq j $ 且 $\cup^\infty _{i=1}C_i=\Omega$ ，则称这一族集合 $\lbrace C_i, i=1,2,\cdots\rbrace$ 为 $\Omega$ 的一个分割（decomposition）或划分（partition）。</description>
+      <guid>https://young-mann.github.io/posts/prob-theory/</guid>
+      <description>本文是 Stochastic Calculus for Finance II: Continuous-Time Models 第 1 章与《微观金融学及其数学基础》第 9 章的部分笔记，简单梳理了基于测度论的概率论的基本概念： 概率的公理化定义 随机变量与分布 随机变量</description>
     </item>
     
     <item>
       <title>关系数据理论</title>
-      <link>https://example.com/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
+      <link>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</link>
       <pubDate>Tue, 18 May 2021 19:31:10 +0800</pubDate>
       
-      <guid>https://example.com/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
-      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：
-一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？（问题的引入） 是否存在某些可以遵循的准则，帮助我们设计出“不那么糟糕”的数据库？（规范化理论） 在了解“不那么糟糕的数据库应该是什么样的”之后，我们又能采取哪些措施，让我们在设计数据库时满足这些让数据库运作得更好的条件？（Armstrong公理&amp;amp;模式分解） 预备知识 为了更好地理解下文的内容，读者首先需要掌握关系数据理论中的部分基本概念：
-函数依赖(Functional Dependency) **函数依赖：**设 R(U) 是属性集U的关系模型, X, Y是U的一个子集, 对于 R(U) 中的任一个关系 r, 不可能存在两个元组在 X 上属性值相同, 而在 Y 上属性值不同。则称 X 函数确定 Y , 或 Y 函数依赖 X ，记作$X \rightarrow Y$。 完全函数依赖：如果Y函数依赖X，但不依赖X的任何一个真子集，则称Y完全函数依赖X，记作$X \xrightarrow F Y$。 部分函数依赖：如果Y函数依赖X，但依赖于X的任何一个真子集，则称Y部分函数依赖X，记作$X \xrightarrow P Y$。 传递函数依赖：设Z也是U的一个子集。如果X决定Y，Y决定Z，且Y不决定X，那么称Z对X传递函数依赖，记作$X \xrightarrow {传递} Y$。 码/键(Key) 候选码：设属性集U包含关系模式内所有可能的属性值，K是U的子集，若$K\xrightarrow F U$，则称K为候选码（K是一个集合！）
-主码：候选码若有多个，则选定其中的一个，称为主码。
-超码：对于属性集U，候选码K，若$K\xrightarrow P U$，则称K为超码。
-主属性/非主属性：包含在任何一个候选码的属性都叫主属性，其他都叫非主属性。
-范式（Normal Form） 对于范式的概念，特别不靠谱的理解如下：
-**第一范式(1NF)：**不能出现类似excel中合并单元格的那种情形？（要求一个关系中的所有字段值都是不可分解的原子值）
-第二范式(2NF)：在满足1NF的基础上，还需要满足：在其他非主属性与主键的函数依赖关系中，主键集合中是作为一个整体起到函数决定的作用的。反过来说，就是不能出现这样一种情况：主键中的某个主属性仅凭自身便能决定其它的非主属性，而函数决定其它的非主属性主键只有作为包含了（不存在非主属性对主键的部分函数依赖关系）。
-**第三范式(3NF)：**在满足2NF的基础上，对于一个关系内的非主属性，他们能且仅能被主键唯一地表示。换而言之，该关系模式内存在的函数依赖关系都是由主键所决定的。除了这些被主键决定的函数依赖关系之外，非主属性之间必须相互独立，再也不能出现其他的函数依赖关系。
-BCNF: 在满足3NF的基础上，将“对于一个关系内的非主属性，他们能且仅能被主键唯一地表示”成了“对于一个关系内的所有属性，他们能且仅能被主键唯一地表示”，所需要满足的条件比3NF更加严格。
-**第四范式(4NF)：**原关系模式中不存在非平凡的多值依赖。
-问题的引入——数据异常及规范化理论 当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：</description>
+      <guid>https://young-mann.github.io/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</guid>
+      <description>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些</description>
     </item>
     
   </channel>

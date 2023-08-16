@@ -1,84 +1,342 @@
 <!DOCTYPE html>
-<html lang="zh"><head>
-  <meta charset="utf-8" />
-	
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="Book Link: C&#43;&#43; Design Patterns and Derivatives Pricing
-本文用于记录读完 C&#43;&#43; design patterns and derivatives pricing 后的代码实践。
-ch1-VanillaCallOption 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 SimpleMCMain1.cpp ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 Random1.h ，以及具体实现该功能的头文件 Random1_Implementation.h 1。
-ch2-Encapsulation 在第 2 章，对于常用的功能进行了封装。这章用到的文件具体如下（表格内省略了用于实现接口的文件，例如 “Random1_Implementation.h”，后文的表格皆是如此）：
-文件名称 用途 Random1.h 生成随机数的函数 PayOff1.h 以 Strike 与 TheOptionsType 为私有变量的 PayOff 类，主要特点由：1. 以 enum OptionType {call, put} 区分不同类型期权的定价方式（这里是 2 种：看涨期权、看跌期权）；2. 通过double operator() (double Spot) const 重载运算符 () ，以计算给定期权的 PayOff SimpleMC.h 用于最终定价的 Monte-Carlo 函数 SimpleMCMain2.">  
-
-  <title>
-    
-      C&#43;&#43; design patterns and derivatives pricing
-    
-  </title>
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/" />
+<html
+  lang="zh"
+  dir="ltr"
   
-  
-  
-  <link rel="stylesheet" href="/css/main.2e19336bd246f7896b7ba90cb9f8474545b7162f4009e840138d78c1921d55b55c580c1950ca60c4d264905facf47740158e0b93bbe0a4f01795bd925c25d48e.css" integrity="sha512-Lhkza9JG94lre6kMufhHRUW3Fi9ACehAE414wZIdVbVcWAwZUMpgxNJkkF&#43;s9HdAFY4Lk7vgpPAXlb2SXCXUjg==" />
-   <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
-    });
 
-</script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
- 
+<title>C&#43;&#43; design patterns and derivatives pricing | 狗蛋日</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
-</head>
-<body a="auto">
-        <main class="page-content" aria-label="Content">
-            <div class="w">
-<a href="/">回到主页</a>
-
-<article>
-
-    <h1>C&#43;&#43; design patterns and derivatives pricing</h1>
-    <div class="post-meta">
-||
-        <span datetime="2022-08-09 00:42:05 &#43;0800 CST">        2022-08-09        </span>
-	- 
-        <span datetime="2022-08-09 00:42:05 &#43;0800 CST">        2022-08-09     </span>
-
-||
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
 
+
+<script defer type="text/javascript" src="https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --sys-font-family: "Noto Sans SC";
+    --zh-font-family: "Noto Sans SC";
+    --base-font-family: "Noto Sans SC";
+    --code-font-family: "Noto Sans SC";
+    --article-font-family: "Noto Sans SC";
+  }
+
+
+p {
+	text-align: justify; 
+	text-justify: inter-ideograph; 
+	color: #000000;
+	text-indent: 2em;
+}
+
+
+   hr
+{
+	border: solid;
+    height: 5px;
+color: #000000;
+    margin: 36px 0;
+	overflow: visible;
+    text-align: center;
+}
+
+
+hr:after {
+    background: #fff;
+    content: 'd=(╹ڡ╹ )>';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+.footnotes p{
+text-indent: 0;
+}
+
+blockquote p{
+text-indent: 0;
+}
+</style>
+
+<script>
+  (function () {
+    const customFont = document.createElement("link");
+    customFont.href =
+      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+
+    customFont.type = "text/css";
+    customFont.rel = "stylesheet";
+
+    document.head.appendChild(customFont);
+  })();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="一篇读书笔记，记录了 &lt;i&gt;C&#43;&#43; Design Patterns and Derivatives Pricing&lt;/i&gt; 的代码实践。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://young-mann.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"C++ design patterns and derivatives pricing",
+      "item":"https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/"
+    },
+    "headline": "C\u002b\u002b design patterns and derivatives pricing | 狗蛋日","datePublished": "2022-08-09T00:42:05+08:00",
+    "dateModified": "2022-08-09T00:42:05+08:00",
+    "wordCount":  1433 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "YANG Huaicheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://young-mann.github.io/images/icon.png"
+        }
+        },
+    "description": "一篇读书笔记，记录了 \u003ci\u003eC\u002b\u002b Design Patterns and Derivatives Pricing\u003c\/i\u003e 的代码实践。"
+}
+</script><meta property="og:title" content="C&#43;&#43; design patterns and derivatives pricing | 狗蛋日" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://young-mann.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://young-mann.github.io/posts/design-patterns-and-derivatives-pricing/" />
+
+
+
+<meta property="og:description" content="一篇读书笔记，记录了 &lt;i&gt;C&#43;&#43; Design Patterns and Derivatives Pricing&lt;/i&gt; 的代码实践。" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-08-09T00:42:05&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2022-08-09T00:42:05&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="设计模式" />
+
+<meta property="article:tag" content="C&#43;&#43;" />
+
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
 
-
+</nav>
+<script>
     
-        <aside >
-            <nav id="TableOfContents"></nav>
-        </aside>
-    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
 
-    <p><strong>Book Link:</strong> <em><a href="https://neodb.social/books/493600/">C++ Design Patterns and Derivatives Pricing</a></em></p>
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class="lg:col-start-2 bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">C&#43;&#43; design patterns and derivatives pricing</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-08-09</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>3分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" class="hover:text-eureka"
+          >工具::代码实现</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p><strong>Book Link:</strong> <em><a href="https://neodb.social/books/493600/">C++ Design Patterns and Derivatives Pricing</a></em></p>
 <p>本文用于记录读完 <a href="https://neodb.social/books/493600/"><em>C++ design patterns and derivatives pricing</em></a> 后的代码实践。</p>
 <h1 id="ch1-vanillacalloption">ch1-VanillaCallOption</h1>
 <p>在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 <code>SimpleMCMain1.cpp</code> ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 <code>Random1.h</code> ，以及具体实现该功能的头文件 <code>Random1_Implementation.h</code> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
@@ -117,26 +375,27 @@ ch2-Encapsulation 在第 2 章，对于常用的功能进行了封装。这章�
 <p>第 1 个问题。如果我们现在希望引入 call, put 之外类型的期权，对其进行定价，那要怎么修改源程序呢？在上一章里，我们区分不同类型期权的 PayOff 利用了 <code>enum OptionType {call, put}</code> ，因此很容易想到的一种方法是，直接向 OptionType 添加新的类型。但是，而这东西是定义在 PayOff 类里面的，如果我们想要添加新类型，那就得修改之前写过的代码，不利于后续的维护——我们更希望后续新增的代码能“即插即用”，不需要我们为了适配新功能而调整之前的代码。</p>
 <p>对于这个问题，本书的做法是采用<strong>继承</strong>，将我们此前实现的 PayOff 类作为基类，衍生出新的子类，如 PayOffCall 类、PayOffPut 类。</p>
 <p>第 2 个问题，如果我们引入的新类型期权（比如 Double Digital Option），与之前的看涨期权、看跌期权都不一样，那怎么办？在上一章里，我们重载了运算符 <code>()</code> 以输出给定期权的 PayOff，那我是不是可以对每一个衍生出来的期权类，都重写 1 个同名函数呢？不行。在已经采用<strong>继承</strong>的方法下，这种思路会有些问题，不能子类与基类之间的“is-a”关系。以下面的代码为例，对于 1 个子类对象，能够调用出 2 种不同功能却同名的函数，会产生一致性问题<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">void</span> foo();
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> A 
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">void</span> foo();
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>B instanceOfB;
-</span></span><span style="display:flex;"><span>A<span style="color:#f92672">*</span> ptrBase <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>instanceOfB;
-</span></span><span style="display:flex;"><span>A<span style="color:#f92672">*</span> ptrDerived <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>instanceOfB;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 对于同一个类实例对象能调用出实现 2 种功能的同名函数
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ptrBase <span style="color:#f92672">-&gt;</span> foo(); <span style="color:#75715e">// A::foo()
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ptrDerived <span style="color:#f92672">-&gt;</span> foo(); <span style="color:#75715e">// B::foo()
-</span></span></span></code></pre></div><p>那么，如果对每一个衍生出来的期权类，我都在该类里重写一个新的计算 PayOff 的函数呢？也不行。比如，PayOffCall 类里写个 <code>CalPayOffCall()</code>、PayOffPut 类里写个 <code>CalPayOffPut()</code>？如果未来还需要引入其它新类型的期权，功能相同、但个个不同名的函数一多，维护起来太麻烦，所以这样也不太好。</p>
+<pre><code class="language-cpp">class A 
+{
+    public:
+        void foo();
+};
+
+class B : public A 
+{
+ public:
+     void foo();
+};
+
+B instanceOfB;
+A* ptrBase = &amp;instanceOfB;
+A* ptrDerived = &amp;instanceOfB;
+
+// 对于同一个类实例对象能调用出实现 2 种功能的同名函数
+ptrBase -&gt; foo(); // A::foo()
+ptrDerived -&gt; foo(); // B::foo()
+</code></pre>
+<p>那么，如果对每一个衍生出来的期权类，我都在该类里重写一个新的计算 PayOff 的函数呢？也不行。比如，PayOffCall 类里写个 <code>CalPayOffCall()</code>、PayOffPut 类里写个 <code>CalPayOffPut()</code>？如果未来还需要引入其它新类型的期权，功能相同、但个个不同名的函数一多，维护起来太麻烦，所以这样也不太好。</p>
 <p>对于这个问题，本书的做法是采用<strong>虚函数</strong>，在 PayOff 基类中，将 <code>operator()</code> 与 析构函数 <code>~PayOff()</code> 写成虚函数。</p>
 <hr>
 <p>引入<strong>继承</strong>与<strong>虚函数</strong>后，便可改写 PayOff 类，新增的文件有：</p>
@@ -199,6 +458,92 @@ ch2-Encapsulation 在第 2 章，对于常用的功能进行了封装。这章�
 
 </article>
 
-            </div>
-        </main>
-    </body></html>
+
+      
+        <div class="my-4">
+    
+    <a href="https://young-mann.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#设计模式</a>
+    
+    <a href="https://young-mann.github.io/tags/c&#43;&#43;/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#C&#43;&#43;</a>
+    
+</div>
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://young-mann.github.io/posts/%E6%8B%BE%E9%81%97%E5%BD%95/" class="block">拾遗5月</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://young-mann.github.io/posts/prob-theory/" class="block">基于测度论的概率论基础</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="giscus" src="https://giscus.app/client.js"
+                data-category=Announcements
+                data-category-id=DIC_kwDOIz0nrM4CTsvo
+                data-emit-metadata=0
+                data-input-position=top
+                data-lang=zh-CN
+                data-mapping=pathname
+                data-reactions-enabled=1
+                data-repo=Young-Mann/giscus
+                data-repo-id=R_kgDOIz0nrA
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+        document.getElementById('giscus').setAttribute('data-theme', 'light')
+    } else if (storageColorScheme == "Dark") {
+        document.getElementById('giscus').setAttribute('data-theme', 'dark')
+    }
+</script>
+
+    </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>

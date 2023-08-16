@@ -9,7 +9,6 @@ series:
 date: '2022-08-09T00:42:05+08:00'
 featuredImage:
 draft: false
-mathjax: true
 ---
 
 
