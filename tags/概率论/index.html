@@ -1,22 +1,417 @@
-<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>概率论 | 狗蛋日</title><meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script>
-<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script>
-<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script>
-<link rel=stylesheet href=https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script>
-<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script>
-<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel=stylesheet><style>:root{--sys-font-family:"Noto Sans SC";--zh-font-family:"Noto Sans SC";--base-font-family:"Noto Sans SC";--code-font-family:"Noto Sans SC";--article-font-family:"Noto Sans SC"}p{text-align:justify;text-justify:inter-ideograph;color:#000;text-indent:2em}hr{border:solid;height:5px;color:#000;margin:36px 0;overflow:visible;text-align:center}hr:after{background:#fff;content:'d=(╹ڡ╹ )>';padding:0 4px;position:relative;top:-13px}.footnotes p{text-indent:0}blockquote p{text-indent:0}</style><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link rel=icon type=image/png sizes=32x32 href=https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png><meta name=description content="Eureka is a elegant and powerful theme for Hugo."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"标签","item":"https://young-mann.github.io/tags/"},{"@type":"ListItem","position":2,"name":"概率论","item":"https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"事件域在金融随机分析中的含义","description":"初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。","url":"https://young-mann.github.io/posts/sigma-algebra/"},{"@type":"ListItem","position":2,"name":"基于测度论的概率论基础","description":"一篇读书笔记，记录了基于测度论的概率论的公理化定义，以及一些其他的相关概念。","url":"https://young-mann.github.io/posts/prob-theory/"}]}</script><meta property="og:title" content="概率论 | 狗蛋日"><meta property="og:type" content="website"><meta property="og:image" content="https://young-mann.github.io/images/icon.png"><meta property="og:url" content="https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"><meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo."><meta property="og:locale" content="zh"><meta property="og:site_name" content="狗蛋日"><meta property="og:updated_time" content="2023-05-16T14:31:37+08:00"><meta property="article:section" content="tags"><link rel=alternate type=application/rss+xml href=https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml title=狗蛋日><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
-<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/posts/about/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">关于我</a>
-<a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">文章</a>
-<a href=/categories/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">分类</a>
-<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
-<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><article class="prose mx-6 my-8"><h1>概率论</h1></article><div class="bg-secondary-bg rounded px-6"><div class="overflow-hidden divide-y"><div class=py-6><div class="flex flex-col-reverse lg:flex-row justify-between"><div class=w-full><div class=prose><a href=https://young-mann.github.io/posts/sigma-algebra/ class=no-underline><h3 class=mt-0>事件域在金融随机分析中的含义</h3></a>初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。<div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
-<span>2023-05-16</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
-<span>4分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
-<a href=https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/ class=hover:text-eureka>工具::数学</a></div></div></div></div></div></div><div class=py-6><div class="flex flex-col-reverse lg:flex-row justify-between"><div class=w-full><div class=prose><a href=https://young-mann.github.io/posts/prob-theory/ class=no-underline><h3 class=mt-0>基于测度论的概率论基础</h3></a>一篇读书笔记，记录了基于测度论的概率论的公理化定义，以及一些其他的相关概念。<div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
-<span>2022-07-14</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
-<span>16分钟阅读时长</span></div><div class="me-6 my-2"><i class="fas fa-folder me-1"></i>
-<a href=https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/ class=hover:text-eureka>工具::数学</a></div></div></div></div></div></div></div></div></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://www.wangchucheng.com/>WANG Chucheng</a> and <a href=https://www.ruiqima.com/>MA Ruiqi</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>概率论 | 狗蛋日</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --sys-font-family: "Noto Sans SC";
+    --zh-font-family: "Noto Sans SC";
+    --base-font-family: "Noto Sans SC";
+    --code-font-family: "Noto Sans SC";
+    --article-font-family: "Noto Sans SC";
+  }
+
+
+p {
+	text-align: justify; 
+	text-justify: inter-ideograph; 
+	color: #000000;
+	text-indent: 2em;
+}
+
+
+   hr
+{
+	border: solid;
+    height: 5px;
+color: #000000;
+    margin: 36px 0;
+	overflow: visible;
+    text-align: center;
+}
+
+
+hr:after {
+    background: #fff;
+    content: 'd=(╹ڡ╹ )>';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+.footnotes p{
+text-indent: 0;
+}
+
+blockquote p{
+text-indent: 0;
+}
+</style>
+
+<script>
+  (function () {
+    const customFont = document.createElement("link");
+    customFont.href =
+      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+
+    customFont.type = "text/css";
+    customFont.rel = "stylesheet";
+
+    document.head.appendChild(customFont);
+  })();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="Eureka is a elegant and powerful theme for Hugo.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"标签",
+      "item":"https://young-mann.github.io/tags/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"概率论",
+      "item":"https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"}]
+}
+</script>
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[{
+            "@type":"ListItem",
+            "position":  1 ,
+            "name": "事件域在金融随机分析中的含义",
+            "description": "初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。",
+            "url": "https://young-mann.github.io/posts/sigma-algebra/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "基于测度论的概率论基础",
+            "description": "一篇读书笔记，记录了基于测度论的概率论的公理化定义，以及一些其他的相关概念。",
+            "url": "https://young-mann.github.io/posts/prob-theory/"
+        }
+    ]
+}
+</script><meta property="og:title" content="概率论 | 狗蛋日" />
+<meta property="og:type" content="website" />
+
+
+<meta property="og:image" content="https://young-mann.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" />
+
+
+
+
+
+<meta property="og:description" content="Eureka is a elegant and powerful theme for Hugo." />
+
+
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+
+
+
+
+
+<meta property="og:updated_time" content="2023-05-16T14:31:37&#43;08:00" />
+
+
+
+<meta property="article:section" content="tags" />
+
+
+<link rel="alternate" type="application/rss+xml" href="https://young-mann.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" title="狗蛋日" />
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">标签</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  <article class="prose mx-6 my-8">
+  <h1>概率论</h1>
+  
+</article>
+
+  <div class="bg-secondary-bg rounded px-6">
+    <div class="overflow-hidden divide-y">
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://young-mann.github.io/posts/sigma-algebra/" class="no-underline">
+    <h3 class="mt-0">事件域在金融随机分析中的含义</h3>
+  </a>
+  
+    初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2023-05-16</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>4分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/" class="hover:text-eureka"
+          >工具::数学</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="prose">
+  <a href="https://young-mann.github.io/posts/prob-theory/" class="no-underline">
+    <h3 class="mt-0">基于测度论的概率论基础</h3>
+  </a>
+  
+    一篇读书笔记，记录了基于测度论的概率论的公理化定义，以及一些其他的相关概念。
+  
+
+  
+    <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2022-07-14</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>16分钟阅读时长</span>
+  </div>
+
+  
+    <div class="me-6 my-2">
+      <i class="fas fa-folder me-1"></i>
+      
+        <a href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E6%95%B0%E5%AD%A6/" class="hover:text-eureka"
+          >工具::数学</a
+        >
+      
+    </div>
+  
+
+  
+</div>
+
+  
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+</div>
+
+
+  </div>
+  
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>

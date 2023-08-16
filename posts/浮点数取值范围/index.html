@@ -1,32 +1,511 @@
-<!doctype html><html lang=zh dir=ltr><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>浮点数的取值范围 | 狗蛋日</title><meta name=generator content="Hugo Eureka 0.9.3"><link rel=stylesheet href=https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css><script defer src=https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js></script>
-<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=preload href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto+Serif+SC:wght@400;600;700&amp;display=swap" as=style onload='this.onload=null,this.rel="stylesheet"'><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js crossorigin></script>
-<script defer src=https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js crossorigin></script>
-<link rel=stylesheet href=https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css media=print onload='this.media="all",this.onload=null'><script defer type=text/javascript src=https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js></script>
-<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css integrity=sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js integrity=sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY crossorigin></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin></script>
-<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js integrity=sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0 crossorigin></script>
-<link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel=stylesheet><style>:root{--sys-font-family:"Noto Sans SC";--zh-font-family:"Noto Sans SC";--base-font-family:"Noto Sans SC";--code-font-family:"Noto Sans SC";--article-font-family:"Noto Sans SC"}p{text-align:justify;text-justify:inter-ideograph;color:#000;text-indent:2em}hr{border:solid;height:5px;color:#000;margin:36px 0;overflow:visible;text-align:center}hr:after{background:#fff;content:'d=(╹ڡ╹ )>';padding:0 4px;position:relative;top:-13px}.footnotes p{text-indent:0}blockquote p{text-indent:0}</style><script>(function(){const e=document.createElement("link");e.href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap",e.type="text/css",e.rel="stylesheet",document.head.appendChild(e)})()</script><link rel=icon type=image/png sizes=32x32 href=https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png><meta name=description content="记录 IEEE754 标准如何表示浮点数——以 C++ 中的float类型为例。"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://young-mann.github.io/posts/"},{"@type":"ListItem","position":2,"name":"浮点数的取值范围","item":"https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/"},"headline":"浮点数的取值范围 | 狗蛋日","datePublished":"2021-02-23T22:58:40+08:00","dateModified":"2021-02-23T22:58:40+08:00","wordCount":2332,"publisher":{"@type":"Person","name":"YANG Huaicheng","logo":{"@type":"ImageObject","url":"https://young-mann.github.io/images/icon.png"}},"description":"记录 IEEE754 标准如何表示浮点数——以 C\u002b\u002b 中的float类型为例。"}</script><meta property="og:title" content="浮点数的取值范围 | 狗蛋日"><meta property="og:type" content="article"><meta property="og:image" content="https://young-mann.github.io/images/icon.png"><meta property="og:url" content="https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/"><meta property="og:description" content="记录 IEEE754 标准如何表示浮点数——以 C++ 中的float类型为例。"><meta property="og:locale" content="zh"><meta property="og:site_name" content="狗蛋日"><meta property="article:published_time" content="2021-02-23T22:58:40+08:00"><meta property="article:modified_time" content="2021-02-23T22:58:40+08:00"><meta property="article:section" content="posts"><body class="flex min-h-screen flex-col"><header class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"><div class="mx-auto w-full max-w-screen-xl"><script>let storageColorScheme=localStorage.getItem("lightDarkMode");((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script><nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0"><a href=/ class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
-<button id=navbar-btn class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
-<i class="fas fa-bars"></i></button><div id=target class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20"><div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0"><a href=/posts/about/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">关于我</a>
-<a href=/posts/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 selected-menu-item me-4">文章</a>
-<a href=/categories/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">分类</a>
-<a href=/tags/ class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2 border-transparent me-4">标签</a></div><div class=flex><div class="relative pt-4 md:pt-0"><div class="cursor-pointer hover:text-eureka" id=lightDarkMode><i class="fas fa-adjust"></i></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id=is-open></div><div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40" id=lightDarkOptions><span class="px-4 py-1 hover:text-eureka" name=Light>浅色</span>
-<span class="px-4 py-1 hover:text-eureka" name=Dark>深色</span>
-<span class="px-4 py-1 hover:text-eureka" name=Auto>自动</span></div></div></div></div><div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id=is-open-mobile></div></nav><script>let element=document.getElementById("lightDarkMode");storageColorScheme==null||storageColorScheme=="Auto"?document.addEventListener("DOMContentLoaded",()=>{window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",switchDarkMode)}):storageColorScheme=="Light"?(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","sun"),element.firstElementChild.classList.add("fa-sun")):storageColorScheme=="Dark"&&(element.firstElementChild.classList.remove("fa-adjust"),element.firstElementChild.setAttribute("data-icon","moon"),element.firstElementChild.classList.add("fa-moon")),document.addEventListener("DOMContentLoaded",()=>{getcolorscheme(),switchBurger()})</script></div></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8"><div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12"><div class="bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"><article class=prose><h1 class=mb-4>浮点数的取值范围</h1><div class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"><div class="me-6 my-2"><i class="fas fa-calendar me-1"></i>
-<span>2021-02-23</span></div><div class="me-6 my-2"><i class="fas fa-clock me-1"></i>
-<span>5分钟阅读时长</span></div></div><p>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p><h2 id=前置知识>前置知识</h2><p>若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。</p><h3 id=ieee754-标准>IEEE754 标准</h3><p>根据IEEE浮点数标准，一个浮点数可表达为：
+<!DOCTYPE html>
+<html
+  lang="zh"
+  dir="ltr"
+  
+><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>浮点数的取值范围 | 狗蛋日</title>
+
+<meta name="generator" content="Hugo Eureka 0.9.3" />
+<link rel="stylesheet" href="https://young-mann.github.io/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
+<script defer src="https://young-mann.github.io/js/eureka.min.fa9a6bf6d7a50bb635b4cca7d2ba5cf3dfb095ae3798773f1328f7950028b48c17d06276594e1b5f244a25a6c969a705.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Noto&#43;Serif&#43;SC:wght@400;600;700&amp;display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/styles/base16/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/highlight.min.js"
+   crossorigin></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.4.0/build/languages/dart.min.js"
+     crossorigin></script>
+<link rel="stylesheet" href="https://young-mann.github.io/css/highlightjs.min.2958991528e43eb6fc9b8c4f2b8e052f79c4010718e1d1e888a777620e9ee63021c2c57ec7417a3108019bb8c41943e6.css" media="print" onload="this.media='all';this.onload=null">
+
+
+<script defer type="text/javascript" src="https://young-mann.github.io/js/fontawesome.min.8c77c7521b1f95ec2031c2a79f5c6a698aa4a0dba5ba649dfbc7f73994cddf3f494be6aac7e5724f35cbf72cfde09703.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+   integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+  integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+   integrity="sha384-&#43;XBljXPPiv&#43;OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.14.0/dist/mermaid.min.js" 
+  integrity="sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0"  crossorigin></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --sys-font-family: "Noto Sans SC";
+    --zh-font-family: "Noto Sans SC";
+    --base-font-family: "Noto Sans SC";
+    --code-font-family: "Noto Sans SC";
+    --article-font-family: "Noto Sans SC";
+  }
+
+
+p {
+	text-align: justify; 
+	text-justify: inter-ideograph; 
+	color: #000000;
+	text-indent: 2em;
+}
+
+
+   hr
+{
+	border: solid;
+    height: 5px;
+color: #000000;
+    margin: 36px 0;
+	overflow: visible;
+    text-align: center;
+}
+
+
+hr:after {
+    background: #fff;
+    content: 'd=(╹ڡ╹ )>';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+
+.footnotes p{
+text-indent: 0;
+}
+
+blockquote p{
+text-indent: 0;
+}
+</style>
+
+<script>
+  (function () {
+    const customFont = document.createElement("link");
+    customFont.href =
+      "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap";
+
+    customFont.type = "text/css";
+    customFont.rel = "stylesheet";
+
+    document.head.appendChild(customFont);
+  })();
+</script>
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.github.io/images/icon_hu71962ec6d09e723653e5ebbfa142cfd3_200877_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="记录 IEEE754 标准如何表示浮点数——以 C&#43;&#43; 中的float类型为例。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"https://young-mann.github.io/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"浮点数的取值范围",
+      "item":"https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/"
+    },
+    "headline": "浮点数的取值范围 | 狗蛋日","datePublished": "2021-02-23T22:58:40+08:00",
+    "dateModified": "2021-02-23T22:58:40+08:00",
+    "wordCount":  2332 ,
+    "publisher": {
+        "@type": "Person",
+        "name": "YANG Huaicheng",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://young-mann.github.io/images/icon.png"
+        }
+        },
+    "description": "记录 IEEE754 标准如何表示浮点数——以 C\u002b\u002b 中的float类型为例。"
+}
+</script><meta property="og:title" content="浮点数的取值范围 | 狗蛋日" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="https://young-mann.github.io/images/icon.png">
+
+
+<meta property="og:url" content="https://young-mann.github.io/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/" />
+
+
+
+<meta property="og:description" content="记录 IEEE754 标准如何表示浮点数——以 C&#43;&#43; 中的float类型为例。" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-02-23T22:58:40&#43;08:00" />
+
+
+<meta property="article:modified_time" content="2021-02-23T22:58:40&#43;08:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+
+  <body class="flex min-h-screen flex-col">
+    <header
+      class="min-h-16 pl-scrollbar bg-secondary-bg fixed z-50 flex w-full items-center shadow-sm"
+    >
+      <div class="mx-auto w-full max-w-screen-xl"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="me-6 text-primary-text text-xl font-bold">狗蛋日</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/about/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">关于我</a>
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  me-4">文章</a>
+            <a href="/categories/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">分类</a>
+            <a href="/tags/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  me-4">标签</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col start-0 md:start-auto end-auto md:end-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+    </header>
+    <main class="grow pt-16">
+        <div class="pl-scrollbar">
+          <div class="mx-auto w-full max-w-screen-xl lg:px-4 xl:px-8">
+  
+  
+  <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+    <div
+      class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
+    >
+      <article class="prose">
+  <h1 class="mb-4">浮点数的取值范围</h1>
+
+  <div
+  class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
+>
+  <div class="me-6 my-2">
+    <i class="fas fa-calendar me-1"></i>
+    <span
+      >2021-02-23</span
+    >
+  </div>
+  <div class="me-6 my-2">
+    <i class="fas fa-clock me-1"></i>
+    <span>5分钟阅读时长</span>
+  </div>
+
+  
+
+  
+</div>
+
+
+  
+  
+
+  <p>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p>
+<h2 id="前置知识">前置知识</h2>
+<p>若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。</p>
+<h3 id="ieee754-标准">IEEE754 标准</h3>
+<p>根据IEEE浮点数标准，一个浮点数可表达为：
 $$
 V=(-1)^s \times M \times 2^E
-$$</p><p>其中，</p><ul><li>V 表示所表示的浮点数的实际值</li><li>s 为符号位(Sign)，表示该浮点数为正数或负数。若为正数，则 s 取值为0；若为负数，则 s 取值为1 (注：对于数值0的符号位需要特殊处理)</li><li>M 为尾数(Mantissa)，是一个二进制小数，用于确定浮点数的精度，以定点数的形式存储在计算机内部（注意：此处的尾数的形式实为1.ffffff，而非0.fffffff，这个特征在下文讨论移码时会被重新提及）</li><li>E 为阶码(Exponent)，用于对浮点数进行加权 (!!!注意!!!：阶码的取值可正可负，是一个有符号数，分别代表小数点是向左移还是向右移。出于使用上的便利，在存储阶码时用到了特别的方式，即下文即将提到的移码(Excess-N System) ）</li></ul><p>将浮点数的位表示划分为三个字段，并分别对这些值进行编码，便可表示出浮点数的实际值。以单精度浮点格式为例。在单精度浮点格式中，符号位s、阶码E和尾数M的尾数分别为1位、8位和23位，将三者联立便可得到以32位表示出的浮点数，具体形式可参见下图<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>：</p><p><a href=https://smms.app/image/bOQYmsygdRkIa2q target=_blank><img src=https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg alt=IEEE754_1.jpg></a></p><h3 id=阶码的存储形式移码-excess-n-system>阶码的存储形式——移码 (Excess-N System)</h3><h4 id=为啥不能用补码存储阶码>为啥不能用补码存储阶码？</h4><p>在上文中我们提到，阶码 E 是一个有符号数，用于表示小数点需要向左或向右移动的位数。那么，在存储阶码时，根据此前所学的知识，我们自然会想到以补码 (2&rsquo;s complement) 的形式存储阶码。</p><p>但是，我们在课本上看到的阶码可不是用补码表示的。这是为什么呢？说实话，我不太确定真正的原因，现在能想到的理由如下：以补码表示的阶码会出现一个新的符号位（区别于上文 IEEE754 标准中所提到的符号位s），使得一个浮点数中出现两个符号位：浮点数本身的，以及浮点数阶码前的。这时，如果要对浮点数进行运算或者比较，无法采用整数那样的简单的二进制比较，所以算起来并不方便。</p><h4 id=那有啥更好的方法存储阶码>那有啥更好的方法存储阶码？</h4><p>既然不能用补码，那我们只能另辟蹊径了。回顾用补码表示阶码所产生的问题，可以发现，阶码作为有符号数时具备的符号位是引发麻烦的源头，那么为了方便起见，只能想着除去符号位了。基于这种思想，前人提出了<strong>移码(Excess-N System)<strong>的存储方式。简单而言，补码在存储阶码时所起到的作用，便是对于 作为有符号数的阶码 的所有可能取值，分别增加一个特定的值N（即$2^{m_E-1}-1$，也是上文中Excess-N中N的含义），从而将原本所有可能的取值映射到一个新的正数集合。基于该正数集合，我们可以找出与原阶码一一对应的无符号数。通过</strong>移码</strong>，我们不再需要考虑如何处理原本作为有符号数的阶码所包含的<strong>符号位</strong>（因为阶码的所有可能取值已经被我们映射到了一个正整数集合）。因此，当我们需要对阶码进行运算或比较时，便可以将这些运算或比较先作用于新的整数集合上，再通过映射的逆操作得到我们所需的阶码值。</p><h4 id=等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿>等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？</h4><p>至此，移码在阶码存储中的用途便讲得差不多了……不过，我是不是忘了什么？哦，在读上面那段的时候，你可能在想，那个$2^{m_E-1}-1$是啥？简单来说，这是将有符号数的阶码全部映射成正整数的一个比较合适的取值，其中$m_E$ 表示的是存储阶码可用的存储单元的位数，在单精度浮点格式里是8位。</p><p>还是以单精度浮点格式为例。上文中，我们提到，作为有符号数的阶码有正有负，在单精度浮点格式里的取值范围是 -126~127 （为啥不是 -128~127 ? 在定义移码的时候，我们是以定点小数0.ffffff作为尾数 M 的，这样算出来的阶码范围确实是-128~127。但是，尾数 M 实际上并不是这么被定义的—— IEEE754 中，尾数 M 是被规范化为1.ffffff，而非0.ffffff，因此要将尾数 M 的小数点左移一位，才符合移码的定义，也就是在此前算出来的阶码范围的基础上加1，即-127~128。在此基础上，还需要掐头去尾，从而得到-126~127）。与此同时，8位无符号数的取值范围为0～255，但是因为 $(0000 0000)_2$ 和 $(1111 1111)_2$ 有着特殊含义，所以需要去除这两个数，使得无符号数的取值范围变为1～254。那么，对于-126~127，只需增加127，就能完成从-126~127到1~254的映射，如下图所示<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>：</p><p><a href=https://smms.app/image/bOQYmsygdRkIa2q target=_blank><img src=https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg alt=IEEE754_1.jpg></a></p><p>总而言之，我们在存储阶码时，实际上是以无符号数的形式完成存储的。只不过，这些无符号数的取值并非阶码的实际值，而是由（本应是有符号数的）阶码的实际值统一增加$2^{m_E-1}-1$个单位得到的。</p><h2 id=float类型浮点数的取值范围>float类型浮点数的取值范围</h2><p>默认存储的数值为<strong>规格化数</strong>的前提下进行的。而在IEEE 754标准中规定，当指数位阶码均为1时，该数取值为 NaN 或 $\pm \infty$ ；当指数位阶码均为0时，则表示0。这两种情况均不属于<strong>规格化数</strong>，因此可知，当数位和尾数位取得<strong>可能取值</strong>的最大值，即：</p><div>$$
+$$</p>
+<p>其中，</p>
+<ul>
+<li>V 表示所表示的浮点数的实际值</li>
+<li>s 为符号位(Sign)，表示该浮点数为正数或负数。若为正数，则 s 取值为0；若为负数，则 s 取值为1 (注：对于数值0的符号位需要特殊处理)</li>
+<li>M 为尾数(Mantissa)，是一个二进制小数，用于确定浮点数的精度，以定点数的形式存储在计算机内部（注意：此处的尾数的形式实为1.ffffff，而非0.fffffff，这个特征在下文讨论移码时会被重新提及）</li>
+<li>E 为阶码(Exponent)，用于对浮点数进行加权 (!!!注意!!!：阶码的取值可正可负，是一个有符号数，分别代表小数点是向左移还是向右移。出于使用上的便利，在存储阶码时用到了特别的方式，即下文即将提到的移码(Excess-N System) ）</li>
+</ul>
+<p>将浮点数的位表示划分为三个字段，并分别对这些值进行编码，便可表示出浮点数的实际值。以单精度浮点格式为例。在单精度浮点格式中，符号位s、阶码E和尾数M的尾数分别为1位、8位和23位，将三者联立便可得到以32位表示出的浮点数，具体形式可参见下图<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<p><a href="https://smms.app/image/bOQYmsygdRkIa2q" target="_blank"><img src="https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg" alt="IEEE754_1.jpg"></a></p>
+<h3 id="阶码的存储形式移码-excess-n-system">阶码的存储形式——移码 (Excess-N System)</h3>
+<h4 id="为啥不能用补码存储阶码">为啥不能用补码存储阶码？</h4>
+<p>在上文中我们提到，阶码 E 是一个有符号数，用于表示小数点需要向左或向右移动的位数。那么，在存储阶码时，根据此前所学的知识，我们自然会想到以补码 (2&rsquo;s complement) 的形式存储阶码。</p>
+<p>但是，我们在课本上看到的阶码可不是用补码表示的。这是为什么呢？说实话，我不太确定真正的原因，现在能想到的理由如下：以补码表示的阶码会出现一个新的符号位（区别于上文 IEEE754 标准中所提到的符号位s），使得一个浮点数中出现两个符号位：浮点数本身的，以及浮点数阶码前的。这时，如果要对浮点数进行运算或者比较，无法采用整数那样的简单的二进制比较，所以算起来并不方便。</p>
+<h4 id="那有啥更好的方法存储阶码">那有啥更好的方法存储阶码？</h4>
+<p>既然不能用补码，那我们只能另辟蹊径了。回顾用补码表示阶码所产生的问题，可以发现，阶码作为有符号数时具备的符号位是引发麻烦的源头，那么为了方便起见，只能想着除去符号位了。基于这种思想，前人提出了<strong>移码(Excess-N System)<strong>的存储方式。简单而言，补码在存储阶码时所起到的作用，便是对于 作为有符号数的阶码 的所有可能取值，分别增加一个特定的值N（即$2^{m_E-1}-1$，也是上文中Excess-N中N的含义），从而将原本所有可能的取值映射到一个新的正数集合。基于该正数集合，我们可以找出与原阶码一一对应的无符号数。通过</strong>移码</strong>，我们不再需要考虑如何处理原本作为有符号数的阶码所包含的<strong>符号位</strong>（因为阶码的所有可能取值已经被我们映射到了一个正整数集合）。因此，当我们需要对阶码进行运算或比较时，便可以将这些运算或比较先作用于新的整数集合上，再通过映射的逆操作得到我们所需的阶码值。</p>
+<h4 id="等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿">等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？</h4>
+<p>至此，移码在阶码存储中的用途便讲得差不多了……不过，我是不是忘了什么？哦，在读上面那段的时候，你可能在想，那个$2^{m_E-1}-1$是啥？简单来说，这是将有符号数的阶码全部映射成正整数的一个比较合适的取值，其中$m_E$ 表示的是存储阶码可用的存储单元的位数，在单精度浮点格式里是8位。</p>
+<p>还是以单精度浮点格式为例。上文中，我们提到，作为有符号数的阶码有正有负，在单精度浮点格式里的取值范围是 -126~127 （为啥不是 -128~127 ? 在定义移码的时候，我们是以定点小数0.ffffff作为尾数 M 的，这样算出来的阶码范围确实是-128~127。但是，尾数 M 实际上并不是这么被定义的—— IEEE754 中，尾数 M 是被规范化为1.ffffff，而非0.ffffff，因此要将尾数 M 的小数点左移一位，才符合移码的定义，也就是在此前算出来的阶码范围的基础上加1，即-127~128。在此基础上，还需要掐头去尾，从而得到-126~127）。与此同时，8位无符号数的取值范围为0～255，但是因为 $(0000 0000)_2$ 和 $(1111 1111)_2$ 有着特殊含义，所以需要去除这两个数，使得无符号数的取值范围变为1～254。那么，对于-126~127，只需增加127，就能完成从-126~127到1~254的映射，如下图所示<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
+<p><a href="https://smms.app/image/bOQYmsygdRkIa2q" target="_blank"><img src="https://s2.loli.net/2022/10/09/bOQYmsygdRkIa2q.jpg" alt="IEEE754_1.jpg"></a></p>
+<p>总而言之，我们在存储阶码时，实际上是以无符号数的形式完成存储的。只不过，这些无符号数的取值并非阶码的实际值，而是由（本应是有符号数的）阶码的实际值统一增加$2^{m_E-1}-1$个单位得到的。</p>
+<h2 id="float类型浮点数的取值范围">float类型浮点数的取值范围</h2>
+<p>默认存储的数值为<strong>规格化数</strong>的前提下进行的。而在IEEE 754标准中规定，当指数位阶码均为1时，该数取值为 NaN 或 $\pm \infty$ ；当指数位阶码均为0时，则表示0。这两种情况均不属于<strong>规格化数</strong>，因此可知，当数位和尾数位取得<strong>可能取值</strong>的最大值，即：</p>
+<div>
+$$
 S=0,E=(\underbrace{11111110}_{8位})_2,M= (\underbrace{111 ... 111}_{23位})_2
-$$</div>此时，指数的位移量为：<div>$$
+$$
+</div>
+此时，指数的位移量为：
+<div>
+$$
 (11111110)_2-(2^7)_{10} = (127)_{10}
-$$</div>所以浮点数的 **最大规格化数** 为：<div>$$
-\begin{align} (1.{\underbrace{111 ... 110}_{23位}})_2 \times 2^{127} &= (1+2^{-1}+2^{-2}+2^{-3}+ ... +2^{-23})\times 2^{127} \\ &=\frac{1-(2^{-1})^{24}}{1-2^{-1}}\times 2^{127} \\ &\approx (3.402823e +38)_{10}  \end{align}
-$$</div>同理可得单精度浮点格式下的**最小规格化数**为：<div>$$
-\begin{align} (1.{\underbrace{000 ... 001}_{23位}})_2 \times 2^{-126} &\approx (1.17549e-38)_{10}  \end{align}
-$$</div><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>图源：&ldquo;Foundations of Computer Science (2018)&rdquo;, Behrouz Forouzan"&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>图源：&ldquo;Foundations of Computer Science (2018)&rdquo;, Behrouz Forouzan"&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></article><div class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"><div><span class="text-primary-text block font-bold">上一页</span>
-<a href=https://young-mann.github.io/posts/about/ class=block>Kulikuacha!</a></div><div class="mt-4 md:mt-0 md:text-right"><span class="text-primary-text block font-bold">下一页</span>
-<a href=https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/ class=block>拉面好吃</a></div></div><script id=giscus src=https://giscus.app/client.js data-category=Announcements data-category-id=DIC_kwDOIz0nrM4CTsvo data-emit-metadata=0 data-input-position=top data-lang=zh-CN data-mapping=pathname data-reactions-enabled=1 data-repo=Young-Mann/giscus data-repo-id=R_kgDOIz0nrA crossorigin=anonymous async></script><script>storageColorScheme=="Light"?document.getElementById("giscus").setAttribute("data-theme","light"):storageColorScheme=="Dark"&&document.getElementById("giscus").setAttribute("data-theme","dark")</script></div><div class=col-span-2><div class="bg-primary-bg
-prose sticky top-16 z-10 hidden px-6 py-4 lg:block"><h3>本页内容</h3></div><div class="sticky-toc hidden px-6 pb-6 lg:block"><nav id=TableOfContents><ul><li><a href=#前置知识>前置知识</a><ul><li><a href=#ieee754-标准>IEEE754 标准</a></li><li><a href=#阶码的存储形式移码-excess-n-system>阶码的存储形式——移码 (Excess-N System)</a><ul><li><a href=#为啥不能用补码存储阶码>为啥不能用补码存储阶码？</a></li><li><a href=#那有啥更好的方法存储阶码>那有啥更好的方法存储阶码？</a></li><li><a href=#等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿>等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？</a></li></ul></li></ul></li><li><a href=#float类型浮点数的取值范围>float类型浮点数的取值范围</a></li></ul></nav></div><script>window.addEventListener("DOMContentLoaded",()=>{enableStickyToc()})</script></div></div><script>document.addEventListener("DOMContentLoaded",()=>{hljs.highlightAll()})</script></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2021 <a href=https://www.wangchucheng.com/>WANG Chucheng</a> and <a href=https://www.ruiqima.com/>MA Ruiqi</a>
-&#183; Powered by the <a href=https://github.com/wangchucheng/hugo-eureka class=hover:text-eureka>Eureka</a> theme for <a href=https://gohugo.io class=hover:text-eureka>Hugo</a></p></div></div></footer></body></html>
+$$
+</div>
+所以浮点数的 **最大规格化数** 为：
+<div>
+$$
+\begin{align}  (1.{\underbrace{111 ... 110}_{23位}})_2 \times 2^{127}   &= (1+2^{-1}+2^{-2}+2^{-3}+ ... +2^{-23})\times 2^{127}  \\ &=\frac{1-(2^{-1})^{24}}{1-2^{-1}}\times 2^{127}  \\ &\approx (3.402823e +38)_{10}  \end{align}
+$$
+</div>
+同理可得单精度浮点格式下的**最小规格化数**为：
+<div>
+$$
+\begin{align}  (1.{\underbrace{000 ... 001}_{23位}})_2 \times 2^{-126}    &\approx (1.17549e-38)_{10}  \end{align}
+$$
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>图源：&ldquo;Foundations of Computer Science (2018)&rdquo;, Behrouz Forouzan&quot;&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>图源：&ldquo;Foundations of Computer Science (2018)&rdquo;, Behrouz Forouzan&quot;&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</article>
+
+
+      
+
+      
+
+
+
+      
+
+      
+  <div
+    class="-mx-2 mt-4 flex flex-col border-t px-2 pt-4 md:flex-row md:justify-between"
+  >
+    <div>
+      
+        <span class="text-primary-text block font-bold"
+          >上一页</span
+        >
+        <a href="https://young-mann.github.io/posts/about/" class="block">Kulikuacha!</a>
+      
+    </div>
+    <div class="mt-4 md:mt-0 md:text-right">
+      
+        <span class="text-primary-text block font-bold">下一页</span>
+        <a href="https://young-mann.github.io/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/" class="block">拉面好吃</a>
+      
+    </div>
+  </div>
+
+
+      
+
+
+
+  <script id="giscus" src="https://giscus.app/client.js"
+                data-category=Announcements
+                data-category-id=DIC_kwDOIz0nrM4CTsvo
+                data-emit-metadata=0
+                data-input-position=top
+                data-lang=zh-CN
+                data-mapping=pathname
+                data-reactions-enabled=1
+                data-repo=Young-Mann/giscus
+                data-repo-id=R_kgDOIz0nrA
+        crossorigin="anonymous"
+        async>
+</script>
+<script>
+    if (storageColorScheme == "Light") {
+        document.getElementById('giscus').setAttribute('data-theme', 'light')
+    } else if (storageColorScheme == "Dark") {
+        document.getElementById('giscus').setAttribute('data-theme', 'dark')
+    }
+</script>
+
+    </div>
+    
+      <div class="col-span-2">
+        
+        
+          <div
+  class="
+    bg-primary-bg
+   prose sticky top-16 z-10 hidden px-6 py-4 lg:block"
+>
+  <h3>本页内容</h3>
+</div>
+<div
+  class="sticky-toc  hidden px-6 pb-6 lg:block"
+>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置知识">前置知识</a>
+      <ul>
+        <li><a href="#ieee754-标准">IEEE754 标准</a></li>
+        <li><a href="#阶码的存储形式移码-excess-n-system">阶码的存储形式——移码 (Excess-N System)</a>
+          <ul>
+            <li><a href="#为啥不能用补码存储阶码">为啥不能用补码存储阶码？</a></li>
+            <li><a href="#那有啥更好的方法存储阶码">那有啥更好的方法存储阶码？</a></li>
+            <li><a href="#等等上面那个用于增加的值-2m_e-1-1-是啥玩意儿">等等……上面那个用于增加的值 $2^{m_E-1}-1$ 是啥玩意儿？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#float类型浮点数的取值范围">float类型浮点数的取值范围</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    enableStickyToc();
+  });
+</script>
+
+        
+      </div>
+    
+
+    
+    
+  </div>
+
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+      });
+    </script>
+
+          </div>
+        </div>
+      
+    </main>
+    <footer class="pl-scrollbar">
+      <div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">WANG Chucheng</a> and <a href="https://www.ruiqima.com/">MA Ruiqi</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+    </footer>
+  </body>
+</html>
