@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ partial "back_link.html" .}}
+
+<article>
+
+    <h1>{{ .Title }}</h1>
+    <div class="post-meta">
+||
+        <span datetime="{{ .Date }}">        {{ .Date | time.Format site.Params.theme_config.date_format }}        </span>
+	- 
+        <span datetime="{{ .Date }}">        {{ .Lastmod | time.Format site.Params.theme_config.date_format }}     </span>
+
+||
+
+{{if .Params.status}}
+        <span class = "writing status">进度：{{ .Params.status}}</span>
+
+||  
+{{end}}
+
+{{if .Params.importance}}
+        <span class = "importance">重要程度：{{ .Params.importance }}</span>
+||
+{{end}}
+    </div>
+
+
+
+    {{ if .Params.toc }}
+        <aside {{ if .Params.tocBorder }} class="toc" {{ end }}>
+            {{ .TableOfContents }}
+        </aside>
+    {{ end }}
+
+    {{ .Content }}
+</article>
+{{ end }}

@@ -1,0 +1,14 @@
+
+[[entries]]
+
+title = "我是谁？"
+  url = "about"
+
+[[entries]]
+title = "最近都写了啥？"
+
+  [entries.post_list]
+  limit = 150
+  show_more = true
+  show_more_text ="查看更多……"
+  show_more_url = "posts"
