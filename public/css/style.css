@@ -55,7 +55,7 @@ h6 {
 h1#title {
   /*Some UA stylesheets put h1 to 1.5em when in an article, so we reset it back for our title here.*/
   font-size: 2em;
-font-family:  'Noto Sans SC', sans-serif,'Lora', serif;
+  font-family:  'Noto Sans SC', sans-serif,'Lora', serif;
 }
 
 body {
