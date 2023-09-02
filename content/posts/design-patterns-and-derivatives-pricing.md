@@ -2,9 +2,8 @@
 title: C++ design patterns and derivatives pricing
 description: 一篇读书笔记，记录了 <i>C++ Design Patterns and Derivatives Pricing</i> 的代码实践。
 toc: true
-tags: [设计模式, C++]
-categories: 
-- 工具::代码实现
+tags: 
+- 工具箱里都有啥？
 series:
 date: '2022-08-09T00:42:05+08:00'
 featuredImage:
@@ -22,7 +21,12 @@ draft: false
 
 在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 `SimpleMCMain1.cpp` ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 `Random1.h` ，以及具体实现该功能的头文件 `Random1_Implementation.h` [^1]。
 
-![](https://s2.loli.net/2022/10/09/CIUwl3ykpuzsQ8e.jpg)
+{{< figure
+  src="https://s2.loli.net/2022/10/09/CIUwl3ykpuzsQ8e.jpg"
+  class="smaller"
+>}}
+
+
 
 # ch2-Encapsulation
 
@@ -35,7 +39,12 @@ draft: false
 | SimpleMC.h        | 用于最终定价的 Monte-Carlo 函数                              |
 | SimpleMCMain2.cpp | 主程序                                                       |
 
-![](https://s2.loli.net/2022/10/09/TCehDSMZ6tal3zj.jpg)
+{{< figure
+  src="https://s2.loli.net/2022/10/09/TCehDSMZ6tal3zj.jpg"
+  class="smaller"
+>}}
+
+
 
 # ch3-InheritanceAndVirtualFunction
 

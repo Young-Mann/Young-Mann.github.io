@@ -1,12 +1,11 @@
 ---
 title: 2021：摇摇晃摇
 date: 2022-02-06 22:16:42
-categories: 
-- 生活记录
+tags:
+- 假的假的
+- 咋那么矫情呢？
 description: 对过去一年的回忆，满是摇摆、逃避与恶心。希望能更加锐利些。
 toc: true
-series:
-featuredImage:
 draft: false
 ---
 
