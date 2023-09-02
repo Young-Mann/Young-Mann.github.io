@@ -2,20 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>考试 on 狗蛋日</title>
-    <link>https://young-mann.github.io/tags/%E8%80%83%E8%AF%95/</link>
+    <link>http://young-mann.top/tags/%E8%80%83%E8%AF%95/</link>
     <description>Recent content in 考试 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Sat, 13 May 2023 21:56:40 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/tags/%E8%80%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>© 2011-2020 Fabian Tamp</copyright>
+    <lastBuildDate>Sat, 13 May 2023 21:56:40 +0800</lastBuildDate><atom:link href="http://young-mann.top/tags/%E8%80%83%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GMAT简记</title>
-      <link>https://young-mann.github.io/posts/gmat/</link>
+      <link>http://young-mann.top/posts/gmat/</link>
       <pubDate>Sat, 13 May 2023 21:56:40 +0800</pubDate>
       
-      <guid>https://young-mann.github.io/posts/gmat/</guid>
-      <description>有一说一，这分数不算高，但对于无 G 成绩的我来说，能从零到一有个成绩还是挺重要的。 简单记录一下备考过程与考试流程。 备考时间线 4.15 -5.3 用到的材料 Q：OG202</description>
+      <guid>http://young-mann.top/posts/gmat/</guid>
+      <description>有一说一，这分数不算高，但对于无 G 成绩的我来说，能从零到一有个成绩还是挺重要的。
+简单记录一下备考过程与考试流程。
+备考时间线 4.15 -5.3
+用到的材料 Q：OG2022；
+V：书面材料有曼哈顿语法， CR200，SC87。至于视频，看过管卫东对 CR 的讲解。虽然有很多人说是玄学，但我觉得还挺有用的😂我在做 Verbal 的时候，确实碰上了 gwd CR 视频里提到了时间不够的情况，最后十题只剩下十分钟，这时候就只能扫一眼去秒杀。
+模考：曾经在对 GMAT 完全没准备的情况下做了 prep1 prep2，结果就 580 640。只能说，主要用来熟悉题型了。
+考试过程 顺序是 Q V IR。
+Q: 真正开始考试时，心跳加速，有些紧张，会下意识验算所得结果。与 OG 相比会更难一些。时间很赶，做完最后一题时，恰好用完所有时间。
+V: 时间更赶了，做到最后十题时只剩下十分钟。SC 纠结了不少题；RC 比平时做的简单；CR 不难。
+总结 - 做题 pace 很重要；
+- Q 和 SC 是拉分的关键。这两部分如果能做好，就更有可能上 700；
+- CR 没有时间让你慢慢整理逻辑链，扫完原文直接把选项中与原文无关的排除后再选答案，可能是更好用的做法。</description>
     </item>
     
   </channel>

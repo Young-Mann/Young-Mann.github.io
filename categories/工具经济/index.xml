@@ -1,31 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>工具::经济 on 狗蛋日</title>
-    <link>https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E7%BB%8F%E6%B5%8E/</link>
-    <description>Recent content in 工具::经济 on 狗蛋日</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;WANG Chucheng&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;MA Ruiqi&lt;/a&gt;
-</copyright>
-    <lastBuildDate>Tue, 16 May 2023 20:25:00 +0800</lastBuildDate><atom:link href="https://young-mann.github.io/categories/%E5%B7%A5%E5%85%B7%E7%BB%8F%E6%B5%8E/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>对无套利定价的一点理解</title>
-      <link>https://young-mann.github.io/posts/derivative-pricing/</link>
-      <pubDate>Tue, 16 May 2023 20:25:00 +0800</pubDate>
-      
-      <guid>https://young-mann.github.io/posts/derivative-pricing/</guid>
-      <description>在课本上看到套利定价模型和衍生品定价的时候，总会看到无套利定价的思路。尽管其思想很容易理解，但还是很好奇为什么特意要强调这种定价方法呢？另外，这种定价</description>
-    </item>
-    
-    <item>
-      <title>侃侃「贷款创造理论」</title>
-      <link>https://young-mann.github.io/posts/lcd/</link>
-      <pubDate>Fri, 21 Oct 2022 17:02:58 +0800</pubDate>
-      
-      <guid>https://young-mann.github.io/posts/lcd/</guid>
-      <description>在《货币创造的逻辑形成和历史演进——对传统货币理论的批判》一文里，孙国峰总结了「贷款创造存款」理论（loan creates deposit, LCD）的逻辑以及发展。 LCD 的内涵1包括</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具::经济 on 狗蛋日</title><link>http://young-mann.top/categories/%E5%B7%A5%E5%85%B7%E7%BB%8F%E6%B5%8E/</link><description>Recent content in 工具::经济 on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>© 2011-2020 Fabian Tamp</copyright><lastBuildDate>Fri, 21 Oct 2022 17:02:58 +0800</lastBuildDate><atom:link href="http://young-mann.top/categories/%E5%B7%A5%E5%85%B7%E7%BB%8F%E6%B5%8E/index.xml" rel="self" type="application/rss+xml"/><item><title>侃侃「贷款创造理论」</title><link>http://young-mann.top/posts/%E8%B4%B7%E6%AC%BE%E5%88%9B%E9%80%A0%E7%90%86%E8%AE%BA/</link><pubDate>Fri, 21 Oct 2022 17:02:58 +0800</pubDate><guid>http://young-mann.top/posts/%E8%B4%B7%E6%AC%BE%E5%88%9B%E9%80%A0%E7%90%86%E8%AE%BA/</guid><description>在《货币创造的逻辑形成和历史演进——对传统货币理论的批判》一文里，孙国峰总结了「贷款创造存款」理论（loan creates deposit, LCD）的逻辑以及发展。
+LCD 的内涵1包括：第一，货币创造是「银行放贷行为」本身，而不是传统教科书中所说的「先有存款进银行，银行再拿这笔钱放贷，就这样存了贷、贷了继续存」。第二，银行放贷是银行与客户的债权债务交换行为，其中，银行获得贷款债权，客户获得存款债权。第三，客户需付出额外的利差才可获取存款债权。客户之所以愿意接受利差，是因为其从银行获得的存款债权也被其他人认可，转移起来比较方便。这样的存款债权，就可成为信用货币。这种信用货币，并不是一种作为基础物质存在的实物「货币金额」，而是债权债务关系的的反映，是在记录这种债权债务关系、存款贷款同时出现的过程中「无中生有」的。相比之下，货币银行理论认为，在每一笔存款与每一笔贷款之间，都是有实实在在的「货币金额」为内容的经济行为，并没有任何「凭空创造」的意思。第四，为了支持贷款创造货币的行为，银行需要持有基础货币。
+下面来举一个简单的例子，从资产负债表的角度说明 LCD 与传统货币银行理论在货币创造上的解释有所不同。
+假设法定存款准备金率为 20 %，客户将现金存入银行后不会提现。第一家银行（记作 A）首先吸收了 100 元的「原始存款」，其中 20 元用于「缴存存款准备金」，剩下的 80 元放贷。客户得到了 80 元贷款后，用于支付给另一个客户，而这个新客户会将 80 元存入另一家银行（记作 B）。银行 B 再缴存 16元存款准备金后，再放贷 64 元。经历了这 2 个步骤后，银行 A 与银行 B 的资产负债表如下图所示。经历如此这般「存款-贷款-再存款-再放贷」的一轮轮接力后，最初存入银行的 100 元的「原始存款」全部变成准备金，再也无法拿出去放贷。此时，计算银行总体的资产负债表，会发现负债端有 500 元存款，资产端有 400 元贷款和 100 元准备金。
+然而，在 LCD 这里，第 2 布的资产负债表就不太一样了。不同之处在于，在银行 A 放出一笔 80 元的新贷款的时候，就已经创造出了新的 80 元存款货币（也就是资产端 下方新出现的 80 元现金），并在此时向中央银行存入 16 元作为存款准备金。如果客户在贷款后继续购买商品，那么银行 A 与银行 B 的资产负债表还会发生变化，但这个变化的过程已经和传统货币银行理论中所描述的不一样了。
+若想了解更多孙国峰对 LCD 的阐释，可见孙国峰（2019）。&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item></channel></rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Small birds on Paperesque theme example</title>
+    <link>http://example.com/tags/small-birds/</link>
+    <description>Recent content in Small birds on Paperesque theme example</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2011-2020 Fabian Tamp</copyright>
+    <lastBuildDate>Sun, 26 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.com/tags/small-birds/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Wood Swallow</title>
+      <link>http://example.com/posts/wood-swallow/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/posts/wood-swallow/</guid>
+      <description>The Wood Swallow &amp;ndash; Project Gutenberg
+This Wood Swallow has been long known to ornithologists1, but unfortunately under so many generic and specific appellations, that it may be cited as an instance of the manner in which our science has been burthened with useless names, thereby producing an inextricable confusion2, and which in this instance, by a reference to Latham’s accurate description, and the slightest care on the part of other writers, might have been avoided.</description>
+    </item>
+    
+    <item>
+      <title>Leach&#39;s Kingfisher</title>
+      <link>http://example.com/posts/leaches-kingfisher/</link>
+      <pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/posts/leaches-kingfisher/</guid>
+      <description>Specimens of this fine Kingsfisher are contained in the British Museum, the Linnean Society, and my own collections, all of which were procured on the north-east coast of Australia, where it evidently replaces the Dacelo gigantea of New South Wales and South Australia.
+Leach&amp;rsquo;s Kingfisher &amp;ndash; Project Gutenberg
+The specimen in the Linnean Society’s museum was presented by Dr. Brown1, who procured it in Keppel Bay on the east coast; and it was subsequently seen at Shoalwater Bay2 and Broad Sound on the same coast; my own specimens were obtained at Cape York, the north-eastern extremity of Australia.</description>
+    </item>
+    
+  </channel>
+</rss>
