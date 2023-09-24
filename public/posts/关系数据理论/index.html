@@ -105,7 +105,9 @@ MathJax = {
 
     </nav>
   </div>
-  <article
+  
+
+<article
     id="main"
     class="content-container look-sheet article-pad-v "
     itemscope
@@ -133,7 +135,34 @@ MathJax = {
   
 
   
+
   <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#预备知识">预备知识</a>
+      <ul>
+        <li><a href="#函数依赖functional-dependency">函数依赖(Functional Dependency)</a></li>
+        <li><a href="#码键key">码/键(Key)</a></li>
+        <li><a href="#范式normal-form">范式（Normal Form）</a></li>
+      </ul>
+    </li>
+    <li><a href="#问题的引入数据异常及规范化理论">问题的引入——数据异常及规范化理论</a></li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
     <p>本文是《数据库系统概论》的第6章以及“Database System: The Complete Book”的第三章所作的部分笔记，用以理解数据库设计过程中的关系数据理论。笔者认为，在这些教材中，对于关系数据理论的阐释可被归结为对于以下几个问题的回应：</p>
 <ul>
 <li>一个糟糕的数据库设计是什么样的，又会为使用者带来多少麻烦？<strong>（问题的引入）</strong></li>
@@ -198,6 +227,8 @@ MathJax = {
 <p>给定关系模式R &lt;U, F&gt;以及函数依赖集F的前提下，是否存在一种方法，which能帮助我们找出<b>该关系模式中被F逻辑蕴含的函数依赖的全体</b>。</p>
 </blockquote>
 <p>首先，通过定义<strong>逻辑蕴含</strong>的概念，以准确的刻画出问题的定义。然而，在描述完上面这个问题以后，我们还是一筹莫展——光从这个定义本身而言，我们得不到什么有用的信息，有助于求解该问题。于是，机智的老哥们曲线救国，试着以全新的角度解读这个问题，重新构造了一个推理系统，即Armstrong公理，在逻辑上证明了“逻辑蕴含”与“根据Armstrong公理进行推导”这两个操作之间是等价的（有效性与完备性的证明）。</p>
+
+
 
   </div>
 </article>

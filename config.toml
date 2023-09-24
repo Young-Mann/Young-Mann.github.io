@@ -24,12 +24,8 @@ pygmentsUseClasses = true
 
 [params]
 # Turn this on if you want to disable margin notes everywhere!
-# disableMarginNotes = true
-
-# Customise your home page menu here:
-
-
-
+disableMarginNotes = false
+toc = true
 # And your top-right menu links here.
 
 [[params.topmenu]]

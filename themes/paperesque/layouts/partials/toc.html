@@ -1,0 +1,14 @@
+{{ if .Params.toc }}
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+<!--Grid column-->
+<div class="col-md-2">
+	<!--Scrollspy-->
+	<div id="page-scrollspy" class="toc-nav">
+		{{ .TableOfContents }}
+	</div>
+	<!--Scrollspy-->
+</div>
+<!--Grid column-->
+</details>
+{{- end -}}

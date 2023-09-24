@@ -105,7 +105,9 @@ MathJax = {
 
     </nav>
   </div>
-  <article
+  
+
+<article
     id="main"
     class="content-container look-sheet article-pad-v "
     itemscope
@@ -133,7 +135,33 @@ MathJax = {
   
 
   
+
   <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#前置知识">前置知识</a>
+      <ul>
+        <li><a href="#ieee754-标准">IEEE754 标准</a></li>
+        <li><a href="#阶码的存储形式移码-excess-n-system">阶码的存储形式——移码 (Excess-N System)</a></li>
+      </ul>
+    </li>
+    <li><a href="#float类型浮点数的取值范围">float类型浮点数的取值范围</a></li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
     <p>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。</p>
 <h2 id="前置知识">前置知识</h2>
 <p>若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。</p>
@@ -191,6 +219,8 @@ $$
 \begin{align}  (1.{\underbrace{000 ... 001}_{23位}})_2 \times 2^{-126}    &\approx (1.17549e-38)_{10}  \end{align}
 $$
 </div>
+
+
 
   </div>
 </article>

@@ -724,3 +724,28 @@ article table th {
     display: none;
   }
 }
+
+/* toc style */
+#TableOfContents > ul > li *{
+   color: black;
+}
+
+#content > details > summary {
+padding-left: 0.5em;
+}
+
+#content > details {
+ border: solid thin;
+margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+

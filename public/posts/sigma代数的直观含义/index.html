@@ -106,7 +106,9 @@ MathJax = {
 
     </nav>
   </div>
-  <article
+  
+
+<article
     id="main"
     class="content-container look-sheet article-pad-v "
     itemscope
@@ -136,7 +138,29 @@ MathJax = {
   
 
   
+
   <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#事件域划分的精细程度代表所知信息的多寡">事件域——划分的精细程度代表所知信息的多寡</a></li>
+    <li><a href="#一个例子">一个例子</a></li>
+    <li><a href="#对上例的修正">对上例的修正</a></li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
     <h2 id="事件域划分的精细程度代表所知信息的多寡">事件域——划分的精细程度代表所知信息的多寡</h2>
 <p>简单来说，sigma 代数刻画的事件域 $\mathcal F$ 包含了一系列划分后的集合，后文称作「分类」，which 可以被我们用来对样本空间 $\Omega$ 中的样本路径 $\omega$ 进行归类。这些分类，实际上表示我们对于当前样本路径的了解程度：我们在某一阶段 $T$ 所知道的信息越多，这一阶段的事件域 $\mathcal F _T$ 所包含的元素就越多，表示我们 $\omega$ 所能采用的分类也就越多。</p>
 <p>这些分类是怎样描述「所知道的信息」的？一种可行的思路是思路是，对于某个随机过程，我们会面临一条事前确定的样本路径 $\omega_i$ 。然而，尽管这条样本路径是已经被「固定」的，但我们并不知道 $\omega_i$ 是 $\Omega$ 中的哪一个 $\omega$ ——我们仅能知道，<u><strong>对于给定的 $\Omega$ 的某个子集，$\omega_i$ 是不是在这个子集里面</strong></u>。而前一句中 能够被判断是否包含 $\omega_i$ 的这些 $\Omega$ 的子集，就是我们在第一段中提到的，事件域 $\mathcal F$ 所包含的「分类」。如果对集合的划分越精细，「分类」就越多，表示我们知道的信息就更多。</p>
@@ -169,6 +193,8 @@ $$</li>
 <p>是一个集合，由以及这些集合的并集和余集组成。$\sigma(S_2)$是一个集合， which 由 $\varnothing, \Omega, A_{HH}, A_{HT}\cup A_{TH}, A_{TT}$以及这些集合的并集和余集组成。</p>
 <p>不难看出，不光是 $\sigma(S_2)$ ，其他的 $\sigma(S_T)$ 都包含于 $\mathcal{F_T}$ ，因此我们可以说随机变量 $S$ 是 可测的 $\mathcal{F-}可测的$ 。可测的定义如下：</p>
 <p><img src="https://s2.loli.net/2023/05/16/X6pd1EwljnkU3Zo.png" alt=""></p>
+
+
 
   </div>
 </article>
