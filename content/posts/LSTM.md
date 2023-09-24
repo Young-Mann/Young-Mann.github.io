@@ -3,7 +3,7 @@ title: 为啥还有人直接用 LSTM 预测股价嘞？
 description: 小小总结了使用 LSTM 预测股价时需要注意的事项。
 toc: true
 tags: 
-- 朴实无华的记录
+- 学术垃圾
 series:
 date: '2022-06-05T02:34:12+08:00'
 featuredImage:

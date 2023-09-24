@@ -2,7 +2,7 @@
 title: 蒙特卡罗估计简介
 tags:
 - 概率论
-- 工具箱里都有啥？
+- 学术垃圾
 description: 又开新坑了，大概会落得贪多嚼不烂的下场。
 toc: true
 series:
