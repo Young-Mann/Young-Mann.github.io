@@ -3,16 +3,7 @@ display_section: posts
 ---
 
 
-<style>
-.p1 {
-text-indent:2em;
-}
-</style>
-
-
-这里是[本人](../posts/about)的文字垃圾回收站。
-
-在此，你可以[看看有没有感兴趣的：](../tags)
+这里是[本人](../posts/about)的文字垃圾回收站。你可以[看看有没有感兴趣的：](../tags)
 
 
 - [情绪垃圾](../tags/情绪)（矫情实录）
@@ -21,3 +12,14 @@ text-indent:2em;
 
 你也可以试着[与我交流。](mailto:young-mann1043@outlook.com)
 
+---
+
+<details>
+<summary>
+<strong>? Life Gauge</strong>
+</summary>
+<progress max = "73" value = "57"></progress> *****`
+<progress max = "75" value = "57"></progress> *****`
+<progress max = "70" value = "31"></progress> ***
+<progress max = "65" value = "22.75"></progress> **
+</details>
