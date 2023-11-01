@@ -30,6 +30,7 @@
 <meta property="og:description" content="假设一对夫妻打算生孩子。他们采取的剩余策略是，除非连续生出3个女孩，否则一直生新的小孩。那么，现在的问题是，当这对夫妻停止生育时，他们已生下的小孩有多少个？为了回答这个问题，可以直接考虑不同小孩数量的概率。假设每次生育时，生出女孩的概率为$p$，生出男孩的概率为$q :=1-p$。那么，在这题里：
 样本空间中的样本点 $\omega_i$ 是长度为 i 的已被生下来的小孩的性别序列。例如，$w_2 = BG$ 表示一共生了两个小孩，第一个是男孩，第二个是女孩； 我们设定一个随机变量 $\text{X}(\omega): \Omega \rightarrow \mathbb R$ 。这个随机变量需要输入一个样本点，即上文提到的性别序列，并输出所输入序列的长度值； 概率测度 $\text P(x) = \text P(\text{X}=x)$表示「这对夫妻停止生育时，他们已生下的小孩有 x 个」的概率。 不难求出以下递归形式， $$ \begin{align} \text P(1)&amp;=0 \\ \text P(2)&amp;=0 \\ \text P(3)&amp;=p^3 \\ \text P(4)&amp;=qp^3=q\text P(3) \\ \text P(5)&amp;=q^2\text P(3)&#43;qp\text P(3)=q\text P(4)&#43;qp\text P(3) \\ \text P(6)&amp;=q\text P(5)&#43;qp\text P(4)&#43;qp^2\text P(3) \\ \cdots \\ \text P(n)&amp;=q\text P(n-1)&#43;qp\text P(n-2)&#43;qp^2\text P(n-3) \end{align} $$
 取$p=0.5$，可得：
+p=0.5
 p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#43;q*p^2*f(i-3); end bar(f) Mathematical Statistics and Data Analysis (3rd Edition) (C1-11) Consider the binomial distribution with $n$ trials and probability $p$ of success on each trial." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://young-mann.top/posts/%E5%B0%8F%E8%AE%B0%E6%A6%82%E7%8E%87%E8%AE%BA%E9%87%8C%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98/" /><meta property="article:section" content="posts" />
@@ -43,6 +44,7 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#
 <meta name="twitter:description" content="假设一对夫妻打算生孩子。他们采取的剩余策略是，除非连续生出3个女孩，否则一直生新的小孩。那么，现在的问题是，当这对夫妻停止生育时，他们已生下的小孩有多少个？为了回答这个问题，可以直接考虑不同小孩数量的概率。假设每次生育时，生出女孩的概率为$p$，生出男孩的概率为$q :=1-p$。那么，在这题里：
 样本空间中的样本点 $\omega_i$ 是长度为 i 的已被生下来的小孩的性别序列。例如，$w_2 = BG$ 表示一共生了两个小孩，第一个是男孩，第二个是女孩； 我们设定一个随机变量 $\text{X}(\omega): \Omega \rightarrow \mathbb R$ 。这个随机变量需要输入一个样本点，即上文提到的性别序列，并输出所输入序列的长度值； 概率测度 $\text P(x) = \text P(\text{X}=x)$表示「这对夫妻停止生育时，他们已生下的小孩有 x 个」的概率。 不难求出以下递归形式， $$ \begin{align} \text P(1)&amp;=0 \\ \text P(2)&amp;=0 \\ \text P(3)&amp;=p^3 \\ \text P(4)&amp;=qp^3=q\text P(3) \\ \text P(5)&amp;=q^2\text P(3)&#43;qp\text P(3)=q\text P(4)&#43;qp\text P(3) \\ \text P(6)&amp;=q\text P(5)&#43;qp\text P(4)&#43;qp^2\text P(3) \\ \cdots \\ \text P(n)&amp;=q\text P(n-1)&#43;qp\text P(n-2)&#43;qp^2\text P(n-3) \end{align} $$
 取$p=0.5$，可得：
+p=0.5
 p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#43;q*p^2*f(i-3); end bar(f) Mathematical Statistics and Data Analysis (3rd Edition) (C1-11) Consider the binomial distribution with $n$ trials and probability $p$ of success on each trial."/>
 
 
@@ -50,9 +52,10 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#
 <meta itemprop="description" content="假设一对夫妻打算生孩子。他们采取的剩余策略是，除非连续生出3个女孩，否则一直生新的小孩。那么，现在的问题是，当这对夫妻停止生育时，他们已生下的小孩有多少个？为了回答这个问题，可以直接考虑不同小孩数量的概率。假设每次生育时，生出女孩的概率为$p$，生出男孩的概率为$q :=1-p$。那么，在这题里：
 样本空间中的样本点 $\omega_i$ 是长度为 i 的已被生下来的小孩的性别序列。例如，$w_2 = BG$ 表示一共生了两个小孩，第一个是男孩，第二个是女孩； 我们设定一个随机变量 $\text{X}(\omega): \Omega \rightarrow \mathbb R$ 。这个随机变量需要输入一个样本点，即上文提到的性别序列，并输出所输入序列的长度值； 概率测度 $\text P(x) = \text P(\text{X}=x)$表示「这对夫妻停止生育时，他们已生下的小孩有 x 个」的概率。 不难求出以下递归形式， $$ \begin{align} \text P(1)&amp;=0 \\ \text P(2)&amp;=0 \\ \text P(3)&amp;=p^3 \\ \text P(4)&amp;=qp^3=q\text P(3) \\ \text P(5)&amp;=q^2\text P(3)&#43;qp\text P(3)=q\text P(4)&#43;qp\text P(3) \\ \text P(6)&amp;=q\text P(5)&#43;qp\text P(4)&#43;qp^2\text P(3) \\ \cdots \\ \text P(n)&amp;=q\text P(n-1)&#43;qp\text P(n-2)&#43;qp^2\text P(n-3) \end{align} $$
 取$p=0.5$，可得：
+p=0.5
 p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#43;q*p^2*f(i-3); end bar(f) Mathematical Statistics and Data Analysis (3rd Edition) (C1-11) Consider the binomial distribution with $n$ trials and probability $p$ of success on each trial."><meta itemprop="datePublished" content="2023-09-26T20:09:07+02:00" />
 <meta itemprop="dateModified" content="2023-09-26T20:09:07+02:00" />
-<meta itemprop="wordCount" content="600">
+<meta itemprop="wordCount" content="601">
 <meta itemprop="keywords" content="概率论," />
 
 
@@ -192,6 +195,12 @@ $$
 \end{align}
 $$</p>
 <p>取$p=0.5$，可得：</p>
+<figure class="smaller"><img src="https://s2.loli.net/2023/09/28/djxoFcCB4LHke1M.jpg"
+         alt="p=0.5"/><figcaption>
+            <p>p=0.5</p>
+        </figcaption>
+</figure>
+
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>p=<span style="color:#ae81ff">0.5</span>; 
 </span></span><span style="display:flex;"><span>q=<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>p; 
 </span></span><span style="display:flex;"><span>f=zeros(<span style="color:#ae81ff">60</span>,<span style="color:#ae81ff">1</span>); 
@@ -246,7 +255,7 @@ P(X \leq x)=P\left(F^{-1}(U) \leq x\right)=P(U \leq F(x))=F(x)
 $$</p>
 </blockquote>
 <hr>
-<details><summary>(C3-8) 下面这两题的题目详情不重要了，主要是我积分积错了，记在这里提醒一下自己。</summary>
+<details><summary>(C3-8) 下面这题的题目详情不重要了，主要是我积分积错了，记在这里提醒一下自己。</summary>
 $$
 \begin{aligned}
 P(X+Y \leq 1)= & P(X \leq 1-Y)=\int_0^1 \int_0^{1-y} \frac{6}{7}(x+y)^2 d x d y \\
@@ -308,8 +317,8 @@ $$</p>
       </a>
       
       
-        <a href="https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/" class="flex-row v-center no-underline" style="max-width: 45%;">
-        <span class="re-underline">Next: 草稿纸</span>&nbsp;<span class="text-1p5">→</span>
+        <a href="https://young-mann.top/posts/law-of-the-iterated-logarithm/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: Law of the iterated logarithm</span>&nbsp;<span class="text-1p5">→</span>
         </a>
       
       </nav>

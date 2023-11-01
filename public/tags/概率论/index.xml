@@ -16,6 +16,7 @@
       <description>假设一对夫妻打算生孩子。他们采取的剩余策略是，除非连续生出3个女孩，否则一直生新的小孩。那么，现在的问题是，当这对夫妻停止生育时，他们已生下的小孩有多少个？为了回答这个问题，可以直接考虑不同小孩数量的概率。假设每次生育时，生出女孩的概率为$p$，生出男孩的概率为$q :=1-p$。那么，在这题里：
 样本空间中的样本点 $\omega_i$ 是长度为 i 的已被生下来的小孩的性别序列。例如，$w_2 = BG$ 表示一共生了两个小孩，第一个是男孩，第二个是女孩； 我们设定一个随机变量 $\text{X}(\omega): \Omega \rightarrow \mathbb R$ 。这个随机变量需要输入一个样本点，即上文提到的性别序列，并输出所输入序列的长度值； 概率测度 $\text P(x) = \text P(\text{X}=x)$表示「这对夫妻停止生育时，他们已生下的小孩有 x 个」的概率。 不难求出以下递归形式， $$ \begin{align} \text P(1)&amp;amp;=0 \\ \text P(2)&amp;amp;=0 \\ \text P(3)&amp;amp;=p^3 \\ \text P(4)&amp;amp;=qp^3=q\text P(3) \\ \text P(5)&amp;amp;=q^2\text P(3)+qp\text P(3)=q\text P(4)+qp\text P(3) \\ \text P(6)&amp;amp;=q\text P(5)+qp\text P(4)+qp^2\text P(3) \\ \cdots \\ \text P(n)&amp;amp;=q\text P(n-1)+qp\text P(n-2)+qp^2\text P(n-3) \end{align} $$
 取$p=0.5$，可得：
+p=0.5
 p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)+q*p*f(i-2)+q*p^2*f(i-3); end bar(f) Mathematical Statistics and Data Analysis (3rd Edition) (C1-11) Consider the binomial distribution with $n$ trials and probability $p$ of success on each trial.</description>
     </item>
     
