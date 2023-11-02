@@ -6,7 +6,21 @@
     <description>Recent content in 概率论 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Sep 2023 20:09:07 +0200</lastBuildDate><atom:link href="https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Oct 2023 13:49:58 +0200</lastBuildDate><atom:link href="https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重对数律</title>
+      <link>https://young-mann.top/posts/law-of-the-iterated-logarithm/</link>
+      <pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate>
+      
+      <guid>https://young-mann.top/posts/law-of-the-iterated-logarithm/</guid>
+      <description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：
+假设 $W=(W_t)_{t \geq 0}$ 是一个布朗运动，那么我们有：
+$$ \begin{align} &amp;amp; \limsup\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=1, \mathbb{P}\text{-a.s.,} \\ &amp;amp; \liminf\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=-1, \mathbb{P}\text{-a.s.,} \end{align} $$
+其中 $\psi_{\text {glob }}(t) := \sqrt{2t \log (\log t)}$。
+粗糙点讲，这里 Law of the iterated logarithm 的含义是， 布朗运动的的样本路径几乎是被包含在 $\pm \psi_{\text {glob }}(t) $ 所组成的上下界内的。不过，由于这里是 $\lim \sup$，而非 $\sup$ ，所以样本路径有时候也会越过上下界。
+t=1E6 且 n_path=500 时的布朗运动</description>
+    </item>
+    
     <item>
       <title>小记概率论里的一些题</title>
       <link>https://young-mann.top/posts/%E5%B0%8F%E8%AE%B0%E6%A6%82%E7%8E%87%E8%AE%BA%E9%87%8C%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98/</link>
