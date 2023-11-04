@@ -49,10 +49,10 @@ $$ \begin{align} S_0(\omega) &amp;amp;= 4, \forall \omega \in \Omega \\ S_1(\ome
     
     <item>
       <title>蒙特卡罗估计简介</title>
-      <link>https://young-mann.top/posts/mc/</link>
+      <link>https://young-mann.top/posts/monte-carlo/</link>
       <pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate>
       
-      <guid>https://young-mann.top/posts/mc/</guid>
+      <guid>https://young-mann.top/posts/monte-carlo/</guid>
       <description>本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。
 蒙特卡洛原理 蒙特卡洛方法是什么？ 蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法。借助测度论的语言，我们可对概率论做一种公理化定义1，将随机试验中随机发生的事件与一个集合对应起来（这个集合包含了事件发生时的所有可能结果），将总体也与一个集合对应起来（这个集合包含了随机试验的所有可能结果），从而将概率定义为：
 $$某事件的概率 := \frac{该事件对应集合的容量}{总体对应集合的容量}$$
