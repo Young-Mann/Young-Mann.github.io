@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狗蛋日</title><link>https://young-mann.top/</link><description>Recent content on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Oct 2023 13:49:58 +0200</lastBuildDate><atom:link href="https://young-mann.top/index.xml" rel="self" type="application/rss+xml"/><item><title>草稿纸</title><link>https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/</link><pubDate>Sat, 28 Jan 2023 23:02:18 +0800</pubDate><guid>https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/</guid><description>Cyberbullying The following passage are an excerpt from a TED speech about cyberbullying (and I’ve forgotten the full name of this speech).
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>狗蛋日</title><link>https://young-mann.top/</link><description>Recent content on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Nov 2023 20:42:42 +0100</lastBuildDate><atom:link href="https://young-mann.top/index.xml" rel="self" type="application/rss+xml"/><item><title>草稿纸</title><link>https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/</link><pubDate>Sat, 28 Jan 2023 23:02:18 +0800</pubDate><guid>https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/</guid><description>Cyberbullying The following passage are an excerpt from a TED speech about cyberbullying (and I’ve forgotten the full name of this speech).
 When chatting online, we may think our words are just the words. We don’t need to take responsibility for what we have said, even when our words really hurt others &amp;ndash; we just keep silent, having no courage to confess it.
-Social network is basically a mutual approval machine.</description></item><item><title>重对数律</title><link>https://young-mann.top/posts/law-of-the-iterated-logarithm/</link><pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate><guid>https://young-mann.top/posts/law-of-the-iterated-logarithm/</guid><description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：
+Social network is basically a mutual approval machine.</description></item><item><title>IV 或 T 的变化对 Greeks 有何影响</title><link>https://young-mann.top/posts/greeks/</link><pubDate>Sat, 04 Nov 2023 20:42:42 +0100</pubDate><guid>https://young-mann.top/posts/greeks/</guid><description>今天在看希腊字母这部分的内容，画了 IV 或 T 变化时的 Greeks，以帮助自己记忆。图中的初始参数设定为：K=200，r=0.04，T=1，IV=0.2。IV 变化时的可能取值：{0.1, 0.3, 0.5, 0.7, 0.9}；T 变化时的可能取值为：{0.25, 1, 3, 5, 10} (以年为单位)。
+总览 K=200, r=0.04, T=1, IV=0.2
+接下来以 Call Option 为例，分析 T 或 IV 变化时，期权的 Greeks 将如何变化。
+Delta IV 变化的影响 不同 IV 下的 Delta
+从上图可知，随着 IV 越来越小，当 $S_t$ 接近 $K$ 的水平时，Delta 的变化得更剧烈，这一部分的曲线也更加陡峭。相应的，两侧的曲线则更加平缓。
+T 变化的影响 不同 T 下的 Delta
+T 变化的影响在方向上与 IV 变化的影响相同。随着 T 越来越小时， $S_t$ 越接近 $K$ ，Delta 就变化得更剧烈。
+Gamma IV 变化的影响 不同 IV 下的 Gamma</description></item><item><title>重对数律</title><link>https://young-mann.top/posts/law-of-the-iterated-logarithm/</link><pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate><guid>https://young-mann.top/posts/law-of-the-iterated-logarithm/</guid><description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：
 假设 $W=(W_t)_{t \geq 0}$ 是一个布朗运动，那么我们有：
 $$ \begin{align} &amp;amp; \limsup\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=1, \mathbb{P}\text{-a.s.,} \\ &amp;amp; \liminf\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=-1, \mathbb{P}\text{-a.s.,} \end{align} $$
 其中 $\psi_{\text {glob }}(t) := \sqrt{2t \log (\log t)}$。
@@ -37,11 +44,7 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)+q*p*f(i-2)+q*p^2
 这是菜单里披萨的部分
 这是叫 Santa Lucia 的披萨
 （待更新）
-想去 Lindt House of Chocolate</description></item><item><title>一间房难倒英雄汉</title><link>https://young-mann.top/posts/%E6%99%8B%E5%8D%87%E8%8B%8F%E9%BB%8E%E4%B8%96%E5%B0%8F%E9%9C%B8%E7%8E%8B%E4%B9%8B%E8%B7%AF/</link><pubDate>Sat, 02 Sep 2023 21:18:07 +0800</pubDate><guid>https://young-mann.top/posts/%E6%99%8B%E5%8D%87%E8%8B%8F%E9%BB%8E%E4%B8%96%E5%B0%8F%E9%9C%B8%E7%8E%8B%E4%B9%8B%E8%B7%AF/</guid><description>一间房难倒英雄汉。苏黎世狼多肉少，租房是个老大难问题。特开本贴，以记录在苏黎世的租房历程。
-目标：租到 800 CHF 以下、有厨房和床的学生宿舍，位置在 110 区。
-目前已租到的：
-月租 来源 起止日期 CHF 1250 小红书 2023.09.07 &amp;ndash; 2023.09.20 CHF 1150 小红书 2023.09.21 &amp;ndash; 2023.11.30 其他申请过的：
-申请日期 房源 来源 申请结果 1 8.23 ROOMS IN ZÜRICH WOKO 默拒 2 8.23 Altstetterstrasse 183, 8048 Zürich WOKO 默拒 3 8.23 Bucheggstrasse 4-12, 8037 Zürich WOKO 默拒 4 8.23 Cäsar-Ritz-Strasse 1, 3, 5, 7 WOKO 默拒 5 8.23 Elsastrasse 17, 8004 Zürich WOKO 默拒 6 8.23 Tannenrauchstrasse 35, 8038 Zürich WOKO 默拒 8.</description></item><item><title>小逛西北</title><link>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/</link><pubDate>Wed, 30 Aug 2023 10:32:52 +0800</pubDate><guid>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/</guid><description>逛完之后的感想：和人聊天比出去看风景有意思多了（？）
+想去 Lindt House of Chocolate</description></item><item><title>小逛西北</title><link>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/</link><pubDate>Wed, 30 Aug 2023 10:32:52 +0800</pubDate><guid>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/</guid><description>逛完之后的感想：和人聊天比出去看风景有意思多了（？）
 2023-08-29 昨日乘坐飞机到了西宁，在就近的面馆里吃了午饭。面馆里有道小菜拼盘（￥10），其中的凉拌青椒与辣猪肝挺好吃。青椒熟烂多汁带点韧劲。猪肝腥味很淡，被辣椒掩盖了不少。我挺喜欢这青椒。
 吃完午饭后，从朋友那里借到车，自驾去了青海湖那一带。对于没见过高原风光的我而言，这里大片大片的绿草、随处可见的牛羊、远处青蓝色的湖水，还是能带来视觉上的新鲜感的。
 开车途中，曾经遇上兜售骑马服务的藏民，提供两种价位的服务：一是支付￥80，然后骑马起到不远处的山脚下，另一种则是支付￥100，然后骑一段更远的距离，大约3公里。我们选了前者。
@@ -102,7 +105,7 @@ LCD 的内涵1包括：第一，货币创造是「银行放贷行为」本身，
 下面来举一个简单的例子，从资产负债表的角度说明 LCD 与传统货币银行理论在货币创造上的解释有所不同。
 假设法定存款准备金率为 20 %，客户将现金存入银行后不会提现。第一家银行（记作 A）首先吸收了 100 元的「原始存款」，其中 20 元用于「缴存存款准备金」，剩下的 80 元放贷。客户得到了 80 元贷款后，用于支付给另一个客户，而这个新客户会将 80 元存入另一家银行（记作 B）。银行 B 再缴存 16元存款准备金后，再放贷 64 元。经历了这 2 个步骤后，银行 A 与银行 B 的资产负债表如下图所示。经历如此这般「存款-贷款-再存款-再放贷」的一轮轮接力后，最初存入银行的 100 元的「原始存款」全部变成准备金，再也无法拿出去放贷。此时，计算银行总体的资产负债表，会发现负债端有 500 元存款，资产端有 400 元贷款和 100 元准备金。
 然而，在 LCD 这里，第 2 布的资产负债表就不太一样了。不同之处在于，在银行 A 放出一笔 80 元的新贷款的时候，就已经创造出了新的 80 元存款货币（也就是资产端 下方新出现的 80 元现金），并在此时向中央银行存入 16 元作为存款准备金。如果客户在贷款后继续购买商品，那么银行 A 与银行 B 的资产负债表还会发生变化，但这个变化的过程已经和传统货币银行理论中所描述的不一样了。
-若想了解更多孙国峰对 LCD 的阐释，可见孙国峰（2019）。&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>蒙特卡罗估计简介</title><link>https://young-mann.top/posts/mc/</link><pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate><guid>https://young-mann.top/posts/mc/</guid><description>本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。
+若想了解更多孙国峰对 LCD 的阐释，可见孙国峰（2019）。&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>蒙特卡罗估计简介</title><link>https://young-mann.top/posts/monte-carlo/</link><pubDate>Thu, 20 Oct 2022 21:50:02 +0800</pubDate><guid>https://young-mann.top/posts/monte-carlo/</guid><description>本文是对《金融工程中的蒙特卡罗方法》一书的读书笔记。
 蒙特卡洛原理 蒙特卡洛方法是什么？ 蒙特卡罗方法是一种用于模拟随机现象，以求得事件的概率的统计模拟方法。借助测度论的语言，我们可对概率论做一种公理化定义1，将随机试验中随机发生的事件与一个集合对应起来（这个集合包含了事件发生时的所有可能结果），将总体也与一个集合对应起来（这个集合包含了随机试验的所有可能结果），从而将概率定义为：
 $$某事件的概率 := \frac{该事件对应集合的容量}{总体对应集合的容量}$$
 确定了这个定义之后，我们便可以通过计算事件对应集合的容量与总体对应集合的容值，计算某个事件的概率——而实际上蒙特卡罗方法就是这么做的。比如，我们现在想要计算某个事件发生的概率。那么，我们可以做的是，在所有可能结果组成的总体中随机抽样，然后计算落入事件对应集合的样本点所占总体的比例，以此比例「估计」事件对应集合的容量。在这一过程中，大数定律保证了这个估计会随着抽样的增加而收敛于真实值2，中心极限定理则给出了在有限次抽样下估计误差的可能幅度。
