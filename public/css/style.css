@@ -1,7 +1,7 @@
 body {
   -webkit-font-smoothings: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision  ;
 }
 
 code {
@@ -61,6 +61,7 @@ h1#title {
 body {
   font-family:  'Noto Serif SC', serif, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
+
 
 .content-container {
   padding-left: 1em;
