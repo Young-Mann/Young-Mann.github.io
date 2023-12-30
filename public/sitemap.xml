@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://young-mann.top/posts/%E8%8D%89%E7%A8%BF/</loc>
-    <lastmod>2023-01-28T23:02:18+08:00</lastmod>
-  </url><url>
     <loc>https://young-mann.top/</loc>
-    <lastmod>2023-11-04T20:42:42+01:00</lastmod>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/posts/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/tags/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/tags/%E6%B8%B8%E8%AE%B0/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/tags/%E7%8E%A9%E5%85%B7/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/tags/%E9%A3%9F%E4%B8%8E%E7%89%A9/</loc>
+    <lastmod>2023-12-29T19:55:03+01:00</lastmod>
+  </url><url>
+    <loc>https://young-mann.top/posts/the-volatility-surface/</loc>
+    <lastmod>2023-12-07T22:14:50+01:00</lastmod>
   </url><url>
     <loc>https://young-mann.top/posts/greeks/</loc>
     <lastmod>2023-11-04T20:42:42+01:00</lastmod>
   </url><url>
-    <loc>https://young-mann.top/posts/</loc>
-    <lastmod>2023-11-04T20:42:42+01:00</lastmod>
-  </url><url>
     <loc>https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/</loc>
-    <lastmod>2023-11-04T20:42:42+01:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.top/tags/</loc>
     <lastmod>2023-11-04T20:42:42+01:00</lastmod>
   </url><url>
     <loc>https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/</loc>
@@ -32,16 +44,7 @@
     <loc>https://young-mann.top/posts/%E4%BA%8C%E5%8D%81%E4%BA%8C%E5%B2%81%E5%87%BA%E9%97%A8%E8%BF%9C%E8%A1%8C/</loc>
     <lastmod>2023-09-24T00:01:16+08:00</lastmod>
   </url><url>
-    <loc>https://young-mann.top/tags/%E6%83%85%E7%BB%AA/</loc>
-    <lastmod>2023-09-24T00:01:16+08:00</lastmod>
-  </url><url>
     <loc>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%8B%8F%E9%BB%8E%E4%B8%96/</loc>
-    <lastmod>2023-09-18T01:13:13+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.top/tags/%E6%B8%B8%E8%AE%B0/</loc>
-    <lastmod>2023-09-18T01:13:13+08:00</lastmod>
-  </url><url>
-    <loc>https://young-mann.top/tags/%E9%A3%9F%E4%B8%8E%E7%89%A9/</loc>
     <lastmod>2023-09-18T01:13:13+08:00</lastmod>
   </url><url>
     <loc>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/</loc>
@@ -122,13 +125,10 @@
     <loc>https://young-mann.top/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/</loc>
     <lastmod>2022-02-26T23:29:12+08:00</lastmod>
   </url><url>
-    <loc>https://young-mann.top/tags/%E7%8E%A9%E5%85%B7/</loc>
-    <lastmod>2022-02-26T23:29:12+08:00</lastmod>
-  </url><url>
     <loc>https://young-mann.top/posts/my-memory-of-2021/</loc>
     <lastmod>2022-02-06T22:16:42+00:00</lastmod>
   </url><url>
-    <loc>https://young-mann.top/tags/%E5%81%87%E7%9A%84%E5%81%87%E7%9A%84/</loc>
+    <loc>https://young-mann.top/tags/%E8%99%9A%E6%9E%84/</loc>
     <lastmod>2022-02-06T22:16:42+00:00</lastmod>
   </url><url>
     <loc>https://young-mann.top/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/</loc>

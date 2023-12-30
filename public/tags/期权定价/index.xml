@@ -6,22 +6,14 @@
     <description>Recent content in 期权定价 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Nov 2023 20:42:42 +0100</lastBuildDate><atom:link href="https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Nov 2023 20:42:42 +0100</lastBuildDate>
+    <atom:link href="https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IV 或 T 的变化对 Greeks 有何影响</title>
       <link>https://young-mann.top/posts/greeks/</link>
       <pubDate>Sat, 04 Nov 2023 20:42:42 +0100</pubDate>
-      
       <guid>https://young-mann.top/posts/greeks/</guid>
-      <description>今天在看希腊字母这部分的内容，画了 IV 或 T 变化时的 Greeks，以帮助自己记忆。图中的初始参数设定为：K=200，r=0.04，T=1，IV=0.2。IV 变化时的可能取值：{0.1, 0.3, 0.5, 0.7, 0.9}；T 变化时的可能取值为：{0.25, 1, 3, 5, 10} (以年为单位)。
-总览 K=200, r=0.04, T=1, IV=0.2
-接下来以 Call Option 为例，分析 T 或 IV 变化时，期权的 Greeks 将如何变化。
-Delta IV 变化的影响 不同 IV 下的 Delta
-从上图可知，随着 IV 越来越小，当 $S_t$ 接近 $K$ 的水平时，Delta 的变化得更剧烈，这一部分的曲线也更加陡峭。相应的，两侧的曲线则更加平缓。
-T 变化的影响 不同 T 下的 Delta
-T 变化的影响在方向上与 IV 变化的影响相同。随着 T 越来越小时， $S_t$ 越接近 $K$ ，Delta 就变化得更剧烈。
-Gamma IV 变化的影响 不同 IV 下的 Gamma</description>
+      <description>今天在看希腊字母这部分的内容，画了 IV 或 T 变化时的 Greeks，以帮助自己记忆。图中的初始参数设定为：K=200，r=0.04，T=1，IV=0.2。IV 变化时的可能取值：{0.1, 0.3, 0.5, 0.7, 0.9}；T 变化时的可能取值为：{0.25, 1, 3, 5, 10} (以年为单位)。&#xA;总览 K=200, r=0.04, T=1, IV=0.2&#xA;接下来以 Call Option 为例，分析 T 或 IV 变化时，期权的 Greeks 将如何变化。&#xA;Delta IV 变化的影响 不同 IV 下的 Delta&#xA;从上图可知，随着 IV 越来越小，当 $S_t$ 接近 $K$ 的水平时，Delta 的变化得更剧烈，这一部分的曲线也更加陡峭。相应的，两侧的曲线则更加平缓。&#xA;T 变化的影响 不同 T 下的 Delta&#xA;T 变化的影响在方向上与 IV 变化的影响相同。随着 T 越来越小时， $S_t$ 越接近 $K$ ，Delta 就变化得更剧烈。&#xA;Gamma IV 变化的影响 不同 IV 下的 Gamma</description>
     </item>
-    
   </channel>
 </rss>
