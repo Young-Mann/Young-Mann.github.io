@@ -10,9 +10,9 @@
     <atom:link href="https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>重对数律</title>
-      <link>https://young-mann.top/posts/law-of-the-iterated-logarithm/</link>
+      <link>https://young-mann.top/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/</link>
       <pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate>
-      <guid>https://young-mann.top/posts/law-of-the-iterated-logarithm/</guid>
+      <guid>https://young-mann.top/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/</guid>
       <description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：&#xA;假设 $W=(W_t)_{t \geq 0}$ 是一个布朗运动，那么我们有：&#xA;$$ \begin{align} &amp;amp; \limsup\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=1, \mathbb{P}\text{-a.s.,} \\ &amp;amp; \liminf\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=-1, \mathbb{P}\text{-a.s.,} \end{align} $$&#xA;其中 $\psi_{\text {glob }}(t) := \sqrt{2t \log (\log t)}$。&#xA;粗糙点讲，这里 Law of the iterated logarithm 的含义是， 布朗运动的的样本路径几乎是被包含在 $\pm \psi_{\text {glob }}(t) $ 所组成的上下界内的。不过，由于这里是 $\lim \sup$，而非 $\sup$ ，所以样本路径有时候也会越过上下界。&#xA;t=1E6 且 n_path=500 时的布朗运动</description>
     </item>
     <item>

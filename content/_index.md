@@ -10,7 +10,7 @@ display_section: posts
 
 
 
-这里是[本人](../posts/about)的文字垃圾回收站。你可以根据标签[看看有没有感兴趣的内容](../tags)，或是[与我交流](mailto:young-mann1043@outlook.com)。
+这里是[本人](../posts/about)的文字垃圾回收站。你可以根据标签[看看有没有感兴趣的内容](../tags)，或是[发邮件和我聊聊](mailto:young-mann1043@outlook.com)。
 
 ---
 
