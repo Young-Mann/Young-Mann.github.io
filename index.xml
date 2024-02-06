@@ -23,10 +23,11 @@ Christkind (?)
 逛完就回去吃饭咯。第二天中午回了苏黎世。回苏黎世前，从S哥那里薅了一大袋切好的牛羊肉。这样的话，接下来两周不用去超市买肉了，幸福o(￣▽￣)o！
 德铁（Deutsch Bahn）&amp;amp;陌生人 本次出行的来程和去程以火车为主，中途碰上了车次被取消及延误的情况，也算是初步体会到德铁为啥被 S 姐称作 Scheiße Bahn 了。好在出现这种情况之后，乘客几乎能任意乘坐别的车次，只要那班车能到你原定的终点即可。如果想保险点，也可以去车站的 Information 处，和柜台人员说明车次被取消的情况，让ta开一张 Reiseverbindung 2，告诉你接下来该坐什么车次才能到目的地。
 Reiseverbindung
+特意强调准时到站again，看起来像是求夸，哈哈哈
 去纽伦堡的途中，我靠着分享自带的巧克力，短暂和邻座的人聊了几句。其中一个人操着英国口音，简单客套几句，共同吐槽了德铁之后就无后话了；另外一个人和我一样拎了一袋 Läderach，说他从日内瓦出发，想把巧克力带回去给妹妹尝尝，看我在写偏微分方程相关的东西，好奇我在干什么。他还问了我是哪里人，解释说他之所以问这个问题，是因为别人问他这个问题时，都猜不出他是个出生在南非的白人，而我也确实猜不出这一点hhh。
 哦对了，玩具博物馆里还碰上了个动机不明的保安大叔。当我在弹玩具琴的时候，那个大叔突然在背后问我：我的名字的第一个字母是什么？我不确定他想知道什么，便反问他道：他是想知道我姓的第一个字母，还是名的第一个字母。他听完之后，说了句 no problem ，然后直接走开了？这把我整懵了，我弹完琴之后，仗着自己人多，开始社牛（？），跑到大叔面前，问他为何刚刚问我那个问题。他嘿嘿笑了一下，说了句：fun，fun，就不再继续作答了。听到这里，我也没继续问了，说完 Tschüss 就溜了。
 不过为什么对菜品的夸赞会是「下饭」呢？难道饭才是主角？&amp;#160;&amp;#x21a9;&amp;#xfe0e;
-【待验证】不过开了这张单子之后，似乎只能乘坐单子上的车次，而不能随意挑一辆坐了。&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>The Volatility Surface</title><link>https://young-mann.top/posts/the-volatility-surface/</link><pubDate>Thu, 07 Dec 2023 22:14:50 +0100</pubDate><guid>https://young-mann.top/posts/the-volatility-surface/</guid><description>简单记录第一次看 The Volatility Surface 时推导有问题的部分。
+【待验证】不过开了这张单子之后，似乎只能乘坐单子上的车次，而不能随意挑一辆坐了。&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description></item><item><title>The Volatility Surface</title><link>https://young-mann.top/posts/%E6%B3%A2%E5%8A%A8%E7%8E%87%E6%9B%B2%E9%9D%A2/</link><pubDate>Thu, 07 Dec 2023 22:14:50 +0100</pubDate><guid>https://young-mann.top/posts/%E6%B3%A2%E5%8A%A8%E7%8E%87%E6%9B%B2%E9%9D%A2/</guid><description>简单记录第一次看 The Volatility Surface 时推导有问题的部分。
 (P16) 给定下列等式：
 $$ \begin{gathered} \frac{\partial V}{\partial t}+\frac{1}{2} v S^2 \frac{\partial^2 V}{\partial S^2}+ \rho \eta v S \frac{\partial^2 V}{\partial S \partial v}+\frac{1}{2} \eta^2 v \frac{\partial^2 V}{\partial v^2}+r S \frac{\partial V}{\partial S}-r V -\lambda(v-\bar{v}) \frac{\partial V}{\partial v}=0 \end{gathered} $$ 进行如下的变量代换： $$ x=\ln \left(F_{t, T} / K\right)=\ln \left(S e^{r \tau} / K\right) , $$ 可得到如下的等式： $$ \begin{gathered} -\frac{\partial C}{\partial \tau}+\frac{1}{2} v \frac{\partial^2 C}{\partial x^2}-\frac{1}{2} v \frac{\partial C}{\partial x}+\frac{1}{2} \eta^2 v \frac{\partial^2 C}{\partial v^2}+\rho \eta v \frac{\partial^2 C}{\partial x \partial v}-\lambda(v-\bar{v}) \frac{\partial V}{\partial v}=0 \end{gathered} $$ 一开始看书时没明白 $r S \frac{\partial V}{\partial S}-r V $ 这项是怎么被消去的。看了这个回答之后才发现我没把当期价格$V$表示成终期价格$C$：$e^{-r \tau} C(x, \nu, \tau)=V(S, \nu, t)$，所以一开始推不出书上的式子。</description></item><item><title>IV 或 T 的变化对 Greeks 有何影响</title><link>https://young-mann.top/posts/greeks/</link><pubDate>Sat, 04 Nov 2023 20:42:42 +0100</pubDate><guid>https://young-mann.top/posts/greeks/</guid><description>今天在看希腊字母这部分的内容，画了 IV 或 T 变化时的 Greeks，以帮助自己记忆。图中的初始参数设定为：K=200，r=0.04，T=1，IV=0.2。IV 变化时的可能取值：{0.1, 0.3, 0.5, 0.7, 0.9}；T 变化时的可能取值为：{0.25, 1, 3, 5, 10} (以年为单位)。
 总览 K=200, r=0.04, T=1, IV=0.2
@@ -35,7 +36,7 @@ Delta IV 变化的影响 不同 IV 下的 Delta
 从上图可知，随着 IV 越来越小，当 $S_t$ 接近 $K$ 的水平时，Delta 的变化得更剧烈，这一部分的曲线也更加陡峭。相应的，两侧的曲线则更加平缓。
 T 变化的影响 不同 T 下的 Delta
 T 变化的影响在方向上与 IV 变化的影响相同。随着 T 越来越小时， $S_t$ 越接近 $K$ ，Delta 就变化得更剧烈。
-Gamma IV 变化的影响 不同 IV 下的 Gamma</description></item><item><title>重对数律</title><link>https://young-mann.top/posts/law-of-the-iterated-logarithm/</link><pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate><guid>https://young-mann.top/posts/law-of-the-iterated-logarithm/</guid><description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：
+Gamma IV 变化的影响 不同 IV 下的 Gamma</description></item><item><title>重对数律</title><link>https://young-mann.top/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/</link><pubDate>Mon, 23 Oct 2023 13:49:58 +0200</pubDate><guid>https://young-mann.top/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/</guid><description>今天读 Mathematical Foundations for Finance 讲义里的布朗运动一章时，看到布朗运动的轨道满足一个以前没见过的 Law of the iterated logarithm，内容如下：
 假设 $W=(W_t)_{t \geq 0}$ 是一个布朗运动，那么我们有：
 $$ \begin{align} &amp;amp; \limsup\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=1, \mathbb{P}\text{-a.s.,} \\ &amp;amp; \liminf\limits_{t \rightarrow \infty} = \frac{W_t}{\psi_{\text {glob }}(t)}=-1, \mathbb{P}\text{-a.s.,} \end{align} $$
 其中 $\psi_{\text {glob }}(t) := \sqrt{2t \log (\log t)}$。
