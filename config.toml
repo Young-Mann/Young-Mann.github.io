@@ -2,6 +2,7 @@ baseURL = "https://young-mann.top/"
 title = "狗蛋日"
 theme = "paperesque"
 
+
 buildDrafts = true
 
 [markup]
@@ -31,6 +32,15 @@ toc = true
 [[params.topmenu]]
   name = "关于"
   url = "posts/about/"
+
+[[params.topmenu]]
+  name = "标签"
+  url = "tags/"
+
+
+[[params.topmenu]]
+  name = "收集夹"
+  url = "posts/collections/"
 
 
 

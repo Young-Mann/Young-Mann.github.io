@@ -5,7 +5,7 @@ description: 初学金融随机分析时，曾经对“引入sigma代数刻画�
 toc: true
 tags: 
 - 概率论
-- 学术垃圾
+- 我小子又在抄教材了！
 
 draft: false
 ---

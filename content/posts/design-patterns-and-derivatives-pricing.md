@@ -3,7 +3,7 @@ title: C++ design patterns and derivatives pricing
 description: 一篇读书笔记，记录了 <i>C++ Design Patterns and Derivatives Pricing</i> 的代码实践。
 toc: true
 tags: 
-- 学术垃圾
+- 我小子又在抄教材了！
 series:
 date: '2022-08-09T00:42:05+08:00'
 featuredImage:

@@ -3,7 +3,7 @@ title: "APS经历记录"
 description: 本文档用于记录个人的 APS 审核流程，包括 2 部分：1. 材料的准备；2. 面谈的准备。
 toc: true
 tags: 
-- 沾点正外部性
+- 经历分享
 date: 2023-03-06T21:57:37+08:00
 draft: false
 ---

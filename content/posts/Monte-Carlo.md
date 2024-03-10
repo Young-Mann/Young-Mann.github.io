@@ -2,7 +2,7 @@
 title: 蒙特卡罗估计简介
 tags:
 - 概率论
-- 学术垃圾
+- 我小子又在抄教材了！
 description: 又开新坑了，大概会落得贪多嚼不烂的下场。
 toc: true
 series:
