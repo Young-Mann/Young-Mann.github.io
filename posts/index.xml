@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狗蛋日</title><link>https://young-mann.top/posts/</link><description>Recent content in Posts on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 29 Dec 2023 19:55:03 +0100</lastBuildDate><atom:link href="https://young-mann.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>小逛纽伦堡</title><link>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</link><pubDate>Fri, 29 Dec 2023 19:55:03 +0100</pubDate><guid>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</guid><description>2023.12.22 ~ 2023.12.27
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 狗蛋日</title><link>https://young-mann.top/posts/</link><description>Recent content in Posts on 狗蛋日</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 22 Mar 2024 14:59:52 +0100</lastBuildDate><atom:link href="https://young-mann.top/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>基于特征函数推导概率分布函数</title><link>https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/</link><pubDate>Fri, 22 Mar 2024 14:59:52 +0100</pubDate><guid>https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/</guid><description>引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} + \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
+然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
+为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
+另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
+推导过程 第一步，任取$0&amp;lt;\varepsilon&amp;lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{+\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{+\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{积分换序}}\int ^{+\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$</description></item><item><title>小逛纽伦堡</title><link>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</link><pubDate>Fri, 29 Dec 2023 19:55:03 +0100</pubDate><guid>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</guid><description>2023.12.22 ~ 2023.12.27
 圣诞集市（Nürnberger Christkindlesmarkt） 上周周五去了趟纽伦堡，到S姐S哥家蹭饭，顺便逛了那里的圣诞集市，尝试了纽伦堡小香肠和热红酒（Glühwein），喝得我浑身乏力，身上有些发痒，静息心率稳定在120次/分左右。可能是我不常喝酒、有些酒精过敏的缘故。
 Christkind (?)
 纽伦堡小香肠
@@ -266,23 +270,7 @@ neta 了康德的《论有美感和崇高感》，并表示导师具备仁、义
 暗示利益集团的存在，以及导师利益分配不均
 恰到好处的大与小
 笑过之后，想想作者作文时的心境，又无比唏嘘。作者是不是在导师门下的利益斗争中失败、不受重用、饱受冷落，才万念俱灰，以作出同归于尽之举？
-不过，更离谱的是其他人对这篇文章的引用——引用此文者大概都是为了在参考文献里多加几篇文献，就在搜索引擎里搜了几个关键词，不看内容、直接把相关文献加进了参考文献吧。这也挺好笑。</description></item><item><title>怕死</title><link>https://young-mann.top/posts/%E6%80%95%E6%AD%BB/</link><pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate><guid>https://young-mann.top/posts/%E6%80%95%E6%AD%BB/</guid><description>无端端今年开始很怕死 年轻一点 一点都不顾忌
-轮到未 最怕活着
-但是没运气
-争口气
-人一生很少多于一世纪
-还醒起很多任务未做不等於有期
-够我逐件逐件地办理
-重新整理
-谈恋爱 游天地
-做喜欢的工作和享受游戏
-一死了 怎细味
-一想死
-la...la...la...
-强壮地吸口气
-来看戏 来打机
-来接吻 来添饭
-来签些卡也好过去死 在人生如此多的不确定当中，似乎只有死亡是确定的。某种意义上而言，它是生活中唯一确定的、每个人都必须独自面对而无法逃避的。无论在生前做出了多少大事，随着活力的逝去，终究会化作一沓沓纸钱。然而，在青年时代，我们往往着眼于未来，而将死亡的存在抛诸脑后。随着看到的死亡愈来愈多，某种异样的、从未有过的情感便在内心中萌发，在某种契机的刺激下，最终意识到：人终究是会死的。
+不过，更离谱的是其他人对这篇文章的引用——引用此文者大概都是为了在参考文献里多加几篇文献，就在搜索引擎里搜了几个关键词，不看内容、直接把相关文献加进了参考文献吧。这也挺好笑。</description></item><item><title>怕死</title><link>https://young-mann.top/posts/%E6%80%95%E6%AD%BB/</link><pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate><guid>https://young-mann.top/posts/%E6%80%95%E6%AD%BB/</guid><description>在人生如此多的不确定当中，似乎只有死亡是确定的。某种意义上而言，它是生活中唯一确定的、每个人都必须独自面对而无法逃避的。无论在生前做出了多少大事，随着活力的逝去，终究会化作一沓沓纸钱。然而，在青年时代，我们往往着眼于未来，而将死亡的存在抛诸脑后。随着看到的死亡愈来愈多，某种异样的、从未有过的情感便在内心中萌发，在某种契机的刺激下，最终意识到：人终究是会死的。
 人必会死亡，也避讳死亡。在我们的成长过程中，关于死亡的教育及思考是极少的。人们，尤其是那些上了年纪的长辈，对于死亡大多是诲而不言，一旦和他提及相关的话题，便开始急眼，责备你为什么整天要想一些不好的事情。亦或者，干脆将死亡上升到了舍生取义的高度，在宣传中大夸特夸其卓越的精神，却对个体性的死亡避而不谈。
 我记得，我是在准备高三时某一次班会上的分享时，想到这个问题的。在临睡前，当我回顾完这一天发生的事情后，开始思考要在班会上分享什么时，突然开始想“如果自己死亡了”会怎么样。意识到“我再也不会存在后”，心中就会泛起阵阵恐惧。这样想着想着，便睡不着了，不知在床上翻来覆去了多久。也因此，那几周的睡眠质量遭受了严重的打击。
 若一直被这种思绪所困扰，那我很难投入精力去做别的事。所以我就开始考虑，如何才能处理好这种因为意识到死亡这个概念而莫名出现的焦虑情绪。在稍作思考后，我认为可以从以下三步入手：一，看看焦虑的来源究竟是什么；二，判断自己能否消除来源，如果可以的话，便进入第三步，即消除恐惧的来源，否则就不继续想下去了。
