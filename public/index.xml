@@ -16,13 +16,6 @@
       <description>引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} + \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。&#xA;然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。&#xA;为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。&#xA;另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。&#xA;推导过程 第一步，任取$0&amp;lt;\varepsilon&amp;lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{+\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{+\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{积分换序}}\int ^{+\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$</description>
     </item>
     <item>
-      <title>常识</title>
-      <link>https://young-mann.top/posts/%E5%B8%B8%E8%AF%86/</link>
-      <pubDate>Sun, 10 Mar 2024 01:51:27 +0100</pubDate>
-      <guid>https://young-mann.top/posts/%E5%B8%B8%E8%AF%86/</guid>
-      <description>打工超人 五险一金 养老保险：个人缴纳8%，公司缴纳20%。累计缴满15年，退休后可以领养老金。目前男性60岁退休，女性55岁退休。 基本医疗保险：个人缴纳2%，公司缴纳10%。医保可以用于门诊或者住院的花销。男性缴满25年，女性缴满20年，可以享受终生医保。如果断缴&amp;lt;3个月，补缴后次月可继续享受医保；断缴3-6个月，补缴后6个月内可以使用；断缴&amp;gt;12个月，补缴后1年可以使用。 失业保险：个人缴纳1%，公司缴纳2%。被公司辞退了可以领失业保险。 工伤保险：用人单位缴纳。如果工作中受伤，可以不用自己的医保卡看病，而是向HR报备，用工伤保险报销。 生育保险：用人单位缴纳。可用于产检生产等费用，还有生育津贴可领。不过，需要在同一家公司待满一年，且在当地生育，才能由这家公司报销。 住房公积金：个人和公司缴纳相同比例。凭住房公积金买房，贷款利率更低。此外，租房建房装修房都可用公积金 攻击性手册 Q: 租房附近有群租房，人多嘈杂&#xA;A: 房管局、税务局（房东偷税漏税）、消防、街道、派出所（怀疑传销）、工商（怀疑居民办公司）</description>
-    </item>
-    <item>
       <title>小逛纽伦堡</title>
       <link>https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/</link>
       <pubDate>Fri, 29 Dec 2023 19:55:03 +0100</pubDate>
