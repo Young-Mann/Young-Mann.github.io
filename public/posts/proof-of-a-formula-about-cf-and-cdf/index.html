@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
+<link rel="manifest" href="https://young-mann.top//site.webmanifest">
+<link rel="mask-icon" href="https://young-mann.top//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="概率论,
+">
+
+<meta property="og:title" content="基于特征函数推导概率分布函数" />
+<meta property="og:description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
+然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
+为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
+另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
+推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-22T14:59:52+01:00" />
+<meta property="article:modified_time" content="2024-03-22T14:59:52+01:00" />
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基于特征函数推导概率分布函数"/>
+<meta name="twitter:description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
+然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
+为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
+另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
+推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$"/>
+
+
+<meta itemprop="name" content="基于特征函数推导概率分布函数">
+<meta itemprop="description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
+然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
+为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
+另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
+推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$"><meta itemprop="datePublished" content="2024-03-22T14:59:52+01:00" />
+<meta itemprop="dateModified" content="2024-03-22T14:59:52+01:00" />
+<meta itemprop="wordCount" content="474">
+<meta itemprop="keywords" content="概率论," />
+
+
+    <title>基于特征函数推导概率分布函数 || 狗蛋日</title>
+    <link rel="canonical" href="https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/" />
+
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >狗蛋日</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/posts/about/">
+              <span class="post-title">关于</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/tags/">
+              <span class="post-title">标签</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/posts/collections/">
+              <span class="post-title">收集夹</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">基于特征函数推导概率分布函数</h1>
+  <meta itemprop="headline" content="基于特征函数推导概率分布函数" />
+  
+  <div class="post-tags">
+  
+    <a href="https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">#概率论</a>&nbsp;
+  
+  </div>
+  
+
+  
+    
+      <div class="post-date"><span itemprop="datePublished">March 22, 2024</span></div>
+      <meta itemprop="dateModified" content="March 22, 2024"/>
+    
+  
+
+  
+
+  
+
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#推导过程">推导过程</a></li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
+    <h2 id="引言">引言</h2>
+<p>最近，笔者在某节课上学习了<u>利用特征函数及FFT的期权定价方法</u>，which 需要用到特征函数反推概率分布函数，也就是下面这个等式：
+$$
+F(x) = \frac {1}{2} +  \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t,
+$$
+其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] =  \int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。</p>
+<p>然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了<a href="https://doi.org/10.1093/biomet/38.3-4.481">这篇文章</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，将推导思路记了下来，写作本文。</p>
+<p>为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。</p>
+<p>另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。</p>
+<h2 id="推导过程">推导过程</h2>
+<p>第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下：
+$$
+\begin{align}
+\text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t
+\nonumber
+\\
+&amp;=  \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{+\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t
+\nonumber
+\\
+&amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon}  \int^{+\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t
+\\
+&amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi}  \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t
+\\
+&amp;\xlongequal{\text{积分换序}}\int ^{+\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon}   \frac {\sin(t(x-z))}{t} \text{d}t
+\end{align}
+$$</p>
+<details class="notes">
+<summary>如何从(1)式推出(2)式？</summary>
+<p>
+这里，从$(1)$式推出$(2)$式需使用欧拉公式（即$e^{iu}=\cos(u)+i\sin(u), \forall u \in \mathbb{R}$）展开$e^{i[t(x-z)]}$及$e^{i[-t(x-z)]}$即可：
+$$
+\begin{align*}
+(1) 式 &=\frac{1}{\pi} \int ^\lambda _{\varepsilon}  \int^{+\infty} _{-\infty}  \frac {\cos(t(x-z)) + i\sin(t(x-z)) -\cos(-t(x-z)) - i\sin(-t(x-z))}{it} \text{d}F(z) \text{d}t 
+\\\
+&=  \frac{2}{\pi}  \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t 
+\end{align*}.
+$$
+</p>
+</details>
+<details class="notes">
+<summary>如何从(2)式推出(3)式？</summary>
+<p>
+若要交换积分次序，我们需要证明被积函数 $ f(t,z) := \frac{\sin(t(x-z))}{t}$ 在 $( \varepsilon ,  \lambda) \times(-\infty, +\infty) $ 上绝对可积。根据假设可知，$0 < \varepsilon < t < \lambda$，且 $-\infty < z < +\infty$。那么，我们有：
+$$
+\begin{align*}
+\left | \frac{\sin(t(x-z))}{t} \right |& < \left | \frac{\sin(t(x-z))}{\varepsilon} \right |
+\\\
+&= \frac { \left | \sin(t(x-z)) \right |} {\varepsilon} 
+\\\
+&\leq \frac 1 \varepsilon.
+\end{align*}
+$$
+</p>
+<p>
+因此，我们有：
+<p>$$
+\begin{align*}
+\int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t &amp;&lt; \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {1}{\varepsilon} \text{d}F(z) \text{d}t
+\\
+&amp;= \int ^{+\infty} _{-\infty} \text{d}F(z) \int ^{\lambda} _{\varepsilon} \frac {1}{\varepsilon} \text{d}t
+\\
+&amp;= {1} \cdot \frac {\lambda - \varepsilon} {\varepsilon} &lt; \infty.
+\end{align*}
+$$</p>
+<p>由此，我们证明了 $ \left | f(t,z) \right | = \left | \frac{\sin(t(x-z))}{t} \right |$  在 $( \varepsilon ,  \lambda) \times(-\infty, +\infty) $ 上的积分值有限，因此 $ \frac{\sin(t(x-z))}{t}$ 绝对可积，可以交换积分次序。</p>
+</p>
+</details>
+<p>第二步，为了求解$(3)$式，我们需要定义函数如下：
+$$
+\begin{align*}
+\operatorname{sign}(x-z) = \frac {2} {\pi} \int ^{\infty} _{0}  \frac{\sin(t(x-z))}{t} \text{d}t &amp;=
+\begin{cases}
+-1, &amp; 如果 z&gt;x
+\\ 0, &amp; 如果 z=x
+\\ 1, &amp; 如果 z&lt;x
+\end{cases}.
+\end{align*}
+$$</p>
+<p>最后，第三步，当$\varepsilon \to 0$ 且 $\lambda \to \infty$时，有以下左右两式相等：
+$$
+\begin{align}
+\lim\limits _{\varepsilon \to 0 \atop \lambda \to \infty} \text{I}
+&amp;=\lim\limits _{\varepsilon \to 0 \atop \lambda \to \infty} \text{(3)式}
+\nonumber
+\\
+\Longrightarrow
+\quad
+\frac {1} {\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t &amp;= \int ^{+\infty} _{-\infty} \text{d}F(z)\thinspace\lim\limits _{\varepsilon \to 0 \atop \lambda \to \infty} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon}   \frac {\sin(t(x-z))}{t} \text{d}t
+\end{align}
+$$</p>
+<p>ss
+$$
+\begin{align}
+\text{RHS}
+&amp;=\int ^{+\infty} _{-\infty} \text{d}F(z)\thinspace\lim\limits _{\varepsilon \to 0 \atop \lambda \to \infty} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon}   \frac {\sin(t(x-z))}{t} \text{d}t \nonumber
+\\ \nonumber
+&amp;= \int ^{+\infty} _{-\infty} \operatorname{sign}(x-z)\thinspace \text{d}F(z)
+\\ \nonumber
+&amp;= \int ^{+\infty} _{x} (-1) \thinspace \text{d}F(z) + \int ^{x} _{-\infty} (1) \thinspace \text{d}F(z)
+\\ \nonumber
+&amp;= -(F(z))| _{x}^{\infty} + (F(z))| ^{x} _{-\infty}
+\\ \nonumber
+&amp;= -[1-F(x)] + [F(x)-0]
+\\
+&amp;=2F(x)-1
+\end{align}
+$$</p>
+<p>将$(5)$式代入$(4)$式，即可得到所需结论：
+$$
+F(x) = \frac {1}{2} +  \frac {1} {\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t.
+$$</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>J. GIL-PELAEZ, Note on the inversion theorem, Biometrika, Volume 38, Issue 3-4, December 1951, Pages 481–482, <a href="https://doi.org/10.1093/biomet/38.3-4.481%5B">https://doi.org/10.1093/biomet/38.3-4.481[</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+  </div>
+</article>
+
+
+
+  
+    
+
+
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://young-mann.top/posts/%E5%B8%B8%E8%AF%86/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 常识</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+
+
+  
+  </body>
+</html>

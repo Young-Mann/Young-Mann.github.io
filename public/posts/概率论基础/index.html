@@ -55,7 +55,10 @@
 
     
 
-    <link rel="stylesheet" href="/css/reboot.css" />
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
 <link rel="stylesheet" href="/css/style.css" />
 <link rel="stylesheet" href="/css/syntax.css" />
 <script type="text/javascript" src="/js/main.js"></script>
@@ -67,22 +70,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
 <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
 </script>
-
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-
-
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
@@ -218,7 +228,7 @@ $$
 <p>这些分类是怎样描述「所知道的信息」的？要知道，对于某个随机过程，我们会面临一条事前确定的样本路径 $\omega_i$ 。然而，尽管这条样本路径是已经被「固定」的，但我们并不知道 $\omega_i$ 是 $\Omega$ 中的哪一个 $\omega$ ——我们仅能知道，<u><strong>对于给定的 $\Omega$ 的某个子集，$\omega_i$ 是不是在这个子集里面</strong></u>。而前一句中 能够被判断是否包含 $\omega_i$ 的这些 $\Omega$ 的子集，就是我们在第一段中提到的，事件域 $\mathcal F$ 所包含的「分类」。如果对集合的划分越精细，「分类」就越多，表示我们知道的信息就更多。</p>
 <p>举个例子，定义一个随机变量 $S$ ，用于表示股票价格：</p>
 <p>$$
-\begin{align} S_0(\omega) &amp;= 4, \forall \omega \in \Omega \\ S_1(\omega) &amp;= \begin{cases} 8, &amp; 如果 \omega_1=H \ 2, &amp; 如果 \omega_1=T \ \end{cases} \\ S_2(\omega) &amp;= \begin{cases} 16, &amp; 如果 \omega_1=\omega_2=H \ 4, &amp; 如果 \omega_1\neq \omega_2 \ 1, &amp; 如果 \omega_1=\omega_2=T \end{cases} \end{align}
+\begin{align} S_0(\omega) &amp;= 4, \forall \omega \in \Omega \\ S_1(\omega) &amp;= \begin{cases} 8, &amp; 如果 \omega_1=H \\ 2, &amp; 如果 \omega_1=T \ \end{cases} \\ S_2(\omega) &amp;= \begin{cases} 16, &amp; 如果 \omega_1=\omega_2=H \\ 4, &amp; 如果 \omega_1\neq \omega_2 \\ 1, &amp; 如果 \omega_1=\omega_2=T \end{cases} \end{align}
 $$</p>
 <p>接下来，假设我们只能观察到 $S(\omega)$ ，而不能直接看到 $\omega$ 是什么。那么，我们便可以用 $\mathcal F$ 刻画该随机过程中的信息。下文中我们先不加定义地使用形如 $\mathcal F_t$ 的 sigma 代数表示「连续投掷2次硬币」每一阶段的已知信息。</p>
 <p><strong>(t=0)</strong> 首先是没扔硬币的时候。此时，

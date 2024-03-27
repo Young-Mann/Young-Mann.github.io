@@ -20,3 +20,4 @@ tags:
 
 ## 也许某天用的上（？）
 - 噪声产生器：[开放办公吵喜你 (scateu.me)](https://scateu.me/2017/10/30/office-sounds-like-shit.html)
+

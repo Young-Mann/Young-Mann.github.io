@@ -142,7 +142,10 @@ Reiseverbindung
 
     
 
-    <link rel="stylesheet" href="/css/reboot.css" />
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
 <link rel="stylesheet" href="/css/style.css" />
 <link rel="stylesheet" href="/css/syntax.css" />
 <script type="text/javascript" src="/js/main.js"></script>
@@ -154,22 +157,29 @@ Reiseverbindung
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
 <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
 </script>
-
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-
-
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
@@ -414,7 +424,9 @@ MathJax = {
       </a>
       
       
-        <span class="flex-row v-center"></span>
+        <a href="https://young-mann.top/posts/%E5%B8%B8%E8%AF%86/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: 常识</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
       
       </nav>
     </div>

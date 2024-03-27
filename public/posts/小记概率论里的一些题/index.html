@@ -65,7 +65,10 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#
 
     
 
-    <link rel="stylesheet" href="/css/reboot.css" />
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
 <link rel="stylesheet" href="/css/style.css" />
 <link rel="stylesheet" href="/css/syntax.css" />
 <script type="text/javascript" src="/js/main.js"></script>
@@ -77,22 +80,29 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
 <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
 </script>
-
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-
-
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>

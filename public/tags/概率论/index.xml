@@ -6,8 +6,15 @@
     <description>Recent content in 概率论 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 23 Oct 2023 13:49:58 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 22 Mar 2024 14:59:52 +0100</lastBuildDate>
     <atom:link href="https://young-mann.top/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于特征函数推导概率分布函数</title>
+      <link>https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/</link>
+      <pubDate>Fri, 22 Mar 2024 14:59:52 +0100</pubDate>
+      <guid>https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/</guid>
+      <description>引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} + \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。&#xA;然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。&#xA;为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。&#xA;另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。&#xA;推导过程 第一步，任取$0&amp;lt;\varepsilon&amp;lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{+\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{+\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{+\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{+\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;amp;\xlongequal{\text{积分换序}}\int ^{+\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$</description>
+    </item>
     <item>
       <title>重对数律</title>
       <link>https://young-mann.top/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/</link>

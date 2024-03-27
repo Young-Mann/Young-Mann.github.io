@@ -1,3 +1,11 @@
+.katex { font-size: 1em !important; } 
+
+details p{
+text-indent:2em;}
+.katex {
+    font-size: 1em;
+}
+
 @font-fact {
 	font-family: "Noto-Serif-SC";
 	src: url("/fonts/NotoSerifSC-Medium.otf") format("truetype");
