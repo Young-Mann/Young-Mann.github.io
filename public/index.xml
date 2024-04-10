@@ -6,8 +6,22 @@
     <description>Recent content on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Mar 2024 14:59:52 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 04 Apr 2024 17:50:03 +0200</lastBuildDate>
     <atom:link href="https://young-mann.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NMF_PDE</title>
+      <link>https://young-mann.top/posts/nmf_pde/</link>
+      <pubDate>Thu, 04 Apr 2024 17:50:03 +0200</pubDate>
+      <guid>https://young-mann.top/posts/nmf_pde/</guid>
+      <description>Definitions and Notation Let $\alpha = ( \alpha_1, \alpha_2, \cdots, alpha_d) \in \mathbb{N}_0^d$ multiindex, and $G $&#xA;For a second-order partial differential equation, we denote the equation as follows:&#xA;$$ F(D^2 u, D^1 u, u, x) = -\Sigma^d_{i,j=0}a_{ij}(x) \cdot \partial_{x_i x_j}u + \Sigma^d_{i=0} b_i(x) \cdot \partial_{x_i}u + c(x)\cdot u - f(x) $$ Assume $A(x) := {a_{i,j}(x)} ^d _{i,j=0}$ is a symmetric matrix with eigenvalues $\lambda_0 {(x)} \leq \lambda_1 {(x)} \leq \cdots \leq \lambda_d {(x)}$.</description>
+    </item>
+    <item>
+      <title>期权定价之有限元法</title>
+      <link>https://young-mann.top/posts/opt_pricing_pde/</link>
+      <pubDate>Wed, 27 Mar 2024 14:43:55 +0100</pubDate>
+      <guid>https://young-mann.top/posts/opt_pricing_pde/</guid>
+      <description>Finite Difference Method Finite Element Method Localization&#xA;Discretization&#xA;考虑</description>
+    </item>
     <item>
       <title>基于特征函数推导概率分布函数</title>
       <link>https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/</link>

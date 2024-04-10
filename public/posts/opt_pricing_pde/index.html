@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
+<link rel="manifest" href="https://young-mann.top//site.webmanifest">
+<link rel="mask-icon" href="https://young-mann.top//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="期权定价,
+">
+
+<meta property="og:title" content="期权定价之有限元法" />
+<meta property="og:description" content="Finite Difference Method Finite Element Method Localization
+Discretization
+考虑" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://young-mann.top/posts/opt_pricing_pde/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-27T14:43:55+01:00" />
+<meta property="article:modified_time" content="2024-03-27T14:43:55+01:00" />
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="期权定价之有限元法"/>
+<meta name="twitter:description" content="Finite Difference Method Finite Element Method Localization
+Discretization
+考虑"/>
+
+
+<meta itemprop="name" content="期权定价之有限元法">
+<meta itemprop="description" content="Finite Difference Method Finite Element Method Localization
+Discretization
+考虑"><meta itemprop="datePublished" content="2024-03-27T14:43:55+01:00" />
+<meta itemprop="dateModified" content="2024-03-27T14:43:55+01:00" />
+<meta itemprop="wordCount" content="9">
+<meta itemprop="keywords" content="期权定价," />
+
+
+    <title>期权定价之有限元法 || 狗蛋日</title>
+    <link rel="canonical" href="https://young-mann.top/posts/opt_pricing_pde/" />
+
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class="draft look-sheet-bkg"
+  lang="en">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >狗蛋日</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/posts/about/">
+              <span class="post-title">关于</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/tags/">
+              <span class="post-title">标签</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/posts/collections/">
+              <span class="post-title">收集夹</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">期权定价之有限元法</h1>
+  <meta itemprop="headline" content="期权定价之有限元法" />
+  
+  <div class="post-tags">
+  
+    <a href="https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/">#期权定价</a>&nbsp;
+  
+  </div>
+  
+
+  
+    
+      <div class="post-date"><span itemprop="datePublished">March 27, 2024</span></div>
+      <meta itemprop="dateModified" content="March 27, 2024"/>
+    
+  
+
+  
+
+  
+    <div class="post-date">9 words</div>
+  
+
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#finite-difference-method">Finite Difference Method</a></li>
+    <li><a href="#finite-element-method">Finite Element Method</a></li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
+    <h2 id="finite-difference-method">Finite Difference Method</h2>
+<h2 id="finite-element-method">Finite Element Method</h2>
+<ul>
+<li>
+<p>Localization</p>
+</li>
+<li>
+<p>Discretization</p>
+</li>
+</ul>
+<p>考虑</p>
+
+
+
+  </div>
+</article>
+
+
+
+  
+    
+
+
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 基于特征函数推导概率分布函数</span>
+      </a>
+      
+      
+        <a href="https://young-mann.top/posts/nmf_pde/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: NMF_PDE</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
+      
+      </nav>
+    </div>
+
+
+  
+  </body>
+</html>

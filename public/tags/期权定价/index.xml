@@ -6,8 +6,15 @@
     <description>Recent content in 期权定价 on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Nov 2023 20:42:42 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2024 14:43:55 +0100</lastBuildDate>
     <atom:link href="https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>期权定价之有限元法</title>
+      <link>https://young-mann.top/posts/opt_pricing_pde/</link>
+      <pubDate>Wed, 27 Mar 2024 14:43:55 +0100</pubDate>
+      <guid>https://young-mann.top/posts/opt_pricing_pde/</guid>
+      <description>Finite Difference Method Finite Element Method Localization&#xA;Discretization&#xA;考虑</description>
+    </item>
     <item>
       <title>IV 或 T 的变化对 Greeks 有何影响</title>
       <link>https://young-mann.top/posts/greeks/</link>

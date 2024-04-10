@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
+<link rel="manifest" href="https://young-mann.top//site.webmanifest">
+<link rel="mask-icon" href="https://young-mann.top//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="">
+
+<meta property="og:title" content="NMF_PDE" />
+<meta property="og:description" content="Definitions and Notation Let $\alpha = ( \alpha_1, \alpha_2, \cdots, alpha_d) \in \mathbb{N}_0^d$ multiindex, and $G $
+For a second-order partial differential equation, we denote the equation as follows:
+$$ F(D^2 u, D^1 u, u, x) = -\Sigma^d_{i,j=0}a_{ij}(x) \cdot \partial_{x_i x_j}u &#43; \Sigma^d_{i=0} b_i(x) \cdot \partial_{x_i}u &#43; c(x)\cdot u - f(x) $$ Assume $A(x) := {a_{i,j}(x)} ^d _{i,j=0}$ is a symmetric matrix with eigenvalues $\lambda_0 {(x)} \leq \lambda_1 {(x)} \leq \cdots \leq \lambda_d {(x)}$." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://young-mann.top/posts/nmf_pde/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-04T17:50:03+02:00" />
+<meta property="article:modified_time" content="2024-04-04T17:50:03+02:00" />
+
+
+<meta property="og:site_name" content="狗蛋日" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NMF_PDE"/>
+<meta name="twitter:description" content="Definitions and Notation Let $\alpha = ( \alpha_1, \alpha_2, \cdots, alpha_d) \in \mathbb{N}_0^d$ multiindex, and $G $
+For a second-order partial differential equation, we denote the equation as follows:
+$$ F(D^2 u, D^1 u, u, x) = -\Sigma^d_{i,j=0}a_{ij}(x) \cdot \partial_{x_i x_j}u &#43; \Sigma^d_{i=0} b_i(x) \cdot \partial_{x_i}u &#43; c(x)\cdot u - f(x) $$ Assume $A(x) := {a_{i,j}(x)} ^d _{i,j=0}$ is a symmetric matrix with eigenvalues $\lambda_0 {(x)} \leq \lambda_1 {(x)} \leq \cdots \leq \lambda_d {(x)}$."/>
+
+
+<meta itemprop="name" content="NMF_PDE">
+<meta itemprop="description" content="Definitions and Notation Let $\alpha = ( \alpha_1, \alpha_2, \cdots, alpha_d) \in \mathbb{N}_0^d$ multiindex, and $G $
+For a second-order partial differential equation, we denote the equation as follows:
+$$ F(D^2 u, D^1 u, u, x) = -\Sigma^d_{i,j=0}a_{ij}(x) \cdot \partial_{x_i x_j}u &#43; \Sigma^d_{i=0} b_i(x) \cdot \partial_{x_i}u &#43; c(x)\cdot u - f(x) $$ Assume $A(x) := {a_{i,j}(x)} ^d _{i,j=0}$ is a symmetric matrix with eigenvalues $\lambda_0 {(x)} \leq \lambda_1 {(x)} \leq \cdots \leq \lambda_d {(x)}$."><meta itemprop="datePublished" content="2024-04-04T17:50:03+02:00" />
+<meta itemprop="dateModified" content="2024-04-04T17:50:03+02:00" />
+<meta itemprop="wordCount" content="167">
+<meta itemprop="keywords" content="" />
+
+
+    <title>NMF_PDE || 狗蛋日</title>
+    <link rel="canonical" href="https://young-mann.top/posts/nmf_pde/" />
+
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >狗蛋日</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/posts/about/">
+              <span class="post-title">关于</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/tags/">
+              <span class="post-title">标签</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/posts/collections/">
+              <span class="post-title">收集夹</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">NMF_PDE</h1>
+  <meta itemprop="headline" content="NMF_PDE" />
+  
+
+  
+    
+      <div class="post-date"><span itemprop="datePublished">April 4, 2024</span></div>
+      <meta itemprop="dateModified" content="April 4, 2024"/>
+    
+  
+
+  
+
+  
+
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#definitions-and-notation">Definitions and Notation</a>
+      <ul>
+        <li><a href="#examples">Examples:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+	
+</div>
+
+</details>
+
+    <h2 id="definitions-and-notation">Definitions and Notation</h2>
+<p>Let $\alpha = ( \alpha_1, \alpha_2, \cdots, alpha_d) \in \mathbb{N}_0^d$ multiindex, and $G $</p>
+<p>For a second-order partial differential equation, we denote the equation as follows:</p>
+<p>$$
+F(D^2 u, D^1 u, u, x) = -\Sigma^d_{i,j=0}a_{ij}(x) \cdot \partial_{x_i x_j}u + \Sigma^d_{i=0} b_i(x) \cdot \partial_{x_i}u + c(x)\cdot u - f(x)
+$$
+Assume $A(x) := {a_{i,j}(x)} ^d _{i,j=0}$ is a symmetric matrix with eigenvalues $\lambda_0 {(x)} \leq \lambda_1 {(x)} \leq \cdots \leq \lambda_d {(x)}$. Now we can define 3 different types of PDE. Suppose $S={0,1,\cdots, d}$. At $x \in \mathbb R^{d+1}$, the PDE is called</p>
+<ul>
+<li>elliptic $\iff$ $((\forall j \in S) (\lambda_j(x) \neq 0)) \and (\operatorname {sign}(\lambda_0(x)) = \operatorname {sign}(\lambda_1(x))=\cdots =\operatorname {sign}(\lambda_d(x)))$</li>
+<li>parabolic $\iff$ $((\exist ! j \in S) (\lambda_j(x) = 0)) \and (\operatorname {rank}(A(x),B(x)) = d+1)$</li>
+<li>hyperbolic $\iff$ $((\forall j \in S) (\lambda_j(x) \neq 0)) \and ((\exist! j \in S)((\forall k \in S /{j})(\operatorname {sign}(\lambda_j(x)) \neq \operatorname {sign}(\lambda_k(x))) $</li>
+</ul>
+<p>The PDE is called elliptic/parabolic/hyperbolic on $G$, if it is elliptic/parabolic/hyperbolic $\forall x \in G$ .</p>
+<h3 id="examples">Examples:</h3>
+
+
+
+  </div>
+</article>
+
+
+
+  
+    
+
+
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://young-mann.top/posts/opt_pricing_pde/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 期权定价之有限元法</span>
+      </a>
+      
+      
+        <span class="flex-row v-center"></span>
+      
+      </nav>
+    </div>
+
+
+  
+  </body>
+</html>
