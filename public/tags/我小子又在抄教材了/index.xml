@@ -6,8 +6,15 @@
     <description>Recent content in 我小子又在抄教材了！ on 狗蛋日</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 May 2023 20:25:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2024 16:11:55 +0200</lastBuildDate>
     <atom:link href="https://young-mann.top/tags/%E6%88%91%E5%B0%8F%E5%AD%90%E5%8F%88%E5%9C%A8%E6%8A%84%E6%95%99%E6%9D%90%E4%BA%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functional Analysis tools used in FEM</title>
+      <link>https://young-mann.top/posts/functional-analysis-for-fem/</link>
+      <pubDate>Wed, 10 Apr 2024 16:11:55 +0200</pubDate>
+      <guid>https://young-mann.top/posts/functional-analysis-for-fem/</guid>
+      <description>This is a brief introduction to the mathematical concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.&#xA;Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces.</description>
+    </item>
     <item>
       <title>对无套利定价的一点理解</title>
       <link>https://young-mann.top/posts/%E6%97%A0%E5%A5%97%E5%88%A9/</link>
