@@ -13,7 +13,7 @@
       <link>https://young-mann.top/posts/functional-analysis-for-fem/</link>
       <pubDate>Wed, 10 Apr 2024 16:11:55 +0200</pubDate>
       <guid>https://young-mann.top/posts/functional-analysis-for-fem/</guid>
-      <description>This is a brief introduction to the mathematical concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.&#xA;Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces.</description>
+      <description>This is a brief introduction to the concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.&#xA;Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces.</description>
     </item>
     <item>
       <title>对无套利定价的一点理解</title>

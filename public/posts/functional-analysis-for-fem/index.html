@@ -28,7 +28,7 @@
 ">
 
 <meta property="og:title" content="Functional Analysis tools used in FEM" />
-<meta property="og:description" content="This is a brief introduction to the mathematical concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
+<meta property="og:description" content="This is a brief introduction to the concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
 Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://young-mann.top/posts/functional-analysis-for-fem/" /><meta property="article:section" content="posts" />
@@ -40,15 +40,15 @@ Function Spaces Definition of partial derivatives The variational formulation in
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Functional Analysis tools used in FEM"/>
-<meta name="twitter:description" content="This is a brief introduction to the mathematical concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
+<meta name="twitter:description" content="This is a brief introduction to the concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
 Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces."/>
 
 
 <meta itemprop="name" content="Functional Analysis tools used in FEM">
-<meta itemprop="description" content="This is a brief introduction to the mathematical concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
+<meta itemprop="description" content="This is a brief introduction to the concepts in functional analysis, which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing1.
 Function Spaces Definition of partial derivatives The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces."><meta itemprop="datePublished" content="2024-04-10T16:11:55+02:00" />
 <meta itemprop="dateModified" content="2024-04-10T16:11:55+02:00" />
-<meta itemprop="wordCount" content="1429">
+<meta itemprop="wordCount" content="1425">
 <meta itemprop="keywords" content="期权定价,我小子又在抄教材了," />
 
 
@@ -202,7 +202,7 @@ Function Spaces Definition of partial derivatives The variational formulation in
 
 </details>
 
-    <p>This is a brief introduction to the mathematical concepts in functional analysis,  which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book <em>Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+    <p>This is a brief introduction to the concepts in functional analysis,  which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book <em>Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <h2 id="function-spaces">Function Spaces</h2>
 <h3 id="definition-of-partial-derivatives">Definition of partial derivatives</h3>
 <p>The variational formulation in the finite element method requires tools from functional analysis, in particular Hilbert spaces. Let $G$ be a non-empty open subset of $\mathbb{R}^d$. If a function $u: G \to \mathbb{R}$ is sufficiently smooth, we denote the partial derivatives of $u$ by
@@ -303,7 +303,7 @@ $$
 W _*^{1, p}(G):=\left\{u \in W^{1, p}(G): \int _G u \mathrm{~d} x=0\right\} .
 $$</p>
 <p>Then, (1) holds also for all $u \in W _*^{1, p}(G)$, with different $C$.</p>
-<p>In Chap. 2, we have already introduced the Bochner spaces $L^p(J ; \mathcal{H})$ which consist of functions $u: J \rightarrow \mathcal{H}$ such that the $L^p(J ; \mathcal{H})$-norm is finite. For the theory of parabolic PDEs, it will prove essential to consider maps $u: J \rightarrow \mathcal{H}$ which are also differentiable (in time). We call $u^{\prime}$ the weak derivative of $u$ if
+<p>We have already introduced the Bochner spaces $L^p(J ; \mathcal{H})$ which consist of functions $u: J \rightarrow \mathcal{H}$ such that the $L^p(J ; \mathcal{H})$-norm is finite. For the theory of parabolic PDEs, it will prove essential to consider maps $u: J \rightarrow \mathcal{H}$ which are also differentiable (in time). We call $u^{\prime}$ the weak derivative of $u$ if
 $$
 \int _J u^{\prime}(t) \varphi(t) \mathrm{d} t=-\int _J u(t) \varphi^{\prime}(t) \mathrm{d} t, \quad \forall \varphi \in C _0^1(J) .
 $$</p>
@@ -316,7 +316,7 @@ with the norm</p>
 <p>$$
 \|u\| _{W^{1, p}(J ; \mathcal{H})}:= \begin{cases}\left(\int _J\|u(t)\| _{\mathcal{H}}^p+\left\|u^{\prime}(t)\right\| _{\mathcal{H}}^p \mathrm{~d} t\right)^{1 / p} &amp; \text { if } 1 \leq p&lt;\infty, \\ \operatorname{ess} \sup  _J\left(\|u(t)\| _{\mathcal{H}}+\left\|u^{\prime}(t)\right\| _{\mathcal{H}}\right) &amp; \text { if } p=\infty .\end{cases}
 $$</p>
-<p>We again denote by $H^1(J ; \mathcal{H}):=W^{1,2}(J ; \mathcal{H})$.</p>
+<p>We again denote by $H^1(J ; \mathcal{H}):=W^{1,2}(J ; \mathcal{H})$​.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -327,7 +327,22 @@ $$</p>
 </div>
 
 
-
+<script src="https://giscus.app/client.js"
+        data-repo="Young-Mann/comments"
+        data-repo-id="R_kgDOKoYnnQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKoYnnc4Cc_N-"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
   </div>
 </article>
 

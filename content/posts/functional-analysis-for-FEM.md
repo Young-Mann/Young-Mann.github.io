@@ -8,7 +8,7 @@ toc: true
 draft: false
 ---
 
-This is a brief introduction to the mathematical concepts in functional analysis,  which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book *Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing*[^1].
+This is a brief introduction to the concepts in functional analysis,  which are used in the variational formulation in finite element methods to solve the PDE. The content below is from the page 11-12 and page 27-31 in the book *Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing*[^1].
 
 ## Function Spaces
 ### Definition of partial derivatives
@@ -107,7 +107,7 @@ $$
 
 We equip $W^{m, p}(G)$ with the norm
 $$
- \\|u \\| _{W^{m, p}(G)}^p=\sum _{n=0}^m\left \\|D^n u\right \\| _{L^p(G)}^p .
+\\|u \\| _{W^{m, p}(G)}^p=\sum _{n=0}^m\left \\|D^n u\right \\| _{L^p(G)}^p .
 $$
 
 The normed space $W^{m, p}(G)$ is complete and hence a Banach space for $1 \leq p \leq \infty$. Functions $u \in W^{1, p}(G)$ are "essentially" continuous.
@@ -141,7 +141,7 @@ $$
 
 Then, (1) holds also for all $u \in W _\*^{1, p}(G)$, with different $C$.
 
-In Chap. 2, we have already introduced the Bochner spaces $L^p(J ; \mathcal{H})$ which consist of functions $u: J \rightarrow \mathcal{H}$ such that the $L^p(J ; \mathcal{H})$-norm is finite. For the theory of parabolic PDEs, it will prove essential to consider maps $u: J \rightarrow \mathcal{H}$ which are also differentiable (in time). We call $u^{\prime}$ the weak derivative of $u$ if
+We have already introduced the Bochner spaces $L^p(J ; \mathcal{H})$ which consist of functions $u: J \rightarrow \mathcal{H}$ such that the $L^p(J ; \mathcal{H})$-norm is finite. For the theory of parabolic PDEs, it will prove essential to consider maps $u: J \rightarrow \mathcal{H}$ which are also differentiable (in time). We call $u^{\prime}$ the weak derivative of $u$ if
 $$
 \int _J u^{\prime}(t) \varphi(t) \mathrm{d} t=-\int _J u(t) \varphi^{\prime}(t) \mathrm{d} t, \quad \forall \varphi \in C _0^1(J) .
 $$
@@ -157,6 +157,8 @@ $$
 \\|u\\| _{W^{1, p}(J ; \mathcal{H})}:= \begin{cases}\left(\int _J\\|u(t)\\| _{\mathcal{H}}^p+\left\\|u^{\prime}(t)\right\\| _{\mathcal{H}}^p \mathrm{~d} t\right)^{1 / p} & \text { if } 1 \leq p<\infty, \\\ \operatorname{ess} \sup  _J\left(\\|u(t)\\| _{\mathcal{H}}+\left\\|u^{\prime}(t)\right\\| _{\mathcal{H}}\right) & \text { if } p=\infty .\end{cases}
 $$
 
-We again denote by $H^1(J ; \mathcal{H}):=W^{1,2}(J ; \mathcal{H})$.
+We again denote by $H^1(J ; \mathcal{H}):=W^{1,2}(J ; \mathcal{H})$​.
+
+
 
 [^1]: Hilber, Norbert, Oleg Reichmann, Christoph Schwab, and Christoph Winter. *Computational Methods for Quantitative Finance: Finite Element Methods for Derivative Pricing*. Springer Finance. Berlin, Heidelberg: Springer Berlin Heidelberg, 2013. https://doi.org/10.1007/978-3-642-35401-4.

@@ -1,2 +1,8 @@
+github.com/hugomods/bootstrap v0.21.2 h1:lu9LHkj7RLxkVp2bX//li2Z/OsG36TGHjlFZG4/p9Tw=
+github.com/hugomods/bootstrap v0.21.2/go.mod h1:3U2SkU7l1+n8/wJZwB8/2phYhvRyFwCMix7pPNJ4U+I=
+github.com/hugomods/icons v0.6.3 h1:2Ra6NU2GOeVvz8vowLq/OZCTzxqhq84MA0TICRBVxeY=
+github.com/hugomods/icons v0.6.3/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/twbs/icons v1.11.3 h1:XhvrQ1XDom9ggBbQx3wQCFGEr8qAQwQP/dAcw8OXMtA=
+github.com/twbs/icons v1.11.3/go.mod h1:GnRlymgVWp5iVJCMa0Me5b6tFyGpVc2bSxPMRGIJmyA=
 wangchucheng.com/hugo-eureka v0.9.3 h1:wQnWQxMW4jy6M/FOvAay13f5OD+UXPKBtkagdS0Fjys=
 wangchucheng.com/hugo-eureka v0.9.3/go.mod h1:vz1B81+UwcYXu6uOJ3aCt4PPa5gikq3OxLlqpjBnHDY=
