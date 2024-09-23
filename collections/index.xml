@@ -1,11 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>标签 on 狗蛋日</title>
-    <link>https://young-mann.top/collections/</link>
-    <description>Recent content in 标签 on 狗蛋日</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <atom:link href="https://young-mann.top/collections/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Collections on 斐康明</title><link>https://young-mann.top/collections/</link><description>Recent content in Collections on 斐康明</description><generator>Hugo</generator><language>en</language><atom:link href="https://young-mann.top/collections/index.xml" rel="self" type="application/rss+xml"/><item><title>收集</title><link>https://young-mann.top/collections/collections/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://young-mann.top/collections/collections/</guid><description>&lt;p>这里存放一些有意思的网站。&lt;/p>
+&lt;h2 id="教程类">教程类&lt;/h2>
+&lt;ul>
+&lt;li>可交互的概率分布说明书：&lt;a href="https://www.acsu.buffalo.edu/~adamcunn/probability/probability.html">Probability Playground: Exploring Probability Distributions and their Relationships&lt;/a>&lt;/li>
+&lt;li>傅里叶变换的直观图示：&lt;a href="https://www.jezzamon.com/fourier/index.html">An Interactive Introduction to Fourier Transforms&lt;/a>&lt;/li>
+&lt;li>入门 Git 的可视化教程：&lt;a href="https://learngitbranching.js.org">Learn Git Branching&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="展示用工具">展示用工具&lt;/h2>
+&lt;ul>
+&lt;li>将 Jupyter Notebook 嵌入网页的工具：&lt;a href="https://nbviewer.org/">nbviewer&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="也许某天用的上">也许某天用的上（？）&lt;/h2>
+&lt;ul>
+&lt;li>噪声产生器：&lt;a href="https://scateu.me/2017/10/30/office-sounds-like-shit.html">开放办公吵喜你 (scateu.me)&lt;/a>&lt;/li>
+&lt;li>查询欧洲允许采摘的果蔬的位置：&lt;a href="https://mundraub.org/">Startseite | mundraub.org&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
