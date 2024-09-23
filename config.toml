@@ -1,5 +1,5 @@
 baseURL = "https://young-mann.top/"
-title = "狗蛋日"
+title = "斐康明"
 theme = "paperesque"
 
 
@@ -40,7 +40,7 @@ toc = true
 
 [[params.topmenu]]
   name = "收集夹"
-  url = "posts/collections/"
+  url = "collections/collections/"
 
 [module]
 [[module.imports]]

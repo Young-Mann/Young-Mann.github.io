@@ -116,7 +116,7 @@ $$
 
 
 
-ss
+
 $$
 \begin{align}
 \text{RHS}
@@ -134,9 +134,23 @@ $$
 \end{align}
 $$
 
-将$(5)$式代入$(4)$式，即可得到所需结论：
+将$(5)$式代入$(4)$式，可得：
 $$
-F(x) = \frac {1}{2} +  \frac {1} {\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t.
+\begin{align}
+F(x) = \mathbb{Q}(X \leq x) &= \frac {1}{2} +  \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t
+\\\
+&= \frac {1}{2} +  \frac {1} {\pi}\int ^{\infty} _{0} \frac {\overline { -e^{-itx} \phi(t)} - e^{-itx}\phi(t)} {2it } \text{d}t
+\\\
+&= \frac {1}{2} -  \frac {1} {\pi}\int ^{\infty} _{0} \operatorname{Re} \left\[ \frac { e^{-itx}\phi(t)} {2it } \right\] \text{d}t
+\end{align}
 $$
+
+因此，
+$$
+\begin{align}
+\mathbb{Q}(X>x) = 1 - F(x) &=  \frac {1}{2} +  \frac {1} {\pi}\int ^{\infty} _{0} \operatorname{Re} \left\[ \frac { e^{-itx}\phi(t)} {2it } \right\] \text{d}t
+\end{align}
+$$
+
 
 [^1]: J. GIL-PELAEZ, Note on the inversion theorem, Biometrika, Volume 38, Issue 3-4, December 1951, Pages 481–482, https://doi.org/10.1093/biomet/38.3-4.481[

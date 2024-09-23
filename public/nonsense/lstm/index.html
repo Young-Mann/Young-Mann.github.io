@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
+<link rel="manifest" href="https://young-mann.top//site.webmanifest">
+<link rel="mask-icon" href="https://young-mann.top//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+<meta name="description" content="小小总结了使用 LSTM 预测股价时需要注意的事项。" />
+
+<meta name="keywords" content="我小子又在抄教材了！,
+">
+
+<meta property="og:title" content="为啥还有人直接用 LSTM 预测股价嘞？" />
+<meta property="og:description" content="小小总结了使用 LSTM 预测股价时需要注意的事项。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://young-mann.top/nonsense/lstm/" /><meta property="article:section" content="nonsense" />
+<meta property="article:published_time" content="2022-06-05T02:34:12+08:00" />
+<meta property="article:modified_time" content="2022-06-05T02:34:12+08:00" />
+
+
+<meta property="og:site_name" content="斐康明" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="为啥还有人直接用 LSTM 预测股价嘞？"/>
+<meta name="twitter:description" content="小小总结了使用 LSTM 预测股价时需要注意的事项。"/>
+
+
+<meta itemprop="name" content="为啥还有人直接用 LSTM 预测股价嘞？">
+<meta itemprop="description" content="小小总结了使用 LSTM 预测股价时需要注意的事项。"><meta itemprop="datePublished" content="2022-06-05T02:34:12+08:00" />
+<meta itemprop="dateModified" content="2022-06-05T02:34:12+08:00" />
+<meta itemprop="wordCount" content="19">
+<meta itemprop="keywords" content="我小子又在抄教材了！," />
+
+
+    <title>为啥还有人直接用 LSTM 预测股价嘞？ || 斐康明</title>
+    <link rel="canonical" href="https://young-mann.top/nonsense/lstm/" />
+
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >斐康明</a>
+      <span class="divider">/ </span>
+          <a href="/nonsense/">Nonsenses</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/posts/about/">
+              <span class="post-title">关于</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/tags/">
+              <span class="post-title">标签</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/collections/collections/">
+              <span class="post-title">收集夹</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title">为啥还有人直接用 LSTM 预测股价嘞？</h1>
+  <meta itemprop="headline" content="为啥还有人直接用 LSTM 预测股价嘞？" />
+  
+  <div class="post-tags">
+  
+    <a href="https://young-mann.top/tags/%E6%88%91%E5%B0%8F%E5%AD%90%E5%8F%88%E5%9C%A8%E6%8A%84%E6%95%99%E6%9D%90%E4%BA%86/">#我小子又在抄教材了！</a>&nbsp;
+  
+  </div>
+  
+
+  
+    
+      <div class="post-date"><span itemprop="datePublished">June 5, 2022</span></div>
+      <meta itemprop="dateModified" content="June 5, 2022"/>
+    
+  
+
+  
+
+  
+
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+<details>
+<summary><strong>目录 / Table of Contents</strong></summary>
+
+<div class="col-md-2">
+	
+	<div id="page-scrollspy" class="toc-nav">
+		<nav id="TableOfContents"></nav>
+	</div>
+	
+</div>
+
+</details>
+
+    <p>最近提交了论文的最终稿，闲来无事和其他同学交流了一下，发现有俩同学在用 LSTM 预测股价。简单扫了一遍他们的文章，发现他在数据的处理上比较粗糙，没有太大实用价值。支撑我作出这个判断的，是他们没做到以下几件事：</p>
+<ol>
+<li>
+<p>在数据处理上，股价数据属于时序数据，需要先做平稳性检验，对输入数据做对数差分，保证预测变量和特征变量都是平稳的。</p>
+</li>
+<li>
+<p>在模型选择上，由于金融时序数据的信噪比比较低，所以模型的参数不能太多，以免过拟合。</p>
+</li>
+<li>
+<p>在预测目标上，选择了股价的绝对值（而非收益率），而股价这玩意是不稳定序列，任何扰动都是永续的，因此方差随时间会趋向无穷大。同时，从实际应用的角度上看，我们其实更希望得到的是下一期的股价和这一期相比，是涨了还是跌了，而不是预测股票价格的绝对值。</p>
+</li>
+</ol>
+<p>如果中了以上几条，相当于训练模型前啥准备工作都没做。这会导致什么结果呢？根据笔者以前的试验，LSTM 大概率只能学到一堆噪声（$y_t^{&rsquo;}=y_{t-1}+\epsilon^{&rsquo;}$），甚至直接把前一期的收盘价作为当期的预测值输出——在这种情况下，假设单日内股价涨跌幅限制 10%（比如 A 股市场），那么在使用 MSE 的情况下，预测的误差也一定不会超过 10%。虽然预测误差看起来不大，但实际上模型没学到啥有用的东西，没法用于在股市里的获利。</p>
+<p>举个例子，某只股票今天的价格是10元，用模型预测其明天的价格是10.25元，结果真的到了第二天，发现股票价格跌到了 9.75 元。这时候，你计算绝对股价的误差，可能会发现，$(10.25-9.75)/9.75 = 5.13%$，好像预测差距并不大，但问题就是，股票每天的波动本来就不大。如果你真拿这个模型去股市里实战，你可能会发现，这个模型虽然可以做到每天预测股价的绝对值的误差都都很小，但是每天的涨跌其实都是乱猜的，怕不是没多久就赔麻了。</p>
+
+
+
+  </div>
+</article>
+
+
+
+  
+    
+
+
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://young-mann.top/nonsense/writing/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 我能写点什么？</span>
+      </a>
+      
+      
+        <a href="https://young-mann.top/nonsense/%E6%8B%BE%E9%81%97%E5%BD%95/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: 拾遗5月</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
+      
+      </nav>
+    </div>
+
+
+  
+  </body>
+</html>

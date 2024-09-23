@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>标签 on 狗蛋日</title>
+    <title>Collections on 斐康明</title>
     <link>https://young-mann.top/collections/</link>
-    <description>Recent content in 标签 on 狗蛋日</description>
+    <description>Recent content in Collections on 斐康明</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <atom:link href="https://young-mann.top/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>收集</title>
+      <link>https://young-mann.top/collections/collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://young-mann.top/collections/collections/</guid>
+      <description>这里存放一些有意思的网站。&#xA;教程类 可交互的概率分布说明书：Probability Playground: Exploring Probability Distributions and their Relationships 傅里叶变换的直观图示：An Interactive Introduction to Fourier Transforms 入门 Git 的可视化教程：Learn Git Branching 展示用工具 将 Jupyter Notebook 嵌入网页的工具：nbviewer 也许某天用的上（？） 噪声产生器：开放办公吵喜你 (scateu.me) 查询欧洲允许采摘的果蔬的位置：Startseite | mundraub.org </description>
+    </item>
   </channel>
 </rss>
