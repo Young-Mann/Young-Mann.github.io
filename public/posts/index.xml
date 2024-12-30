@@ -6,8 +6,15 @@
     <description>Recent content in Posts on 斐康明</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 10 Apr 2024 16:11:55 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 16:11:15 +0100</lastBuildDate>
     <atom:link href="https://young-mann.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Volitility Dynamics Filtering</title>
+      <link>https://young-mann.top/posts/volitility-dynamics-filtering/</link>
+      <pubDate>Mon, 30 Dec 2024 16:11:15 +0100</pubDate>
+      <guid>https://young-mann.top/posts/volitility-dynamics-filtering/</guid>
+      <description>这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。&#xA;Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型：&#xA;他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance2 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）3提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。</description>
+    </item>
     <item>
       <title>Functional Analysis tools used in FEM</title>
       <link>https://young-mann.top/posts/functional-analysis-for-fem/</link>
@@ -203,6 +210,13 @@
       <pubDate>Mon, 01 Apr 2019 18:30:56 +0000</pubDate>
       <guid>https://young-mann.top/posts/%E6%80%95%E6%AD%BB/</guid>
       <description>在人生如此多的不确定当中，似乎只有死亡是确定的。某种意义上而言，它是生活中唯一确定的、每个人都必须独自面对而无法逃避的。无论在生前做出了多少大事，随着活力的逝去，终究会化作一沓沓纸钱。然而，在青年时代，我们往往着眼于未来，而将死亡的存在抛诸脑后。随着看到的死亡愈来愈多，某种异样的、从未有过的情感便在内心中萌发，在某种契机的刺激下，最终意识到：人终究是会死的。&#xA;人必会死亡，也避讳死亡。在我们的成长过程中，关于死亡的教育及思考是极少的。人们，尤其是那些上了年纪的长辈，对于死亡大多是诲而不言，一旦和他提及相关的话题，便开始急眼，责备你为什么整天要想一些不好的事情。亦或者，干脆将死亡上升到了舍生取义的高度，在宣传中大夸特夸其卓越的精神，却对个体性的死亡避而不谈。&#xA;我记得，我是在准备高三时某一次班会上的分享时，想到这个问题的。在临睡前，当我回顾完这一天发生的事情后，开始思考要在班会上分享什么时，突然开始想“如果自己死亡了”会怎么样。意识到“我再也不会存在后”，心中就会泛起阵阵恐惧。这样想着想着，便睡不着了，不知在床上翻来覆去了多久。也因此，那几周的睡眠质量遭受了严重的打击。&#xA;若一直被这种思绪所困扰，那我很难投入精力去做别的事。所以我就开始考虑，如何才能处理好这种因为意识到死亡这个概念而莫名出现的焦虑情绪。在稍作思考后，我认为可以从以下三步入手：一，看看焦虑的来源究竟是什么；二，判断自己能否消除来源，如果可以的话，便进入第三步，即消除恐惧的来源，否则就不继续想下去了。&#xA;在稍微搜索了相关的资料之后，我认为这种焦虑的根源来自生理构造，是由我们基因所决定的。基因的本能之一是延续自身。为了让我们这些基因的载体们存活得尽量长久，以保证基因的延续，基因设置了“遇到危险——感到恐惧”的反馈回路，从而促使我们为了消除这种与威胁相伴的恐惧，促使我们赶紧做些什么来逃避危险。&#xA;所以说，这种焦虑情绪是难以被抹除的，而带来这种焦虑的源头，即死亡，更是难以避免。无论是焦虑，还是死亡本身，都难以着手改变。因此，可以说，我找不出一个答案，能够帮助我克服这种死亡焦虑。它必将一生与我相随，不断地折磨我。&#xA;听上去怪恐怖的。也许如此，但是，其实这样想了几周以后，我发觉，在这个过程中，我形成了非常清晰的“我”这种感觉。只有在意识到一切都会死去，让自己直接面对那赤裸裸、黑暗的死亡恐惧时，我的自我才真正出场，我也才会意识到自己的生命从根本上不能依靠于外界的力量，是自己想要去活的。&#xA;我草率地将这种自我意识的出场归因为死亡焦虑的出现，以及我对其的一系列反应。这种死亡焦虑之所以能够促使自我意识的演进，是因为，死亡作为一种终结的象征，，能够消抹掉现有许多事物的意义，而我们为了弥补这些意义的空白，就必须试着赋予某些事物以新的意义。就比如，我们在现实生活中往往会因许多事情而困扰，担心自己考不上研，担心自己绩点不高，担心自己找不到工作，担心自己找不到一个人生伴侣。诸如此类的烦恼将会是永无止尽的，但是在死亡面前，它们都显得微不足道：毕竟，如果一切都注定要死亡，那么，即便我获得了上面的一切之后又有什么意义？这些东西在已有的社会架构下也许是有意义的，看似与我们构建自己的角色息息相关。可是，当我们不断地追问这个问题时，我们会发现，这些东西好像又是没什么意义的。这时我们会意识到，那些大家都在谈论的东西不一定是我所感兴趣的事物，而那些约定俗成的规矩，似乎也不那么合理了。此时，身边的一切似乎都不在那么坚定。我们便会陷入一种迷茫，开始重新审视自己周边的一切，乃至自己。心中难免会生出“从来如此，便对吗”的疑惑。 在惴惴不安之余，我们便难免会开始琢磨，如何将自己诸如生命之类的有限资源分配到实处。这可表现为，我们在面对那些曾经习以为常的事物时，开始频繁地追问自己，这件事的意义是什么，我之所以会选择做这件事究竟是为了什么。&#xA;这是一个很痛苦的过程。但是，在经历这一系列挣扎之后，我发现，或者说更愿意相信，世界归根到底还是有意义的，但它只有在面向我这个个体的存在时才具有意义。为了探寻到这种意义究竟何为，我们就得从自己的生活中，攫取那些最为鲜活的个人体验，感受到自己真正关心的事物，并意识到对我而言，它们与其他事物的不同之处，通过你自己的方式来刻画出它们的模样，从而构建出一个由你自身所组成的、自我的小世界。在此时此刻，自我的意识便完成了出场。我们每个人在世界上留存的时间非常有限，所以必须完全的为自己负责，要意识到你度过的每一分每一秒都是属于你自己的。&#xA;但是说实话，我还是没法廓清“意义”的定义究竟何为（而我现在也放弃了厘清其定义）。如果现在问我这个问题，我大概会回答，在活着的时候（甚至再持久点，在死后一段时间里），尽可能帮助和我有交集、我喜爱的人们，多多少少贡献些许正外部性，让他们过得稍快乐点。</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://young-mann.top/posts/numerical-analysis-of-sodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://young-mann.top/posts/numerical-analysis-of-sodes/</guid>
+      <description>Numerical Analysis of SODEs&#xA;Definition 1.2.1 (Generalized inverse distribution function associated to a distribution function). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then we denote by $I_F:(0,1) \rightarrow$ $\mathbb{R}$ the function which satisfies for all $y \in(0,1)$ that&#xA;$$ I_F(y)=\inf {x \in \mathbb{R}: F(x) \geq y}=\inf \left(F^{-1}([y, 1])\right) $$&#xA;and we call $I_F$ the generalized inverse distribution function associated to $F$. Definition 1.2.1 plays a key role in the inversion method which we present in Theorem 1.</description>
     </item>
     <item>
       <title>记忆里的食谱</title>

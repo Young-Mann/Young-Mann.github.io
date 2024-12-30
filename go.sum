@@ -1,7 +1,17 @@
+github.com/hugomods/base v0.7.2 h1:SShNl7koN79CEUdGQ65Knbf/c2k+bE+El5ManYWd8Cg=
+github.com/hugomods/base v0.7.2/go.mod h1:hnWCPbVxuhXBwdFax3mmbMlWKmIo/7OP36MCLOyHtT4=
 github.com/hugomods/bootstrap v0.21.2 h1:lu9LHkj7RLxkVp2bX//li2Z/OsG36TGHjlFZG4/p9Tw=
 github.com/hugomods/bootstrap v0.21.2/go.mod h1:3U2SkU7l1+n8/wJZwB8/2phYhvRyFwCMix7pPNJ4U+I=
+github.com/hugomods/bootstrap v0.23.0 h1:/Mj6VCk+xUNan72m4ulupu+oRug7IuvpBO1jp+MhhFw=
+github.com/hugomods/bootstrap v0.23.0/go.mod h1:eL5Y6abDndTt/LZu1VtgprvkdZgsV7/d3jpSoCcDkKQ=
 github.com/hugomods/icons v0.6.3 h1:2Ra6NU2GOeVvz8vowLq/OZCTzxqhq84MA0TICRBVxeY=
 github.com/hugomods/icons v0.6.3/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/hugomods/icons v0.6.6 h1:gGlafcBDRP7sSID+tgLcWdog+s/QBj8DIfU+h9tZj1U=
+github.com/hugomods/icons v0.6.6/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/hugomods/icons/vendors/bootstrap v0.5.9 h1:IlKsW1iybTNZLYnMipyc2d9w51rUtu89lPMkocGaP6c=
+github.com/hugomods/icons/vendors/bootstrap v0.5.9/go.mod h1:DuB5N1o3GCUyvYFnEeBvJRBrCHqbMWEbjoEWVLULggw=
+github.com/hugomods/images v0.11.2 h1:d7u3c/ePboeOGx8OI5eUnilpA79YvD7KJjUgqVMR83Y=
+github.com/hugomods/images v0.11.2/go.mod h1:U6Gwj16LKvk66rOMyGFrnF6f0aV8lT89lqOsckOAjYY=
 github.com/twbs/icons v1.11.3 h1:XhvrQ1XDom9ggBbQx3wQCFGEr8qAQwQP/dAcw8OXMtA=
 github.com/twbs/icons v1.11.3/go.mod h1:GnRlymgVWp5iVJCMa0Me5b6tFyGpVc2bSxPMRGIJmyA=
 wangchucheng.com/hugo-eureka v0.9.3 h1:wQnWQxMW4jy6M/FOvAay13f5OD+UXPKBtkagdS0Fjys=

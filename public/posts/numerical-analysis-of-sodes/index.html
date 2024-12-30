@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="utf-8" />
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
+<link rel="manifest" href="https://young-mann.top//site.webmanifest">
+<link rel="mask-icon" href="https://young-mann.top//safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta name="keywords" content="">
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="Numerical Analysis of SODEs
+Definition 1.2.1 (Generalized inverse distribution function associated to a distribution function). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then we denote by $I_F:(0,1) \rightarrow$ $\mathbb{R}$ the function which satisfies for all $y \in(0,1)$ that
+$$ I_F(y)=\inf {x \in \mathbb{R}: F(x) \geq y}=\inf \left(F^{-1}([y, 1])\right) $$
+and we call $I_F$ the generalized inverse distribution function associated to $F$. Definition 1.2.1 plays a key role in the inversion method which we present in Theorem 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://young-mann.top/posts/numerical-analysis-of-sodes/" /><meta property="article:section" content="posts" />
+
+
+
+
+<meta property="og:site_name" content="斐康明" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Numerical Analysis of SODEs
+Definition 1.2.1 (Generalized inverse distribution function associated to a distribution function). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then we denote by $I_F:(0,1) \rightarrow$ $\mathbb{R}$ the function which satisfies for all $y \in(0,1)$ that
+$$ I_F(y)=\inf {x \in \mathbb{R}: F(x) \geq y}=\inf \left(F^{-1}([y, 1])\right) $$
+and we call $I_F$ the generalized inverse distribution function associated to $F$. Definition 1.2.1 plays a key role in the inversion method which we present in Theorem 1."/>
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Numerical Analysis of SODEs
+Definition 1.2.1 (Generalized inverse distribution function associated to a distribution function). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then we denote by $I_F:(0,1) \rightarrow$ $\mathbb{R}$ the function which satisfies for all $y \in(0,1)$ that
+$$ I_F(y)=\inf {x \in \mathbb{R}: F(x) \geq y}=\inf \left(F^{-1}([y, 1])\right) $$
+and we call $I_F$ the generalized inverse distribution function associated to $F$. Definition 1.2.1 plays a key role in the inversion method which we present in Theorem 1.">
+
+<meta itemprop="wordCount" content="784">
+<meta itemprop="keywords" content="" />
+
+
+    <title> || 斐康明</title>
+    <link rel="canonical" href="https://young-mann.top/posts/numerical-analysis-of-sodes/" />
+
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/reboot.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+<script type="text/javascript" src="/js/main.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+
+
+
+
+<link rel="stylesheet" href="/js/katex/katex.min.css" >
+<script src="/js/katex/katex.min.js" > </script>
+<script src="/js/katex/contrib/auto-render.min.js" ></script>
+ 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+    delimiters: [
+      {left: "$$", right: "$$", display: true},
+      {left: "$", right: "$", display: false},
+    ],
+    macros: {
+      "\\ge": "\\geqslant",
+      "\\le": "\\leqslant",
+      "\\geq": "\\geqslant",
+      "\\leq": "\\leqslant"
+	}
+  });
+    });
+</script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body
+  class=" look-sheet-bkg"
+  lang="en">
+  <div class="navbar nav-bkg drop-shadow">
+    <nav class="content-container pagewide-bar-padding">
+      <span class="divider">/ </span>
+      <a href="/" >斐康明</a>
+      <span class="divider">/ </span>
+          <a href="/posts/">Posts</a>
+      <ul class="list-unstyled right-links">
+
+          <li>
+            <a href="/posts/about/">
+              <span class="post-title">关于</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/tags/">
+              <span class="post-title">标签</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/collections/collections/">
+              <span class="post-title">收集夹</span>
+            </a>
+          </li>
+
+</ul>
+
+    </nav>
+  </div>
+  
+
+<article
+    id="main"
+    class="content-container look-sheet article-pad-v "
+    itemscope
+    itemtype="https://schema.org/Article" >
+  <meta itemprop="author" content="" />
+  <meta itemprop="publisher" content="" />
+  <meta itemprop="image" content="" />
+  <h1 itemprop="name" id="title"></h1>
+  <meta itemprop="headline" content="" />
+  
+
+  
+
+  
+
+  
+
+  <div itemprop="articleBody" id="content" class="article-body margin-top-2em">
+
+
+
+    <p>Numerical Analysis of SODEs</p>
+<p>Definition 1.2.1 (Generalized inverse distribution function associated to a distribution function). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then we denote by $I_F:(0,1) \rightarrow$ $\mathbb{R}$ the function which satisfies for all $y \in(0,1)$ that</p>
+<p>$$
+I_F(y)=\inf {x \in \mathbb{R}: F(x) \geq y}=\inf \left(F^{-1}([y, 1])\right)
+$$</p>
+<p>and we call $I_F$ the generalized inverse distribution function associated to $F$.
+Definition 1.2.1 plays a key role in the inversion method which we present in Theorem 1.2 .7 below. In the following we present a few comments regarding Definition 1.2.1.
+(i) Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. Then note that for every $y \in(0,1)$ it holds that the set
+$$
+{x \in \mathbb{R}: F(x) \geq y}
+$$</p>
+<p>(see Definition 1.2.1) is not empty and bounded from below. Indeed, the fact that $F$ satisfies</p>
+<p>$$
+\lim _{x \rightarrow \infty} F(x)=1
+$$</p>
+<p>ensures that for every $y \in(0,1)$ it holds that ${x \in \mathbb{R}: F(x) \geq y}$ is not empty. Moreover, the fact that $F$ satisfies</p>
+<p>$$
+\lim _{x \rightarrow-\infty} F(x)=0
+$$</p>
+<p>implies that for every $y \in(0,1)$ it holds that ${x \in \mathbb{R}: F(x) \geq y}$ is bounded from below. Therefore, the function $I_F:(0,1) \rightarrow \mathbb{R}$ in Definition 1.2 .1 is well defined.
+(ii) Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function. The generalized inverse distribution function associated to $F$ is sometimes also referred to as quantile function associated to $F$ (cf. Item (iii) below).
+(iii) Let $(\Omega, \mathcal{F}, P)$ be a probability space, let $X: \Omega \rightarrow \mathbb{R}$ be an $\mathcal{F} / \mathcal{B}(\mathbb{R})$-measurable function (we think of $X$ as a model for the change of the value of a given portfolio of financial assets within a given time period), let $F: \mathbb{R} \rightarrow[0,1]$ be the distribution function of $-X$ and let $\alpha \in(0,1)$ (we think of $\alpha$ as a confidence level for the statement below, which is typically a number close to 1 such as $99 %$ or $95 %$, and we think of $1-\alpha$ as a small number such as $1 %$ or $5 %$ ). Then the real number</p>
+<p>$$
+\begin{aligned}
+I_F(\alpha) &amp; =\min {x \in \mathbb{R}: F(x) \geq \alpha}=\min {x \in \mathbb{R}: P(-X \leq x) \geq \alpha} \
+&amp; =\min {x \in \mathbb{R}: P(\neg[-X&gt;x]) \geq \alpha} \
+&amp; =\min {x \in \mathbb{R}: P(-X&gt;x) \leq 1-\alpha}
+\end{aligned}
+$$</p>
+<p>is sometimes referred to as the value at risk with confidence level $\alpha$ associated to $-X$ ( $V a R$ with confidence level $\alpha$ associated to $-X$ ) in the financial risk management literature. Observe that (1.5) ensures that</p>
+<p>$$
+P\left(-X \leq I_F(\alpha)\right)=P\left(\neg\left[-X&gt;I_F(\alpha)\right]\right) \geq \alpha \text {. }
+$$</p>
+<p>It thus holds with a probability of at least $\alpha$ that the loss $-X$ will not exceed the number $I_F(\alpha)$ (the value at risk with confidence level $\alpha$ ).</p>
+<p>Lemma 1.2 .4 (Properties of generalized inverse distribution functions). Let $F: \mathbb{R} \rightarrow$ $[0,1]$ be a distribution function and let $I_F:(0,1) \rightarrow \mathbb{R}$ be the generalized inverse distribution function associated to $F$. Then $I_F$ fulfills the following properties:
+(i) $I_F$ is non-decreasing, i.e., for all $y_1, y_2 \in(0,1)$ with $y_1 \leq y_2: I_F\left(y_1\right) \leq I_F\left(y_2\right)$,
+(ii) for all $y \in(0,1): F\left(I_F(y)\right) \geq y, F^{-1}([y, 1])=\left[I_F(y), \infty\right)$, and $I_F(y)=$ $\min \left(F^{-1}([y, 1])\right)$
+(iii) for all $x \in F^{-1}((0,1))={z \in \mathbb{R}: F(z) \in(0,1)}: I_F(F(x)) \leq x$,
+(iv) for all $x \in \mathbb{R}, y \in(0,1): I_F(y) \leq x$ if and only if $y \leq F(x)$ (switching formula),
+(v) for all $x \in \mathbb{R}, y \in(0,1): I_F(y)&gt;x$ if and only if $y&gt;F(x)$ (switching formula), and
+(vi) for all open sets $D \subseteq \mathbb{R}$ with the property that $\left.F\right|_D: D \rightarrow[0,1]$ is injective and all $y \in F(D):\left.F\right|_D ^{-1}(y)=I_F(y)$</p>
+<p>Lemma 1.2.5 (Continuity properties of generalized inverse distribution functions). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function and let $I_F:(0,1) \rightarrow \mathbb{R}$ be the generalized inverse distribution function associated to $F$. Then $I_F$ fulfills the following properties:
+(i) $I_F$ is a càglàd (continue à gauche, limitée à droite) function, i.e., for all $y \in$ $(0,1): \lim _{z \nearrow y} I_F(z)$ and $\lim _{z \searrow y} I_F(z)$ exist and $\lim _{z \nearrow y} I_F(z)=I_F(y)$,
+(ii) for all $y \in(0,1):\left[I_F(y), \lim <em>{z \backslash y} I_F(z)\right) \subseteq F^{-1}({y}) \subseteq\left[I_F(y), \lim <em>{z \searrow y} I_F(z)\right]$,
+(iii) for all $y \in(0,1): I_F$ is continuous in $y \in(0,1)$ if and only if $#</em>{\mathbb{R}}\left(F^{-1}({y})\right)=$ $#</em>{\mathbb{R}}({x \in \mathbb{R}: F(x)=y}) \leq 1$.</p>
+<p>Theorem 1.2.7 (Inversion method). Let $F: \mathbb{R} \rightarrow[0,1]$ be a distribution function, let $(\Omega, \mathcal{F}, P)$ be a probability space, and let $U: \Omega \rightarrow \mathbb{R}$ be an $\mathcal{U}_{(0,1)}$-distributed random variable with $U(\Omega) \subseteq(0,1)$. Then $F$ is the distribution function of the $\mathcal{F} / \mathcal{B}(\mathbb{R})$-measurable function $I_F(U)=I_F \circ U: \Omega \rightarrow \mathbb{R}$, i.e., it holds for all $x \in \mathbb{R}$ that</p>
+<p>$$
+P\left(I_F(U) \leq x\right)=F(x)
+$$</p>
+
+
+
+  </div>
+</article>
+
+
+
+  
+    
+
+
+  
+    <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
+      <nav class="flex-row">
+      
+      <a href="https://young-mann.top/posts/%E8%8F%9C%E8%B0%B1%E4%BB%AC/" class="flex-row v-center no-underline"  style="max-width:45%;">
+        <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 记忆里的食谱</span>
+      </a>
+      
+      
+        <a href="https://young-mann.top/posts/%E6%80%95%E6%AD%BB/" class="flex-row v-center no-underline" style="max-width: 45%;">
+        <span class="re-underline">Next: 怕死</span>&nbsp;<span class="text-1p5">→</span>
+        </a>
+      
+      </nav>
+    </div>
+
+
+  
+  </body>
+</html>

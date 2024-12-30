@@ -13,6 +13,7 @@ tags:
 - 可交互的概率分布说明书：[Probability Playground: Exploring Probability Distributions and their Relationships](https://www.acsu.buffalo.edu/~adamcunn/probability/probability.html)
 - 傅里叶变换的直观图示：[An Interactive Introduction to Fourier Transforms](https://www.jezzamon.com/fourier/index.html)
 - 入门 Git 的可视化教程：[Learn Git Branching](https://learngitbranching.js.org)
+- 卡尔曼滤波的教程：https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python
 
 ## 展示用工具
 
