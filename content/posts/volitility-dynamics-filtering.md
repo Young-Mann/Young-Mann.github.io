@@ -8,7 +8,7 @@ draft: false
 
 ---
 
-> 这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。
+> 这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) [^carr-and-wu]的部分结果。
 >
 > Carr and Wu (2016) 提出了一个被称作 VGVV model [^-1] 的期权定价模型：
 >
@@ -19,7 +19,7 @@ draft: false
 >
 > 下文简单记录了  Carr and Wu (2016) 的思路，以及我的复现结果。
 
-## Introduction
+## 1 Introduction
 
   Carr and Wu (2016) develops a so-called VGVV model for option pricing. The main components of this model includes:
 
@@ -29,7 +29,7 @@ draft: false
 
 
 
-## Motivation
+1 ## Motivation
 
 Tradition option pricing models focus on the option prices instead of the implied volatility, while institutional investors exchange their quotes not through options prices, but through the implied volatility from the Black-Scholes-Merton model. 
 Apart from that, traditional option pricing models require the full specification of the instantaneous variance dynamics, which is not always well-determined, and requires recalibration over time.
@@ -38,9 +38,9 @@ In order to handle the implied volatility and alleviate the drawbacks of full-sp
 - models the dynamics of the implied and expected volatility, instead of the instantaneous volatility;
 - estimates the near-term shape of the volatility surface, only using the current values of the parameters in volatility dynamics without fully specifying it.
 
-## Methodology
+## 2 Methodology
 
-### Assumptions for the dynamics of BSM implied volatility surface
+### 2.1 Assumptions for the dynamics of BSM implied volatility surface
 
 Carr and Wu (2016) consider a market with a risk-free bond, a risky asset, and a continuum of vanilla European options written on the stock. The dynamics of the underlying risky asset, the implied volatility, and the return-volatility correlation process are shown as follows:
 $$
@@ -51,7 +51,8 @@ $$
 \end{align} 
 $$
 
-### Definition of ORV and OEV
+### 2.2 Definition of ORV and OEV
+
 Carr and WU (2016) constructs the new concept of realized and expected volatilities, which are defined in reference to a specific option contract. 
 
 
@@ -88,8 +89,7 @@ $$
 
 
 
-
-### The no-dynamic-arbitrage constraint on IV surface
+### 2.3 The no-dynamic-arbitrage constraint on IV surface
 
 Carr and Wu (2016) specifies the no-arbitrage constraints on the market. To avoid static arbitrage, the BSM implied volatility is required to be positive. To avoid dynamic arbitrage, the BSM put price $B(S,\sigma, t)$ and the BSM implied volatility is required to satisfy the following PDE[^1]
 
@@ -168,13 +168,13 @@ Therefore, if $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\
 
 Carr and Wu (2016) uses the Unscented Kalman Filter to solve these 2 problems. In the following section, we will firstly introduce the data used in the empirical analysis, and then show the performance of Unscented Kalman Filter for extracting the near-term dynamics of the volatility.
 
-## Replication: Data
+## 3 Replication: Data
 
-### Data description and data preprocessing
+### 3.1 Data description and data preprocessing
 
 To extract the near-term dynamics of the volatility surfaces, this paper uses the dataset of SPX option implied volatility quotes, SPX price time series, interest rate and dividend yield:
 
-#### Implied volatility quotes on SPX options
+#### 3.1.1 Implied volatility quotes on SPX options
 
 The implied volalitity quotes are obtained from IvyDB US by OptionMetrics. The quotes are available from January 8, 1997 to October 29, 2014, 
 having $25 \ 054 \ 504$ samples. 
@@ -193,20 +193,20 @@ For instance, the preprocessed implied volatility quotes on 1997-01-08, which ha
 | …    | …          | …        | …       | …        |
 | 25   | 1997-01-08 | 2.000000 | 1.2     | 0.179292 |
 
-#### SPX daily quotes
+#### 3.1.2 SPX daily quotes
 The SPX daily quotes are obtained from Bloomberg, available from January 4, 1985 to August 31, 2023, having $10 \ 505 $ samples. Note that SPX daily quotes have 12 years more data than the implied volatility quotes. The reason is that Carr and WU (2016) estimate the historical ORV 10 years earlier than the implied volatility sample from January 8, 1987, which needs the SPX daily time series going back 2 additional years to January 8, 1985, since $\operatorname{ORV}(k,t-\tau,t)$ uses the data from time $t-\tau$ to time $t$, and the longest $\tau$ in my implied volatility quotes is $24 \text{ months}$.
 
-#### Interest rate
+#### 3.1.3 Interest rate
 The daily interest rate is proxied by the zero coupon yield in the nominal yield curve of U.S. Treasury, obtained from the official website of the Federal Reserve[^2]. The mnemonic for zero-coupon yield is "SVENYXX".
 
-#### Dividend yield
+#### 3.1.4 Dividend yield
 The monthly dividend yield computed with Shiller's US Stock market data, obtained from Shiller Data[^3]. 
 
-### The average behavior of volatility surfaces and volatility risk premiums
+### 3.2 The average behavior of volatility surfaces and volatility risk premiums
 
 <img src="https://s2.loli.net/2024/12/31/FaBmOKXEfQbh9wq.png" />
 
-### The time-series variation of implied and expected volatilities
+### 3.3 The time-series variation of implied and expected volatilities
 
 The time-series trends of at-the-money implied and expected volatilities exhibit similar behaviors. The volatility series experience significant spikes during notable events such as the 1998 Asian financial crisis, the subsequent hedge fund crisis in 1999, and most notably, the global financial crisis in 2008. Another noticeable spike in 2012 aligns with the European sovereign debt crisis. 
 
@@ -219,7 +219,7 @@ The 90–110\% difference in option implied volatility remains consistently posi
 
 <img src="https://s2.loli.net/2024/12/31/r64hV5mGY7Molnk.png" />
 
-### Volatility of volatility dependence structure
+### 3.4 Volatility of volatility dependence structure
 
 Carr and Wu (2016) assumes that the variance of the volatility changes is proportional to the variance level, which is different from the common setting of the square-root instantaneous variance rate specification.. 
 
@@ -252,9 +252,9 @@ $$
 
 The table above reports the slope estimates for each implied volatility time series. For all 25 series, the slope estimates are far away from the square-root hypothesis of  $\beta=0$, but close to our proportional specification of  $\beta = 1$, suggesting that the proportional volatility dynamics enjoys better empirical support than the square-root specification.
 
-## Replication:  Extracting state variables from volatility surface
+## 4 Replication:  Extracting state variables from volatility surface
 
-### Introduction to the Unscented Kalman Filter
+### 4.1 Introduction to the Unscented Kalman Filter
 
 Note that the shapes of the implied volatility surface and the expected volatility surface only depends on the current levels of covariates, and there is no need to specify the full dynamics of covariates. Therefore, the emphasis of the empirical analysis involves the extraction of the states from the two surfaces, without knowing the stat dynamics.
 
@@ -337,7 +337,7 @@ $$
 
 **Here, $(\sigma_{1}^2,\sigma_{2}^2,\sigma_{3}^2,\sigma_{4}^2,\sigma_{5}^2,\sigma_{6}^2,\sigma_{7}^2,\sigma_{8}^2,\sigma_{I}^2,\sigma_{V}^2)$ are estimated by minimizing the sum of squared forecasting errors in a quasi-maximum likelihood setting.**
 
-### Pricing performance and state dynamics analysis
+### 4.2 Pricing performance and state dynamics analysis
 
 In the paper, the first three years volatility quotes are used to estimate 10 covariance parameters. Then, these parameters are applied to predict the volatilities through the whole time slots.  \cref{tbl:pricing_error} reports the average pricing error on each volatility series. The pricing errors are defined as the difference between the observed volatility series and the model-generated values, in volatility percentage points. Given a fixed moneyness, it is shown that the most obvious pricing error occurs at 1-month maturity, which means the model fails to capture the volatility smile at the short maturity. This might be caused by the pure-continuous assumption for the underlying price dynamics \parencite{carrAnalyzingVolatilityRisk2016}. As maturities being longer, the average biases are less severe. 
 
@@ -345,33 +345,55 @@ The pricing errors on the expected volatility surface are much more severe than 
 
 <img src="https://s2.loli.net/2024/12/31/PN3Re8LcjJl9GFd.png" />
 
-### State dynamic analysis
+### 4.3 State dynamic analysis
 
-#### Instantaneous volatility: $\sqrt{v_t}$, $\sqrt{v_t^{\mathbb{P}}}$
+#### 4.3.1 Instantaneous volatility: $\sqrt{v_t}$, $\sqrt{v_t^{\mathbb{P}}}$
 
 The time-series fluctuations of the two instantaneous volatility series closely align with the variations observed in at-the-money implied and expected volatilities. Meanwhile, the instantaneous volatility series extracted from the expected volatility surface seems to lag behind the solid line extracted from the implied volatility surface, because it is estimated in a backward way.
 
 <img src="https://s2.loli.net/2024/12/31/jC6e8YA5rysNdKn.png" />
 
-#### Instantaneous drift: $m_t$, $m_t^{\mathbb{P}}$
+#### 4.3.2 Instantaneous drift: $m_t$, $m_t^{\mathbb{P}}$
 The instantaneous drift of the implied volatility remains above zero for most of the period, except during the 2002 recession and the 2008 financial crisis. This predominantly positive risk-neutral drift indicates that the at-the-money implied volatility term structure is generally upward sloping. In contrast, the instantaneous drift of is mostly negative, implying that the expected volatility derived from historical sample paths typically exhibits a downward-sloping term structure. The gap between these term structures represents the volatility risk premium, which becomes especially pronounced during the major financial crises of 1998 and 2008.
 <img src="https://s2.loli.net/2024/12/31/jCnUTzve7km8QoW.png" />
 
-#### Instantaneous return-volatility correlation: $\rho_t$,  $\rho_t^\mathbb{P}$
+#### 4.3.3 Instantaneous return-volatility correlation: $\rho_t$,  $\rho_t^\mathbb{P}$
 The instantaneous correlation between the SPX index return and the implied volatility stays strongly negative, reflecting the negative skew in the implied volatility surface. By contrast, the instantaneous correlation between the SPX index return and the expected volatility flucuates more, somtimes being positive, meaning that the expected volatility surface is not always negatively skewed.
 
 <img src="https://s2.loli.net/2024/12/31/y2YBZGMEsDvH5af.png" />
 
 
-#### Volatility of volatility: $\omega_t$
+#### 4.3.4 Volatility of volatility: $\omega_t$
 The volvol estimated in Carr and Wu (2016) tends to be high when the volatility levels are high, while the volvol estimates here seem to be irregular. This might be caused by the overestimated OEV. Since the OEV does not match the observed data, the volvol coefficient will not accurately describe the volatility of volatility.
 
 <img src="https://s2.loli.net/2024/12/31/JtUglL7QPMq6kZW.png" />
 
-#### Maturity decay: $\eta$
+#### 4.3.5 Maturity decay: $\eta$
 The extracted series remain stable except during the 1998 and 2002 recessions, when the estimates rise significantly. This recession stands out with unique characteristics: short-term volatility is elevated, the term structures for both implied and expected volatilities slope downward, and short-term volatility exhibits much greater variation compared to long-term volatilities. Although short-term volatility is high during both the financial crises and this recession, long-term implied volatilities increase less during the recession, indicating that investors were notably less concerned about the recession compared to the financial crises.
 
 <img src="https://s2.loli.net/2024/12/31/uPqM9AEcd25iebx.png" />
+
+## （5 遇到的问题和解决方法）
+Q1: 使用 cubic spline interpolation 的 iv 曲面可能不满足无套利条件。
+
+A1: 或许可以尝试[这篇文章](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1964634#paper-citations-widget)里的插值方法。
+
+---
+
+Q2: 在 quasi-maximum-likelihood 的设定下以最小化 pricing error 的 SSE 为损失函数估计 Q 和 R 时，最终的估计值对初始值很敏感。可能的原因是，minimizing pricing error SSE 是 non-convex 的，因此估计值是局部最优解。
+
+A2: 尚未解决。
+
+---
+
+Q3: 如果过程噪音矩阵 Q 的值太小，那么状态协方差矩阵 P 迭代时不一定是半正定的。
+
+A3: 在每次更新完 P 之后，进行下述操作：
+
+1. $P^{\prime}:=\frac{P+P^T}{2}$
+2. 对 $P'$ 做特征分解：$P^{\prime}=V D V^T$，其中 $V$ 是特征向量，$D$ 是主对角线元素为特征值的对角矩阵
+3. 将 $D$ 主对角线上的元素替换为 $\max \left(D_{i j}, 0\right)+\epsilon$，其中 $\epsilon$ 是一个较小的正数（我取了1e-6）。将新的对角矩阵记作 $D'$
+4. 获取新的$P^* := V D^{\prime} V^T$
 
 
 
@@ -386,3 +408,13 @@ The extracted series remain stable except during the 1998 and 2002 recessions, w
 
 
 [^ukf]: 个人感觉这篇讲解卡尔曼滤波的教程很易读： https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python。
+
+[^carr-and-wu]: Peter Carr, Liuren Wu,
+Analyzing volatility risk and risk premium in option contracts: A new theory,
+Journal of Financial Economics,
+Volume 120, Issue 1,
+2016,
+Pages 1-20,
+ISSN 0304-405X,
+https://doi.org/10.1016/j.jfineco.2016.01.004.
+(https://www.sciencedirect.com/science/article/pii/S0304405X16000052)
