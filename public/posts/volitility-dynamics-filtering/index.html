@@ -27,9 +27,9 @@
 ">
 
 <meta property="og:title" content="Volitility Dynamics Filtering" />
-<meta property="og:description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。
-Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型：
-他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance2 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）3提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。" />
+<meta property="og:description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 1的部分结果。
+Carr and Wu (2016) 提出了一个被称作 VGVV model 2 的期权定价模型：
+他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance3 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）4提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://young-mann.top/posts/volitility-dynamics-filtering/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-12-30T16:11:15+01:00" />
@@ -40,17 +40,17 @@ Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型�
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Volitility Dynamics Filtering"/>
-<meta name="twitter:description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。
-Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型：
-他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance2 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）3提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。"/>
+<meta name="twitter:description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 1的部分结果。
+Carr and Wu (2016) 提出了一个被称作 VGVV model 2 的期权定价模型：
+他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance3 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）4提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。"/>
 
 
 <meta itemprop="name" content="Volitility Dynamics Filtering">
-<meta itemprop="description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。
-Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型：
-他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance2 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）3提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。"><meta itemprop="datePublished" content="2024-12-30T16:11:15+01:00" />
+<meta itemprop="description" content="这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 1的部分结果。
+Carr and Wu (2016) 提出了一个被称作 VGVV model 2 的期权定价模型：
+他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance3 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）4提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。"><meta itemprop="datePublished" content="2024-12-30T16:11:15+01:00" />
 <meta itemprop="dateModified" content="2024-12-30T16:11:15+01:00" />
-<meta itemprop="wordCount" content="3169">
+<meta itemprop="wordCount" content="3292">
 <meta itemprop="keywords" content="期权定价," />
 
 
@@ -175,30 +175,30 @@ Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型�
 	<div id="page-scrollspy" class="toc-nav">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#motivation">Motivation</a></li>
-    <li><a href="#methodology">Methodology</a>
+    <li><a href="#1-introduction">1 Introduction</a></li>
+    <li><a href="#2-methodology">2 Methodology</a>
       <ul>
-        <li><a href="#assumptions-for-the-dynamics-of-bsm-implied-volatility-surface">Assumptions for the dynamics of BSM implied volatility surface</a></li>
-        <li><a href="#definition-of-orv-and-oev">Definition of ORV and OEV</a></li>
-        <li><a href="#the-no-dynamic-arbitrage-constraint-on-iv-surface">The no-dynamic-arbitrage constraint on IV surface</a></li>
+        <li><a href="#21-assumptions-for-the-dynamics-of-bsm-implied-volatility-surface">2.1 Assumptions for the dynamics of BSM implied volatility surface</a></li>
+        <li><a href="#22-definition-of-orv-and-oev">2.2 Definition of ORV and OEV</a></li>
+        <li><a href="#23-the-no-dynamic-arbitrage-constraint-on-iv-surface">2.3 The no-dynamic-arbitrage constraint on IV surface</a></li>
       </ul>
     </li>
-    <li><a href="#replication-data">Replication: Data</a>
+    <li><a href="#3-replication-data">3 Replication: Data</a>
       <ul>
-        <li><a href="#data-description-and-data-preprocessing">Data description and data preprocessing</a></li>
-        <li><a href="#the-average-behavior-of-volatility-surfaces-and-volatility-risk-premiums">The average behavior of volatility surfaces and volatility risk premiums</a></li>
-        <li><a href="#the-time-series-variation-of-implied-and-expected-volatilities">The time-series variation of implied and expected volatilities</a></li>
-        <li><a href="#volatility-of-volatility-dependence-structure">Volatility of volatility dependence structure</a></li>
+        <li><a href="#31-data-description-and-data-preprocessing">3.1 Data description and data preprocessing</a></li>
+        <li><a href="#32-the-average-behavior-of-volatility-surfaces-and-volatility-risk-premiums">3.2 The average behavior of volatility surfaces and volatility risk premiums</a></li>
+        <li><a href="#33-the-time-series-variation-of-implied-and-expected-volatilities">3.3 The time-series variation of implied and expected volatilities</a></li>
+        <li><a href="#34-volatility-of-volatility-dependence-structure">3.4 Volatility of volatility dependence structure</a></li>
       </ul>
     </li>
-    <li><a href="#replication--extracting-state-variables-from-volatility-surface">Replication:  Extracting state variables from volatility surface</a>
+    <li><a href="#4-replication--extracting-state-variables-from-volatility-surface">4 Replication:  Extracting state variables from volatility surface</a>
       <ul>
-        <li><a href="#introduction-to-the-unscented-kalman-filter">Introduction to the Unscented Kalman Filter</a></li>
-        <li><a href="#pricing-performance-and-state-dynamics-analysis">Pricing performance and state dynamics analysis</a></li>
-        <li><a href="#state-dynamic-analysis">State dynamic analysis</a></li>
+        <li><a href="#41-introduction-to-the-unscented-kalman-filter">4.1 Introduction to the Unscented Kalman Filter</a></li>
+        <li><a href="#42-pricing-performance-and-state-dynamics-analysis">4.2 Pricing performance and state dynamics analysis</a></li>
+        <li><a href="#43-state-dynamic-analysis">4.3 State dynamic analysis</a></li>
       </ul>
     </li>
+    <li><a href="#5-遇到的问题和解决方法">（5 遇到的问题和解决方法）</a></li>
   </ul>
 </nav>
 	</div>
@@ -208,24 +208,24 @@ Carr and Wu (2016) 提出了一个被称作 VGVV model 1 的期权定价模型�
 </details>
 
     <blockquote>
-<p>这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 的部分结果。</p>
-<p>Carr and Wu (2016) 提出了一个被称作 VGVV model <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 的期权定价模型：</p>
+<p>这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>的部分结果。</p>
+<p>Carr and Wu (2016) 提出了一个被称作 VGVV model <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 的期权定价模型：</p>
 <ol>
 <li>他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， <strong>$(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。</strong></li>
 <li>为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， <strong>$(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。</strong></li>
-<li>从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> (以及 option expected variance) 的二次方程，其中包含  $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。<strong>如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。</strong></li>
-<li>那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。</li>
+<li>从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> (以及 option expected variance) 的二次方程，其中包含  $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。<strong>如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。</strong></li>
+<li>那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。</li>
 </ol>
 <p>下文简单记录了  Carr and Wu (2016) 的思路，以及我的复现结果。</p>
 </blockquote>
-<h2 id="introduction">Introduction</h2>
+<h2 id="1-introduction">1 Introduction</h2>
 <p>Carr and Wu (2016) develops a so-called VGVV model for option pricing. The main components of this model includes:</p>
 <ol>
-<li>Assumptions for the dynamics: The assumptions for the dynamics of underlying price, implied volatility / option expected volatility<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> , and the return-volatility correlation.</li>
+<li>Assumptions for the dynamics: The assumptions for the dynamics of underlying price, implied volatility / option expected volatility<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> , and the return-volatility correlation.</li>
 <li>A quadratic equation as the no-dynamic-arbitrage constraint on the current shape of volatility surfacec, which shows the relation between the current shape of volatility surface and the current values of certain parameters in the 3 dynamics defined above.</li>
 <li>A Unscented Kalman Filter to extract the current values of certain parameters in the 3 dynamics defined above, and use this values to estimate the volatility surface in next time step.</li>
 </ol>
-<h2 id="motivation">Motivation</h2>
+<p>1 ## Motivation</p>
 <p>Tradition option pricing models focus on the option prices instead of the implied volatility, while institutional investors exchange their quotes not through options prices, but through the implied volatility from the Black-Scholes-Merton model.
 Apart from that, traditional option pricing models require the full specification of the instantaneous variance dynamics, which is not always well-determined, and requires recalibration over time.</p>
 <p>In order to handle the implied volatility and alleviate the drawbacks of full-specified instantaneous variance rate dynamics, Carr and Wu (2016) develops an option pricing model, which</p>
@@ -233,8 +233,8 @@ Apart from that, traditional option pricing models require the full specificatio
 <li>models the dynamics of the implied and expected volatility, instead of the instantaneous volatility;</li>
 <li>estimates the near-term shape of the volatility surface, only using the current values of the parameters in volatility dynamics without fully specifying it.</li>
 </ul>
-<h2 id="methodology">Methodology</h2>
-<h3 id="assumptions-for-the-dynamics-of-bsm-implied-volatility-surface">Assumptions for the dynamics of BSM implied volatility surface</h3>
+<h2 id="2-methodology">2 Methodology</h2>
+<h3 id="21-assumptions-for-the-dynamics-of-bsm-implied-volatility-surface">2.1 Assumptions for the dynamics of BSM implied volatility surface</h3>
 <p>Carr and Wu (2016) consider a market with a risk-free bond, a risky asset, and a continuum of vanilla European options written on the stock. The dynamics of the underlying risky asset, the implied volatility, and the return-volatility correlation process are shown as follows:
 $$
 \begin{align}
@@ -243,7 +243,7 @@ $$
 \mathbb{E} _t\left[ dW_tdZ_t \right] &amp;=\rho _t\mathrm{d}t,\\
 \end{align}
 $$</p>
-<h3 id="definition-of-orv-and-oev">Definition of ORV and OEV</h3>
+<h3 id="22-definition-of-orv-and-oev">2.2 Definition of ORV and OEV</h3>
 <p>Carr and WU (2016) constructs the new concept of realized and expected volatilities, which are defined in reference to a specific option contract.</p>
 <p><strong>Definition of ORV:</strong> Let $\operatorname{ORV}(K,t,T)$ denotes the option realized volatility corresponding to the option contract which starts at $t$, struck at $K$, and expires at $T$, and let ${t_j}_{j=0}^N$ be the sequence of days during the life of the option, where $t_0=t$ and $t_N=T$, the $\operatorname{ORV}(K,t,T)$  can be computed as follows:</p>
 <p>$$
@@ -270,8 +270,8 @@ $$</p>
 $$
 \operatorname{VRP}_t(K, T)=B\left(S, V_t(K, T), t ; K, T\right)-B\left(S, I_t(K, T), t ; K, T\right).
 $$</p>
-<h3 id="the-no-dynamic-arbitrage-constraint-on-iv-surface">The no-dynamic-arbitrage constraint on IV surface</h3>
-<p>Carr and Wu (2016) specifies the no-arbitrage constraints on the market. To avoid static arbitrage, the BSM implied volatility is required to be positive. To avoid dynamic arbitrage, the BSM put price $B(S,\sigma, t)$ and the BSM implied volatility is required to satisfy the following PDE<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<h3 id="23-the-no-dynamic-arbitrage-constraint-on-iv-surface">2.3 The no-dynamic-arbitrage constraint on IV surface</h3>
+<p>Carr and Wu (2016) specifies the no-arbitrage constraints on the market. To avoid static arbitrage, the BSM implied volatility is required to be positive. To avoid dynamic arbitrage, the BSM put price $B(S,\sigma, t)$ and the BSM implied volatility is required to satisfy the following PDE<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></p>
 <p>$$
 -B_t=\mu_t {B_\sigma}+\frac{1}{2} v_t S_{{t}}^2 B_{S S}+\rho_t \omega_t \sqrt{v_t} {S_t} B_{S \sigma}+\frac{1}{2} \omega_t^2 {B_{\sigma \sigma}} ,
 $$
@@ -332,10 +332,10 @@ $$</p>
 <li><strong>How to estimate the shape of volatility surface $I_{t+1}(K,T)$ and $V_{t+1}(K,T)$ in the next time step, if the current values of $v$ are known?</strong></li>
 </ol>
 <p>Carr and Wu (2016) uses the Unscented Kalman Filter to solve these 2 problems. In the following section, we will firstly introduce the data used in the empirical analysis, and then show the performance of Unscented Kalman Filter for extracting the near-term dynamics of the volatility.</p>
-<h2 id="replication-data">Replication: Data</h2>
-<h3 id="data-description-and-data-preprocessing">Data description and data preprocessing</h3>
+<h2 id="3-replication-data">3 Replication: Data</h2>
+<h3 id="31-data-description-and-data-preprocessing">3.1 Data description and data preprocessing</h3>
 <p>To extract the near-term dynamics of the volatility surfaces, this paper uses the dataset of SPX option implied volatility quotes, SPX price time series, interest rate and dividend yield:</p>
-<h4 id="implied-volatility-quotes-on-spx-options">Implied volatility quotes on SPX options</h4>
+<h4 id="311-implied-volatility-quotes-on-spx-options">3.1.1 Implied volatility quotes on SPX options</h4>
 <p>The implied volalitity quotes are obtained from IvyDB US by OptionMetrics. The quotes are available from January 8, 1997 to October 29, 2014,
 having $25 \ 054 \ 504$ samples.</p>
 <p>For implied volatility quotes, options with zero volume or open interest are excluded. Meanwhile, options which are not traded in the last three days are removed. All in-the-money options with NaN implied volatility quote are removed.</p>
@@ -382,21 +382,21 @@ having $25 \ 054 \ 504$ samples.</p>
 </tr>
 </tbody>
 </table>
-<h4 id="spx-daily-quotes">SPX daily quotes</h4>
+<h4 id="312-spx-daily-quotes">3.1.2 SPX daily quotes</h4>
 <p>The SPX daily quotes are obtained from Bloomberg, available from January 4, 1985 to August 31, 2023, having $10 \ 505 $ samples. Note that SPX daily quotes have 12 years more data than the implied volatility quotes. The reason is that Carr and WU (2016) estimate the historical ORV 10 years earlier than the implied volatility sample from January 8, 1987, which needs the SPX daily time series going back 2 additional years to January 8, 1985, since $\operatorname{ORV}(k,t-\tau,t)$ uses the data from time $t-\tau$ to time $t$, and the longest $\tau$ in my implied volatility quotes is $24 \text{ months}$.</p>
-<h4 id="interest-rate">Interest rate</h4>
-<p>The daily interest rate is proxied by the zero coupon yield in the nominal yield curve of U.S. Treasury, obtained from the official website of the Federal Reserve<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. The mnemonic for zero-coupon yield is &ldquo;SVENYXX&rdquo;.</p>
-<h4 id="dividend-yield">Dividend yield</h4>
-<p>The monthly dividend yield computed with Shiller&rsquo;s US Stock market data, obtained from Shiller Data<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>.</p>
-<h3 id="the-average-behavior-of-volatility-surfaces-and-volatility-risk-premiums">The average behavior of volatility surfaces and volatility risk premiums</h3>
+<h4 id="313-interest-rate">3.1.3 Interest rate</h4>
+<p>The daily interest rate is proxied by the zero coupon yield in the nominal yield curve of U.S. Treasury, obtained from the official website of the Federal Reserve<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>. The mnemonic for zero-coupon yield is &ldquo;SVENYXX&rdquo;.</p>
+<h4 id="314-dividend-yield">3.1.4 Dividend yield</h4>
+<p>The monthly dividend yield computed with Shiller&rsquo;s US Stock market data, obtained from Shiller Data<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>.</p>
+<h3 id="32-the-average-behavior-of-volatility-surfaces-and-volatility-risk-premiums">3.2 The average behavior of volatility surfaces and volatility risk premiums</h3>
 <img src="https://s2.loli.net/2024/12/31/FaBmOKXEfQbh9wq.png" />
-<h3 id="the-time-series-variation-of-implied-and-expected-volatilities">The time-series variation of implied and expected volatilities</h3>
+<h3 id="33-the-time-series-variation-of-implied-and-expected-volatilities">3.3 The time-series variation of implied and expected volatilities</h3>
 <p>The time-series trends of at-the-money implied and expected volatilities exhibit similar behaviors. The volatility series experience significant spikes during notable events such as the 1998 Asian financial crisis, the subsequent hedge fund crisis in 1999, and most notably, the global financial crisis in 2008. Another noticeable spike in 2012 aligns with the European sovereign debt crisis.</p>
 <p>However, it is important to note that at-the-money expected volatilities are higher than implied volatilities, which implies that the expected volatilities might be overestimated.</p>
 <p>The 90–110% difference in option implied volatility remains consistently positive throughout the sample period and across all option maturities, indicating a persistently negatively skewed SPX return distribution implied by options. In contrast, the corresponding option expected volatility exhibits significantly less negative skewness and occasionally shifts to positive values.</p>
 <img src="https://s2.loli.net/2024/12/31/qG6kIWytXYgCji7.png" />
 <img src="https://s2.loli.net/2024/12/31/r64hV5mGY7Molnk.png" />
-<h3 id="volatility-of-volatility-dependence-structure">Volatility of volatility dependence structure</h3>
+<h3 id="34-volatility-of-volatility-dependence-structure">3.4 Volatility of volatility dependence structure</h3>
 <p>Carr and Wu (2016) assumes that the variance of the volatility changes is proportional to the variance level, which is different from the common setting of the square-root instantaneous variance rate specification..</p>
 <p>To investigate how the variance of the volatility changes depends on the volatility level, a constant elasticity of variance specification on the implied volatility time series is estimated:</p>
 <p>$$
@@ -420,8 +420,8 @@ $$
 $$</p>
 <img src="https://s2.loli.net/2024/12/31/KWCyTIJNZ23YQR4.png" />
 <p>The table above reports the slope estimates for each implied volatility time series. For all 25 series, the slope estimates are far away from the square-root hypothesis of  $\beta=0$, but close to our proportional specification of  $\beta = 1$, suggesting that the proportional volatility dynamics enjoys better empirical support than the square-root specification.</p>
-<h2 id="replication--extracting-state-variables-from-volatility-surface">Replication:  Extracting state variables from volatility surface</h2>
-<h3 id="introduction-to-the-unscented-kalman-filter">Introduction to the Unscented Kalman Filter</h3>
+<h2 id="4-replication--extracting-state-variables-from-volatility-surface">4 Replication:  Extracting state variables from volatility surface</h2>
+<h3 id="41-introduction-to-the-unscented-kalman-filter">4.1 Introduction to the Unscented Kalman Filter</h3>
 <p>Note that the shapes of the implied volatility surface and the expected volatility surface only depends on the current levels of covariates, and there is no need to specify the full dynamics of covariates. Therefore, the emphasis of the empirical analysis involves the extraction of the states from the two surfaces, without knowing the stat dynamics.</p>
 <p>Based on this feature, Carr and Wu (2016) treat the covariates as the hidden variables in a state-space form model and apply the Unscented Kalman Filter to extract the covariates from the volatility surfaces.</p>
 <p>Among the eight variables, $(w_t, \eta_t,v_t,v_t^{\mathbb{P}})$ are constrained to be strictly positive, $ (\rho_t,\rho_t^{\mathbb{P}})$ are constrained to be between $(−1, 1)$. For convenience, these variables are transformed so that they can take values on the whole real line:</p>
@@ -486,49 +486,75 @@ R_V&amp;=I_{25} \sigma_V^2,
 \end{align}
 $$</p>
 <p><strong>Here, $(\sigma_{1}^2,\sigma_{2}^2,\sigma_{3}^2,\sigma_{4}^2,\sigma_{5}^2,\sigma_{6}^2,\sigma_{7}^2,\sigma_{8}^2,\sigma_{I}^2,\sigma_{V}^2)$ are estimated by minimizing the sum of squared forecasting errors in a quasi-maximum likelihood setting.</strong></p>
-<h3 id="pricing-performance-and-state-dynamics-analysis">Pricing performance and state dynamics analysis</h3>
+<h3 id="42-pricing-performance-and-state-dynamics-analysis">4.2 Pricing performance and state dynamics analysis</h3>
 <p>In the paper, the first three years volatility quotes are used to estimate 10 covariance parameters. Then, these parameters are applied to predict the volatilities through the whole time slots.  \cref{tbl:pricing_error} reports the average pricing error on each volatility series. The pricing errors are defined as the difference between the observed volatility series and the model-generated values, in volatility percentage points. Given a fixed moneyness, it is shown that the most obvious pricing error occurs at 1-month maturity, which means the model fails to capture the volatility smile at the short maturity. This might be caused by the pure-continuous assumption for the underlying price dynamics \parencite{carrAnalyzingVolatilityRisk2016}. As maturities being longer, the average biases are less severe.</p>
 <p>The pricing errors on the expected volatility surface are much more severe than the implied volatility. This might be caused by the overestimation of the OEV.</p>
 <img src="https://s2.loli.net/2024/12/31/PN3Re8LcjJl9GFd.png" />
-<h3 id="state-dynamic-analysis">State dynamic analysis</h3>
-<h4 id="instantaneous-volatility-sqrtv_t-sqrtv_tmathbbp">Instantaneous volatility: $\sqrt{v_t}$, $\sqrt{v_t^{\mathbb{P}}}$</h4>
+<h3 id="43-state-dynamic-analysis">4.3 State dynamic analysis</h3>
+<h4 id="431-instantaneous-volatility-sqrtv_t-sqrtv_tmathbbp">4.3.1 Instantaneous volatility: $\sqrt{v_t}$, $\sqrt{v_t^{\mathbb{P}}}$</h4>
 <p>The time-series fluctuations of the two instantaneous volatility series closely align with the variations observed in at-the-money implied and expected volatilities. Meanwhile, the instantaneous volatility series extracted from the expected volatility surface seems to lag behind the solid line extracted from the implied volatility surface, because it is estimated in a backward way.</p>
 <img src="https://s2.loli.net/2024/12/31/jC6e8YA5rysNdKn.png" />
-<h4 id="instantaneous-drift-m_t-m_tmathbbp">Instantaneous drift: $m_t$, $m_t^{\mathbb{P}}$</h4>
+<h4 id="432-instantaneous-drift-m_t-m_tmathbbp">4.3.2 Instantaneous drift: $m_t$, $m_t^{\mathbb{P}}$</h4>
 <p>The instantaneous drift of the implied volatility remains above zero for most of the period, except during the 2002 recession and the 2008 financial crisis. This predominantly positive risk-neutral drift indicates that the at-the-money implied volatility term structure is generally upward sloping. In contrast, the instantaneous drift of is mostly negative, implying that the expected volatility derived from historical sample paths typically exhibits a downward-sloping term structure. The gap between these term structures represents the volatility risk premium, which becomes especially pronounced during the major financial crises of 1998 and 2008.
 <img src="https://s2.loli.net/2024/12/31/jCnUTzve7km8QoW.png" /></p>
-<h4 id="instantaneous-return-volatility-correlation-rho_t--rho_tmathbbp">Instantaneous return-volatility correlation: $\rho_t$,  $\rho_t^\mathbb{P}$</h4>
+<h4 id="433-instantaneous-return-volatility-correlation-rho_t--rho_tmathbbp">4.3.3 Instantaneous return-volatility correlation: $\rho_t$,  $\rho_t^\mathbb{P}$</h4>
 <p>The instantaneous correlation between the SPX index return and the implied volatility stays strongly negative, reflecting the negative skew in the implied volatility surface. By contrast, the instantaneous correlation between the SPX index return and the expected volatility flucuates more, somtimes being positive, meaning that the expected volatility surface is not always negatively skewed.</p>
 <img src="https://s2.loli.net/2024/12/31/y2YBZGMEsDvH5af.png" />
-<h4 id="volatility-of-volatility-omega_t">Volatility of volatility: $\omega_t$</h4>
+<h4 id="434-volatility-of-volatility-omega_t">4.3.4 Volatility of volatility: $\omega_t$</h4>
 <p>The volvol estimated in Carr and Wu (2016) tends to be high when the volatility levels are high, while the volvol estimates here seem to be irregular. This might be caused by the overestimated OEV. Since the OEV does not match the observed data, the volvol coefficient will not accurately describe the volatility of volatility.</p>
 <img src="https://s2.loli.net/2024/12/31/JtUglL7QPMq6kZW.png" />
-<h4 id="maturity-decay-eta">Maturity decay: $\eta$</h4>
+<h4 id="435-maturity-decay-eta">4.3.5 Maturity decay: $\eta$</h4>
 <p>The extracted series remain stable except during the 1998 and 2002 recessions, when the estimates rise significantly. This recession stands out with unique characteristics: short-term volatility is elevated, the term structures for both implied and expected volatilities slope downward, and short-term volatility exhibits much greater variation compared to long-term volatilities. Although short-term volatility is high during both the financial crises and this recession, long-term implied volatilities increase less during the recession, indicating that investors were notably less concerned about the recession compared to the financial crises.</p>
 <img src="https://s2.loli.net/2024/12/31/uPqM9AEcd25iebx.png" />
+<h2 id="5-遇到的问题和解决方法">（5 遇到的问题和解决方法）</h2>
+<p>Q1: 使用 cubic spline interpolation 的 iv 曲面可能不满足无套利条件。</p>
+<p>A1: 或许可以尝试<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1964634#paper-citations-widget">这篇文章</a>里的插值方法。</p>
+<hr>
+<p>Q2: 在 quasi-maximum-likelihood 的设定下以最小化 pricing error 的 SSE 为损失函数估计 Q 和 R 时，最终的估计值对初始值很敏感。可能的原因是，minimizing pricing error SSE 是 non-convex 的，因此估计值是局部最优解。</p>
+<p>A2: 尚未解决。</p>
+<hr>
+<p>Q3: 如果过程噪音矩阵 Q 的值太小，那么状态协方差矩阵 P 迭代时不一定是半正定的。</p>
+<p>A3: 在每次更新完 P 之后，进行下述操作：</p>
+<ol>
+<li>$P^{\prime}:=\frac{P+P^T}{2}$</li>
+<li>对 $P&rsquo;$ 做特征分解：$P^{\prime}=V D V^T$，其中 $V$ 是特征向量，$D$ 是主对角线元素为特征值的对角矩阵</li>
+<li>将 $D$ 主对角线上的元素替换为 $\max \left(D_{i j}, 0\right)+\epsilon$，其中 $\epsilon$ 是一个较小的正数（我取了1e-6）。将新的对角矩阵记作 $D'$</li>
+<li>获取新的$P^* := V D^{\prime} V^T$</li>
+</ol>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>VGVV 是 Vega-Gamma-Vanna-Volga 的缩写。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Peter Carr, Liuren Wu,
+Analyzing volatility risk and risk premium in option contracts: A new theory,
+Journal of Financial Economics,
+Volume 120, Issue 1,
+2016,
+Pages 1-20,
+ISSN 0304-405X,
+<a href="https://doi.org/10.1016/j.jfineco.2016.01.004">https://doi.org/10.1016/j.jfineco.2016.01.004</a>.
+(<a href="https://www.sciencedirect.com/science/article/pii/S0304405X16000052">https://www.sciencedirect.com/science/article/pii/S0304405X16000052</a>)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>注意这里是 variance 而非 volatility。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>VGVV 是 Vega-Gamma-Vanna-Volga 的缩写。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>个人感觉这篇讲解卡尔曼滤波的教程很易读： <a href="https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python">https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python</a>。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>注意这里是 variance 而非 volatility。&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>Option Expected Volatility is a new concept proposed in Carr and Wu (2016). The definition of OEV can be seen <a href="#definition-of-orv-and-oev">in this subsection</a>.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>个人感觉这篇讲解卡尔曼滤波的教程很易读： <a href="https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python">https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python</a>。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5">
-<p>It is important to note that the PDE is derived for the relation which the stochastic terms must satisfy to avoid dynamic arbitrage. In other words, <strong>this PDE is not used for solving the value function $B(S_t, I_t, t)$ (since it is already given),</strong> and the coefficients in the SDE are not deterministic as well.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Option Expected Volatility is a new concept proposed in Carr and Wu (2016). The definition of OEV can be seen <a href="#definition-of-orv-and-oev">in this subsection</a>.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6">
-<p>Source: <a href="https://www.federalreserve.gov/data/nominal-yield-curve.htm">https://www.federalreserve.gov/data/nominal-yield-curve.htm</a>.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>It is important to note that the PDE is derived for the relation which the stochastic terms must satisfy to avoid dynamic arbitrage. In other words, <strong>this PDE is not used for solving the value function $B(S_t, I_t, t)$ (since it is already given),</strong> and the coefficients in the SDE are not deterministic as well.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:7">
-<p>Source: <a href="https://shillerdata.com/">https://shillerdata.com/</a>. The dividend yield is computed by dividing the dividend by the price of stock in the file &ldquo;ie_data (xls)&rdquo;.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Source: <a href="https://www.federalreserve.gov/data/nominal-yield-curve.htm">https://www.federalreserve.gov/data/nominal-yield-curve.htm</a>.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>Source: <a href="https://shillerdata.com/">https://shillerdata.com/</a>. The dividend yield is computed by dividing the dividend by the price of stock in the file &ldquo;ie_data (xls)&rdquo;.&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -536,6 +562,22 @@ $$</p>
 
 
   </div>
+
+<script src="https://giscus.app/client.js"
+        data-repo="Young-Mann/comments"
+        data-repo-id="R_kgDOKoYnnQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOKoYnnc4Cc_N-"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
 </article>
 
 
