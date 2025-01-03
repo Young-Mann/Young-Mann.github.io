@@ -4,6 +4,7 @@ date: 2024-03-22T14:59:52+01:00
 tags:
 - 概率论
 toc: true
+description: 记录如何使用特征函数推导概率分布函数。
 draft: false
 ---
 ## 引言

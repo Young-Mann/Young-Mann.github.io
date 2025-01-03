@@ -4,7 +4,7 @@
 
 [outputFormats.droplist]
 mediatype = "text/droplist"
-isPlainText = false
+isPlainText = true
 
 [params]
 enableEmoji = true

@@ -1,9 +1,10 @@
 ---
-title: "Functional Analysis tools used in FEM"
+title: "一些函数空间的相关概念"
 date: 2024-04-10T16:11:55+02:00
 tags:
 - 期权定价
 - 我小子又在抄教材了
+description: 这学期学习如何用有限元的数值方法做期权定价时，见到了许多没见过的概念，在此记录一下。
 toc: true
 draft: false
 ---

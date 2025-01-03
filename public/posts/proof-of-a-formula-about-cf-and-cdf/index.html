@@ -22,16 +22,13 @@
 <meta name="theme-color" content="#ffffff">
 
 
+<meta name="description" content="记录如何使用特征函数推导概率分布函数。" />
 
 <meta name="keywords" content="概率论,
 ">
 
 <meta property="og:title" content="基于特征函数推导概率分布函数" />
-<meta property="og:description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
-然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
-为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
-另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
-推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$" />
+<meta property="og:description" content="记录如何使用特征函数推导概率分布函数。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://young-mann.top/posts/proof-of-a-formula-about-cf-and-cdf/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-03-22T14:59:52+01:00" />
@@ -42,19 +39,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="基于特征函数推导概率分布函数"/>
-<meta name="twitter:description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
-然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
-为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
-另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
-推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$"/>
+<meta name="twitter:description" content="记录如何使用特征函数推导概率分布函数。"/>
 
 
 <meta itemprop="name" content="基于特征函数推导概率分布函数">
-<meta itemprop="description" content="引言 最近，笔者在某节课上学习了利用特征函数及FFT的期权定价方法，which 需要用到特征函数反推概率分布函数，也就是下面这个等式： $$ F(x) = \frac {1}{2} &#43; \frac {1} {2\pi}\int ^{\infty} _{0} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t, $$ 其中，$F(x)=F_Z(x)$是关于随机变量$Z$的概率分布函数，$\phi(t)=\phi_Z(t) :=\mathbb{E}[e^{itZ}] = \int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)$ 是关于随机变量$Z$的特征函数，$i:=\sqrt{-1}$。
-然而，这节课的课件里没有这个表达式的推导过程。为了理解这个式子从何而来，笔者找到了这篇文章1，将推导思路记了下来，写作本文。
-为简化符号，下文将继续省略概率分布函数、特征函数关于随机变量的下标。
-另外，笔者不确定下文中自己对「为什么可以交换积分次序」的证明是对是错。如果有大佬能指出其中的问题，那就在此提前感谢了。
-推导过程 第一步，任取$0&lt;\varepsilon&lt;\lambda$，硬凑积分如下： $$ \begin{align} \text{I}&amp;= \frac {1} {\pi}\int ^\lambda _{\varepsilon} \frac {e^{itx} \phi(-t) - e^{-itx}\phi(t)} {it} \text{d}t \nonumber \\ &amp;= \frac {1} {\pi} \int ^\lambda _{\varepsilon} \frac {e^{itx} \int^{&#43;\infty} _{-\infty} e^{-itz} \text{d}F(z) - e^{-itx}\int^{&#43;\infty} _{-\infty}e^{itz}\text{d}F(z)} {it} \text{d}t \nonumber \\ &amp;= \frac{1}{\pi} \int ^\lambda _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {e^{i[t(x-z)]}- e^{i[-t(x-z)]}} {it}\text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{使用欧拉公式}} \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \int^{&#43;\infty} _{-\infty} \frac {\sin(t(x-z))}{t} \text{d}F(z) \text{d}t \\ &amp;\xlongequal{\text{积分换序}}\int ^{&#43;\infty} _{-\infty} \text{d}F(z) \frac{2}{\pi} \int ^{\lambda} _{\varepsilon} \frac {\sin(t(x-z))}{t} \text{d}t \end{align} $$"><meta itemprop="datePublished" content="2024-03-22T14:59:52+01:00" />
+<meta itemprop="description" content="记录如何使用特征函数推导概率分布函数。"><meta itemprop="datePublished" content="2024-03-22T14:59:52+01:00" />
 <meta itemprop="dateModified" content="2024-03-22T14:59:52+01:00" />
 <meta itemprop="wordCount" content="546">
 <meta itemprop="keywords" content="概率论," />
@@ -353,7 +342,7 @@ $$</p>
     <div class="nav-bkg-50 content-container-narrow-pad bottom-links text-0p75 drop-shadow">
       <nav class="flex-row">
       
-      <a href="https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/" class="flex-row v-center no-underline"  style="max-width:45%;">
+      <a href="https://young-mann.top/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1-2023/" class="flex-row v-center no-underline"  style="max-width:45%;">
         <span class="text-1p5">←</span>&nbsp;<span class="re-underline">Previous: 小逛纽伦堡</span>
       </a>
       

@@ -134,18 +134,66 @@ sticky-nav
     
     <div class="sidepull-side">
         <style>
-    p{	
+    p {    
          text-indent: 2em;
-         text-justify:inter-ideograph ;
-         text-align:justify;
-         font-size:1em;
+         text-justify: inter-ideograph;
+         text-align: left-align;
+         font-size: 0.875em;
+    }
+    .tomb img {
+        cursor: pointer;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .tomb figcaption {
+        transition: opacity 0.5s ease, transform 0.5s ease;
     }
 </style>
-<figure><img src="https://s2.loli.net/2024/09/24/loMhr7yZzc54uXm.jpg"/>
+<span class="tomb">
+<figure>
+  <img id="switchImage" src="https://s2.loli.net/2024/09/24/loMhr7yZzc54uXm.jpg" width="70%">
+  <figcaption id="caption">堆于 2023.11.30<br>我的学生卡长眠于此</figcaption>
 </figure>
+<p>你好呀，这里是 <a href="../posts/about">我</a> 的文字坟头，存放的多是从课本上抄来的内容，亦或是我线下生活的流水账。读起来应该会挺无趣，从这些 <a href="../tags">标签</a> 可窥见一斑。</p>
+<p>若是觉得晦气，想要和我“友好”互动，那欢迎 <a href="mailto:young-mann1043@outlook.com">发邮件至此</a> 。让咱俩好好比划比划！</p>
+</span>
+<script>
+    const slides = [
+        {
+            src: "https://s2.loli.net/2024/09/24/loMhr7yZzc54uXm.jpg",
+            caption: "堆于 2023.11.30<br>我的学生卡长眠于此"
+        },
+        {
+            src: "https://s2.loli.net/2025/01/03/QFPstSp7AXyG4lB.jpg",
+            caption: "生于 2024.11.22<br>无声而立，卒时不记"
+        }
+    ];
+    
+    let currentIndex = 0;
+    const imgElement = document.getElementById("switchImage");
+    const captionElement = document.getElementById("caption");
 
-<p>这里是 <a href="../posts/about">我</a> 的文字坟头，存放的大多是从课本上抄来的内容，亦或是我线下生活的流水账，从这些 <a href="../tags">标签</a> 可窥见一斑。如果没有与我类似的经历，读起来应该会挺无趣。</p>
-<p>来到这里时，若是心情不太好，想要找人骂一骂，那欢迎 <a href="mailto:young-mann1043@outlook.com">发邮件到这旮旯</a> ，让咱俩好好比划比划！</p>
+    imgElement.onclick = function() {
+        // 淡出并缩小
+        imgElement.style.opacity = 0;
+        imgElement.style.transform = "scale(0.9)";
+        captionElement.style.opacity = 0;
+        captionElement.style.transform = "scale(0.9)";
+
+        // 等待动画完成后切换图片和文字
+    setTimeout(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        imgElement.src = slides[currentIndex].src;
+        captionElement.innerHTML = slides[currentIndex].caption;  // 使用innerHTML
+
+        // 淡入并放大
+        imgElement.style.opacity = 1;
+        imgElement.style.transform = "scale(1)";
+        captionElement.style.opacity = 1;
+        captionElement.style.transform = "scale(1)";
+    }, 500);
+
+    }
+</script>
 
     </div>
     
@@ -154,9 +202,10 @@ sticky-nav
         <ul id="list" class="list-unstyled list-of-titles">
         
         <li class="">
-            <a href="/posts/volitility-dynamics-filtering/">
-            <span class="post-title">Volitility Dynamics Filtering</span>
+            <a href="/posts/extract-vol-surface-with-ukf/">
+            <span class="post-title">Extract near-term shape of volatility surface with UKF</span>
             <br>
+	    <span class="post-description">||| 我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。</span><br>
             <span class="post-meta">December 30, 2024</span>
             <br>
             <span class="post-meta">
@@ -169,8 +218,9 @@ sticky-nav
         
         <li class="">
             <a href="/posts/functional-analysis-for-fem/">
-            <span class="post-title">Functional Analysis tools used in FEM</span>
+            <span class="post-title">一些函数空间的相关概念</span>
             <br>
+	    <span class="post-description">||| 这学期学习如何用有限元的数值方法做期权定价时，见到了许多没见过的概念，在此记录一下。</span><br>
             <span class="post-meta">April 10, 2024</span>
             <br>
             <span class="post-meta">
@@ -187,6 +237,7 @@ sticky-nav
             <a href="/posts/%E5%B0%8F%E9%80%9B%E5%9F%83%E5%B8%8C%E6%84%8F-2024/">
             <span class="post-title">趁着春假小逛埃希意</span>
             <br>
+	    <span class="post-description">||| 趁着春假跟着大哥 $51^2$ 突袭埃及、 希腊、意大利！</span><br>
             <span class="post-meta">April 9, 2024</span>
             <br>
             <span class="post-meta">
@@ -203,6 +254,7 @@ sticky-nav
             <a href="/posts/proof-of-a-formula-about-cf-and-cdf/">
             <span class="post-title">基于特征函数推导概率分布函数</span>
             <br>
+	    <span class="post-description">||| 记录如何使用特征函数推导概率分布函数。</span><br>
             <span class="post-meta">March 22, 2024</span>
             <br>
             <span class="post-meta">
@@ -214,9 +266,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1/">
+            <a href="/posts/%E5%B0%8F%E9%80%9B%E7%BA%BD%E4%BC%A6%E5%A0%A1-2023/">
             <span class="post-title">小逛纽伦堡</span>
             <br>
+	    <span class="post-description">||| 趁着圣诞跟着S姐S哥闪击纽伦堡！</span><br>
             <span class="post-meta">December 29, 2023</span>
             <br>
             <span class="post-meta">
@@ -235,6 +288,7 @@ sticky-nav
             <a href="/posts/%E6%B3%A2%E5%8A%A8%E7%8E%87%E6%9B%B2%E9%9D%A2/">
             <span class="post-title">The Volatility Surface</span>
             <br>
+	    
             <span class="post-meta">December 7, 2023</span>
             <br>
             <span class="post-meta">
@@ -244,23 +298,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E9%87%8D%E5%AF%B9%E6%95%B0%E5%BE%8B/">
-            <span class="post-title">重对数律</span>
-            <br>
-            <span class="post-meta">October 23, 2023</span>
-            <br>
-            <span class="post-meta">
-                
-                #概率论&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
             <a href="/posts/%E5%B0%8F%E8%AE%B0%E6%A6%82%E7%8E%87%E8%AE%BA%E9%87%8C%E7%9A%84%E4%B8%80%E4%BA%9B%E9%A2%98/">
             <span class="post-title">小记概率论里的一些题</span>
             <br>
+	    
             <span class="post-meta">September 26, 2023</span>
             <br>
             <span class="post-meta">
@@ -272,37 +313,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E4%BA%8C%E5%8D%81%E4%BA%8C%E5%B2%81%E5%87%BA%E9%97%A8%E8%BF%9C%E8%A1%8C/">
-            <span class="post-title">二十二岁出门远行</span>
-            <br>
-            <span class="post-meta">September 24, 2023</span>
-            <br>
-            <span class="post-meta">
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/%E5%B0%8F%E9%80%9B%E8%8B%8F%E9%BB%8E%E4%B8%96/">
-            <span class="post-title">小逛苏黎世</span>
-            <br>
-            <span class="post-meta">September 18, 2023</span>
-            <br>
-            <span class="post-meta">
-                
-                #小逛某地的游记&nbsp;
-                
-                #食与物&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97/">
+            <a href="/posts/%E5%B0%8F%E9%80%9B%E8%A5%BF%E5%8C%97-2023/">
             <span class="post-title">小逛西北</span>
             <br>
+	    
             <span class="post-meta">August 30, 2023</span>
             <br>
             <span class="post-meta">
@@ -319,6 +333,7 @@ sticky-nav
             <a href="/posts/%E6%97%A0%E5%A5%97%E5%88%A9/">
             <span class="post-title">对无套利定价的一点理解</span>
             <br>
+	    <span class="post-description">||| 在课本上看到套利定价模型和衍生品定价的时候，总会看到无套利定价的思路。尽管其思想很容易理解，但还是很好奇为什么特意要强调这种定价方法呢？</span><br>
             <span class="post-meta">May 16, 2023</span>
             <br>
             <span class="post-meta">
@@ -333,6 +348,7 @@ sticky-nav
             <a href="/posts/sigma%E4%BB%A3%E6%95%B0%E7%9A%84%E7%9B%B4%E8%A7%82%E5%90%AB%E4%B9%89/">
             <span class="post-title">金融数学中sigma代数的直观含义</span>
             <br>
+	    <span class="post-description">||| 初学金融随机分析时，曾经对“引入sigma代数刻画事件域”感到困惑，直到我简单粗暴将事件域及其划分理解成，一个随机过程中不同阶段所知道的信息。</span><br>
             <span class="post-meta">May 16, 2023</span>
             <br>
             <span class="post-meta">
@@ -346,9 +362,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/aps%E5%87%86%E5%A4%87%E7%BB%8F%E5%8E%86/">
-            <span class="post-title">APS经历记录</span>
+            <a href="/posts/%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87aps/">
+            <span class="post-title">如何准备APS审核？</span>
             <br>
+	    <span class="post-description">||| 本文档用于记录个人的 APS 审核流程，包括 2 部分：1. 材料的准备；2. 面谈的准备。</span><br>
             <span class="post-meta">March 6, 2023</span>
             <br>
             <span class="post-meta">
@@ -363,6 +380,7 @@ sticky-nav
             <a href="/posts/%E8%B4%B7%E6%AC%BE%E5%88%9B%E9%80%A0%E7%90%86%E8%AE%BA/">
             <span class="post-title">侃侃「贷款创造理论」</span>
             <br>
+	    <span class="post-description">||| 偶然看到了与教科书上不同思路的货币理论，故记录于此、作个索引。</span><br>
             <span class="post-meta">October 21, 2022</span>
             <br>
             <span class="post-meta">
@@ -377,6 +395,7 @@ sticky-nav
             <a href="/posts/monte-carlo/">
             <span class="post-title">蒙特卡罗估计简介</span>
             <br>
+	    <span class="post-description">||| 又开新坑了，大概会落得贪多嚼不烂的下场。</span><br>
             <span class="post-meta">October 20, 2022</span>
             <br>
             <span class="post-meta">
@@ -393,6 +412,7 @@ sticky-nav
             <a href="/posts/design-patterns-and-derivatives-pricing/">
             <span class="post-title">C&#43;&#43; design patterns and derivatives pricing</span>
             <br>
+	    <span class="post-description">||| 一篇读书笔记，记录了 C&#43;&#43; Design Patterns and Derivatives Pricing 的代码实践。</span><br>
             <span class="post-meta">August 9, 2022</span>
             <br>
             <span class="post-meta">
@@ -407,6 +427,7 @@ sticky-nav
             <a href="/posts/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%9F%BA%E7%A1%80/">
             <span class="post-title">基于测度论的概率论基础</span>
             <br>
+	    <span class="post-description">||| 一篇读书笔记，记录了基于测度论的概率论的公理化定义，以及一些其他的相关概念。</span><br>
             <span class="post-meta">July 14, 2022</span>
             <br>
             <span class="post-meta">
@@ -420,35 +441,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E9%80%80%E5%AE%BF/">
-            <span class="post-title">退宿日</span>
-            <br>
-            <span class="post-meta">July 5, 2022</span>
-            <br>
-            <span class="post-meta">
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/%E6%94%80%E5%B2%A9/">
-            <span class="post-title">攀岩杂记</span>
-            <br>
-            <span class="post-meta">June 29, 2022</span>
-            <br>
-            <span class="post-meta">
-                
-                #变强壮！&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
             <a href="/posts/%E7%9B%B4%E8%A8%80/">
             <span class="post-title">侃侃「直言」</span>
             <br>
+	    <span class="post-description">||| 记录福柯书中 2 个有意思的阐释/概念。</span><br>
             <span class="post-meta">April 1, 2022</span>
             <br>
             <span class="post-meta">
@@ -460,37 +456,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E8%80%83%E5%8F%A4%E7%8E%A9%E5%85%B7/">
-            <span class="post-title">刨土，然后假装考古</span>
-            <br>
-            <span class="post-meta">February 26, 2022</span>
-            <br>
-            <span class="post-meta">
-                
-                #玩具&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/my-memory-of-2021/">
-            <span class="post-title">2021：摇摇晃摇</span>
-            <br>
-            <span class="post-meta">February 6, 2022</span>
-            <br>
-            <span class="post-meta">
-                
-                #虚构&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
             <a href="/posts/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E7%90%86%E8%AE%BA/">
             <span class="post-title">关系数据理论</span>
             <br>
+	    <span class="post-description">||| 怎样的数据库算是一个「好」，或者说「不那么坏」的数据库？在确定怎样才算「好」之后，数据库设计者又需要遵循哪些原则，才能使设计出的数据库尽可能具备这种「好」的性质？本文主要介绍了「数据关系理论」中的规范化理论以及 Armstrong 公理，用以回答这 2 个问题。</span><br>
             <span class="post-meta">May 18, 2021</span>
             <br>
             <span class="post-meta">
@@ -505,6 +474,7 @@ sticky-nav
             <a href="/posts/about/">
             <span class="post-title">Kulikuacha!</span>
             <br>
+	    <span class="post-description">||| 关于这个博客，你可能想知道这些……</span><br>
             <span class="post-meta">May 18, 2021</span>
             <br>
             <span class="post-meta">
@@ -514,9 +484,25 @@ sticky-nav
         </li>
         
         <li class="">
+            <a href="/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/">
+            <span class="post-title">浮点数的取值范围</span>
+            <br>
+	    <span class="post-description">||| 记录 IEEE754 标准如何表示浮点数——以 C&#43;&#43; 中的float类型为例。</span><br>
+            <span class="post-meta">February 23, 2021</span>
+            <br>
+            <span class="post-meta">
+                
+                #我小子又在抄教材了！&nbsp;
+                
+            </span>
+            </a>
+        </li>
+        
+        <li class="">
             <a href="/posts/%E6%8B%89%E9%9D%A2%E5%BA%97/">
             <span class="post-title">面条好吃</span>
             <br>
+	    <span class="post-description">||| 有点想念初中门口的那家面馆了。</span><br>
             <span class="post-meta">May 20, 2020</span>
             <br>
             <span class="post-meta">
@@ -528,33 +514,10 @@ sticky-nav
         </li>
         
         <li class="">
-            <a href="/posts/%E5%9C%A8%E6%B5%81%E6%94%BE%E5%9C%B0/">
-            <span class="post-title">在流放地</span>
-            <br>
-            <span class="post-meta">March 30, 2020</span>
-            <br>
-            <span class="post-meta">
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/%E5%86%B0%E5%B7%9D%E5%86%BB%E5%9C%9F/">
-            <span class="post-title">记一篇阴阳怪气的文章</span>
-            <br>
-            <span class="post-meta">January 15, 2020</span>
-            <br>
-            <span class="post-meta">
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
             <a href="/posts/%E6%80%95%E6%AD%BB/">
             <span class="post-title">怕死</span>
             <br>
+	    <span class="post-description">||| 听上去或许可笑——我竟怕死怕到睡不着。</span><br>
             <span class="post-meta">April 1, 2019</span>
             <br>
             <span class="post-meta">
@@ -569,6 +532,7 @@ sticky-nav
             <a href="/posts/%E8%8F%9C%E8%B0%B1%E4%BB%AC/">
             <span class="post-title">记忆里的食谱</span>
             <br>
+	    <span class="post-description">||| 距离 2022 已过去了 66 年，我很怀念它。</span><br>
             <span class="post-meta">January 1, 0001</span>
             <br>
             <span class="post-meta">
@@ -576,18 +540,6 @@ sticky-nav
                 #食与物&nbsp;
                 
                 #虚构&nbsp;
-                
-            </span>
-            </a>
-        </li>
-        
-        <li class="">
-            <a href="/posts/numerical-analysis-of-sodes/">
-            <span class="post-title"></span>
-            <br>
-            <span class="post-meta">January 1, 0001</span>
-            <br>
-            <span class="post-meta">
                 
             </span>
             </a>

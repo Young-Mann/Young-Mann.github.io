@@ -1,5 +1,5 @@
 ---
-title: "APS经历记录"
+title: "如何准备APS审核？"
 description: 本文档用于记录个人的 APS 审核流程，包括 2 部分：1. 材料的准备；2. 面谈的准备。
 toc: true
 tags: 

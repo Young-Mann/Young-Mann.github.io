@@ -1,6 +1,6 @@
 ---
 title: C++ design patterns and derivatives pricing
-description: 一篇读书笔记，记录了 <i>C++ Design Patterns and Derivatives Pricing</i> 的代码实践。
+description: 一篇读书笔记，记录了 C++ Design Patterns and Derivatives Pricing 的代码实践。
 toc: true
 tags: 
 - 我小子又在抄教材了！
@@ -11,11 +11,11 @@ draft: false
 ---
 
 
-**Book Link:** *[C++ Design Patterns and Derivatives Pricing](https://neodb.social/books/493600/)*
+**Book Link:** [C++ Design Patterns and Derivatives Pricing](https://neodb.social/books/493600/)
 
 
 
-本文用于记录读完 [*C++ design patterns and derivatives pricing*](https://neodb.social/books/493600/) 后的代码实践。
+本文用于记录读完 [C++ design patterns and derivatives pricing](https://neodb.social/books/493600/) 后的代码实践。
 
 # ch1-VanillaCallOption
 

@@ -9,14 +9,14 @@
     <lastBuildDate>Mon, 30 Dec 2024 16:11:15 +0100</lastBuildDate>
     <atom:link href="https://young-mann.top/tags/%E6%9C%9F%E6%9D%83%E5%AE%9A%E4%BB%B7/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Volitility Dynamics Filtering</title>
-      <link>https://young-mann.top/posts/volitility-dynamics-filtering/</link>
+      <title>Extract near-term shape of volatility surface with UKF</title>
+      <link>https://young-mann.top/posts/extract-vol-surface-with-ukf/</link>
       <pubDate>Mon, 30 Dec 2024 16:11:15 +0100</pubDate>
-      <guid>https://young-mann.top/posts/volitility-dynamics-filtering/</guid>
+      <guid>https://young-mann.top/posts/extract-vol-surface-with-ukf/</guid>
       <description>这学期的某门 Seminar 要求复现给定范围内的一篇论文。我尝试复现了 Carr and Wu (2016) 1的部分结果。&#xA;Carr and Wu (2016) 提出了一个被称作 VGVV model 2 的期权定价模型：&#xA;他们假设了风险中性测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics，并为 implied volatility 指定了更具体的形式。在这 3 个 dynamics 中， $(m_t, w_t, \eta_t,v_t, \rho_t)$ 这 5 个参数是未知的。 为了分析 Volatility Risk Premium，他们定义了 option realized volatility 和 option expected volatility，并假设了真实世界测度下的 underlying price, implied volatility 以及两者 correlation 的 dynamics。在这 3 个 dynamic 中， $(m_t^{\mathbb{P}}, w_t, \eta_t,v_t^{\mathbb{P}},\rho_t^{\mathbb{P}})$ 这 5 个参数是未知的。 从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance3 (以及 option expected variance) 的二次方程，其中包含 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。 那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）4提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。 下文简单记录了 Carr and Wu (2016) 的思路，以及我的复现结果。</description>
     </item>
     <item>
-      <title>Functional Analysis tools used in FEM</title>
+      <title>一些函数空间的相关概念</title>
       <link>https://young-mann.top/posts/functional-analysis-for-fem/</link>
       <pubDate>Wed, 10 Apr 2024 16:11:55 +0200</pubDate>
       <guid>https://young-mann.top/posts/functional-analysis-for-fem/</guid>
@@ -24,9 +24,9 @@
     </item>
     <item>
       <title>IV 或 T 的变化对 Greeks 有何影响</title>
-      <link>https://young-mann.top/nonsense/greeks/</link>
+      <link>https://young-mann.top/drafts/greeks/</link>
       <pubDate>Sat, 04 Nov 2023 20:42:42 +0100</pubDate>
-      <guid>https://young-mann.top/nonsense/greeks/</guid>
+      <guid>https://young-mann.top/drafts/greeks/</guid>
       <description>今天在看希腊字母这部分的内容，画了 IV 或 T 变化时的 Greeks，以帮助自己记忆。图中的初始参数设定为：K=200，r=0.04，T=1，IV=0.2。IV 变化时的可能取值：{0.1, 0.3, 0.5, 0.7, 0.9}；T 变化时的可能取值为：{0.25, 1, 3, 5, 10} (以年为单位)。&#xA;总览 K=200, r=0.04, T=1, IV=0.2&#xA;接下来以 Call Option 为例，分析 T 或 IV 变化时，期权的 Greeks 将如何变化。&#xA;Delta IV 变化的影响 不同 IV 下的 Delta&#xA;从上图可知，随着 IV 越来越小，当 $S_t$ 接近 $K$ 的水平时，Delta 的变化得更剧烈，这一部分的曲线也更加陡峭。相应的，两侧的曲线则更加平缓。&#xA;T 变化的影响 不同 T 下的 Delta&#xA;T 变化的影响在方向上与 IV 变化的影响相同。随着 T 越来越小时， $S_t$ 越接近 $K$ ，Delta 就变化得更剧烈。&#xA;Gamma IV 变化的影响 不同 IV 下的 Gamma</description>
     </item>
   </channel>

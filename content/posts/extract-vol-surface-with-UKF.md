@@ -1,8 +1,9 @@
 ---
-title: "Volitility Dynamics Filtering"
+title: "Extract near-term shape of volatility surface with UKF"
 date: 2024-12-30T16:11:15+01:00
 tags:
 - 期权定价
+description: 我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。
 toc: true
 draft: false
 
