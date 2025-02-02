@@ -56,7 +56,7 @@ p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#
 p=0.5
 p=0.5; q=1-p; f=zeros(60,1); f(3)=p^3; for i=4:60 f(i)=q*f(i-1)&#43;q*p*f(i-2)&#43;q*p^2*f(i-3); end bar(f) Mathematical Statistics and Data Analysis (3rd Edition) (C1-11) Consider the binomial distribution with $n$ trials and probability $p$ of success on each trial."><meta itemprop="datePublished" content="2023-09-26T20:09:07+02:00" />
 <meta itemprop="dateModified" content="2023-09-26T20:09:07+02:00" />
-<meta itemprop="wordCount" content="601">
+<meta itemprop="wordCount" content="715">
 <meta itemprop="keywords" content="概率论," />
 
 
@@ -322,6 +322,22 @@ $$</p>
 </li>
 </ol>
 </details>
+<hr>
+<details>
+<summary><b>Q: 求下列程序返回值的期望值。
+<pre><code>
+## randomUniform(0, 1) 指的是从 (0, 1) 的均匀分布中抽 1 个随机数
+float sum = 0.0;
+while(sum <= 1.0) {
+  sum += randomUniform(0, 1);
+}
+return sum;
+</code></pre>
+</b></summary>
+<p><b>A</b>:
+令 $X_1, X_2, \ldots, X_n \sim \operatorname{Unif}(0,1), S_0=0, S_n=X_1+X_2+\cdots+X_n$ ，定义停时 $\tau=\inf \left{n \geq 0: S_n&gt;1\right}$ 。目的是求 $\mathbb{E}\left[S_\tau\right]$ 。可见 $S_n-n / 2$ 是一个鞅。因为 $S_{\tau \wedge n} \leq 2$ ，满足 optional sampling定理＋条件，可以得到 $\mathbb{E}\left[S_\tau-\tau / 2\right]=S_0$ ，也就是说 $\mathbb{E}\left[S_\tau\right]=\mathbb{E}[\tau] / 2$ ，所以求 $\mathbb{E}[\tau]$ 就可以了。要求一个函数 $f:[0, \infty) \rightarrow[0, \infty)$ 使得 $f\left(S_{\tau \wedge n}\right)+\tau \wedge n$ 是一个鞅，且对于 $x&gt;1, f(x)=0$ 。 根据䩰性质以及边界条件，解ODE：$f(x)=1+\int_x^1 f(t) d t$ 得到 $f(x)=e^{1-x} 1_{{x \leq 1}}$ 。为什么这样就足够了呢？因为根据靱性质 $f\left(S_0\right)=\mathbb{E}\left[f\left(S_{\tau \wedge n}\right)+\tau \wedge n\right]$ ，令 $n \rightarrow \infty$ ，根据单调以及控制收敛定理＋，收敛到 $\mathbb{E}\left[f\left(S_\tau\right)+\tau\right]$ 。因为边界条件，$f\left(S_\tau\right)=0$ ，所以 $\mathbb{E}[\tau]=f\left(S_0\right)=f(0)=e$ 。最终结果就是 $\mathbb{E}\left[S_\tau\right]=\mathbb{E}[\tau] / 2=e / 2 \approx 1.359 \ldots$</p>
+</details>
+
 
 
   </div>
