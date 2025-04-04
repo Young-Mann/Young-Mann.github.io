@@ -86,8 +86,8 @@ $$
 $$
 s_f = \sqrt {\frac 1 {n-1} \sum^n_{i=1} (f(U_i) - \hat \alpha_i)^2}.
 $$
-至此，我们得到一个误差较低的 $\hat \alpha _n$ 估计值，以及本次估计的误差值 $s_f$。&lt;/p></description></item><item><title>C++ design patterns and derivatives pricing</title><link>https://young-mann.top/posts/design-patterns-and-derivatives-pricing/</link><pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate><guid>https://young-mann.top/posts/design-patterns-and-derivatives-pricing/</guid><description>&lt;p>&lt;strong>Book Link:&lt;/strong> &lt;em>&lt;a href="https://neodb.social/books/493600/">C++ Design Patterns and Derivatives Pricing&lt;/a>&lt;/em>&lt;/p>
-&lt;p>本文用于记录读完 &lt;a href="https://neodb.social/books/493600/">&lt;em>C++ design patterns and derivatives pricing&lt;/em>&lt;/a> 后的代码实践。&lt;/p>
+至此，我们得到一个误差较低的 $\hat \alpha _n$ 估计值，以及本次估计的误差值 $s_f$。&lt;/p></description></item><item><title>C++ design patterns and derivatives pricing</title><link>https://young-mann.top/posts/design-patterns-and-derivatives-pricing/</link><pubDate>Tue, 09 Aug 2022 00:42:05 +0800</pubDate><guid>https://young-mann.top/posts/design-patterns-and-derivatives-pricing/</guid><description>&lt;p>&lt;strong>Book Link:&lt;/strong> &lt;a href="https://neodb.social/books/493600/">C++ Design Patterns and Derivatives Pricing&lt;/a>&lt;/p>
+&lt;p>本文用于记录读完 &lt;a href="https://neodb.social/books/493600/">C++ design patterns and derivatives pricing&lt;/a> 后的代码实践。&lt;/p>
 &lt;h1 id="ch1-vanillacalloption">ch1-VanillaCallOption&lt;/h1>
 &lt;p>在第 1 章的文件夹里，主要实现了 1 个简单的看涨期权（call option）的定价模型，由 3 部分组成。主程序是 &lt;code>SimpleMCMain1.cpp&lt;/code> ，其中需要用到生成随机数的功能，所以引入了 1 个头文件（只有函数声明）的 &lt;code>Random1.h&lt;/code> ，以及具体实现该功能的头文件 &lt;code>Random1_Implementation.h&lt;/code> &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>。&lt;/p>
 &lt;figure class="smaller">&lt;img src="https://s2.loli.net/2022/10/09/CIUwl3ykpuzsQ8e.jpg">
@@ -138,20 +138,7 @@ C_1=\lbrace第1次掷币的结果是正面\rbrace =\lbrace \text{HH, HT}\rbrace,
 C_2=\lbrace第1次掷币的结果是反面\rbrace =\lbrace\text{TH, TT}\rbrace .
 \
 $$
-根据注释1&lt;sup id="fnref1:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>中对划分的定义，不难验证， $ C_1\cap C_2=\varnothing$ 且 $C_1 \cup C_2 = \Omega$，所以 $\lbrace \text{HH, HT}\rbrace, \lbrace \text{TH, TT}\rbrace$ 是 $\Omega$ 的一个划分，而 &lt;u>第1次掷币的结果是否是正面&lt;/u> 便是我们关心的事件。&lt;/p></description></item><item><title>为啥还有人直接用 LSTM 预测股价嘞？</title><link>https://young-mann.top/nonsense/lstm/</link><pubDate>Sun, 05 Jun 2022 02:34:12 +0800</pubDate><guid>https://young-mann.top/nonsense/lstm/</guid><description>&lt;p>最近提交了论文的最终稿，闲来无事和其他同学交流了一下，发现有俩同学在用 LSTM 预测股价。简单扫了一遍他们的文章，发现他在数据的处理上比较粗糙，没有太大实用价值。支撑我作出这个判断的，是他们没做到以下几件事：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>在数据处理上，股价数据属于时序数据，需要先做平稳性检验，对输入数据做对数差分，保证预测变量和特征变量都是平稳的。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>在模型选择上，由于金融时序数据的信噪比比较低，所以模型的参数不能太多，以免过拟合。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>在预测目标上，选择了股价的绝对值（而非收益率），而股价这玩意是不稳定序列，任何扰动都是永续的，因此方差随时间会趋向无穷大。同时，从实际应用的角度上看，我们其实更希望得到的是下一期的股价和这一期相比，是涨了还是跌了，而不是预测股票价格的绝对值。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>如果中了以上几条，相当于训练模型前啥准备工作都没做。这会导致什么结果呢？根据笔者以前的试验，LSTM 大概率只能学到一堆噪声（$y_t^{&amp;rsquo;}=y_{t-1}+\epsilon^{&amp;rsquo;}$），甚至直接把前一期的收盘价作为当期的预测值输出——在这种情况下，假设单日内股价涨跌幅限制 10%（比如 A 股市场），那么在使用 MSE 的情况下，预测的误差也一定不会超过 10%。虽然预测误差看起来不大，但实际上模型没学到啥有用的东西，没法用于在股市里的获利。&lt;/p>
-&lt;p>举个例子，某只股票今天的价格是10元，用模型预测其明天的价格是10.25元，结果真的到了第二天，发现股票价格跌到了 9.75 元。这时候，你计算绝对股价的误差，可能会发现，$(10.25-9.75)/9.75 = 5.13%$，好像预测差距并不大，但问题就是，股票每天的波动本来就不大。如果你真拿这个模型去股市里实战，你可能会发现，这个模型虽然可以做到每天预测股价的绝对值的误差都都很小，但是每天的涨跌其实都是乱猜的，怕不是没多久就赔麻了。&lt;/p></description></item><item><title>侃侃「直言」</title><link>https://young-mann.top/posts/%E7%9B%B4%E8%A8%80/</link><pubDate>Fri, 01 Apr 2022 22:04:47 +0000</pubDate><guid>https://young-mann.top/posts/%E7%9B%B4%E8%A8%80/</guid><description>&lt;p>今天读了福柯文选《自我技术》中的2篇文章，即《何谓直言？》与《说真话的勇气》。前一篇结合了诸多对于古希腊文献的分析，对于“直言”这一概念的词源、定义及特征进行解释。后一篇文章则延续了前一篇文章对于“直言”的讨论，简要阐明了指明了“直言”在“自我实践”的发展历程中极为重要。这种重要性体现在“直言”能够作为一种特定的标准判断“他者”，而这种“他者”在“述说自己之真”的自我实践是必不可少的。&lt;/p>
+根据注释1&lt;sup id="fnref1:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>中对划分的定义，不难验证， $ C_1\cap C_2=\varnothing$ 且 $C_1 \cup C_2 = \Omega$，所以 $\lbrace \text{HH, HT}\rbrace, \lbrace \text{TH, TT}\rbrace$ 是 $\Omega$ 的一个划分，而 &lt;u>第1次掷币的结果是否是正面&lt;/u> 便是我们关心的事件。&lt;/p></description></item><item><title>侃侃「直言」</title><link>https://young-mann.top/posts/%E7%9B%B4%E8%A8%80/</link><pubDate>Fri, 01 Apr 2022 22:04:47 +0000</pubDate><guid>https://young-mann.top/posts/%E7%9B%B4%E8%A8%80/</guid><description>&lt;p>今天读了福柯文选《自我技术》中的2篇文章，即《何谓直言？》与《说真话的勇气》。前一篇结合了诸多对于古希腊文献的分析，对于“直言”这一概念的词源、定义及特征进行解释。后一篇文章则延续了前一篇文章对于“直言”的讨论，简要阐明了指明了“直言”在“自我实践”的发展历程中极为重要。这种重要性体现在“直言”能够作为一种特定的标准判断“他者”，而这种“他者”在“述说自己之真”的自我实践是必不可少的。&lt;/p>
 &lt;p>说实话，这两篇文章里，比较吸引我的，一是福柯对于自己所用的方法论（即“问题化置疑”）的阐述，二是福柯提出的“直言”这一概念。在此，笔者尝试对于文本中的观点及论证进行选择性的转述，权当是今天的写作练习（？）了。由于笔者的福柯文本并没有多少阅读量，对于书中使用的诸多概念或许都存在理解偏差。因此，还请谨慎对待文中所提到的福柯的观点。&lt;/p>
 &lt;h2 id="福柯的问题化置疑">福柯的“问题化置疑”&lt;/h2>
 &lt;p>“问题化置疑”是什么？简而言之，就是研究 &lt;strong>如今被视作问题的事物&lt;/strong> 是 &lt;strong>为何&lt;/strong> 且 &lt;strong>如何&lt;/strong> 在当今成为（或者说被视作）问题的。在《何谓直言？》一文里，福柯将自己视作一名“思想史”学者（而非“观念史学者”），澄清了“观念史”与“思想史”在研究方法论上的差异：前者关注某个特定的概念是何时出现的，如何产生、发展的，又和其他相关的概念如何相互影响；而思想史的学者则不然——他们关注的，是某个 未曾被问题化的 经验领域或实践类型（这些经验和实践在过去是被人们理所当然、习以为常的、寂寂无名的），如何成为一个亟需解决的问题，从而引发了一系列探讨和争论，煽动了新的反对与抗争，并为过去的那一系列行为、习惯、实践、制度带来危机。研究某些事物是为何且如何成为问题，关注这类曾经不成问题的事物“问题化”的过程，便是福柯的研究切入点。&lt;/p>
@@ -211,7 +198,7 @@ $$
 &lt;/li>
 &lt;/ul>
 &lt;h2 id="问题的引入数据异常及规范化理论">问题的引入——数据异常及规范化理论&lt;/h2>
-&lt;p>当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：&lt;/p></description></item><item><title>浮点数的取值范围</title><link>https://young-mann.top/nonsense/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</link><pubDate>Tue, 23 Feb 2021 22:58:40 +0800</pubDate><guid>https://young-mann.top/nonsense/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</guid><description>&lt;p>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。&lt;/p>
+&lt;p>当我们在设计数据库时，若我们考虑不当，将过多的要素全部塞进了一张单独的表时，那么后续操作这张表时可能会引发诸多意料之外的异常情况(anomality)，如：&lt;/p></description></item><item><title>浮点数的取值范围</title><link>https://young-mann.top/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</link><pubDate>Tue, 23 Feb 2021 22:58:40 +0800</pubDate><guid>https://young-mann.top/posts/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8F%96%E5%80%BC%E8%8C%83%E5%9B%B4/</guid><description>&lt;p>本文以单精度浮点格式（即C++中的float类型）为例，简要介绍 IEEE754 标准中浮点数的表示方法，以及该表示方法中需要特别注意的部分（即浮点数中的阶码是以移码形式存储的），并基于上述两点，求得单精度浮点数的有效数字的位数以及取值范围。其他类型浮点格式的有效数字位数及取值范围可依此类推。&lt;/p>
 &lt;h2 id="前置知识">前置知识&lt;/h2>
 &lt;p>若想了解浮点数在计算机内被如何存储，就必须先了解 IEEE754 标准，which 制定了计算机内浮点数及其运算的标准，被目前几乎所有的计算机所支持。&lt;/p>
 &lt;h3 id="ieee754-标准">IEEE754 标准&lt;/h3>

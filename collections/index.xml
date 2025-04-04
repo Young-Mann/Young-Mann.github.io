@@ -4,6 +4,7 @@
 &lt;li>可交互的概率分布说明书：&lt;a href="https://www.acsu.buffalo.edu/~adamcunn/probability/probability.html">Probability Playground: Exploring Probability Distributions and their Relationships&lt;/a>&lt;/li>
 &lt;li>傅里叶变换的直观图示：&lt;a href="https://www.jezzamon.com/fourier/index.html">An Interactive Introduction to Fourier Transforms&lt;/a>&lt;/li>
 &lt;li>入门 Git 的可视化教程：&lt;a href="https://learngitbranching.js.org">Learn Git Branching&lt;/a>&lt;/li>
+&lt;li>卡尔曼滤波的教程：https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python&lt;/li>
 &lt;/ul>
 &lt;h2 id="展示用工具">展示用工具&lt;/h2>
 &lt;ul>
