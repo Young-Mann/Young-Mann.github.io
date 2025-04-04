@@ -14,6 +14,7 @@
 
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://young-mann.top//apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="https://young-mann.top//favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="https://young-mann.top//favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://young-mann.top//favicon-16x16.png">
 <link rel="manifest" href="https://young-mann.top//site.webmanifest">
@@ -27,13 +28,16 @@
 <meta name="keywords" content="期权定价,
 ">
 
-<meta property="og:title" content="Extract near-term shape of volatility surface with UKF" />
-<meta property="og:description" content="我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://young-mann.top/posts/extract-vol-surface-with-ukf/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-12-30T16:11:15+01:00" />
-<meta property="article:modified_time" content="2024-12-30T16:11:15+01:00" />
-
+<meta property="og:url" content="https://young-mann.top/posts/extract-vol-surface-with-ukf/">
+  <meta property="og:site_name" content="斐康明">
+  <meta property="og:title" content="Extract near-term shape of volatility surface with UKF">
+  <meta property="og:description" content="我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-30T16:11:15+01:00">
+    <meta property="article:modified_time" content="2024-12-30T16:11:15+01:00">
+    <meta property="article:tag" content="期权定价">
 
 <meta property="og:site_name" content="斐康明" />
 
@@ -42,11 +46,13 @@
 <meta name="twitter:description" content="我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。"/>
 
 
-<meta itemprop="name" content="Extract near-term shape of volatility surface with UKF">
-<meta itemprop="description" content="我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。"><meta itemprop="datePublished" content="2024-12-30T16:11:15+01:00" />
-<meta itemprop="dateModified" content="2024-12-30T16:11:15+01:00" />
-<meta itemprop="wordCount" content="3292">
-<meta itemprop="keywords" content="期权定价," />
+
+  <meta itemprop="name" content="Extract near-term shape of volatility surface with UKF">
+  <meta itemprop="description" content="我部分复现了 Carr and Wu (2016) ，基于假设的 IV 和 OEV 的 dynamics，在无动态套利对应的二次方程的约束下，使用 Unscented Kalman Filter 提取波动率曲面的近期形态。复现结果和原文有较大差异，尤其在 Option Expected Volatility (OEV) 的估计上——我过高估计了 OEV 。">
+  <meta itemprop="datePublished" content="2024-12-30T16:11:15+01:00">
+  <meta itemprop="dateModified" content="2024-12-30T16:11:15+01:00">
+  <meta itemprop="wordCount" content="3292">
+  <meta itemprop="keywords" content="期权定价">
 
 
     <title>Extract near-term shape of volatility surface with UKF || 斐康明</title>
@@ -211,8 +217,7 @@
 <li>从市场内不存在 dynamic arbitrage 的要求出发，可推得 put option BSM price 与其 Vega, Gamma, Vanna, Volga之间必须满足的PDE。这个作为约束条件的 PDE 可被化简为关于 implied variance<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> (以及 option expected variance) 的二次方程，其中包含  $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。<strong>如果已知 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值，就能计算同一时间点的 implied variance (以及 option expected variance) ，以及对应的期权价格。</strong></li>
 <li>那么，如何估计 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 的值？为此，他们使用了 Unscented Kalman Filter（简称 UKF）<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>提取每个时间点的 $(m_t,m_t^{\mathbb{P}}, w_t, \eta_t,v_t,v_t^{\mathbb{P}}, \rho_t,\rho_t^{\mathbb{P}})$ 。需要注意，在使用UKF前，需要估计其 process noise 和 measurement noise 的协方差矩阵。</li>
 </ol>
-<p>下文简单记录了  Carr and Wu (2016) 的思路，以及我的复现结果。</p>
-</blockquote>
+<p>下文简单记录了  Carr and Wu (2016) 的思路，以及我的复现结果。</p></blockquote>
 <h2 id="1-introduction">1 Introduction</h2>
 <p>Carr and Wu (2016) develops a so-called VGVV model for option pricing. The main components of this model includes:</p>
 <ol>
@@ -337,45 +342,45 @@ having $25 \ 054 \ 504$ samples.</p>
 <p>Carr and Wu (2016) obtain the implied volatility quotes from a major, and their quotes are a matrix on a grid of five fixed relative strikes from 80% to 120% of the spot level and eight fixed time to maturities from 1 month to 5 years. To get a similar matrix of dataset, I use cubic spline interpolation to obtain the implied volatility quotes with 5 sets of moneyness ($K/S \in {0.8, 0.9, 1.0, 1.1, 1.2}$) and 5 sets of time to maturities ($\tau  \in {1 \text{ month}, 3 \text{ months}, 6 \text{ months}, 12 \text{ months}, 24 \text{ months}}$ ). These quotes are sampled weekly every Wednesday, aligned with the setting in Carr and Wu (2016).</p>
 <p>For instance, the preprocessed implied volatility quotes on 1997-01-08, which has 25 rows and 4 columns, are shown as follows:</p>
 <table>
-<thead>
-<tr>
-<th></th>
-<th><strong>t</strong></th>
-<th><strong>tau (in year)</strong></th>
-<th><strong>K/S</strong></th>
-<th><strong>IV</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1997-01-08</td>
-<td>0.083333</td>
-<td>0.8</td>
-<td>0.305950</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1997-01-08</td>
-<td>0.083333</td>
-<td>0.9</td>
-<td>0.245290</td>
-</tr>
-<tr>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-<tr>
-<td>25</td>
-<td>1997-01-08</td>
-<td>2.000000</td>
-<td>1.2</td>
-<td>0.179292</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th><strong>t</strong></th>
+          <th><strong>tau (in year)</strong></th>
+          <th><strong>K/S</strong></th>
+          <th><strong>IV</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>1997-01-08</td>
+          <td>0.083333</td>
+          <td>0.8</td>
+          <td>0.305950</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>1997-01-08</td>
+          <td>0.083333</td>
+          <td>0.9</td>
+          <td>0.245290</td>
+      </tr>
+      <tr>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+          <td>…</td>
+      </tr>
+      <tr>
+          <td>25</td>
+          <td>1997-01-08</td>
+          <td>2.000000</td>
+          <td>1.2</td>
+          <td>0.179292</td>
+      </tr>
+  </tbody>
 </table>
 <h4 id="312-spx-daily-quotes">3.1.2 SPX daily quotes</h4>
 <p>The SPX daily quotes are obtained from Bloomberg, available from January 4, 1985 to August 31, 2023, having $10 \ 505 $ samples. Note that SPX daily quotes have 12 years more data than the implied volatility quotes. The reason is that Carr and WU (2016) estimate the historical ORV 10 years earlier than the implied volatility sample from January 8, 1987, which needs the SPX daily time series going back 2 additional years to January 8, 1985, since $\operatorname{ORV}(k,t-\tau,t)$ uses the data from time $t-\tau$ to time $t$, and the longest $\tau$ in my implied volatility quotes is $24 \text{ months}$.</p>

@@ -4,7 +4,7 @@
     <title>Collections on 斐康明</title>
     <link>https://young-mann.top/collections/</link>
     <description>Recent content in Collections on 斐康明</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <atom:link href="https://young-mann.top/collections/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,7 +12,7 @@
       <link>https://young-mann.top/collections/collections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://young-mann.top/collections/collections/</guid>
-      <description>这里存放一些有意思的网站。&#xA;教程类 可交互的概率分布说明书：Probability Playground: Exploring Probability Distributions and their Relationships 傅里叶变换的直观图示：An Interactive Introduction to Fourier Transforms 入门 Git 的可视化教程：Learn Git Branching 卡尔曼滤波的教程：https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python 展示用工具 将 Jupyter Notebook 嵌入网页的工具：nbviewer 也许某天用的上（？） 噪声产生器：开放办公吵喜你 (scateu.me) 查询欧洲允许采摘的果蔬的位置：Startseite | mundraub.org </description>
+      <description>&lt;p&gt;这里存放一些有意思的网站。&lt;/p&gt;&#xA;&lt;h2 id=&#34;教程类&#34;&gt;教程类&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;可交互的概率分布说明书：&lt;a href=&#34;https://www.acsu.buffalo.edu/~adamcunn/probability/probability.html&#34;&gt;Probability Playground: Exploring Probability Distributions and their Relationships&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;傅里叶变换的直观图示：&lt;a href=&#34;https://www.jezzamon.com/fourier/index.html&#34;&gt;An Interactive Introduction to Fourier Transforms&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;入门 Git 的可视化教程：&lt;a href=&#34;https://learngitbranching.js.org&#34;&gt;Learn Git Branching&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;卡尔曼滤波的教程：https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;展示用工具&#34;&gt;展示用工具&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;将 Jupyter Notebook 嵌入网页的工具：&lt;a href=&#34;https://nbviewer.org/&#34;&gt;nbviewer&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;也许某天用的上&#34;&gt;也许某天用的上（？）&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;噪声产生器：&lt;a href=&#34;https://scateu.me/2017/10/30/office-sounds-like-shit.html&#34;&gt;开放办公吵喜你 (scateu.me)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;查询欧洲允许采摘的果蔬的位置：&lt;a href=&#34;https://mundraub.org/&#34;&gt;Startseite | mundraub.org&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

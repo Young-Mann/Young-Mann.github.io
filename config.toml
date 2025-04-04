@@ -1,5 +1,6 @@
 baseURL = "https://young-mann.top/"
 title = "斐康明"
+
 theme = "paperesque"
 
 
@@ -28,6 +29,7 @@ pygmentsUseClasses = true
 disableMarginNotes = false
 toc = true
 # And your top-right menu links here.
+subtitle = "后步宽宏"
 
 [[params.topmenu]]
   name = "关于"
